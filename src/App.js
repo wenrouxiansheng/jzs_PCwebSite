@@ -1,9 +1,13 @@
 import './App.css';
-import Header from '@components/header/header'
+import 'antd/dist/antd.css';
+import { Route } from 'react-router-dom'
+import HomePage from './views/homePage/homePage';
+import BrandIntroduction from './views/brandIntroduction/brandIntroduction';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Route path="/home" component={HomePage}/>
+      <Route path="/BrandIntroduction" component={BrandIntroduction}/>
     </div>
   );
 }

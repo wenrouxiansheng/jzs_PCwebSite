@@ -332,10 +332,10 @@ module.exports = function (webpackEnv) {
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
-          '@assets': path.join(__dirname, '../src/assets'),
-          '@components': path.join(__dirname, '../src/components'),
         }),
         ...(modules.webpackAliases || {}),
+        '@assets': path.join(__dirname, '../src/assets'),
+        '@components': path.join(__dirname, '../src/components'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

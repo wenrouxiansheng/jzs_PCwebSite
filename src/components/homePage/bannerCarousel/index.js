@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './style.scss'
 import { Carousel } from 'antd';
-export default class index extends Component {
+export default class bannerCarousel extends Component {
     render() {
         const { bannerList } = this.props
         

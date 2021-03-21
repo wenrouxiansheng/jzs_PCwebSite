@@ -19,6 +19,7 @@ export default class nav extends Component {
         // ],
     }
     navMouseover = (e) => {
+        //控制下划线滑动
         const { target: { className, nodeName }, target } = e;
         if (className !== 'line' && nodeName === 'LI') {
             let num = [].indexOf.call(target.parentNode.querySelectorAll('li'), target),
@@ -32,6 +33,7 @@ export default class nav extends Component {
         }
     }
     navMouseenter = (num) => {
+        //进入时二级导航高度设置为子元素*50  设置为true
         return () => {
             const { navList } = this.state;
             let ary = navList.map((item, index) => {
@@ -44,6 +46,7 @@ export default class nav extends Component {
         }
     }
     navMouseleave = (num) => {
+        //离开时二级导航全部高度设置为0
         return () => {
             this.setState({
                 navList: [false, false, false, false, false, false, false]
@@ -57,7 +60,7 @@ export default class nav extends Component {
             <nav className="horizontalPullDownNav">
                 <ul onMouseOver={this.navMouseover}>
                     <li><Link to="/home">首页</Link></li>
-                    <li className="pullDown" onMouseEnter={this.navMouseenter(0)} onMouseLeave={this.navMouseleave(0)}><Link to="/BrandIntroduction">首页</Link>
+                    <li className="pullDown" onMouseEnter={this.navMouseenter(0)} onMouseLeave={this.navMouseleave(0)}><Link to="/BrandIntroduction">品牌介绍</Link>
                         <div style={{ height: navList[0] ? '100px' : '0px' }}>
                             <a href="http://www.baidu.com">发展历程</a>
                             <a href="http://www.baidu.com">教研课程</a>

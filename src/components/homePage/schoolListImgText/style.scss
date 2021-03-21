@@ -1,0 +1,120 @@
+/* 学校列表多图 */
+.schoolListImgText {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.schoolListImgText .bigImg {
+    position: relative;
+}
+.schoolListImgText .bigImg p {
+    position: absolute;
+    width: 42px;
+    height: 40px;
+    background-color: #ffab32;
+    color: white;
+    right: 20px;
+    font-size: 26px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.schoolListImgText .bigImg .top {
+    bottom: 150px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.schoolListImgText .bigImg .bottom {
+    bottom: 100px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.schoolListImgText .bigImg p:active {
+    transform: scale(0.9);
+}
+.schoolListImgText .bigImg h1 {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    line-height: 70px;
+    padding-left: 30px;
+    margin: 0;
+}
+.schoolListImgText .bigImg img {
+    width: 920px;
+    height: 540px;
+    object-fit: cover;
+}
+.schoolListImgText .smallImg {
+    width: 270px;
+    height: 540px;
+    transition: 0.3s;
+}
+.schoolListImgText .smalllBox {
+    height: 173px;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.schoolListImgText .smalllBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 悬浮弹出层 */
+.schoolListImgText .smalllBox div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    left: 0;
+    transition: 0.3s cubic-bezier(0.32, 0, 0.39, 1.36);
+    opacity: 0;
+}
+.schoolListImgText .smalllBox div h3 {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+}
+.schoolListImgText .smalllBox div p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.schoolListImgText .smalllBox div span {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+.schoolListImgText .smalllBox div img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+.schoolListImgText .smalllBox:hover div {
+    top: 0;
+    opacity: 1;
+}

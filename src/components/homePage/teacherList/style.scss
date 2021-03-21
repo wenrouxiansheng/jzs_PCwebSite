@@ -1,0 +1,12 @@
+.teacherListLoop{
+    width: 1200px;
+    margin: 0 auto;
+    height: 380px;
+    .ant-carousel, .slick-track, .slick-slider, .slick-list{
+        width: 100%;
+        height: 100%;
+    }
+    .ant-carousel .slick-list .slick-slide > div > div{
+        height: 380px;
+    }
+}

@@ -1,13 +1,10 @@
 import './App.css';
 import 'antd/dist/antd.css';
-import { Route } from 'react-router-dom'
-import HomePage from './views/homePage/homePage';
-import BrandIntroduction from './views/brandIntroduction/brandIntroduction';
+import Router from './router/router'
 function App() {
   return (
     <div className="App">
-      <Route path="/home" component={HomePage}/>
-      <Route path="/BrandIntroduction" component={BrandIntroduction}/>
+      <Router />
     </div>
   );
 }

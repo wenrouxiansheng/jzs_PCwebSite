@@ -1,9 +1,20 @@
-.App{
+.App {
   max-width: 1920px;
   min-width: 1200px;
   margin: 0 auto;
 }
-*{
+* {
   outline: none;
   user-select: none;
+}
+@keyframes zoomButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

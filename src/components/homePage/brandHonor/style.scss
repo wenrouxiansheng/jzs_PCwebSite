@@ -1,0 +1,92 @@
+.brandHonor {
+    width: 100%;
+    height: 480px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    .honorBox {
+        width: 1200px;
+        margin: 0 auto;
+        height: 300px;
+        .slick-list {
+            height: 100%;
+            .slick-track {
+                height: 100%;
+            }
+        }
+    }
+    .ant-carousel .slick-dots li.slick-active > button {
+        background: #ffab32 !important;
+        opacity: 1;
+    }
+    .ant-carousel .slick-dots li button {
+        background: #bebebe !important;
+        opacity: 1;
+    }
+    .honor {
+        width: 225px;
+        height: 240px;
+        padding: 10px;
+        float: left;
+        background-color: white;
+        transition: 0.3s;
+        margin-left: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 13px #d6d4d4;
+        margin-top: 5px;
+        img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    }
+    .introduceList {
+        width: 1200px;
+        margin: 0 auto;
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > div {
+            width: 285px;
+            height: 125px;
+            background-color: white;
+            border-radius: 10px;
+            position: relative;
+            img {
+                position: absolute;
+                width: 82px;
+                height: 82px;
+                object-fit: cover;
+                left: 0px;
+                top: 0px;
+            }
+            p {
+                margin: 0px;
+                width: 100%;
+                text-align: center;
+            }
+            p:nth-of-type(1) {
+                font-size: 20px;
+                color: #ffab32;
+                font-weight: bold;
+                letter-spacing: 2px;
+                margin-bottom: 5px;
+                height: 76px;
+                line-height: 95px;
+                strong {
+                    font-size: 50px;
+                    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                }
+            }
+            p:nth-of-type(2) {
+                font-size: 16px;
+            }
+        }
+    }
+}

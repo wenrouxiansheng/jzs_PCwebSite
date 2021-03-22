@@ -6,10 +6,10 @@ import BrandIntroduction from '../views/brandIntroduction/brandIntroduction';
 export default class router extends Component {
     render() {
         return (
-            <div>
+            <main>
                 <Route path="/home" component={HomePage} />
                 <Route path="/brandIntroduction" component={BrandIntroduction} />
-            </div>
+            </main>
         )
     }
 }

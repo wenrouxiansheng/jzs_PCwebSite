@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Header from '@components/homePage/header'
-import Nav from '@components/homePage/horizontalNav'
+
 import Banner from '@components/homePage/bannerCarousel'
 import Title from '@components/homePage/title'
 import ImgAndText from '@components/homePage/imgAndText'
@@ -8,6 +7,8 @@ import SchoolListImgText from '@components/homePage/schoolListImgText'
 import ListOfOptionsImg from '@components/homePage/listOfOptionsImg'
 import ExamLevelList from '@components/homePage/examLevelList'
 import TeacherList from '@components/homePage/teacherList'
+import GloryList from '@components/homePage/gloryList'
+import BrandHonor from '@components/homePage/brandHonor'
 export default class homePage extends Component {
     state = {
         bannerData: [
@@ -23,9 +24,7 @@ export default class homePage extends Component {
     render() {
         const { bannerData, imgAndText } = this.state
         return (
-            <div style={{paddingBottom: "500px"}}>
-                <Header />
-                <Nav />
+            <div>
                 <Banner bannerList={bannerData} />
                 <Title info={{ title: "为什么选择桔子树", subTitle: "Core advantages" }} />
                 {
@@ -41,6 +40,10 @@ export default class homePage extends Component {
                 <ExamLevelList />
                 <Title info={{ title: "师资力量", subTitle: "汇聚国内外艺术名师" }} />
                 <TeacherList />
+                <Title info={{ title: "学员风采", subTitle: "桔子树STAR  闪耀中外" }} />
+                <GloryList />
+                <Title info={{ title: "品牌荣誉", subTitle: "艺术教育素质品牌" }} />
+                <BrandHonor />
             </div>
         )
     }

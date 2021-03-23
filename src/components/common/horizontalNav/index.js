@@ -60,7 +60,7 @@ export default class nav extends Component {
             <nav className="horizontalPullDownNav">
                 <ul onMouseOver={this.navMouseover}>
                     <li><Link to="/home">首页</Link></li>
-                    <li className="pullDown" onMouseEnter={this.navMouseenter(0)} onMouseLeave={this.navMouseleave(0)}><Link to="/BrandIntroduction">品牌介绍</Link>
+                    <li className="pullDown" onMouseEnter={this.navMouseenter(0)} onMouseLeave={this.navMouseleave(0)}><Link to="/brandIntroduction">品牌介绍</Link>
                         <div style={{ height: navList[0] ? '100px' : '0px' }}>
                             <a href="http://www.baidu.com">发展历程</a>
                             <a href="http://www.baidu.com">教研课程</a>

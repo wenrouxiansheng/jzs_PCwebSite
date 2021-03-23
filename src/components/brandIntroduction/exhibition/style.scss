@@ -1,0 +1,104 @@
+$fontColor: #999999;
+
+.exhibition {
+    width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+    margin-top: 10px;
+    .imgContainer {
+        width: 100%;
+        height: 450px;
+        margin-top: -150px;
+        position: relative;
+        strong {
+            font-size: 80px;
+            position: absolute;
+            left: 10%;
+            bottom: 30%;
+            color: $fontColor;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 240px;
+                height: 2px;
+                background-color: #666666;
+                left: 120%;
+                top: 50%;
+            }
+        }
+        & > div {
+            float: right;
+            width: 690px;
+            height: 330px;
+            margin-right: 60px;
+            position: relative;
+            z-index: 1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 2;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                z-index: 0;
+                border: solid 5px #fd9707;
+            }
+        }
+    }
+    .fontContainer {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        z-index: 5;
+        strong {
+            font-size: 80px;
+            position: absolute;
+            right: 20%;
+            top: 20px;
+            color: $fontColor;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 240px;
+                height: 2px;
+                background-color: #666666;
+                right: 120%;
+                top: 50%;
+            }
+        }
+        & > div {
+            background-color: rgba($color: #ffffff, $alpha: 0.7);
+            width: 695px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            align-content: center;
+            padding: 0px 60px;
+            border: solid 5px #fd9707;
+            h3 {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+            }
+            p {
+                color: #666666;
+                font-size: 16px;
+                line-height: 30px;
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+    }
+}

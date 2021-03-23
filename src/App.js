@@ -1,9 +1,10 @@
 import './App.css';
 import 'antd/dist/antd.css';
 import Router from './router/router'
-import Header from '@components/homePage/header'
-import Nav from '@components/homePage/horizontalNav'
-import Footer from '@components/homePage/footer'
+import Header from '@components/common/header'
+import Nav from '@components/common/horizontalNav'
+import Footer from '@components/common/footer'
+import SuspendedWindow from '@components/common/suspendedWindow'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Nav />
       <Router />
+      <SuspendedWindow />
       <Footer />
     </div>
   );

@@ -62,11 +62,11 @@ export default class nav extends Component {
                     <li><Link to="/home">首页</Link></li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(0)} onMouseLeave={this.navMouseleave(0)}><Link to="/brandIntroduction">品牌介绍</Link>
                         <div style={{ height: navList[0] ? '100px' : '0px' }}>
-                            <a href="http://www.baidu.com">发展历程</a>
-                            <a href="http://www.baidu.com">教研课程</a>
+                            <Link to="/brandIntroduction/history">发展历程</Link>
+                            <Link to="/brandIntroduction/course">教研课程</Link>
                         </div>
                     </li>
-                    <li className="pullDown" onMouseEnter={this.navMouseenter(1)} onMouseLeave={this.navMouseleave(1)}><a href="http://www.baidu.com">舞蹈培训</a>
+                    <li className="pullDown" onMouseEnter={this.navMouseenter(1)} onMouseLeave={this.navMouseleave(1)}><Link to="/danceTraining">舞蹈培训</Link>
                         <div style={{ height: navList[1] ? '400px' : '0px' }}>
                             <a href="http://www.baidu.com">少儿舞蹈</a>
                             <a href="http://www.baidu.com">成人舞蹈</a>

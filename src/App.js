@@ -4,7 +4,7 @@ import Router from './router/router'
 import Header from '@components/common/header'
 import Nav from '@components/common/horizontalNav'
 import Footer from '@components/common/footer'
-import SuspendedWindow from '@components/common/suspendedWindow'
+// import SuspendedWindow from '@components/common/suspendedWindow'  右侧悬浮窗  
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Nav />
       <Router />
-      <SuspendedWindow />
+      {/* <SuspendedWindow /> */}
       <Footer />
     </div>
   );

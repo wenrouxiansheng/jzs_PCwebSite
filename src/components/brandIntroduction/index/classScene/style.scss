@@ -1,0 +1,26 @@
+.classScene {
+    width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    .container {
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+
+        & > p {
+            font-size: 15px;
+            line-height: 30px;
+            color: #666666;
+            text-align: center;
+            letter-spacing: 1px;
+            span {
+                color: #f2aa46;
+            }
+        }
+        
+    }
+    
+}

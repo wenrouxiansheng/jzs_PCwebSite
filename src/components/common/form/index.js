@@ -1,41 +1,28 @@
 import React, { Component } from 'react'
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Select } from 'antd';
 import './style.scss'
 import bg from '@assets/danceTraining/childrenDance/formBg.png'
-const layout = {
-    labelCol: {
-        span: 8,
-    },
-    wrapperCol: {
-        span: 16,
-    },
-};
-const tailLayout = {
-    wrapperCol: {
-        offset: 8,
-        span: 16,
-    },
-};
-const onFinish = (values) => {
-    console.log('Success:', values);
-};
 
-const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
+const { Option } = Select;
+
+// const onFinish = (values) => {
+//     console.log('Success:', values);
+// };
+
+
 export default class form extends Component {
+    form = React.createRef()
+    onFinish = (values) => {
+        console.log('Success:', values);
+        this.form.current.resetFields();
+    };
     render() {
         return (
             <div className="formContainer" style={{ background: `url(${bg}) no-repeat center center` }}>
                 <div className="container">
                     <Form
-                        {...layout}
-                        name="basic"
-                        initialValues={{
-                            remember: true,
-                        }}
-                        onFinish={onFinish}
-                        onFinishFailed={onFinishFailed}
+                        onFinish={this.onFinish}
+                        ref={this.form}
                     >
                         <h1>报名参加桔子树</h1>
                         <h3>免费试听课程</h3>
@@ -48,7 +35,7 @@ export default class form extends Component {
                                 },
                             ]}
                         >
-                            <Input placeholder="姓名（必填）"/>
+                            <Input placeholder="姓名（必填）" />
                         </Form.Item>
 
                         <Form.Item
@@ -56,17 +43,33 @@ export default class form extends Component {
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input your password!',
+                                    pattern: /^1[3|4|5|7|8][0-9]\d{8}$/,
+                                    message: '请输入正确的手机号码',
                                 },
                             ]}
                         >
-                            <Input.Password />
+                            <Input placeholder="手机号码（必填）" maxLength="11" />
                         </Form.Item>
-
-                        <Form.Item {...tailLayout}>
-                            <Button type="primary" htmlType="submit">
-                                Submit
-                            </Button>
+                        <Form.Item name="course">
+                            <Select
+                                placeholder="请选择课程"
+                            >
+                                <Option value="1">美术</Option>
+                                <Option value="2">音乐</Option>
+                                <Option value="3">器乐</Option>
+                            </Select>
+                        </Form.Item>
+                        <Form.Item name="school">
+                            <Select
+                                placeholder="请选择校区"
+                            >
+                                <Option value="1">通州校区</Option>
+                                <Option value="2">东直门校区</Option>
+                                <Option value="3">大望路校区</Option>
+                            </Select>
+                        </Form.Item>
+                        <Form.Item>
+                            <button type="submit">立即申请</button>
                         </Form.Item>
                     </Form>
                 </div>

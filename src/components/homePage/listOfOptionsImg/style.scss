@@ -65,9 +65,10 @@
     overflow: hidden;
 }
 .multiPictureLoop ul {
+    width: 4000px;
     display: flex;
     flex-wrap: wrap;
-    height: 350px;
+    height: 360px;
     transition: 0.5s;
     overflow: hidden;
 }
@@ -76,6 +77,11 @@
     height: 350px;
     margin-right: 11px;
     background-color: white;
+    transition: .3s;
+    margin-bottom: 10px;
+}
+.multiPictureLoop li:hover {
+    box-shadow: 0px 0px 10px #bfbbb8;
 }
 .multiPictureLoop li img {
     width: 100%;

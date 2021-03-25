@@ -6,6 +6,7 @@ import DevelopmentHistory from '../views/brandIntroduction/developmentHistory';
 import CurriculumPlan from '../views/brandIntroduction/curriculumPlan';
 
 import DanceTraining from '../views/danceTraining';
+import ChildrenDance from '../views/danceTraining/childrenDance';
 
 export default class router extends Component {
     render() {
@@ -18,6 +19,7 @@ export default class router extends Component {
                     <Route path="/brandIntroduction/course" component={CurriculumPlan} />
                     <Route path="/brandIntroduction" component={BrandIntroduction} />
                     {/* 舞蹈培训 */}
+                    <Route path="/danceTraining/childrenDance" component={ChildrenDance} />
                     <Route path="/danceTraining" component={DanceTraining} />
                     <Redirect to="/home" />
                 </Switch>

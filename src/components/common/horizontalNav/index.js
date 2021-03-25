@@ -68,7 +68,7 @@ export default class nav extends Component {
                     </li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(1)} onMouseLeave={this.navMouseleave(1)}><Link to="/danceTraining">舞蹈培训</Link>
                         <div style={{ height: navList[1] ? '400px' : '0px' }}>
-                            <a href="http://www.baidu.com">少儿舞蹈</a>
+                            <Link to="/danceTraining/childrenDance">少儿舞蹈</Link>
                             <a href="http://www.baidu.com">成人舞蹈</a>
                             <a href="http://www.baidu.com">民族舞</a>
                             <a href="http://www.baidu.com">古典舞</a>

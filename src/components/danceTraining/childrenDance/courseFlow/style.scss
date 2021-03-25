@@ -1,0 +1,66 @@
+.courseFlow {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0px 30px;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    .flowContainer {
+        width: 230px;
+        height: 310px;
+        position: relative;
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px 0px;
+        cursor: pointer;
+        background-color: #ac9b84;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            background-image: none !important;
+            background-color: #ffab32;
+        }
+        .num {
+            color: white;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+            font-size: 80px;
+            height: 110px;
+            display: inline-block;
+            border-bottom: 5px solid white;
+            margin-left: 20px;
+            opacity: 0.6;
+        }
+        .text {
+            margin-top: 20px;
+            color: white;
+            font-size: 22px;
+            padding: 0px 15px;
+            line-height: 30px;
+        }
+        p {
+            margin: 0px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: -14px;
+            height: 30px;
+            width: 105%;
+            background-color: white;
+            z-index: 1;
+            transform: rotate(5deg);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: -3px;
+            bottom: -14px;
+            height: 30px;
+            width: 105%;
+            background-color: white;
+            z-index: 1;
+            transform: rotate(5deg);
+        }
+    }
+}

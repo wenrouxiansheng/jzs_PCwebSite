@@ -22,11 +22,16 @@
                 border-left: solid rgba($color: #f9d68b, $alpha: 0.5) 1px;
                 color: #333;
                 font-size: 15px;
+                max-width: 100px;
                 span {
                     color: #ff8000;
                     font-weight: bold;
                     font-size: 16px;
                     cursor: pointer;
+                }
+                p{
+                    color: #666;
+                    font-size: 14px;
                 }
             }
             tr{
@@ -34,9 +39,9 @@
                     background-color: #faefe3 !important;
                 }
 
-                &:nth-of-type(even) {
-                    background-color: #FDF8EE;
-                }
+                // &:nth-of-type(even) {
+                //     background-color: #FDF8EE;
+                // }
             }
         }
         td {

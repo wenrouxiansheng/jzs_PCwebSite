@@ -1,0 +1,52 @@
+.categoryIntroduction{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    width: 1200px;
+    margin: 0 auto;
+    .img{
+        width: 270px;
+        height: 320px;
+        position: relative;
+        margin-right: 50px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        p{
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: .5);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+    }
+    .text{
+        width: 650px;
+        height: 320px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+        h1{
+            color: #FFAB32;
+            font-weight: bold;
+            width: 100%;
+        }
+        p{
+            padding-bottom: 20px;
+            font-size: 16px;
+            line-height: 32px;
+            color: #666666;
+            border-bottom: #FFAB32 solid 1px;
+        }
+    }
+}

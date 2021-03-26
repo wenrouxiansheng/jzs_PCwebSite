@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import './style.scss'
 import { Carousel } from 'antd';
+import { Link } from 'react-router-dom'
 export default class bannerCarousel extends Component {
     render() {
         const { bannerList } = this.props
-        
+
         return (
             <section className="bannerContent">
                 <Carousel autoplay>
@@ -13,9 +14,9 @@ export default class bannerCarousel extends Component {
                             return (
 
                                 <div key={item.id}>
-                                    <a href={item.adress}>
+                                    <Link to={item.adress}>
                                         <img src={item.src} alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
                             )
                         })

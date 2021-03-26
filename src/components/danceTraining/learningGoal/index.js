@@ -6,6 +6,7 @@ import circular from '@assets/danceTraining/childrenDance/circular.png'
 
 export default class learningGoal extends Component {
     render() {
+        const { textList } = this.props;
         return (
             <div className="learningGoal" style={{ backgroundImage: `url(${bg})` }}>
                 <Title info={{ title: "学习目标", subTitle: "" }} />
@@ -24,15 +25,11 @@ export default class learningGoal extends Component {
                     <p className="line7"></p>
                     <p className="line8"></p>
                     <p className="line9"></p>
-                    <span className="text1">基本功大幅提升</span>
-                    <span className="text2">即兴反应迅速</span>
-                    <span className="text3">丰富专业知识</span>
-                    <span className="text4">熟悉乐理知识</span>
-                    <span className="text5">适合个人的表演</span>
-                    <span className="text6">形成个人特色</span>
-                    <span className="text7">展示完整个人技巧</span>
-                    <span className="text8">变得更加自信</span>
-                    <span className="text9">表演细节处理</span>
+                    {
+                        textList.map((item, index) => {
+                            return <span className={`text${index + 1}`} key={index}>{item}</span>
+                        })
+                    }
                 </div>
 
             </div>

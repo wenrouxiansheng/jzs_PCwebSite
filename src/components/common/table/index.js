@@ -18,11 +18,11 @@ export default class table extends Component {
                     </thead>
                     <tbody>
                         {
-                            tableData.list.map((data, j) => {
-                                return <tr key={j}>
+                            tableData.list.map((item, index) => {
+                                return <tr key={index}>
                                     {
-                                        data.map((list, k) => {
-                                            return <td key={k} dangerouslySetInnerHTML={{ __html: list }}></td>
+                                        item.row.map((list, j) => {
+                                            return <td rowSpan={item.rowspan} dangerouslySetInnerHTML={{ __html: list }} key={j}></td>
                                         })
                                     }
                                 </tr>
@@ -32,7 +32,7 @@ export default class table extends Component {
                     </tbody>
                 </table>
 
-            </div>
+            </div >
         )
     }
 }

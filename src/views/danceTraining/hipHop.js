@@ -1,27 +1,19 @@
 import React, { Component } from 'react'
-import ImgNav from '@components/danceTraining/imgNav'
-import Banner from '@components/homePage/bannerCarousel'
+import img from '@assets/danceTraining/hipHop/course1.png'
 import Title from '@components/homePage/title'
+import Banner from '@components/homePage/bannerCarousel'
 import CourseFlow from '@components/danceTraining/courseFlow'
-import LearningGoal from '@components/danceTraining/learningGoal'
 import Table from '@components/common/table'
 import QuestionConsultation from '@components/common/questionConsultation'
 import TeacherList from '@components/homePage/teacherList'
 import Form from '@components/common/form'
+import LearningGoal from '@components/danceTraining/learningGoal'
+import CategoryIntroduction from '@components/danceTraining/hipHop/categoryIntroduction'
 
-export default class childrenDance extends Component {
+export default class hipHop extends Component {
     state = {
-        navList: [
-            { img: require('../../assets/danceTraining/childrenDance/course1.png').default, text: "少儿民族舞", href: "/home" },
-            { img: require('../../assets/danceTraining/childrenDance/course2.png').default, text: "少儿古典舞", href: "/home" },
-            { img: require('../../assets/danceTraining/childrenDance/course3.png').default, text: "少儿芭蕾舞", href: "/home" },
-            { img: require('../../assets/danceTraining/childrenDance/course4.png').default, text: "少儿中国舞", href: "/home" },
-            { img: require('../../assets/danceTraining/childrenDance/course5.png').default, text: "少儿街舞", href: "/home" },
-            { img: require('../../assets/danceTraining/childrenDance/course6.png').default, text: "少儿爵士舞", href: "/home" },
-            { img: require('../../assets/danceTraining/childrenDance/course7.png').default, text: "少儿拉丁舞", href: "/home" },
-        ],
         bannerData: [
-            { id: 1, adress: "www.baidu.com", src: require("../../assets/danceTraining/childrenDance/banner.jpg").default },
+            { id: 1, adress: "www.baidu.com", src: require("../../assets/danceTraining/hipHop/banner.jpg").default },
         ],
         courseList: [
             { img: require('../../assets/danceTraining/childrenDance/dance_1.png').default, num: "01", text: "专业测评，了解学员上课愿望" },
@@ -35,23 +27,23 @@ export default class childrenDance extends Component {
             list: [
                 {
                     owspan: 1,
-                    row: ["少儿舞蹈1V1", "1人", "45分钟", "<span>咨询详情</span>"],
+                    row: ["少儿街舞1V1", "1人", "45分钟", "<span>咨询详情</span>"],
                 },
                 {
                     owspan: 1,
-                    row: ["少儿舞蹈1V2", "2人", "45分钟", "<span>咨询详情</span>"],
+                    row: ["少儿街舞1V2", "2人", "45分钟", "<span>咨询详情</span>"],
                 },
                 {
                     owspan: 1,
-                    row: ["少儿舞蹈1V3", "3人", "45分钟", "<span>咨询详情</span>"],
+                    row: ["少儿街舞1V3", "3人", "45分钟", "<span>咨询详情</span>"],
                 },
                 {
                     owspan: 1,
-                    row: ["少儿舞蹈精品小班课", "6-8人", "90分钟", "<span>咨询详情</span>"],
+                    row: ["少儿街舞精品小班课", "6-8人", "90分钟", "<span>咨询详情</span>"],
                 },
                 {
                     owspan: 1,
-                    row: ["少儿舞蹈排练班课程", "8-10人", "90分钟", "<span>咨询详情</span>"],
+                    row: ["少儿街舞排练班课程", "8-10人", "90分钟", "<span>咨询详情</span>"],
                 },
             ]
         },
@@ -67,15 +59,21 @@ export default class childrenDance extends Component {
             "什么是假声？",
         ],
         textList: [
-            "基本功大幅提升", "即兴反应迅速", "丰富专业知识", "熟悉乐理知识", "适合个人的表演", "形成个人特色", "展示完整个人技巧", "变得更加自信", "表演细节处理"
-        ]
+            "基本功大幅提升", "即兴反应迅速", "丰富专业知识", "熟悉乐理知识", "适合个人的表演", "形成个人特色", "展示完整个人技巧", "自信面对考试", "表演完美细节处理"
+        ],
+        introduction: {
+            img: img,
+            subTitle: "街舞特色课",
+            title: "街舞介绍",
+            text: "街舞是起源于美国，基于不同的街头文化或音乐风格而产生的多个不同种类的舞蹈的统称。街舞可以锻炼舞感，节奏感，solo技巧，battle技巧，风格区分等内容。学习大量的成品舞，从而达到准确专业的诠释作品，拥有自信，个人魅力值增强，整体姿态帅气，活泼，站上舞台光芒四射。"
+        }
     }
     render() {
-        const { navList, bannerData, courseList, tableData, questionList, textList } = this.state;
+        const { bannerData, courseList, tableData, questionList, textList, introduction } = this.state;
         return (
             <div>
                 <Banner bannerList={bannerData} />
-                <ImgNav navList={navList} />
+                <CategoryIntroduction introduction={introduction} />
                 <Title info={{ title: "课程流程", subTitle: "" }} />
                 <CourseFlow courseList={courseList} />
                 <LearningGoal textList={textList} />

@@ -75,7 +75,7 @@ export default class nav extends Component {
                             <a href="http://www.baidu.com">爵士舞</a>
                             <a href="http://www.baidu.com">芭蕾舞</a>
                             <a href="http://www.baidu.com">拉丁舞</a>
-                            <a href="http://www.baidu.com">街舞</a>
+                            <Link to="/danceTraining/hipHop">街舞</Link>
                         </div>
                     </li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(2)} onMouseLeave={this.navMouseleave(2)}><a href="http://www.baidu.com">声乐培训</a>
@@ -112,19 +112,19 @@ export default class nav extends Component {
                     </li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(5)} onMouseLeave={this.navMouseleave(5)}><a href="http://www.baidu.com">艺考考级</a>
                         <div style={{ height: navList[5] ? '250px' : '0px' }}>
-                            <a href="http://www.baidu.com">艺考舞蹈</a>
+                            <Link to="/artGrading/artExamDance">艺考舞蹈</Link>
                             <a href="http://www.baidu.com">艺考声乐</a>
                             <a href="http://www.baidu.com">艺考器乐</a>
                             <a href="http://www.baidu.com">社会考级</a>
                             <a href="http://www.baidu.com">特长考试</a>
                         </div>
                     </li>
-                    <li className="pullDown" onMouseEnter={this.navMouseenter(6)} onMouseLeave={this.navMouseleave(6)}><a href="http://www.baidu.com">关于我们</a>
+                    <li className="pullDown" onMouseEnter={this.navMouseenter(6)} onMouseLeave={this.navMouseleave(6)}>关于我们
                         <div style={{ height: navList[6] ? '200px' : '0px' }}>
-                            <a href="http://www.baidu.com">师资力量</a>
-                            <a href="http://www.baidu.com">学员风采</a>
-                            <a href="http://www.baidu.com">艺术头条</a>
-                            <a href="http://www.baidu.com">联系我们</a>
+                            <Link to="/teachers">师资力量</Link>
+                            <Link to="/studentHonor">学员风采</Link>
+                            <Link to="/artNews">艺术头条</Link>
+                            <Link to="/contactInfo">联系我们</Link>
                         </div>
                     </li>
                     <li><a href="http://www.baidu.com">校区分布</a></li>

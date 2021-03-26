@@ -21,11 +21,6 @@ export default class brandIntroduction extends Component {
                 <Exhibition />
                 <Introduce />
                 <ClassScene />
-                {/* <Switch>
-                    <Route path="/brandIntroduction/history" component={History} />
-                    <Route path="/brandIntroduction/course" component={CurriculumPlan} />
-                    <Route path="/brandIntroduction" component={BrandIntroduction} />
-                </Switch> */}
             </div>
         )
     }

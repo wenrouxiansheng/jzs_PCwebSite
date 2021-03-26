@@ -1,5 +1,7 @@
 import './App.css';
 import 'antd/dist/antd.css';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/lib/locale/zh_CN';
 import Router from './router/router'
 import Header from '@components/common/header'
 import Nav from '@components/common/horizontalNav'
@@ -8,13 +10,15 @@ import Footer from '@components/common/footer'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Nav />
-      <Router />
-      {/* <SuspendedWindow /> */}
-      <Footer />
-    </div>
+    <ConfigProvider locale={zhCN}>
+      <div className="App">
+        <Header />
+        <Nav />
+        <Router />
+        {/* <SuspendedWindow /> */}
+        <Footer />
+      </div>
+    </ConfigProvider>
   );
 }
 

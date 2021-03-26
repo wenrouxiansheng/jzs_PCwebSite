@@ -13,7 +13,7 @@ export default class zoomCarousel extends Component {
     carouselList = React.createRef()
     state = {
         currentSub: 1,
-        list: [
+        imgList: [
             { src: swiper1 },
             { src: swiper2 },
             { src: swiper3 },
@@ -43,7 +43,9 @@ export default class zoomCarousel extends Component {
         }
     }
     render() {
-        const { currentSub, list } = this.state;
+        const { currentSub, imgList } = this.state;
+        const { classList } = this.props;
+        let list = classList || imgList;
         return (
             <div className="zoomCarousel">
                 <div className="carousel-container">

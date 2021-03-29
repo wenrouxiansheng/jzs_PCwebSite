@@ -5,28 +5,24 @@ import { Pagination } from 'antd';
 import './style.scss'
 import Title from '@components/homePage/title'
 import teacher1 from '@assets/homePage/teacher/teacher1.png'
-
-function onChange(pageNumber) {
-    console.log('Page: ', pageNumber);
-}
 export default class teachersClassification extends Component {
     state = {
         teacherList: [
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
-            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "www.baidu.com" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
+            { img: teacher1, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/teachers/detail" },
         ],
         category: 0,
         selectList: [
@@ -44,6 +40,9 @@ export default class teachersClassification extends Component {
                 category: type
             })
         }
+    }
+    pageChange = (pageNumber) => {
+        console.log('Page: ', pageNumber);
     }
     render() {
         const { teacherList, selectList, category } = this.state;
@@ -76,7 +75,7 @@ export default class teachersClassification extends Component {
                     }
                 </div>
                 <div className="pagination">
-                    <Pagination showQuickJumper defaultCurrent={1} total={500} onChange={onChange} />
+                    <Pagination showQuickJumper defaultCurrent={1} total={500} onChange={this.pageChange} pageSize={15} showSizeChanger={false} />
                 </div>
             </div>
         )

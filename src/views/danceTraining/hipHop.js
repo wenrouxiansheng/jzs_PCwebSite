@@ -8,7 +8,7 @@ import QuestionConsultation from '@components/common/questionConsultation'
 import TeacherList from '@components/homePage/teacherList'
 import Form from '@components/common/form'
 import LearningGoal from '@components/danceTraining/learningGoal'
-import CategoryIntroduction from '@components/danceTraining/hipHop/categoryIntroduction'
+import CategoryIntroduction from '@components/danceTraining/categoryIntroduction'
 
 export default class hipHop extends Component {
     state = {

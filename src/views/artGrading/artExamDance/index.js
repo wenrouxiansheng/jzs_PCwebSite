@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ImgNav from '@components/danceTraining/childrenDance/imgNav'
+import ImgNav from '@components/danceTraining/imgNav'
 import Banner from '@components/homePage/bannerCarousel'
 import Title from '@components/homePage/title'
 import Table from '@components/common/table'

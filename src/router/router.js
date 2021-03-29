@@ -11,7 +11,8 @@ import HipHop from '../views/danceTraining/hipHop';
 import DanceGrading from '../views/artGrading/artExamDance';
 import LatinGrading from '../views/artGrading/artExamDance/latinGrading';
 import Teachers from '../views/aboutUs/teachers';
-
+import StudentHonor from '../views/aboutUs/studentHonor';
+import ArtNews from '../views/aboutUs/artNews';
 export default class router extends Component {
     render() {
         return (
@@ -31,6 +32,8 @@ export default class router extends Component {
                     <Route path="/artGrading/artExamDance" component={DanceGrading} />{/**舞蹈考级综合 */}
                     {/* 关于我们 */}
                     <Route path="/teachers" component={Teachers} />{/**师资力量 */}
+                    <Route path="/studentHonor" component={StudentHonor} />{/**学员风采 */}
+                    <Route path="/artNews" component={ArtNews} />{/**艺术头条 */}
                     <Redirect to="/home" />
                 </Switch>
             </main>

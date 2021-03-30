@@ -8,7 +8,7 @@ import BrandHonor from '@components/homePage/brandHonor'
 export default class curriculumPlan extends Component {
     state = {
         bannerData: [
-            { id: 2, adress: "www.baidu.com", src: require("../../assets/brandIntroduction/course/banner.png").default }
+            { id: 2, adress: "/brandIntroduction/course", src: require("../../assets/brandIntroduction/course/banner.png").default }
         ]
     }
     render() {

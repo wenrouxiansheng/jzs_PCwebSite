@@ -124,10 +124,10 @@ export default class nav extends Component {
                             <Link to="/teachers">师资力量</Link>
                             <Link to="/studentHonor">学员风采</Link>
                             <Link to="/artNews">艺术头条</Link>
-                            <Link to="/contactInfo">联系我们</Link>
+                            <Link to="/contactUs">联系我们</Link>
                         </div>
                     </li>
-                    <li><a href="http://www.baidu.com">校区分布</a></li>
+                    <li><Link to="/campusDistribution">校区分布</Link></li>
                     <li className="line" ref={this.line}></li>
                 </ul>
             </nav>

@@ -45,7 +45,7 @@ export default class brandHonor extends Component {
                                 {
                                     item.map((data, j) => {
                                         return <div className="honor" key={j}>
-                                            <img src={data.img} alt="" />
+                                            <div><img src={data.img} alt="" /></div>
                                             <p className="text">
                                                 {data.detail}
                                             </p>
@@ -66,7 +66,6 @@ export default class brandHonor extends Component {
                             </div>
                         })
                     }
-
                 </div>
             </div>
         )

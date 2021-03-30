@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import HomePage from '../views/homePage/homePage';
+import HomePage from '../views/homePage';
 import BrandIntroduction from '../views/brandIntroduction';
 import DevelopmentHistory from '../views/brandIntroduction/developmentHistory';
 import CurriculumPlan from '../views/brandIntroduction/curriculumPlan';
@@ -13,6 +13,8 @@ import LatinGrading from '../views/artGrading/artExamDance/latinGrading';
 import Teachers from '../views/aboutUs/teachers';
 import StudentHonor from '../views/aboutUs/studentHonor';
 import ArtNews from '../views/aboutUs/artNews';
+import ContactUs from '../views/aboutUs/contactUs';
+import CampusDistribution from '../views/campusDistribution';
 export default class router extends Component {
     render() {
         return (
@@ -34,6 +36,9 @@ export default class router extends Component {
                     <Route path="/teachers" component={Teachers} />{/**师资力量 */}
                     <Route path="/studentHonor" component={StudentHonor} />{/**学员风采 */}
                     <Route path="/artNews" component={ArtNews} />{/**艺术头条 */}
+                    <Route path="/contactUs" component={ContactUs} />{/**联系我们 */}
+                    {/* 校区分布 */}
+                    <Route path="/campusDistribution" component={CampusDistribution} />
                     <Redirect to="/home" />
                 </Switch>
             </main>

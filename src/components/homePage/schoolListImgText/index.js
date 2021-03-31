@@ -70,7 +70,7 @@ export default class schoolListImgText extends Component {
         const { list, num, offSet } = this.state;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="right" duration="1000" className="schoolListImgText-antMotion-box">
+                <QueueAnim type="scale" duration="1000" className="schoolListImgText-antMotion-box">
                     <div className="schoolListImgText" key="schoolListImgText">
                         <div className="bigImg">
                             <img src={list.src} alt="" />

@@ -4,6 +4,10 @@ import dance from '@assets/homePage/examLevelList/dance.png'
 import music from '@assets/homePage/examLevelList/music.png'
 import instrumentalMusic from '@assets/homePage/examLevelList/instrumentalMusic.png'
 import art from '@assets/homePage/examLevelList/art.png'
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
+
+const ScrollOverPack = ScrollAnim.OverPack;
 export default class examLevelList extends Component {
     state = {
         list: [
@@ -16,22 +20,26 @@ export default class examLevelList extends Component {
     render() {
         const { list } = this.state;
         return (
-            <div className="examLevelList">
-                {
-                    list.map((item, index) => {
-                        return <a href="www.baidu.com" key={index}>
-                            <div className="container">
-                                <img src={item.src} alt="" />
-                                <p className="titleBlock">
-                                    <span>{item.text}</span>
-                                    <span>{item.subText}</span>
-                                    <button>了解更多</button>
-                                </p>
-                            </div>
-                        </a>
-                    })
-                }
-            </div >
+            <ScrollOverPack always={false}>
+                <QueueAnim type="right" duration="1000" className="examLevelList-antMotion-box">
+                    <div className="examLevelList" key="examLevelList">
+                        {
+                            list.map((item, index) => {
+                                return <a href="www.baidu.com" key={index}>
+                                    <div className="container">
+                                        <img src={item.src} alt="" />
+                                        <p className="titleBlock">
+                                            <span>{item.text}</span>
+                                            <span>{item.subText}</span>
+                                            <button>了解更多</button>
+                                        </p>
+                                    </div>
+                                </a>
+                            })
+                        }
+                    </div >
+                </QueueAnim>
+            </ScrollOverPack>
         )
     }
 }

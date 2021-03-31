@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import './style.scss'
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
 import tel from '@assets/homePage/schoolList/tellWhite.png'
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
 
+const ScrollOverPack = ScrollAnim.OverPack;
 export default class schoolListImgText extends Component {
     state = {
         list: {
@@ -66,27 +69,31 @@ export default class schoolListImgText extends Component {
     render() {
         const { list, num, offSet } = this.state;
         return (
-            <div className="schoolListImgText">
-                <div className="bigImg">
-                    <img src={list.src} alt="" />
-                    <h1>{list.title}</h1>
-                    <p className="top" onClick={this.switchList('top')}><UpOutlined /></p>
-                    <p className="bottom" onClick={this.switchList('bottom')}><DownOutlined /></p>
-                </div>
-                <div className="smallImg" flag={num} style={{ transform: `translateY(-${offSet}px)` }}>
-                    {
-                        list.smallList.map((item, index) => {
-                            return <div className="smalllBox" key={index}>
-                                <img src={item.src} alt="" />
-                                <div>
-                                    <h3>{item.name}</h3>
-                                    <p><img src={tel} alt="" /><span>{item.tel}</span></p>
-                                </div>
-                            </div>
-                        })
-                    }
-                </div>
-            </div>
+            <ScrollOverPack always={false}>
+                <QueueAnim type="right" duration="1000" className="schoolListImgText-antMotion-box">
+                    <div className="schoolListImgText" key="schoolListImgText">
+                        <div className="bigImg">
+                            <img src={list.src} alt="" />
+                            <h1>{list.title}</h1>
+                            <p className="top" onClick={this.switchList('top')}><UpOutlined /></p>
+                            <p className="bottom" onClick={this.switchList('bottom')}><DownOutlined /></p>
+                        </div>
+                        <div className="smallImg" flag={num} style={{ transform: `translateY(-${offSet}px)` }}>
+                            {
+                                list.smallList.map((item, index) => {
+                                    return <div className="smalllBox" key={index}>
+                                        <img src={item.src} alt="" />
+                                        <div>
+                                            <h3>{item.name}</h3>
+                                            <p><img src={tel} alt="" /><span>{item.tel}</span></p>
+                                        </div>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+                </QueueAnim>
+            </ScrollOverPack>
         )
     }
 }

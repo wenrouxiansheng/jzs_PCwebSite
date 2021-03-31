@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import './style.scss'
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
+
+const ScrollOverPack = ScrollAnim.OverPack;
 
 export default class imgBlindPlatoon extends Component {
     state = {
@@ -39,19 +43,21 @@ export default class imgBlindPlatoon extends Component {
     render() {
         const { imgList } = this.state;
         return (
-            <div className="imgBlindPlatoon">
-                {
-                    imgList.map(item => {
-                        return <div className={`imgBox${item.id}`} key={item.id}>
-                            {
-                                item.img.map((img, index) => {
-                                    return <img src={img} alt="" key={index} />
-                                })
-                            }
-                        </div>
-                    })
-                }
-            </div>
+            <ScrollOverPack  always={false}>
+                <QueueAnim type="right" duration="1000" className="imgBlindPlatoon" interval="200">
+                    {
+                        imgList.map(item => {
+                            return <div className={`imgBox${item.id}`} key={item.id}>
+                                {
+                                    item.img.map((img, index) => {
+                                        return <img src={img} alt="" key={index} />
+                                    })
+                                }
+                            </div>
+                        })
+                    }
+                </QueueAnim>
+            </ScrollOverPack>
         )
     }
 }

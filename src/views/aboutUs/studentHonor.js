@@ -9,7 +9,7 @@ import Form from '@components/common/form'
 
 
 const h1Style = {
-    color: '#333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center'
+    color: '#333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center',marginBottom: '10px'
 };
 const h2Style = {
     color: '#555', fontSize: '15px', fontWeight: 'bold', textAlign: 'center'

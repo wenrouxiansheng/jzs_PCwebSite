@@ -13,6 +13,10 @@ import list2 from '@assets/homePage/brandHonor/list2.png'
 import list3 from '@assets/homePage/brandHonor/list3.png'
 import list4 from '@assets/homePage/brandHonor/list4.png'
 
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
+
+const ScrollOverPack = ScrollAnim.OverPack;
 export default class brandHonor extends Component {
     state = {
         list: [
@@ -37,37 +41,41 @@ export default class brandHonor extends Component {
     render() {
         const { list, introduceList } = this.state;
         return (
-            <div className="brandHonor" style={{ backgroundImage: `url(${bgImg})` }}>
-                <Carousel className="honorBox" autoplay>
-                    {
-                        list.map((item, index) => {
-                            return <div key={index}>
-                                {
-                                    item.map((data, j) => {
-                                        return <div className="honor" key={j}>
-                                            <div><img src={data.img} alt="" /></div>
-                                            <p className="text">
-                                                {data.detail}
-                                            </p>
-                                        </div>
-                                    })
-                                }
-                            </div>
-                        })
-                    }
-                </Carousel>
-                <div className="introduceList">
-                    {
-                        introduceList.map((item, index) => {
-                            return <div key={index}>
-                                <p><strong>{item.font[0]}</strong>{item.font[1]}</p>
-                                <p>{item.text}</p>
-                                <img src={item.img} alt="" />
-                            </div>
-                        })
-                    }
-                </div>
-            </div>
+            <ScrollOverPack always={false}>
+                <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box">
+                    <div className="brandHonor" style={{ backgroundImage: `url(${bgImg})` }} key="brandHonor">
+                        <Carousel className="honorBox" autoplay>
+                            {
+                                list.map((item, index) => {
+                                    return <div key={index}>
+                                        {
+                                            item.map((data, j) => {
+                                                return <div className="honor" key={j}>
+                                                    <div><img src={data.img} alt="" /></div>
+                                                    <p className="text">
+                                                        {data.detail}
+                                                    </p>
+                                                </div>
+                                            })
+                                        }
+                                    </div>
+                                })
+                            }
+                        </Carousel>
+                        <div className="introduceList">
+                            {
+                                introduceList.map((item, index) => {
+                                    return <div key={index}>
+                                        <p><strong>{item.font[0]}</strong>{item.font[1]}</p>
+                                        <p>{item.text}</p>
+                                        <img src={item.img} alt="" />
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+                </QueueAnim>
+            </ScrollOverPack>
         )
     }
 }

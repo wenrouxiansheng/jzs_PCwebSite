@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import './style.scss'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
+
+const ScrollOverPack = ScrollAnim.OverPack;
 export default class listOfOptionsImg extends Component {
     state = {
         list: [
@@ -111,43 +115,45 @@ export default class listOfOptionsImg extends Component {
         const { list, selectedIndex, switchIndex } = this.state;
         const imgList = list[selectedIndex].imgList;
         return (
-            <div className="listOfOptionsImg">
-
-                <ul className="level1">
-                    {
-                        list.map((item, index) => {
-                            return <li className={item.active ? "active" : ""} key={index} onClick={this.level1Selected(index)}>{item.text}</li>
-                        })
-                    }
-                </ul>
-                <ul className="level2 active">
-                    {
-                        list[selectedIndex].level2.map((item, index) => {
-                            return <li key={index}><a href={item.adress}>{item.text}</a></li>
-
-                        })
-                    }
-                </ul>
-                <div className="multiPictureLoop active">
-                    <div className="loopContent">
-                        <ul style={{ transform: `translateX(${switchIndex * -276}px)`, width: `${imgList.length * 276}px` }}>
+            <ScrollOverPack always={false}>
+                <QueueAnim type="left" duration="1000" className="listOfOptionsImg-antMotion-box">
+                    <div className="listOfOptionsImg" key="listOfOptionsImg">
+                        <ul className="level1">
                             {
-                                imgList.map((item, index) => {
-                                    return <li key={index}>
-                                        <a href={item.adress}>
-                                            <img src={item.src} alt="" />
-                                            <p>{item.text}</p>
-                                        </a>
-                                    </li>
+                                list.map((item, index) => {
+                                    return <li className={item.active ? "active" : ""} key={index} onClick={this.level1Selected(index)}>{item.text}</li>
                                 })
                             }
                         </ul>
-                    </div>
-                    <div className={`controlButton prev ${this.activeState('left')}`} onClick={this.switchImgList('prev')}><LeftOutlined /></div>
-                    <div className={`controlButton next ${this.activeState('right')}`} onClick={this.switchImgList('next')}><RightOutlined /></div>
-                </div>
+                        <ul className="level2 active">
+                            {
+                                list[selectedIndex].level2.map((item, index) => {
+                                    return <li key={index}><a href={item.adress}>{item.text}</a></li>
 
-            </div >
+                                })
+                            }
+                        </ul>
+                        <div className="multiPictureLoop active">
+                            <div className="loopContent">
+                                <ul style={{ transform: `translateX(${switchIndex * -276}px)`, width: `${imgList.length * 276}px` }}>
+                                    {
+                                        imgList.map((item, index) => {
+                                            return <li key={index}>
+                                                <a href={item.adress}>
+                                                    <img src={item.src} alt="" />
+                                                    <p>{item.text}</p>
+                                                </a>
+                                            </li>
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                            <div className={`controlButton prev ${this.activeState('left')}`} onClick={this.switchImgList('prev')}><LeftOutlined /></div>
+                            <div className={`controlButton next ${this.activeState('right')}`} onClick={this.switchImgList('next')}><RightOutlined /></div>
+                        </div>
+                    </div >
+                </QueueAnim>
+            </ScrollOverPack >
         )
     }
 }

@@ -140,36 +140,32 @@ export default class nav extends Component {
         //离开时二级导航全部高度设置为0
         return () => {
             this.setState({
-                navList: [false, false, false, false, false, false, false]
+                navList: [false, false, false, false, false, false, false, false, false]
             })
         }
     }
-    changeDom = () => {
-        const { dataList, navList } = this.state;
-        return <ul onMouseOver={this.navMouseover}>
-            {
-                dataList.map((item, index) => {
-                    return <li key={item.id} className={item.level2 ? 'pullDown' : ''} onMouseEnter={item.level2 ? this.navMouseenter(index) : null} onMouseLeave={item.level2 ? this.navMouseleave(index) : null}><Link to={item.adress} target={item.type}>{item.level1}</Link>
-                        {item.level2 ?
-                            <div style={{ height: navList[index] ? `${item.level2.length * 50}px` : '0px' }}>
-                                {
-                                    item.level2.map((child, j) => {
-                                        return <Link to={child.adress} target={child.type} key={j}>{child.text}</Link>
-                                    })
-                                }
-                            </div>
-                            : null}
-                    </li>
-                })
-            }
-            <li className="line" ref={this.line}></li>
-        </ul>
-    }
     render() {
-        const { navList } = this.state;
+        const { navList, dataList } = this.state;
         return (
             <nav className="horizontalPullDownNav">
-                {this.changeDom()}
+                <ul onMouseOver={this.navMouseover}>
+                    {
+                        dataList.map((item, index) => {
+                            return <li key={item.id} className={item.level2 ? 'pullDown' : ''} onMouseEnter={item.level2 ? this.navMouseenter(index) : null} onMouseLeave={item.level2 ? this.navMouseleave(index) : null}><Link to={item.adress} target={item.type}>{item.level1}</Link>
+                                {item.level2 ?
+                                    <div style={{ height: navList[index] ? `${item.level2.length * 50}px` : '0px' }}>
+                                        {
+                                            item.level2.map((child, j) => {
+                                                return <Link to={child.adress} target={child.type} key={j}>{child.text}</Link>
+                                            })
+                                        }
+                                    </div>
+                                    : null}
+                            </li>
+                        })
+                    }
+                    <li className="line" ref={this.line}></li>
+                </ul>
             </nav >
         )
     }

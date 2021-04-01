@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 import Banner from '@components/homePage/bannerCarousel'
 import Title from '@components/homePage/title'
 import ImgAndText from '@components/homePage/imgAndText'
@@ -10,7 +9,7 @@ import ExamLevelList from '@components/homePage/examLevelList'
 import TeacherList from '@components/homePage/teacherList'
 import GloryList from '@components/homePage/gloryList'
 import BrandHonor from '@components/homePage/brandHonor'
-import DropDownPrompt from '@components/common/dropDownPrompt'
+import DropDownPrompt from '@components/homePage/dropDownPrompt'
 
 export default class homePage extends Component {
     state = {

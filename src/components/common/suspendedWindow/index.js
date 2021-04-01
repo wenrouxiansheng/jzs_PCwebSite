@@ -25,7 +25,7 @@ export default class suspendedWindow extends Component {
     render() {
         //以下是弹出组件
         const QRcontent = (
-            <div>
+            <div style={{ textAlign: 'center' }}>
                 <img src={QRpublic} alt="" style={{ width: "135px", height: "135px", objectFit: 'cover' }} />
             </div>
         );
@@ -38,7 +38,7 @@ export default class suspendedWindow extends Component {
         );
 
         return (
-            <div className="suspendedWindow animate__animated animate__bounceInRight">
+            <div className="suspendedWindow animate__bounceInRight">
                 <Popover placement="left" content={QRcontent} title="请扫描二维码">
                     <div className="container QR">
                         <img src={QR} alt="" />

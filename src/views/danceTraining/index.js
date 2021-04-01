@@ -4,7 +4,7 @@ export default class danceTraining extends Component {
     render() {
         return (
             <div>
-                asdasdas
+                asdas
             </div>
         )
     }

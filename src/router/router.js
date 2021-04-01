@@ -1,24 +1,44 @@
-import React, { Component } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import HomePage from '../views/homePage';
-import BrandIntroduction from '../views/brandIntroduction';
-import DevelopmentHistory from '../views/brandIntroduction/developmentHistory';
-import CurriculumPlan from '../views/brandIntroduction/curriculumPlan';
+import { Skeleton } from 'antd';
 
-import DanceTraining from '../views/danceTraining';
-import ChildrenDance from '../views/danceTraining/childrenDance';
-import HipHop from '../views/danceTraining/hipHop';
-import DanceGrading from '../views/artGrading/artExamDance';
-import LatinGrading from '../views/artGrading/artExamDance/latinGrading';
-import Teachers from '../views/aboutUs/teachers';
-import StudentHonor from '../views/aboutUs/studentHonor';
-import ArtNews from '../views/aboutUs/artNews';
-import ContactUs from '../views/aboutUs/contactUs';
-import CampusDistribution from '../views/campusDistribution';
-export default class router extends Component {
-    render() {
-        return (
-            <main>
+import HomePage from '../views/homePage';
+
+
+const BrandIntroduction = lazy(() => import('../views/brandIntroduction'));
+const DevelopmentHistory = lazy(() => import('../views/brandIntroduction/developmentHistory'));
+const CurriculumPlan = lazy(() => import('../views/brandIntroduction/curriculumPlan'));
+const DanceTraining = lazy(() => import('../views/danceTraining'));
+const ChildrenDance = lazy(() => import('../views/danceTraining/childrenDance'));
+const HipHop = lazy(() => import('../views/danceTraining/hipHop'));
+const DanceGrading = lazy(() => import('../views/artGrading/artExamDance'));
+const LatinGrading = lazy(() => import('../views/artGrading/artExamDance/latinGrading'));
+const Teachers = lazy(() => import('../views/aboutUs/teachers'));
+const StudentHonor = lazy(() => import('../views/aboutUs/studentHonor'));
+const ArtNews = lazy(() => import('../views/aboutUs/artNews'));
+const ContactUs = lazy(() => import('../views/aboutUs/contactUs'));
+const CampusDistribution = lazy(() => import('../views/campusDistribution'));
+
+//懒加载需要配合Suspense
+//骨架屏
+const loadingStyle = {
+    width: '1200px',
+    margin: '0 auto',
+    minHeight: '1000px',
+    padding: '50px 0px'
+}
+const Loading = <div className="lazyLoading" style={loadingStyle}>
+    <Skeleton.Image active style={{width: '1200px', height: '480px'}}/>
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+</div>;
+const routeDom = () => {
+    return (
+        <main>
+            <Suspense fallback={Loading}>
                 <Switch>
                     <Route path="/home" component={HomePage} />{/**首页 */}
                     {/*品牌介绍*/}
@@ -39,9 +59,10 @@ export default class router extends Component {
                     <Route path="/contactUs" component={ContactUs} />{/**联系我们 */}
                     {/* 校区分布 */}
                     <Route path="/campusDistribution" component={CampusDistribution} />
-                    <Redirect to="/home" />
+                    <Redirect to="/home" />{/* 重定向首页 */}
                 </Switch>
-            </main>
-        )
-    }
+            </Suspense>
+        </main>
+    )
 }
+export default routeDom

@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import './style.scss'
 import img from '../../../assets/aboutUs/studentHonor/honor1.png'
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
+
+const ScrollOverPack = ScrollAnim.OverPack;
 
 export default class imgTextCrossing extends Component {
     state = {
@@ -18,22 +22,24 @@ export default class imgTextCrossing extends Component {
     render() {
         const { list } = this.state;
         return (
-            <div className="imgTextCrossing">
-                {
-                    list.map((item, index) => {
-                        if (item.img) {
-                            return <div key={index}>
-                                <img src={item.img} alt="" />
-                            </div>
-                        }else{
-                            return <div key={index}>
-                            <h1>{item.title}</h1>
-                            <h3>{item.subTitle}</h3>
-                        </div>
-                        }
-                    })
-                }
-            </div>
+            <ScrollOverPack always={false}>
+                <QueueAnim type="scaleX" duration="1000" className="imgTextCrossing imgTextCrossing-antMotion-box">
+                    {
+                        list.map((item, index) => {
+                            if (item.img) {
+                                return <div key={index}>
+                                    <img src={item.img} alt="" />
+                                </div>
+                            } else {
+                                return <div key={index}>
+                                    <h1>{item.title}</h1>
+                                    <h3>{item.subTitle}</h3>
+                                </div>
+                            }
+                        })
+                    }
+                </QueueAnim>
+            </ScrollOverPack>
         )
     }
 }

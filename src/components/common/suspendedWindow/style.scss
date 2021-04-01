@@ -1,3 +1,20 @@
+.ant-popover .ant-popover-title{
+    text-align: center;
+}
+.animate__bounceInRight{
+    animation: bounceInRight .5s cubic-bezier(.45,-0.4,.42,1.79);
+}
+@keyframes bounceInRight{
+    0%{
+        transform: translateX(200px);
+    }
+    60%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
 .suspendedWindow {
     position: fixed;
     width: 100px;

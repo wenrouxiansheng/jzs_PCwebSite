@@ -8,20 +8,23 @@ import Header from '@components/common/header'
 import Nav from '@components/common/horizontalNav'
 import Footer from '@components/common/footer'
 import SuspendedWindow from '@components/common/suspendedWindow'  //右侧悬浮窗  
+import QueueAnim from 'rc-queue-anim';
 
 function App(props) {
   props.history.listen(() => {
+    //监听路由跳转返回顶部
     if (document.body.scrollTop || document.documentElement.scrollTop > 0) {
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
     }
   }, [props.history])
-
   return (
     <ConfigProvider locale={zhCN}>
       <div className="App">
         <Header />
         <Nav />
-        <Router />
+        <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box">
+          <Router />
+        </QueueAnim>
         <SuspendedWindow />
         <Footer />
       </div>

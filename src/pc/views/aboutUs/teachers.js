@@ -17,8 +17,8 @@ export default class teachers extends Component {
             <div>
                 <Banner bannerList={bannerData} />
                 <Switch>
-                    <Route path="/teachers/detail" component={TeacherDeatil} />{/**教师详情 */}
-                    <Route path="/teachers" component={TeacherList} />{/**教师列表 */}
+                    <Route path="/pc/aboutUs/teachers/detail" component={TeacherDeatil} />{/**教师详情 */}
+                    <Route path="/pc/aboutUs/teachers" component={TeacherList} />{/**教师列表 */}
                 </Switch>
             </div>
         )

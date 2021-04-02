@@ -8,101 +8,100 @@ export default class nav extends Component {
         dataList: [
             {
                 level1: "首页",
-                adress: '/home',
+                adress: "/pc/home",
                 type: '',
                 level2: null,
                 id: "nav1"
             },
             {
                 level1: "品牌介绍",
-                adress: 'www.baidu.com',
+                adress: '/pc/brandIntroduction',
                 type: '_blank',
-                level2: [{ text: "发展历程", adress: "/brandIntroduction/history", type: '_blank' }, { text: "教研课程", adress: "/brandIntroduction/course", type: '_blank' }],
+                level2: [{ text: "发展历程", adress: "/pc/brandIntroduction/history", type: '_blank' }, { text: "教研课程", adress: "/pc/brandIntroduction/course", type: '_blank' }],
                 id: "nav2"
             },
             {
                 level1: "舞蹈培训",
-                adress: '/danceTraining',
+                adress: "/pc/danceTraining",
                 type: '_blank',
-                level2: [{ text: "少儿舞蹈", adress: "/danceTraining/childrenDance", type: '_blank' },
-                { text: "教研课程", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "成人舞蹈", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "民族舞", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "古典舞", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "爵士舞", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "芭蕾舞", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "拉丁舞", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "街舞", adress: "/danceTraining/hipHop", type: '_blank' },
+                level2: [{ text: "少儿舞蹈", adress: "/pc/danceTraining/childrenDance", type: '_blank' },
+                { text: "成人舞蹈", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "民族舞", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "古典舞", adress: "/asd", type: '_blank' },
+                { text: "爵士舞", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "芭蕾舞", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "拉丁舞", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "街舞", adress: "/pc/danceTraining/hipHop", type: '_blank' },
                 ],
                 id: "nav3"
             },
             {
                 level1: "声乐培训",
-                adress: '/danceTraining',
+                adress: "/pc/danceTraining",
                 type: '_blank',
-                level2: [{ text: "少儿声乐", adress: "/danceTraining/childrenDance", type: '_blank' },
-                { text: "成人声乐", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "流行唱法", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "民族唱法", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "通俗唱法", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "美声唱法", adress: "/brandIntroduction/course", type: '_blank' }
+                level2: [{ text: "少儿声乐", adress: "/pc/danceTraining/childrenDance", type: '_blank' },
+                { text: "成人声乐", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "流行唱法", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "民族唱法", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "通俗唱法", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "美声唱法", adress: "/pc/brandIntroduction/course", type: '_blank' }
                 ],
                 id: "nav4"
             },
             {
                 level1: "器乐培训",
-                adress: '/danceTraining',
+                adress: "pc/danceTraining",
                 type: '_blank',
-                level2: [{ text: "少儿器乐", adress: "/danceTraining/childrenDance", type: '_blank' },
-                { text: "成人器乐", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "钢琴", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "吉他", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "架子鼓", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "尤克里里", adress: "/brandIntroduction/course", type: '_blank' }
+                level2: [{ text: "少儿器乐", adress: "/pc/danceTraining/childrenDance", type: '_blank' },
+                { text: "成人器乐", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "钢琴", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "吉他", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "架子鼓", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "尤克里里", adress: "/pc/brandIntroduction/course", type: '_blank' }
                 ],
                 id: "nav5"
             },
             {
                 level1: "美术培训",
-                adress: '/danceTraining',
+                adress: "/pc/danceTraining",
                 type: '_blank',
-                level2: [{ text: "少儿美术", adress: "/danceTraining/childrenDance", type: '_blank' },
-                { text: "成人美术", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "素描", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "油画", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "漫画", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "水彩", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "速写", adress: "/brandIntroduction/course", type: '_blank' },
+                level2: [{ text: "少儿美术", adress: "/pc/danceTraining/childrenDance", type: '_blank' },
+                { text: "成人美术", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "素描", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "油画", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "漫画", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "水彩", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "速写", adress: "/pc/brandIntroduction/course", type: '_blank' },
                 ],
                 id: "nav6"
             },
             {
                 level1: "艺考考级",
-                adress: '/danceTraining',
+                adress: "/pc/artGrading",
                 type: '_blank',
-                level2: [{ text: "艺考舞蹈", adress: "/danceTraining/childrenDance", type: '_blank' },
-                { text: "艺考声乐", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "艺考器乐", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "社会考级", adress: "/brandIntroduction/course", type: '_blank' },
-                { text: "特长考试", adress: "/brandIntroduction/course", type: '_blank' }
+                level2: [{ text: "艺考舞蹈", adress: "/pc/artGrading/artExamDance", type: '_blank' },
+                { text: "艺考声乐", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "艺考器乐", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "社会考级", adress: "/pc/brandIntroduction/course", type: '_blank' },
+                { text: "特长考试", adress: "/pc/brandIntroduction/course", type: '_blank' }
                 ],
                 id: "nav7"
             },
             {
                 level1: "关于我们",
-                adress: '/asdsd',
-                type: '_blank',
+                adress: '#',
+                type: '',
                 level2: [
-                    { text: "师资力量", adress: "/danceTraining/childrenDance", type: '_blank' },
-                    { text: "学员风采", adress: "/brandIntroduction/course", type: '_blank' },
-                    { text: "艺术头条", adress: "/brandIntroduction/course", type: '_blank' },
-                    { text: "联系我们", adress: "/brandIntroduction/course", type: '_blank' }
+                    { text: "师资力量", adress: "/pc/aboutUs/teachers", type: '_blank' },
+                    { text: "学员风采", adress: "/pc/aboutUs/studentHonor", type: '_blank' },
+                    { text: "艺术头条", adress: "/pc/aboutUs/artNews", type: '_blank' },
+                    { text: "联系我们", adress: "/pc/aboutUs/contactUs", type: '_blank' }
                 ],
                 id: "nav8"
             },
             {
                 level1: "校区分布",
-                adress: '/campusDistribution',
+                adress: "/pc/campusDistribution",
                 type: '_blank',
                 level2: null,
                 id: "nav9"
@@ -174,24 +173,24 @@ export default class nav extends Component {
 /**
  *
  * <ul onMouseOver={this.navMouseover}>
-                     <li><Link to="/home">首页</Link></li>
-                    <li className="pullDown" onMouseEnter={null} onMouseLeave={this.navMouseleave(0)}><Link to="/brandIntroduction" target="_blank">品牌介绍</Link>
+                     <li><Link to="/pc/home">首页</Link></li>
+                    <li className="pullDown" onMouseEnter={null} onMouseLeave={this.navMouseleave(0)}><Link to="/pc/brandIntroduction" target="_blank">品牌介绍</Link>
                         <div style={{ height: navList[0] ? '100px' : '0px' }}>
-                            <Link to="/brandIntroduction/history" target="_blank">发展历程</Link>
-                            <Link to="/brandIntroduction/course" target="_blank">教研课程</Link>
+                            <Link to="/pc/brandIntroduction/history" target="_blank">发展历程</Link>
+                            <Link to="/pc/brandIntroduction/course" target="_blank">教研课程</Link>
                         </div>
                     </li>
                     {this.changeDom()}
-                    <li className="pullDown" onMouseEnter={this.navMouseenter(1)} onMouseLeave={this.navMouseleave(1)}><Link to="/danceTraining" target="_blank">舞蹈培训</Link>
+                    <li className="pullDown" onMouseEnter={this.navMouseenter(1)} onMouseLeave={this.navMouseleave(1)}><Link to="/pc/danceTraining" target="_blank">舞蹈培训</Link>
                         <div style={{ height: navList[1] ? '400px' : '0px' }}>
-                            <Link to="/danceTraining/childrenDance" target="_blank">少儿舞蹈</Link>
+                            <Link to="/pc/danceTraining/childrenDance" target="_blank">少儿舞蹈</Link>
                             <a href="http://www.baidu.com">成人舞蹈</a>
                             <a href="http://www.baidu.com">民族舞</a>
                             <a href="http://www.baidu.com">古典舞</a>
                             <a href="http://www.baidu.com">爵士舞</a>
                             <a href="http://www.baidu.com">芭蕾舞</a>
                             <a href="http://www.baidu.com">拉丁舞</a>
-                            <Link to="/danceTraining/hipHop">街舞</Link>
+                            <Link to="/pc/danceTraining/hipHop">街舞</Link>
                         </div>
                     </li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(2)} onMouseLeave={this.navMouseleave(2)}><a href="http://www.baidu.com">声乐培训</a>
@@ -228,7 +227,7 @@ export default class nav extends Component {
                     </li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(5)} onMouseLeave={this.navMouseleave(5)}><a href="http://www.baidu.com">艺考考级</a>
                         <div style={{ height: navList[5] ? '250px' : '0px' }}>
-                            <Link to="/artGrading/artExamDance" target="_blank">艺考舞蹈</Link>
+                            <Link to="/pc/artGrading/artExamDance" target="_blank">艺考舞蹈</Link>
                             <a href="http://www.baidu.com">艺考声乐</a>
                             <a href="http://www.baidu.com">艺考器乐</a>
                             <a href="http://www.baidu.com">社会考级</a>
@@ -237,13 +236,13 @@ export default class nav extends Component {
                     </li>
                     <li className="pullDown" onMouseEnter={this.navMouseenter(6)} onMouseLeave={this.navMouseleave(6)}>关于我们
                         <div style={{ height: navList[6] ? '200px' : '0px' }}>
-                            <Link to="/teachers" target="_blank">师资力量</Link>
-                            <Link to="/studentHonor" target="_blank">学员风采</Link>
-                            <Link to="/artNews" target="_blank">艺术头条</Link>
-                            <Link to="/contactUs" target="_blank">联系我们</Link>
+                            <Link to="/pc/teachers" target="_blank">师资力量</Link>
+                            <Link to="/pc/studentHonor" target="_blank">学员风采</Link>
+                            <Link to="/pc/artNews" target="_blank">艺术头条</Link>
+                            <Link to="/pc/contactUs" target="_blank">联系我们</Link>
                         </div>
                     </li>
-                    <li><Link to="/campusDistribution" target="_blank">校区分布</Link></li>
+                    <li><Link to="/pc/campusDistribution" target="_blank">校区分布</Link></li>
                     <li className="line" ref={this.line}></li>
                 </ul>
  *

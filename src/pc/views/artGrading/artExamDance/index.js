@@ -16,7 +16,7 @@ export default class danceGrading extends Component {
             { img: require('../../../assets/artGrading/artExamDance/indexImg4.png').default, text: "古典舞", href: "/home" },
             { img: require('../../../assets/artGrading/artExamDance/indexImg5.png').default, text: "街舞", href: "/home" },
             { img: require('../../../assets/artGrading/artExamDance/indexImg6.png').default, text: "现代舞", href: "/home" },
-            { img: require('../../../assets/artGrading/artExamDance/indexImg7.png').default, text: "国标舞", href: "/artGrading/artExamDance/latinGrading" },
+            { img: require('../../../assets/artGrading/artExamDance/indexImg7.png').default, text: "国标舞", href: "/pc/artGrading/artExamDance/latinGrading" },
         ],
         bannerData: [
             { id: 1, adress: "/artGrading/artExamDance", src: require("../../../assets/artGrading/artExamDance/banner.jpg").default },

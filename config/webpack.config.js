@@ -334,8 +334,9 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        '@assets': path.join(__dirname, '../src/assets'),
-        '@components': path.join(__dirname, '../src/components'),
+        '@assets': path.join(__dirname, '../src/pc/assets'),
+        '@components': path.join(__dirname, '../src/pc/components'),
+        '@pcPage': path.join(__dirname, '../src/pc/views'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

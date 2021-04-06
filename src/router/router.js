@@ -24,8 +24,9 @@ const routeDom = () => {
         <main>
             <Suspense fallback={Loading}>
                 <Switch>
-                    <Route path="/pcEdit" component={lazy(() => import('../pcEditWebsite/views'))} />
+                    <Route path="/pcEdit" component={lazy(() => import('../pcEditWebsite/views'))} />{/**pc编辑 */}
                     <Route path="/pc" component={PcPage} />{/**pc官网 */}
+                    <Redirect from="/" to="/pc" />
                 </Switch>
             </Suspense>
         </main>

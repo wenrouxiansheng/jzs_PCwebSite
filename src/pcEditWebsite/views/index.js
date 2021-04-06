@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
-import './style.scss'
 
 export default class pcEditWebsite extends Component {
+    iframe = React.createRef()
+
+    getIframe = () => {
+        const iframe = this.iframe.current.contentWindow;
+        iframe.postMessage("asdasdadasd", "/")
+    }
+
     render() {
         return (
             <div>
-                <iframe id="iframe" src="../../pc/views/index.js"></iframe>
+                <button onClick={this.getIframe}>asdasdasd</button>
+                <iframe id="iframe" src="../../pc/views/index.js" title="pc" ref={this.iframe} style={{ width: "100%", height: "100vh" }} />
             </div>
         )
     }

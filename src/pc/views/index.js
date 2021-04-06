@@ -8,6 +8,8 @@ import Footer from '@components/common/footer'
 import SuspendedWindow from '@components/common/suspendedWindow'  //右侧悬浮窗
 import routeList from '../router'
 
+
+
 //懒加载需要配合Suspense
 //骨架屏
 const loadingStyle = {
@@ -16,6 +18,7 @@ const loadingStyle = {
     minHeight: '1000px',
     padding: '50px 0px'
 }
+
 const Loading = <div className="lazyLoading" style={loadingStyle}>
     <Skeleton.Image active style={{ width: '1200px', height: '480px' }} />
     <Skeleton active />
@@ -43,7 +46,7 @@ const pcPage = () => {
                             return item.children ? childRoute(item) : <Route path={routeList.path + item.path} component={item.component} key={index} />
                         })
                     }
-                    <Redirect to="/pc/home"/>
+                    <Redirect to="/pc/home" />
                 </Switch>
             </Suspense>
 

@@ -100,18 +100,3 @@ const pcRouter = {
     ]
 }
 export default pcRouter
-/**
- * {
-            path: '/brandIntroduction',
-            component: lazy(() => import('@pcPage/brandIntroduction'))
-
-        },
-        {
-            path: '/brandIntroduction/course',
-            component: lazy(() => import('@pcPage/brandIntroduction/curriculumPlan'))
-        },
-        {
-            path: '/brandIntroduction/history',
-            component: lazy(() => import('@pcPage/brandIntroduction/developmentHistory')),
-        },
- */

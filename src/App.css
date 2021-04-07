@@ -2,6 +2,7 @@
   max-width: 1920px;
   min-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 * {
   outline: none;
@@ -20,4 +21,5 @@
 }
 .App p{
   margin: 0px;
+  
 }

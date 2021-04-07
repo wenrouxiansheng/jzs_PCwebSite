@@ -13,7 +13,7 @@ export default class pcEditWebsite extends Component {
     iframe = React.createRef()
 
     getIframe = () => {
-        const iframe = this.iframe.current.contentWindow;
+        // const iframe = this.iframe.current.contentWindow;
     }
     componentDidMount() {
         PubSub.subscribe('changePageComponent', (msg, data) => {

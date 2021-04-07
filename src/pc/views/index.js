@@ -10,8 +10,8 @@ import Footer from '@components/common/footer'
 import SuspendedWindow from '@components/common/suspendedWindow'  //右侧悬浮窗
 import SelectionModifiers from '@components/common/selectionModifiers'  //右侧悬浮窗
 import routeList from '../router'
-
-
+import { editingStatus } from '../../store/store'
+import { changeEditingStatus } from '../../store/actions'
 
 //懒加载需要配合Suspense
 //骨架屏
@@ -49,6 +49,8 @@ export default class page extends Component {
     }
     componentDidMount() {
         if (window.self === window.top) return;
+        editingStatus.dispatch(changeEditingStatus(true))
+        console.log(editingStatus.getState())
         //是编辑状态 订阅更改信息
         PubSub.subscribe('changeSelection', (msg, data) => {
             this.setState({

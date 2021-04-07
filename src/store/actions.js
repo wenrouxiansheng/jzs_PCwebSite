@@ -1,0 +1,1 @@
+export const changeEditingStatus = data => ({type: 'checkEditingStatus', data}) //是编辑器状态就会调用的动作

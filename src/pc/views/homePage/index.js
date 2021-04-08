@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
 
+
 import DropDownPrompt from '@components/homePage/dropDownPrompt'
 import switchComponents from '@components/allComponents'//汇总的组件
 import { getParents, throttle } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
 
-
+let getChangeComponent = null;
 export default class homePage extends Component {
     state = {
         status: "",
@@ -121,6 +122,26 @@ export default class homePage extends Component {
     componentDidMount() {
         //组件挂载后监听滚轮
         window.addEventListener('scroll', this.bindHandleScroll);
+
+        if (!editingStatus.getState()) return false;
+        //订阅 - 接收编辑器改变组件后的数据
+        getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
+            if (data.type !== 'homePage') {
+                window.parent.PubSub.publish('operationMessage', {
+                    message: '组件名不对应',
+                    type: 'error'
+                });
+                return false;
+            }
+
+            this.setState({
+                componentJson: data.componentJson
+            })
+            window.parent.PubSub.publish('operationMessage', {
+                message: '修改成功',
+                type: 'success'
+            })
+        });
     }
     homePageMouseMove = (e) => {
         const { componentJson } = this.state;
@@ -172,7 +193,7 @@ export default class homePage extends Component {
     componentWillUnmount() {
         //组件即将销毁后删除监听滚轮事件
         window.removeEventListener('scroll', this.bindHandleScroll);
-
+        PubSub.unsubscribe(getChangeComponent);
     }
     render() {
         const { status } = this.state

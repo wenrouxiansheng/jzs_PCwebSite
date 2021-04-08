@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
+import { message } from 'antd';
 
 import EditorSuspension from "../components/suspensionEditor";
 import ImgGalleryEditor from "../components/imgGalleryEditor";
@@ -11,16 +12,14 @@ const style = {
     height: '100vh'
 };
 let selectPageMessage = null,
-    revisedMessage = null
+    revisedMessage = null,
+    operationMessage = null;
 export default class pcEditWebsite extends Component {
     iframe = React.createRef()
     state = {
         suspensionIsShow: false,//组件编辑器是否显示
         changedComponents: null,//传过来的页面组件和选中组件的下标
         componentInfo: null//选中组件的信息
-    }
-    getIframe = () => {
-        // const iframe = this.iframe.current.contentWindow;
     }
     componentDidMount() {
         //接收要更改页面组件和组件信息 打开编辑悬浮窗
@@ -36,19 +35,29 @@ export default class pcEditWebsite extends Component {
         revisedMessage = PubSub.subscribe('revisedDataList', (msg, data) => {
             this.changeRevisedDataList(data)
         });
+
+        //订阅 - 修改组件后的消息是成功还是什么失败
+        operationMessage = PubSub.subscribe('operationMessage', (msg, data) => {
+            if(data.type === 'success') message.success(data.message);
+
+            if(data.type === 'error') message.error(data.message);
+        });
+
     }
     componentWillUnmount() {
         // 组件销毁前去除订阅消息
         PubSub.unsubscribe(selectPageMessage);
         PubSub.unsubscribe(revisedMessage);
+        PubSub.unsubscribe(operationMessage);
     }
     changeRevisedDataList = (data) => {
+        const iframe = this.iframe.current.contentWindow;
         //获得修改后的数据 根据下标替换
         const { changedComponents } = this.state,
-         { num, componentJson } = changedComponents;
+            { num, componentJson } = changedComponents;
         componentJson[num] = data[0];
-        console.log(changedComponents)
-        //这里改写  判断是那个页面  传递修改后的数据
+        //这里要获取iframe下的window
+        iframe.PubSub.publish('getChangeComponentData', changedComponents);
     }
     filterComponentInfo = (info) => {
         //筛选要更改的组件信息

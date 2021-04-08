@@ -4,6 +4,8 @@ import PubSub from 'pubsub-js'
 import DropDownPrompt from '@components/homePage/dropDownPrompt'
 import switchComponents from '@components/allComponents'//汇总的组件
 import { getParents, throttle } from '../../publicjs'
+import { editingStatus } from '../../../store/store'
+
 
 export default class homePage extends Component {
     state = {
@@ -142,16 +144,16 @@ export default class homePage extends Component {
             }
 
         //更改悬浮窗位置
-        PubSub.publish('changeSelection', info);
+        PubSub.publish('changeSelectionPosition', info);
 
         //选中之后把页面的组件数据   以及选择的组件下标传到悬浮小窗口中
-        PubSub.publish('changeActiveObj', activeObjInfo);
+        PubSub.publish('getActiveObj', activeObjInfo);
     }
     seekComponents = () => {
         const { componentJson } = this.state;
-        //遍历页面结构
+        //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
         return componentJson.map((item, index) => {
-            return <div className="componentContainer" onMouseMove={window.self !== window.top ? throttle(this.homePageMouseMove, 300) : null} key={index} flag={index}>
+            return <div className="componentContainer" onMouseMove={editingStatus.getState() ? throttle(this.homePageMouseMove, 300) : null} key={index} flag={index}>
                 {switchComponents(item.component, item.props)}
             </div>
         })
@@ -170,9 +172,7 @@ export default class homePage extends Component {
     componentWillUnmount() {
         //组件即将销毁后删除监听滚轮事件
         window.removeEventListener('scroll', this.bindHandleScroll);
-        if (window.self !== window.top) {//判断是否被iframe嵌套 卸载监听
-            window.removeEventListener('message', this.changeComponentState);
-        }
+
     }
     render() {
         const { status } = this.state

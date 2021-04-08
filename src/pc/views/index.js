@@ -36,7 +36,7 @@ const childRoute = detail => {//二级路由遍历
         return <Route path={routeList.path + detail.path + item.path} component={item.component} key={index} />
     })
 }
-
+let changeSelection = null;
 export default class page extends Component {
     state = {
         selection: {
@@ -50,9 +50,9 @@ export default class page extends Component {
     componentDidMount() {
         if (window.self === window.top) return;
         editingStatus.dispatch(changeEditingStatus(true))
-        console.log(editingStatus.getState())
+
         //是编辑状态 订阅更改信息
-        PubSub.subscribe('changeSelection', (msg, data) => {
+        changeSelection = PubSub.subscribe('changeSelectionPosition', (msg, data) => {
             this.setState({
                 selection: data
             })
@@ -60,11 +60,15 @@ export default class page extends Component {
     }
     isEdit = () => {
         //是不是编辑状态
-        if (window.self === window.top) return;
+        if (!editingStatus.getState()) return;
         const { selection } = this.state;
         return <SelectionModifiers info={selection} />
     }
-
+    componentWillUnmount() {
+        if (!editingStatus.getState()) return;
+        // 组件销毁前去除订阅消息
+        PubSub.unsubscribe(changeSelection);
+    }
     render() {
         return (
             <ConfigProvider locale={zhCN}>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { CloseOutlined } from '@ant-design/icons';
 import './style.scss'
+import BannerEdit from '../bannerEdit'
 // 编辑组件悬浮窗
 export default class editorSuspension extends Component {
     state = {
-        isShow: true,
+        isShow: false,
         top: 0,
         indexed: 0
     }
@@ -21,14 +22,22 @@ export default class editorSuspension extends Component {
             })
         }
     }
+    switchComponentEdit = (componentInfo) => {
+        if (!componentInfo) return;
+        const { component } = componentInfo[0]
+        if (component === "Banner") {
+            return <BannerEdit detail={componentInfo} />
+        }
+    }
     render() {
-        const { isShow, top, indexed } = this.state;
+        const { top, indexed } = this.state;
+        const { suspensionIsShow, closeSuspension, componentInfo } = this.props;
         return (
-            <div className="control_editorSuspension" style={{ display: isShow ? 'flex' : 'none' }}>
+            <div className="control_editorSuspension" style={{ display: suspensionIsShow ? 'flex' : 'none' }}>
                 <div className="zoom">
                     <div className="editorHead">
                         <h3>编辑模块</h3>
-                        <CloseOutlined onClick={this.closeEditorSuspension} />
+                        <CloseOutlined onClick={closeSuspension} />
                     </div>
                     <div className="editorBody">
                         <nav>
@@ -37,7 +46,12 @@ export default class editorSuspension extends Component {
                             <p className="line" style={{ top: `${top}px` }}></p>
                         </nav>
                         <div className="container">
-
+                            <div style={{ display: indexed === 0 ? 'block' : 'none' }}>
+                                {
+                                    this.switchComponentEdit(componentInfo)
+                                }
+                            </div>
+                            <div style={{ display: indexed === 1 ? 'block' : 'none' }}>2</div>
                         </div>
                     </div>
                 </div>

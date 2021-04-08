@@ -22,7 +22,7 @@ export default class selectionModifiers extends Component {
     }
     componentDidMount() {
         //订阅消息 - 当悬浮选中组件时传过来的 activeobj信息
-        changeActiveObj = PubSub.subscribe('changeActiveObj', (msg, data) => {
+        changeActiveObj = PubSub.subscribe('getActiveObj', (msg, data) => {
             this.setState({
                 selectedActiveObj: data
             })
@@ -31,11 +31,11 @@ export default class selectionModifiers extends Component {
     reviseModule = () => {
         const { selectedActiveObj } = this.state;
         //发布消息 - 点击编辑组件把activeobj信息 传递给顶层编辑器页面
-        if (!selectedActiveObj){
+        if (!selectedActiveObj) {
             message.warning('请先选择组件');
             return false;
         }
-        window.parent.PubSub.publish('changePageComponent', selectedActiveObj);
+        window.parent.PubSub.publish('selectPageComponent', selectedActiveObj);
     }
     componentWillUnmount() {
         // 组件销毁后去除订阅消息

@@ -20,6 +20,9 @@
                     margin: 0px 5px;
                     cursor: pointer;
                     font-size: 18px;
+                    &:hover {
+                        color: #5874d8;
+                    }
                 }
                 img {
                     width: 90px;
@@ -51,8 +54,16 @@
     }
     .input_box {
         padding-left: 50px;
+        label {
+            animation: labelShow .5s ease-in;
+        }
     }
-}
-.bannerEdit table td i:hover {
-    color: #5874d8;
+    @keyframes labelShow {
+        0% {
+            transform: translateX(-100px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
 }

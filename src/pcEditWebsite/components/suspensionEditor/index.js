@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { CloseOutlined } from '@ant-design/icons';
 import './style.scss'
-import BannerEdit from '../bannerEdit'
+import switchComponentEdit from '../../editorComponents/allEditor'
 // 编辑组件悬浮窗
 export default class editorSuspension extends Component {
     state = {
@@ -20,13 +20,6 @@ export default class editorSuspension extends Component {
                 top: num * 60,
                 indexed: num
             })
-        }
-    }
-    switchComponentEdit = (componentInfo) => {
-        if (!componentInfo) return;
-        const { component } = componentInfo[0]
-        if (component === "Banner") {
-            return <BannerEdit detail={componentInfo} />
         }
     }
     render() {
@@ -48,7 +41,7 @@ export default class editorSuspension extends Component {
                         <div className="container">
                             <div style={{ display: indexed === 0 ? 'block' : 'none' }}>
                                 {
-                                    this.switchComponentEdit(componentInfo)
+                                    switchComponentEdit(componentInfo)
                                 }
                             </div>
                             <div style={{ display: indexed === 1 ? 'block' : 'none' }}>2</div>

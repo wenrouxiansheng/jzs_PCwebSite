@@ -18,6 +18,7 @@ export default class homePage extends Component {
                     bannerList: [
                         { id: 1, adress: "www.baidu.com", src: require("../../assets/homePage/banner/homepage1.png").default },
                         { id: 2, adress: "www.baidu.com", src: require("../../assets/homePage/banner/banner.jpg").default },
+                        { id: 3, adress: "www.baidu.com", src: require("../../assets/homePage/banner/homepage2.png").default },
                     ]
                 }
             },

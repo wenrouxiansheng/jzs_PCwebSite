@@ -40,6 +40,8 @@ export default class pcEditWebsite extends Component {
         operationMessage = PubSub.subscribe('operationMessage', (msg, data) => {
             if(data.type === 'success') message.success(data.message);
 
+            if(data.type === 'warning') message.warning(data.message);
+
             if(data.type === 'error') message.error(data.message);
         });
 

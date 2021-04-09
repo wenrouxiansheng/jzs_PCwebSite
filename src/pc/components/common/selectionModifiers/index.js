@@ -35,6 +35,7 @@ export default class selectionModifiers extends Component {
             message.warning('请先选择组件');
             return false;
         }
+        console.log(selectedActiveObj)
         window.parent.PubSub.publish('selectPageComponent', selectedActiveObj);
     }
     componentWillUnmount() {

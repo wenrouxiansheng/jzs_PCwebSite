@@ -7,7 +7,8 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     ExamLevelList = lazy(() => import('./homePage/examLevelList')),
     TeacherList = lazy(() => import('./homePage/teacherList')),
     GloryList = lazy(() => import('./homePage/gloryList')),
-    BrandHonor = lazy(() => import('./homePage/brandHonor'));
+    BrandHonor = lazy(() => import('./homePage/brandHonor')),
+    AddModule = lazy(() => import('./common/addModule'));
 
 export default function switchComponents(name, props) {
     switch (name) {
@@ -20,6 +21,7 @@ export default function switchComponents(name, props) {
         case 'TeacherList': return <TeacherList {...props}  />; //教师列表
         case 'GloryList': return <GloryList {...props}  />; //学员风采
         case 'BrandHonor': return <BrandHonor {...props}  />; //品牌荣誉列表
+        case 'AddModule': return <AddModule />; //添加模块
         default: return <div>没有找到组件</div>
     }
 }

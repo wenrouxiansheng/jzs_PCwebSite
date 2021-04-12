@@ -28,6 +28,7 @@ export default class homePage extends Component {
                     info: { title: "为什么选择桔子树", subTitle: "Core advantages" }
                 }
             },
+            
             {
                 component: 'ImgAndText',
                 props: {
@@ -55,7 +56,37 @@ export default class homePage extends Component {
             {
                 component: 'SchoolListImgText',
                 props: {
-
+                    list: {
+                        src: require('../../assets/homePage/schoolList/schoolBanner.png').default,
+                        title: "桔子树——中国艺术教育素质教育品牌",
+                        smallList: [
+                            {
+                                src: require('../../assets/homePage/schoolList/school1.jpg').default,
+                                name: "通州校区",
+                                tel: "400-900-8898"
+                            },
+                            {
+                                src: require('../../assets/homePage/schoolList/school2.jpg').default,
+                                name: "大望路校区",
+                                tel: "400-900-8898"
+                            },
+                            {
+                                src: require('../../assets/homePage/schoolList/school3.jpg').default,
+                                name: "中关村校区",
+                                tel: "400-900-8898"
+                            },
+                            {
+                                src: require('../../assets/homePage/schoolList/school3.jpg').default,
+                                name: "中关村校区",
+                                tel: "400-900-8898"
+                            },
+                            {
+                                src: require('../../assets/homePage/schoolList/school3.jpg').default,
+                                name: "中关村校区",
+                                tel: "400-900-8898"
+                            },
+                        ]
+                    }
                 }
             },
             {
@@ -67,7 +98,58 @@ export default class homePage extends Component {
             {
                 component: 'ListOfOptionsImg',
                 props: {
-
+                    list: [
+                        {
+                            text: "舞蹈培训",
+                            level2: [{ text: "少儿舞蹈", adress: "www.baidu.com" }, { text: "成人舞蹈", adress: "www.baidu.com" }],
+                            active: true,
+                            imgList: [
+                                { text: "民族舞0", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
+                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                            ]
+                        },
+                        {
+                            text: "声乐培训",
+                            level2: [{ text: "少儿声乐", adress: "www.baidu.com" }, { text: "成人声乐", adress: "www.baidu.com" }],
+                            active: false,
+                            imgList: [
+                                { text: "民族舞1", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
+                            ]
+                        },
+                        {
+                            text: "器乐培训",
+                            level2: [{ text: "少儿器乐", adress: "www.baidu.com" }, { text: "成人器乐", adress: "www.baidu.com" }],
+                            active: false,
+                            imgList: [
+                                { text: "民族舞2", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
+                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                            ]
+                        },
+                        {
+                            text: "美术培训",
+                            level2: [{ text: "少儿美术", adress: "www.baidu.com" }, { text: "成人美术", adress: "www.baidu.com" }],
+                            active: false,
+                            imgList: [
+                                { text: "民族舞3", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
+                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                            ]
+                        },
+                    ]
                 }
             },
             {
@@ -147,6 +229,7 @@ export default class homePage extends Component {
     homePageMouseMove = (e) => {
         const { componentJson } = this.state;
         //在编辑时调整右上角悬浮窗位置
+        if (e.target.nodeName === 'path') return;
         const target = getParents(e.target, 'componentContainer');
 
         if (!target || !target.parentNode) return;
@@ -155,7 +238,7 @@ export default class homePage extends Component {
             info = {
                 display: 'block',
                 width: `${target.offsetWidth}px`,
-                height: `${target.offsetHeight}px`,
+                height: `0px`,
                 left: `${target.offsetLeft}px`,
                 top: `${target.offsetTop}px`,
             },
@@ -164,7 +247,6 @@ export default class homePage extends Component {
                 componentJson,
                 type: "homePage"
             }
-
         //更改悬浮窗位置
         PubSub.publish('changeSelectionPosition', info);
 

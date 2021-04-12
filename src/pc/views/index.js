@@ -13,6 +13,8 @@ import routeList from '../router'
 import { editingStatus } from '../../store/store'
 import { changeEditingStatus } from '../../store/actions'
 
+//页面汇总文件
+
 //懒加载需要配合Suspense
 //骨架屏
 const loadingStyle = {
@@ -42,7 +44,7 @@ export default class page extends Component {
         selection: {
             display: 'none',
             width: '500px',
-            height: '200px',
+            height: '0px',
             left: '50px',
             top: '60px'
         }

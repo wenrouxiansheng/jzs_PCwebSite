@@ -5,35 +5,22 @@ import './style.scss'
 
 
 export default class titleEdit extends Component {
-    state = {
-        data: null
-    }
-    componentDidMount() {
-        const { detail } = this.props;
-        this.setState({
-            data: detail
-        })
-    }
     changeTitle = (type) => {
         return (e) => {
-            const { data } = this.state;
-            const { props: { info } } = data[0];
+            const { detail } = this.props;
+            const { props: { info } } = detail[0];
             info[type] = e.target.value;
-
-            this.setState({
-                data
-            })
         }
     }
     changeData = () => {
-        const { data } = this.state;
-        PubSub.publish('revisedDataList', data);
+        const { detail } = this.props;
+        PubSub.publish('revisedDataList', detail);
     }
     render() {
         const { detail } = this.props;
         const { props: { info: { title, subTitle } } } = detail[0];
         return (
-            <div className="titleEdit">
+            <div className="titleEdit" key={title}>
                 <div className="input_box">
                     <label><span>标题：</span><input type="text" name="title" placeholder="请输入标题" defaultValue={title} onChange={this.changeTitle('title')} /></label>
                 </div>

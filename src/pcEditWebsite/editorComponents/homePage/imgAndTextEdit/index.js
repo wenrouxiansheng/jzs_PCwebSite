@@ -5,65 +5,52 @@ import PubSub from 'pubsub-js'
 import './style.scss'
 let imgMessage = null;
 export default class imgAndTextEdit extends Component {
-    state = {
-        data: null
-    }
-    componentDidMount() {
-        const { detail } = this.props;
-        this.setState({
-            data: detail
-        })
-    }
     changeData = () => {
         //传递修改的数据
-        const { data } = this.state;
-        PubSub.publish('revisedDataList', data);
+        const { detail } = this.props;
+        PubSub.publish('revisedDataList', detail);
     }
     onRadioChange = (e) => {
         //更改图片位置
         const { target: { value } } = e;
-        const { data } = this.state,
-            { props: { detail } } = data[0];
+        const { detail } = this.props,
+            { props: { detail: data } } = detail[0];
 
-        detail.type = value;
-        this.setState({
-            data
-        })
+        data.type = value;
+        this.setState({})
     }
+
     onInputChange = (type) => {
         return (e) => {
             //更改标题及文案
-            const { data } = this.state;
-            let { props: { detail } } = data[0];
-            if (type === 'title') detail.title = e.target.value;
+            const { detail } = this.props;
+            let { props: { detail: data } } = detail[0];
+            if (type === 'title') data.title = e.target.value;
 
-            if (type === 'text') detail.text = e.target.value;
+            if (type === 'text') data.text = e.target.value;
 
-            this.setState({
-                data
-            })
+            this.setState({})
         }
     }
     changeImage = () => {
-        const { data } = this.state;
-        const { props: { detail } } = data[0];
+        const { detail } = this.props;
+        const { props: { detail: data } } = detail[0];
         //唤醒图片库
         PubSub.publish('awakenPhotoGallery', true);
         //订阅 - 更改图片后回调
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
-            detail.src = imgData;
-            this.setState({
-                data
-            })
+            data.src = imgData;
+            this.setState({})
             //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
             PubSub.unsubscribe(imgMessage);
         });
     }
     render() {
         const { detail } = this.props;
-        const { props: { detail: { src, text, title, type } } } = detail[0];
+        const { props: { detail: { src, text, title, type, id } } } = detail[0];
+
         return (
-            <div className="imgAndTextEdit">
+            <div className="imgAndTextEdit" key={id}>
                 <div className="input_box">
                     <label><span>点击图片更改：</span><img src={src} alt="" onClick={this.changeImage} /></label>
                 </div>
@@ -81,7 +68,7 @@ export default class imgAndTextEdit extends Component {
                     </Radio.Group>
                 </div>
                 <div className="changeComponentConf">
-                    <button onClick={this.changeData}>确认</button>
+                    <button onClick={this.changeData} >确认</button>
                 </div>
             </div>
         )

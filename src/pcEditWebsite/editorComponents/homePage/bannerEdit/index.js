@@ -100,7 +100,7 @@ export default class bannerEdit extends Component {
         //添加banner
         const { list } = this.state,
             { props: { bannerList } } = list[0];
-        let obj = { id: bannerList.length + 1, adress: "#", src: require("../../assets/photoGallery/banner.jpg").default };
+        let obj = { id: bannerList.length + 1, adress: "#", src: require("../../../assets/photoGallery/banner.jpg").default };
 
         bannerList.push(obj)
         this.setState({
@@ -110,7 +110,6 @@ export default class bannerEdit extends Component {
     editAdress = (num) => {
         return () => {
             //记录选中索要更改地址数据的下标
-            console.log("asdasda")
             this.setState({
                 indexed: num,
                 inputIsShow: true

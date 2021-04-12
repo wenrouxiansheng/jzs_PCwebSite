@@ -38,7 +38,7 @@ export default class schoolListImgText extends Component {
                     tel: "400-900-8898"
                 },
             ]
-        },
+        },//list数据没用到之后可能要做默认数据
         num: 0,
         offSet: 0
     }
@@ -67,7 +67,8 @@ export default class schoolListImgText extends Component {
         }
     }
     render() {
-        const { list, num, offSet } = this.state;
+        const { num, offSet } = this.state;
+        const { list } = this.props
         return (
             <ScrollOverPack always={false}>
                 <QueueAnim type="scale" duration="1000" className="schoolListImgText-antMotion-box">

@@ -129,6 +129,16 @@
                                 box-shadow: 0 0 5px 0px #54b4c0;
                             }
                         }
+                        button {
+                            width: 120px;
+                            height: 40px;
+                            cursor: pointer;
+                            background-color: #5874d8;
+                            border: 0px;
+                            color: white;
+                            border-radius: 5px;
+                            transition: .3s;
+                        }
                     }
                 }
             }

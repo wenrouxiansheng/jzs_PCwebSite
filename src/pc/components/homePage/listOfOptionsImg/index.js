@@ -11,7 +11,6 @@ export default class listOfOptionsImg extends Component {
             {
                 text: "舞蹈培训",
                 level2: [{ text: "少儿舞蹈", adress: "www.baidu.com" }, { text: "成人舞蹈", adress: "www.baidu.com" }],
-                active: true,
                 imgList: [
                     { text: "民族舞0", src: require('../../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
                     { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
@@ -24,7 +23,6 @@ export default class listOfOptionsImg extends Component {
             {
                 text: "声乐培训",
                 level2: [{ text: "少儿声乐", adress: "www.baidu.com" }, { text: "成人声乐", adress: "www.baidu.com" }],
-                active: false,
                 imgList: [
                     { text: "民族舞1", src: require('../../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
                     { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
@@ -35,7 +33,6 @@ export default class listOfOptionsImg extends Component {
             {
                 text: "器乐培训",
                 level2: [{ text: "少儿器乐", adress: "www.baidu.com" }, { text: "成人器乐", adress: "www.baidu.com" }],
-                active: false,
                 imgList: [
                     { text: "民族舞2", src: require('../../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
                     { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
@@ -48,7 +45,6 @@ export default class listOfOptionsImg extends Component {
             {
                 text: "美术培训",
                 level2: [{ text: "少儿美术", adress: "www.baidu.com" }, { text: "成人美术", adress: "www.baidu.com" }],
-                active: false,
                 imgList: [
                     { text: "民族舞3", src: require('../../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
                     { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
@@ -65,14 +61,7 @@ export default class listOfOptionsImg extends Component {
     level1Selected = (num) => {
         //点击一级导航切换
         return () => {
-            const { list } = this.state;
-            const newList = list.map((item, index) => {
-                item.active = false;
-                if (index === num) item.active = true;
-                return item;
-            })
             this.setState({
-                list: newList,
                 selectedIndex: num,
                 switchIndex: 0
             })
@@ -112,7 +101,8 @@ export default class listOfOptionsImg extends Component {
         }
     }
     render() {
-        const { list, selectedIndex, switchIndex } = this.state;
+        const { selectedIndex, switchIndex } = this.state;
+        const { list } = this.props;
         const imgList = list[selectedIndex].imgList;
         return (
             <ScrollOverPack always={false}>
@@ -121,7 +111,7 @@ export default class listOfOptionsImg extends Component {
                         <ul className="level1">
                             {
                                 list.map((item, index) => {
-                                    return <li className={item.active ? "active" : ""} key={index} onClick={this.level1Selected(index)}>{item.text}</li>
+                                    return <li className={selectedIndex === index ? "active" : ""} key={index} onClick={this.level1Selected(index)}>{item.text}</li>
                                 })
                             }
                         </ul>

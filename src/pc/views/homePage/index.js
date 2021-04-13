@@ -28,7 +28,7 @@ export default class homePage extends Component {
                     info: { title: "为什么选择桔子树", subTitle: "Core advantages" }
                 }
             },
-            
+
             {
                 component: 'ImgAndText',
                 props: {
@@ -205,7 +205,6 @@ export default class homePage extends Component {
     componentDidMount() {
         //组件挂载后监听滚轮
         window.addEventListener('scroll', this.bindHandleScroll);
-
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
@@ -216,7 +215,6 @@ export default class homePage extends Component {
                 });
                 return false;
             }
-
             this.setState({
                 componentJson: data.componentJson
             })
@@ -257,7 +255,7 @@ export default class homePage extends Component {
         const { componentJson } = this.state;
         //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
         return componentJson.map((item, index) => {
-            return <div className="componentContainer" onMouseMove={editingStatus.getState() ? throttle(this.homePageMouseMove, 300) : null} key={index} flag={index}>
+            return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`} onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(this.homePageMouseMove, 300) : null} key={index} flag={index}>
                 {switchComponents(item.component, item.props)}
             </div>
         })

@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
 import { message } from 'antd';
 
-import EditorSuspension from "../components/suspensionEditor";
-import ImgGalleryEditor from "../components/imgGalleryEditor";
+import EditorSuspension from "../components/suspensionEditor";//编辑器容器
+import ImgGalleryEditor from "../components/imgGalleryEditor";//图片库
+import ModalWindow from "../components/modalWindow";//悬浮模态窗
+import Toolbar from "../components/toolbar";//左侧工具栏
 
 const style = {
     position: 'relative',
@@ -83,6 +85,8 @@ export default class pcEditWebsite extends Component {
                 <iframe id="iframe" src="../../pc/views/index.js" title="pc" ref={this.iframe} style={{ width: "100%", height: "100vh" }} />
                 <EditorSuspension suspensionIsShow={suspensionIsShow} closeSuspension={this.closeSuspension} componentInfo={componentInfo} />
                 <ImgGalleryEditor />
+                <ModalWindow />
+                <Toolbar />
             </div>
         )
     }

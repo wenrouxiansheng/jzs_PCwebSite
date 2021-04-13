@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import { CloseOutlined } from '@ant-design/icons';
 import './style.scss'
 import switchComponentEdit from '../../editorComponents/allEditor'
 // 编辑组件悬浮窗
+
+const Loading = <div style={{ fontSize: '14px', textAlign: 'center', lineHeight: '100px'}}>稍等...</div>;
 export default class editorSuspension extends Component {
     state = {
         isShow: false,
@@ -39,12 +41,15 @@ export default class editorSuspension extends Component {
                             <p className="line" style={{ top: `${top}px` }}></p>
                         </nav>
                         <div className="container">
-                            <div style={{ display: indexed === 0 ? 'block' : 'none' }}>
-                                {
-                                    switchComponentEdit(componentInfo)
-                                }
-                            </div>
-                            <div style={{ display: indexed === 1 ? 'block' : 'none' }}>2</div>
+                            <Suspense fallback={Loading}>
+                                <div style={{ display: indexed === 0 ? 'block' : 'none' }}>
+
+                                    {
+                                        switchComponentEdit(componentInfo)
+                                    }
+                                </div>
+                                <div style={{ display: indexed === 1 ? 'block' : 'none' }}>2</div>
+                            </Suspense>
                         </div>
                     </div>
                 </div>

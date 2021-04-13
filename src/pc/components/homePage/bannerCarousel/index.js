@@ -9,8 +9,7 @@ export default class bannerCarousel extends Component {
         }
     }
     render() {
-        const { bannerList, only } = this.props
-        this.key = only
+        const { bannerList } = this.props
         return (
             <section className="bannerContent">
                 <Carousel autoplay>

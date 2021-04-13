@@ -1,0 +1,212 @@
+/* 管理组件编辑器悬浮窗 */
+.modalWindow {
+    position: fixed;
+    width: 350px;
+    height: 650px;
+    background-color: white;
+    border-radius: 8px;
+    z-index: 100;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: editorSuspension 0.5s;
+    /* 悬浮窗顶部导航栏 */
+    .suspendedWindow_header {
+        width: 100%;
+        height: 60px;
+        background-color: #5a75d5;
+        color: white;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        padding-right: 50px;
+        & > div {
+            width: 60px;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 20px;
+            align-content: center;
+            cursor: pointer;
+            span {
+                transition: 0.3s;
+                transform: translateY(10px);
+            }
+            p {
+                width: 100%;
+                font-size: 14px;
+                text-align: center;
+                margin-top: 3px;
+                transition: 0.3s;
+                transform: translateY(50px);
+            }
+            &:hover {
+                span {
+                    transform: translateY(0px);
+                }
+                p {
+                    transform: translateY(0px);
+                }
+            }
+        }
+        & > div.active {
+            background-color: #6781de;
+            span {
+                transform: translateY(0px);
+            }
+            p {
+                transform: translateY(0px);
+            }
+        }
+        & > span {
+            position: absolute;
+            color: #3f5dc7;
+            right: 15px;
+            top: 50%;
+            font-size: 26px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+    /* 组件编辑器body */
+
+    .suspendedWindow_body {
+        width: 100%;
+        height: 590px;
+        overflow-x: hidden;
+        .suspendedWindow_box {
+            width: 100%;
+            height: auto;
+            animation: suspendedWindow_box 0.5s;
+            .suspendedWindow_boxBody {
+                display: none;
+                width: 100%;
+                height: 530px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                animation: suspendedWindow_box 0.5s;
+                &.active {
+                    display: block;
+                }
+            }
+            @keyframes suspendedWindow_box {
+                from {
+                    transform: translateX(100px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0px);
+                    opacity: 1;
+                }
+            }
+        }
+        .menu_title {
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+            position: relative;
+            cursor: pointer;
+            color: rgba(52, 120, 246, 0.80196078431372547);
+            &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 50%;
+                height: 1px;
+                background-color: #5874d8;
+                top: 19px;
+                right: 10%;
+                display: none;
+            }
+            &.active {
+                span {
+                    transform: rotate(90deg);
+                }
+            }
+            span {
+                color: rgba(52, 120, 246, 0.80196078431372547);
+                margin-right: 10px;
+                transition: 0.5s all;
+                transform: rotate(0deg);
+            }
+        }
+        .controlMenu {
+            width: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            animation: controlMenuMove 0.5s;
+            li {
+                width: 85px;
+                height: 65px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                padding-top: 10px;
+                cursor: pointer;
+                transition: 0.5s all;
+                span:nth-of-type(1) {
+                    color: #9ca2b8;
+                }
+                span:nth-of-type(2) {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 13px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                &:hover {
+                    span {
+                        color: rgba(52, 120, 246, 0.80196078431372547);
+                    }
+                }
+            }
+            @keyframes controlMenuMove {
+                from {
+                    transform: translateX(-30px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0px);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    /* 组件编辑器 二级导航 suspendedWindow_boxHead */
+    .suspendedWindow_boxHead {
+        height: 50px;
+        width: 100%;
+        background: #f8f8f8;
+        border-bottom: 1px solid #ececec;
+        display: flex;
+        padding-left: 10px;
+        position: relative;
+        cursor: pointer;
+        & > li {
+            width: 70px;
+            font-size: 14px;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            margin: 0 5px;
+            &.active {
+                color: #5874d8;
+            }
+        }
+        .line {
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            background-color: #5874d8;
+            height: 3px;
+            transition: 0.3s;
+        }
+    }
+}

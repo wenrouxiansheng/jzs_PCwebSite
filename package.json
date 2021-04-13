@@ -160,5 +160,6 @@
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1",
     "webpack-bundle-analyzer": "^4.4.0"
-  }
+  },
+  "homepage": "http://twww.juzishu.com.cn/pc/"
 }

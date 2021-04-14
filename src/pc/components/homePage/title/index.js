@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import './index.scss'
 
 export default class title extends Component {
+    state = {
+        info: {
+            "title": "为什么选择桔子树",
+            "subTitle": "Core advantages"
+        }
+    }
     render() {
         const { info } = this.props;
         return (

@@ -8,43 +8,43 @@ export default class nav extends Component {
         dataList: [
             {
                 level1: "首页",
-                adress: "/pc/home",
+                adress: "/site/pc/home",
                 type: '',
                 level2: null,
                 id: "nav1"
             },
             {
                 level1: "品牌介绍",
-                adress: '/pc/brandIntroduction',
+                adress: '/site/pc/brandIntroduction',
                 type: '',
-                level2: [{ text: "发展历程", adress: "/pc/brandIntroduction/history", type: '' }, { text: "教研课程", adress: "/pc/brandIntroduction/course", type: '' }],
+                level2: [{ text: "发展历程", adress: "/site/pc/brandIntroduction/history", type: '' }, { text: "教研课程", adress: "/site/pc/brandIntroduction/course", type: '' }],
                 id: "nav2"
             },
             {
                 level1: "舞蹈培训",
-                adress: "/pc/danceTraining",
+                adress: "/site/pc/danceTraining",
                 type: '',
-                level2: [{ text: "少儿舞蹈", adress: "/pc/danceTraining/childrenDance", type: '' },
-                { text: "成人舞蹈", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "民族舞", adress: "/pc/brandIntroduction/course", type: '' },
+                level2: [{ text: "少儿舞蹈", adress: "/site/pc/danceTraining/childrenDance", type: '' },
+                { text: "成人舞蹈", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "民族舞", adress: "/site/pc/brandIntroduction/course", type: '' },
                 { text: "古典舞", adress: "/asd", type: '' },
-                { text: "爵士舞", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "芭蕾舞", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "拉丁舞", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "街舞", adress: "/pc/danceTraining/hipHop", type: '' },
+                { text: "爵士舞", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "芭蕾舞", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "拉丁舞", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "街舞", adress: "/site/pc/danceTraining/hipHop", type: '' },
                 ],
                 id: "nav3"
             },
             {
                 level1: "声乐培训",
-                adress: "/pc/danceTraining",
+                adress: "/site/pc/danceTraining",
                 type: '',
-                level2: [{ text: "少儿声乐", adress: "/pc/danceTraining/childrenDance", type: '' },
-                { text: "成人声乐", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "流行唱法", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "民族唱法", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "通俗唱法", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "美声唱法", adress: "/pc/brandIntroduction/course", type: '' }
+                level2: [{ text: "少儿声乐", adress: "/site/pc/danceTraining/childrenDance", type: '' },
+                { text: "成人声乐", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "流行唱法", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "民族唱法", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "通俗唱法", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "美声唱法", adress: "/site/pc/brandIntroduction/course", type: '' }
                 ],
                 id: "nav4"
             },
@@ -52,38 +52,38 @@ export default class nav extends Component {
                 level1: "器乐培训",
                 adress: "pc/danceTraining",
                 type: '',
-                level2: [{ text: "少儿器乐", adress: "/pc/danceTraining/childrenDance", type: '' },
-                { text: "成人器乐", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "钢琴", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "吉他", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "架子鼓", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "尤克里里", adress: "/pc/brandIntroduction/course", type: '' }
+                level2: [{ text: "少儿器乐", adress: "/site/pc/danceTraining/childrenDance", type: '' },
+                { text: "成人器乐", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "钢琴", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "吉他", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "架子鼓", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "尤克里里", adress: "/site/pc/brandIntroduction/course", type: '' }
                 ],
                 id: "nav5"
             },
             {
                 level1: "美术培训",
-                adress: "/pc/danceTraining",
+                adress: "/site/pc/danceTraining",
                 type: '',
-                level2: [{ text: "少儿美术", adress: "/pc/danceTraining/childrenDance", type: '' },
-                { text: "成人美术", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "素描", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "油画", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "漫画", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "水彩", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "速写", adress: "/pc/brandIntroduction/course", type: '' },
+                level2: [{ text: "少儿美术", adress: "/site/pc/danceTraining/childrenDance", type: '' },
+                { text: "成人美术", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "素描", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "油画", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "漫画", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "水彩", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "速写", adress: "/site/pc/brandIntroduction/course", type: '' },
                 ],
                 id: "nav6"
             },
             {
                 level1: "艺考考级",
-                adress: "/pc/artGrading",
+                adress: "/site/pc/artGrading",
                 type: '',
-                level2: [{ text: "艺考舞蹈", adress: "/pc/artGrading/artExamDance", type: '' },
-                { text: "艺考声乐", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "艺考器乐", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "社会考级", adress: "/pc/brandIntroduction/course", type: '' },
-                { text: "特长考试", adress: "/pc/brandIntroduction/course", type: '' }
+                level2: [{ text: "艺考舞蹈", adress: "/site/pc/artGrading/artExamDance", type: '' },
+                { text: "艺考声乐", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "艺考器乐", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "社会考级", adress: "/site/pc/brandIntroduction/course", type: '' },
+                { text: "特长考试", adress: "/site/pc/brandIntroduction/course", type: '' }
                 ],
                 id: "nav7"
             },
@@ -92,16 +92,16 @@ export default class nav extends Component {
                 adress: '#',
                 type: '',
                 level2: [
-                    { text: "师资力量", adress: "/pc/aboutUs/teachers", type: '' },
-                    { text: "学员风采", adress: "/pc/aboutUs/studentHonor", type: '' },
-                    { text: "艺术头条", adress: "/pc/aboutUs/artNews", type: '' },
-                    { text: "联系我们", adress: "/pc/aboutUs/contactUs", type: '' }
+                    { text: "师资力量", adress: "/site/pc/aboutUs/teachers", type: '' },
+                    { text: "学员风采", adress: "/site/pc/aboutUs/studentHonor", type: '' },
+                    { text: "艺术头条", adress: "/site/pc/aboutUs/artNews", type: '' },
+                    { text: "联系我们", adress: "/site/pc/aboutUs/contactUs", type: '' }
                 ],
                 id: "nav8"
             },
             {
                 level1: "校区分布",
-                adress: "/pc/campusDistribution",
+                adress: "/site/pc/campusDistribution",
                 type: '',
                 level2: null,
                 id: "nav9"

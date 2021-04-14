@@ -8,6 +8,7 @@ const TitleEdit = lazy(() => import('./homePage/titleEdit'))//标题编辑器
 const ImgAndTextEdit = lazy(() => import('./homePage/imgAndTextEdit'))//图文编辑器
 const SchoolListEdit = lazy(() => import('./homePage/schoolListEdit'))//校区图文列表编辑器
 const ListOfOptionsImg = lazy(() => import('./homePage/listOptionsImgEdit'))//课程多级列表编辑器
+const ExamLevelEdit = lazy(() => import('./homePage/examLevelEdit'))//课程多级列表编辑器
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
@@ -18,6 +19,7 @@ export default function switchComponentEdit(componentInfo) {
         case 'ImgAndText': return <ImgAndTextEdit detail={componentInfo} />;
         case 'SchoolListImgText': return <SchoolListEdit detail={componentInfo} />;
         case 'ListOfOptionsImg': return <ListOfOptionsImg detail={componentInfo} />;
+        case 'ExamLevelList': return <ExamLevelEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
 }

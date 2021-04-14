@@ -10,10 +10,14 @@ export default class addModule extends Component {
             type: 'close'
         });
     }
+    openModuleWindow = () => {
+        //唤醒模态窗  - 组件列表
+        window.parent.PubSub.publish('showModalWindow', { select: 0, isShow: true });
+    }
     render() {
         return (
             <div className="addModule">
-                <p><FileAddOutlined />添加模块</p>
+                <p onClick={this.openModuleWindow}><FileAddOutlined />添加模块</p>
                 <p onClick={this.closeAddModule}>取消</p>
             </div>
         )

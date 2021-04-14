@@ -16,9 +16,9 @@ export default class homePage extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "www.baidu.com", src: require("../../assets/homePage/banner/homepage1.png").default },
-                        { id: 2, adress: "www.baidu.com", src: require("../../assets/homePage/banner/banner.jpg").default },
-                        { id: 3, adress: "www.baidu.com", src: require("../../assets/homePage/banner/homepage2.png").default },
+                        { id: 1, adress: "/", src: require("../../assets/homePage/banner/homepage1.png").default },
+                        { id: 2, adress: "/", src: require("../../assets/homePage/banner/banner.jpg").default },
+                        { id: 3, adress: "/", src: require("../../assets/homePage/banner/homepage2.png").default },
                     ]
                 }
             },
@@ -101,52 +101,52 @@ export default class homePage extends Component {
                     list: [
                         {
                             text: "舞蹈培训",
-                            level2: [{ text: "少儿舞蹈", adress: "www.baidu.com" }, { text: "成人舞蹈", adress: "www.baidu.com" }],
+                            level2: [{ text: "少儿舞蹈", adress: "/" }, { text: "成人舞蹈", adress: "/" }],
                             active: true,
                             imgList: [
-                                { text: "民族舞0", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                                { text: "民族舞0", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
+                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
                             ]
                         },
                         {
                             text: "声乐培训",
-                            level2: [{ text: "少儿声乐", adress: "www.baidu.com" }, { text: "成人声乐", adress: "www.baidu.com" }],
+                            level2: [{ text: "少儿声乐", adress: "/" }, { text: "成人声乐", adress: "/" }],
                             active: false,
                             imgList: [
-                                { text: "民族舞1", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
+                                { text: "民族舞1", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
                             ]
                         },
                         {
                             text: "器乐培训",
-                            level2: [{ text: "少儿器乐", adress: "www.baidu.com" }, { text: "成人器乐", adress: "www.baidu.com" }],
+                            level2: [{ text: "少儿器乐", adress: "/" }, { text: "成人器乐", adress: "/" }],
                             active: false,
                             imgList: [
-                                { text: "民族舞2", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                                { text: "民族舞2", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
+                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
                             ]
                         },
                         {
                             text: "美术培训",
-                            level2: [{ text: "少儿美术", adress: "www.baidu.com" }, { text: "成人美术", adress: "www.baidu.com" }],
+                            level2: [{ text: "少儿美术", adress: "/" }, { text: "成人美术", adress: "/" }],
                             active: false,
                             imgList: [
-                                { text: "民族舞3", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
+                                { text: "民族舞3", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
+                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
+                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
+                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
+                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
                             ]
                         },
                     ]
@@ -161,7 +161,12 @@ export default class homePage extends Component {
             {
                 component: 'ExamLevelList',
                 props: {
-
+                    list: [
+                        { src: require('../../assets/homePage/examLevelList/dance.png').default, text: "舞蹈考级", subText: "DANCE DISTINCTION", adress: "/" },
+                        { src: require('../../assets/homePage/examLevelList/music.png').default, text: "声乐考级", subText: "VOCAL MUSIC EMPLOYS", adress: "/" },
+                        { src: require('../../assets/homePage/examLevelList/instrumentalMusic.png').default, text: "器乐考级", subText: "INSTRUMENTAL MUSIC", adress: "/" },
+                        { src: require('../../assets/homePage/examLevelList/art.png').default, text: "美术考级", subText: "FINE ARTS", adress: "/" },
+                    ]
                 }
             },
             {
@@ -173,7 +178,7 @@ export default class homePage extends Component {
             {
                 component: 'TeacherList',
                 props: {
-
+                    
                 }
             },
             {

@@ -25,7 +25,7 @@ export default class modalWindow extends Component {
             },
         ],
         record: 0,
-        isShow: true,
+        isShow: false,
         moveObj: {
             left: 200,
             top: 100,

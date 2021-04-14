@@ -44,7 +44,8 @@ export default class schoolListImgText extends Component {
     }
     switchList = (type) => {
         return () => {
-            let { num, list } = this.state;
+            let { num } = this.state;
+            const { list } = this.props;
             if (type === 'top') {//上一个
                 if (num <= 0) return;
                 num--;

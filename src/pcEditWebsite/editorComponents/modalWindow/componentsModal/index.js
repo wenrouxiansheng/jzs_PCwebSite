@@ -1,26 +1,36 @@
 import React, { Component } from 'react'
 import './style.scss'
-import { RightCircleFilled, AlignLeftOutlined, BoldOutlined } from '@ant-design/icons';
+import { RightCircleFilled, AlignLeftOutlined, BoldOutlined, AreaChartOutlined, FontColorsOutlined } from '@ant-design/icons';
+
+import switchComponentInfo from '../../../componentsPropsInfo'
 
 export default class componentsModal extends Component {
     state = {
         headeList: ["新增模块", "页面模块"],
         componentList: [
             {
-                title: "常用控件",
+                title: "组件",
                 icon: <RightCircleFilled />,
                 active: true,
                 id: "1",
                 list: [
                     {
-                        text: "段落",
-                        icon: <AlignLeftOutlined />,
+                        text: "横幅图",
+                        icon: <AreaChartOutlined />,
                         id: "1-1",
+                        value: "Banner"
                     },
                     {
-                        text: "按钮",
-                        icon: <BoldOutlined />,
+                        text: "标题",
+                        icon: <FontColorsOutlined />,
                         id: "1-2",
+                        value: "Title"
+                    },
+                    {
+                        text: "图文",
+                        icon: <FontColorsOutlined />,
+                        id: "1-3",
+                        value: "ImgAndText"
                     },
                 ]
             },
@@ -63,6 +73,12 @@ export default class componentsModal extends Component {
             })
         }
     }
+    addComponent = (value) => {
+        return () => {
+            let iframe = document.getElementById('iframe').contentWindow;
+            iframe.PubSub.publish('addComponent', {component: value, info: switchComponentInfo(value)});
+        }
+    }
     render() {
         const { record, componentList, headeList } = this.state;
         return (
@@ -86,7 +102,7 @@ export default class componentsModal extends Component {
                                 <ul className="controlMenu" style={{ display: item.active ? 'flex' : 'none' }}>
                                     {
                                         item.list.map((info, j) => {
-                                            return <li key={info.id}>
+                                            return <li key={info.id} onClick={this.addComponent(info.value)}>
                                                 {info.icon}
                                                 <span>{info.text}</span>
                                             </li>

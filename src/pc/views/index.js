@@ -1,4 +1,4 @@
-import React, { Suspense, Component } from 'react'
+import React, { Suspense, Component} from 'react'
 import { ConfigProvider, Skeleton } from 'antd';
 import { Route, Redirect, Switch } from 'react-router-dom'
 import zhCN from 'antd/lib/locale/zh_CN';
@@ -12,6 +12,7 @@ import SelectionModifiers from '@components/common/selectionModifiers'  //右侧
 import routeList from '../router'
 import { editingStatus } from '../../store/store'
 import { changeEditingStatus } from '../../store/actions'
+
 
 //页面汇总文件
 
@@ -76,7 +77,6 @@ export default class page extends Component {
             <ConfigProvider locale={zhCN}>
                 <Header />
                 <Nav />
-
                 <Suspense fallback={Loading}>
                     <Switch>
                         {

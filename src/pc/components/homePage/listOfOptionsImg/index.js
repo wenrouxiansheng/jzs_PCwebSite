@@ -70,9 +70,11 @@ export default class listOfOptionsImg extends Component {
     switchImgList = (type) => {
         //左右切换图片列表
         return () => {
-            const { selectedIndex, list, switchIndex } = this.state;
+            const { selectedIndex, switchIndex } = this.state;
+            const { list } = this.props;
             const imgList = list[selectedIndex].imgList;
             let num = switchIndex;
+            console.log(num)
             if (type === "prev") {
                 if (switchIndex === 0) return;
                 num--;
@@ -88,7 +90,8 @@ export default class listOfOptionsImg extends Component {
     }
     activeState = (type) => {
         //初始化左右按钮是否添加active样式 ，每次render之后都会判断一次
-        const { list, switchIndex, selectedIndex } = this.state;
+        const { switchIndex, selectedIndex } = this.state;
+        const { list } = this.props;
         const imgList = list[selectedIndex].imgList;
         if (type === 'right') {
             let num = imgList.length - 4;

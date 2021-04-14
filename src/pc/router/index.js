@@ -1,7 +1,7 @@
 
 import { lazy } from 'react'
 const pcRouter = {
-    path: '/pc',
+    path: '/site/pc',
     children: [
         {
             path: '/home',

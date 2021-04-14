@@ -134,6 +134,7 @@ export default class listOptionsImgEdit extends Component {
         this.setState({});
     }
     addImg = () => {
+        //添加图片
         const { level1, templateImg } = this.state,
             { props: { list } } = this.props.detail[0];
         list[level1].imgList.push(templateImg);

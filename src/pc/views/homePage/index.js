@@ -178,7 +178,24 @@ export default class homePage extends Component {
             {
                 component: 'TeacherList',
                 props: {
-                    
+                    list: [
+                        {
+                            info: [
+                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵1", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                                { img: require('../../assets/homePage/teacher/teacher2.png').default, name: "余子涵2", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                                { img: require('../../assets/homePage/teacher/teacher3.png').default, name: "余子涵3", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                                { img: require('../../assets/homePage/teacher/teacher4.png').default, name: "余子涵4", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                                { img: require('../../assets/homePage/teacher/teacher5.png').default, name: "余子涵5", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                            ]
+                        },
+                        {
+                            info: [
+                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                            ]
+                        },
+                    ]
                 }
             },
             {
@@ -190,7 +207,16 @@ export default class homePage extends Component {
             {
                 component: 'GloryList',
                 props: {
-
+                    data: [
+                        [
+                            { id: 1, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "桔子树4岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
+                            { id: 2, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "桔子树5岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
+                        ],
+                        [
+                            { id: 3, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "桔子树6岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
+                            { id: 4, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "桔子树7岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
+                        ]
+                    ]
                 }
             },
             {

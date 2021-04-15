@@ -101,6 +101,11 @@
                         display: block;
                         /*公共输入样式*/
                         min-height: 40px;
+                        margin: 30px 0px;
+                        img {
+                            object-fit: cover;
+                            cursor: pointer;
+                        }
                         span {
                             display: inline-block;
                             width: auto;

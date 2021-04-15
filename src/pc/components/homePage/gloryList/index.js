@@ -32,7 +32,7 @@ export default class gloryList extends Component {
         this.carousel.current.prev();
     }
     render() {
-        const { detail } = this.state;
+        const { data: detail } = this.props;
         return (
             <ScrollOverPack always={false}>
                 <QueueAnim type="bottom" duration="1000" className="gloryList-antMotion-box">

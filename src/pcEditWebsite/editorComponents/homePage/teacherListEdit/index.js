@@ -39,13 +39,13 @@ export default class teacherListEdit extends Component {
         //阻止点击事件冒泡   不设置会再触发一次switchData 会顶替掉setstate
         e.stopPropagation();
         //删除一条数据
-        const { props: { list } } = this.props.detail[0],
+        const { props, props: { list } } = this.props.detail[0],
             { indexed: [flag1, flag2] } = this.state;
         if (list[0].info.length === 1) {
             PubSub.publish('operationMessage', { type: 'warning', message: "请保留一条有效数据，如需删除请先添加" });
             return;
         }
-        // list[flag1].info.splice(flag2, 1);
+        list[flag1].info.splice(flag2, 1);
         let ary = list.map(item => {
             return item.info
         })
@@ -59,52 +59,25 @@ export default class teacherListEdit extends Component {
             container.info.push(item);
             if ((index + 1) % 5 === 0) {
                 newAry.push(container);
-                // container.info = [];
+                container = {
+                    info: []
+                };
                 return;
             }
             //单数结尾添加进去
             if (index === separate.length - 1) {
                 newAry.push(container);
-                // container.info = [];
+                container = {
+                    info: []
+                };
             }
         });
-        container.info = [];
-        console.log(separate, newAry, list)
 
-        // props.data = newary;
+        props.list = newAry;
+        console.log(separate, newAry, list)
         this.setState({
             indexed: [0, 0]
         })
-        //这里实现相当于二维数组的 删除和顶替    代码很丑待优化标记
-        // if (list.length - 1 !== flag1) {
-        //     list[flag1].info.splice(flag2, 1);
-        //     list[flag1].info.push(list[flag1 + 1].info[0])
-        //     if (list[flag1 + 1].info.length === 1) {
-        //         list.splice(flag1 + 1, 1)
-        //     } else {
-        //         list[flag1 + 1].info.splice(0, 1);
-        //     }
-        // } else {
-        //     list[flag1].info.splice(flag2, 1);
-        // }
-
-        // let obj = {
-        //     info: []
-        // }
-        // let ary = list.map(item => {
-        //     return item.info
-        // })
-        // //扁平化数组
-        // let separate = ary.flat(Infinity);
-
-        // let newAry = separate.map(item => {
-        //     return {
-
-        //     }
-        // })
-        // console.log(separate)
-        // this.setState({})
-
     }
     onChangeInput = (type) => {
         //更改一条数据

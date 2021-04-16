@@ -4,7 +4,7 @@ import PubSub from 'pubsub-js'
 
 import DropDownPrompt from '@components/homePage/dropDownPrompt'
 import switchComponents from '@components/allComponents'//汇总的组件
-import { getParents, throttle } from '../../publicjs'
+import { homePageMouseMove, throttle } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
 
 let getChangeComponent = null;
@@ -228,7 +228,24 @@ export default class homePage extends Component {
             {
                 component: 'BrandHonor',
                 props: {
-
+                    list: [
+                        [
+                            { img: require('../../assets/homePage/brandHonor/glory1.png').default, detail: "2018北京文化创意大赛 全国总决赛二等奖" },
+                            { img: require('../../assets/homePage/brandHonor/glory2.png').default, detail: "2018通州文创产业人才提升计划路演展示一等奖" },
+                            { img: require('../../assets/homePage/brandHonor/glory3.png').default, detail: "2018世界移动互联网大会最具品牌影响力企业" },
+                            { img: require('../../assets/homePage/brandHonor/glory4.png').default, detail: "百度教育2017年度教育行业典范" },
+                            { img: require('../../assets/homePage/brandHonor/glory5.png').default, detail: "网易教育2014年度最具影响力教育集团" },
+                        ],
+                        [
+                            { img: require('../../assets/homePage/brandHonor/glory6.png').default, detail: "腾讯大燕网京津冀十佳教育辅导机构" },
+                        ]
+                    ],
+                    introduceList: [
+                        { img: require('../../assets/homePage/brandHonor/list1.png').default, text: "艺术教育培训经验", font: ["9", "年"] },
+                        { img: require('../../assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["18", "家"] },
+                        { img: require('../../assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["88", "种"] },
+                        { img: require('../../assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["40", "余万"] },
+                    ]
                 }
             }
         ]
@@ -255,38 +272,13 @@ export default class homePage extends Component {
             })
         });
     }
-    homePageMouseMove = (e) => {
-        const { componentJson } = this.state;
-        //在编辑时调整右上角悬浮窗位置
-        if (e.target.nodeName === 'path') return;
-        const target = getParents(e.target, 'componentContainer');
-
-        if (!target || !target.parentNode) return;
-
-        const num = target.parentNode.getAttribute('flag'),//选中组件的下标
-            info = {
-                display: 'block',
-                width: `${target.offsetWidth}px`,
-                height: `0px`,
-                left: `${target.offsetLeft}px`,
-                top: `${target.offsetTop}px`,
-            },
-            activeObjInfo = {
-                num,
-                componentJson,
-                type: "homePage"
-            }
-        //更改悬浮窗位置
-        PubSub.publish('changeSelectionPosition', info);
-
-        //选中之后把页面的组件数据   以及选择的组件下标传到悬浮小窗口中
-        PubSub.publish('getActiveObj', activeObjInfo);
-    }
     seekComponents = () => {
         const { componentJson } = this.state;
         //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
         return componentJson.map((item, index) => {
-            return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`} onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(this.homePageMouseMove, 300) : null} key={index} flag={index}>
+            return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`}
+                onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, 'homePage'), 300) : null}
+                key={index} flag={index}>
                 {switchComponents(item.component, item.props)}
             </div>
         })

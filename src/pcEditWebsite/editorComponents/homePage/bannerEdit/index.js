@@ -101,7 +101,6 @@ export default class bannerEdit extends Component {
         const { list } = this.state,
             { props: { bannerList } } = list[0];
         let obj = { id: bannerList.length + 1, adress: "#", src: require("../../../assets/photoGallery/banner.jpg").default };
-
         bannerList.push(obj)
         this.setState({
             list

@@ -39,7 +39,8 @@ export default class brandHonor extends Component {
         ]
     }
     render() {
-        const { list, introduceList } = this.state;
+        const { list, introduceList } = this.props.list ? this.props : this.state;
+        // const { list, introduceList } = this.props;
         return (
             <ScrollOverPack always={false}>
                 <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box">

@@ -4,6 +4,7 @@ import { CloseCircleOutlined } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
 import { Popconfirm } from 'antd';
 
+let imgMessage = null;
 export default class gloryListEdit extends Component {
     state = {
         indexed: null
@@ -38,7 +39,9 @@ export default class gloryListEdit extends Component {
             }
         });
         props.data = newary;
-        this.setState({});
+        this.setState({
+            indexed: null
+        });
     }
     switchData = (num) => {
         return () => {
@@ -68,10 +71,45 @@ export default class gloryListEdit extends Component {
 
         this.setState({});
     }
+    chaneText = (type) => {
+        return (e) => {
+            const { props: { data } } = this.props.detail[0],
+                { indexed } = this.state;
+            if (!indexed) {
+                PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改数据" });
+                return;
+            }
+            data[indexed[0]][indexed[1]][type] = e.target.value;
+            this.setState({});
+        }
+    }
+    changeImage = () => {
+        const { indexed } = this.state;
+        if (!indexed) {
+            PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的图片" });
+            return false;
+        }
+        const { props: { data } } = this.props.detail[0],
+            { indexed: [flag1, flag2] } = this.state;
+
+        //唤醒图片库
+        PubSub.publish('awakenPhotoGallery', true);
+        //订阅 - 更改图片后回调
+        imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
+            data[flag1][flag2].src = imgData;
+            this.setState({})
+            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+            PubSub.unsubscribe(imgMessage);
+        });
+    }
+    changeData = () => {
+        //传递修改的数据
+        const { detail } = this.props;
+        PubSub.publish('revisedDataList', detail);
+    }
     render() {
         const { props: { data } } = this.props.detail[0],
             { indexed } = this.state;
-        console.log(data)
         return (
             <div className="gloryListEdit">
                 <div className="input_box" style={{ marginBottom: '10px' }}>
@@ -91,6 +129,18 @@ export default class gloryListEdit extends Component {
                         })
                     }
                     <div className="add" onClick={this.addData}>+</div>
+                </div>
+                <div className="input_box">
+                    <span>更改选中图片：</span><button className="changeImg" onClick={this.changeImage}>点击更改</button>
+                </div>
+                <div className="input_box">
+                    <label><span>标题：</span><input type="text" name="title" placeholder="请输入文字" key={indexed} onChange={this.chaneText('title')} defaultValue={indexed !== null ? data[indexed[0]][indexed[1]].title : ''} /></label>
+                </div>
+                <div className="input_box">
+                    <label><span>文案：</span><textarea key={indexed} defaultValue={indexed !== null ? data[indexed[0]][indexed[1]].detail : ''} onChange={this.chaneText('detail')}></textarea></label>
+                </div>
+                <div className="changeComponentConf">
+                    <button onClick={this.changeData} >确认</button>
                 </div>
             </div>
         )

@@ -40,11 +40,11 @@ export default class pcEditWebsite extends Component {
 
         //订阅 - 修改组件后的消息是成功还是什么失败
         operationMessage = PubSub.subscribe('operationMessage', (msg, data) => {
-            if(data.type === 'success') message.success(data.message);
+            if (data.type === 'success') message.success(data.message);
 
-            if(data.type === 'warning') message.warning(data.message);
+            if (data.type === 'warning') message.warning(data.message);
 
-            if(data.type === 'error') message.error(data.message);
+            if (data.type === 'error') message.error(data.message);
         });
 
     }
@@ -55,6 +55,10 @@ export default class pcEditWebsite extends Component {
         PubSub.unsubscribe(operationMessage);
     }
     changeRevisedDataList = (data) => {
+
+        if (!Array.isArray(data)) {
+            throw new Error("传递的值应为数组");
+        }
         const iframe = this.iframe.current.contentWindow;
         //获得修改后的数据 根据下标替换
         const { changedComponents } = this.state,

@@ -44,7 +44,7 @@ export default class zoomCarousel extends Component {
     }
     render() {
         const { currentSub, imgList } = this.state;
-        const { classList } = this.props;
+        const { list: classList } = this.props;
         let list = classList || imgList;
         return (
             <div className="zoomCarousel">

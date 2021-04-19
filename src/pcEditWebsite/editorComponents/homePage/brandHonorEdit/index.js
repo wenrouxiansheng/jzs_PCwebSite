@@ -70,7 +70,7 @@ export default class brandHonorEdit extends Component {
         return (e) => {
             const { props: { list } } = this.props.detail[0],
                 { indexed } = this.state;
-            if (!indexed) {
+            if (indexed === null) {
                 PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改数据" });
                 return;
             }
@@ -80,7 +80,7 @@ export default class brandHonorEdit extends Component {
     }
     changeImage = () => {
         const { indexed } = this.state;
-        if (!indexed) {
+        if (indexed === null) {
             PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的图片" });
             return false;
         }
@@ -104,7 +104,8 @@ export default class brandHonorEdit extends Component {
     }
     render() {
         const { indexed } = this.state;
-        const { props: { introduceList, list } } = this.props.detail[0]
+        const { props: { list } } = this.props.detail[0]
+        //introduceList
         return (
             <div className="brandHonorEdit">
                 <div className="input_box" style={{ marginBottom: '10px' }}>

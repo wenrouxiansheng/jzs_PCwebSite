@@ -13,13 +13,15 @@ export default class exhibition extends Component {
         }
     }
     render() {
-        const { data } = this.props.length ? this.props : this.state;
+        const { data: propsData } = this.props;
+        const { data: stateDate } = this.state;
+        let data = propsData || stateDate
         return (
             <div className="exhibition">
                 <div className="fontContainer">
                     <div>
                         <h3>{data.title}</h3>
-                        <p>{data.text}</p>
+                        <p dangerouslySetInnerHTML={{ __html: data.text }}></p>
                     </div>
                     <strong>{data.number1}</strong>
                 </div>

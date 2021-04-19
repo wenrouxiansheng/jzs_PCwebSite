@@ -2,6 +2,15 @@
     width: 1200px;
     margin: 0 auto;
     min-height: 300px;
+    display: flex;
+    justify-content: center;
+    .nav {
+        width: 150px;
+    }
+    .container {
+        width: 970px;
+        min-height: 400px;
+    }
     .ant-timeline-item-head-blue {
         border-color: #fca603;
     }
@@ -10,27 +19,27 @@
             font-size: 28px;
             margin-top: -10px;
         }
-        .container {
-            width: 1100px;
-            min-height: 300px;
-            border-radius: 5px;
-            // box-shadow: 0px 0px 8px #d4d1cf;
-            line-height: 26px;
-            padding: 10px;
-            .img_text {
-                margin: 10px 0px;
-                display: flex;
-                align-items: center;
-                img {
-                    width: 180px;
-                    height: 120px;
-                    object-fit: cover;
-                }
-                span {
-                    font-size: 14px;
-                    margin-left: 15px;
-                    font-weight: bold;
-                }
+    }
+    .container {
+        width: 1100px;
+        min-height: 300px;
+        border-radius: 5px;
+        // box-shadow: 0px 0px 8px #d4d1cf;
+        line-height: 26px;
+        padding: 10px 10px 100px 10px;
+        .img_text {
+            margin: 10px 0px;
+            display: flex;
+            align-items: center;
+            img {
+                width: 180px;
+                height: 120px;
+                object-fit: cover;
+            }
+            span {
+                font-size: 14px;
+                margin-left: 15px;
+                font-weight: bold;
             }
         }
     }

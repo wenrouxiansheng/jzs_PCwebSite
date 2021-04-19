@@ -75,7 +75,7 @@ export default class gloryListEdit extends Component {
         return (e) => {
             const { props: { data } } = this.props.detail[0],
                 { indexed } = this.state;
-            if (!indexed) {
+            if (indexed === null) {
                 PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改数据" });
                 return;
             }
@@ -85,7 +85,7 @@ export default class gloryListEdit extends Component {
     }
     changeImage = () => {
         const { indexed } = this.state;
-        if (!indexed) {
+        if (indexed === null) {
             PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的图片" });
             return false;
         }

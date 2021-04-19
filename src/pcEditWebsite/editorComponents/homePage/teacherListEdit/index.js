@@ -83,7 +83,7 @@ export default class teacherListEdit extends Component {
         //更改一条数据
         return (e) => {
             const { indexed } = this.state;
-            if (!indexed) {
+            if (indexed === null) {
                 PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的数据" });
                 return false;
             }
@@ -95,7 +95,7 @@ export default class teacherListEdit extends Component {
     }
     changeImage = () => {
         const { indexed } = this.state;
-        if (!indexed) {
+        if (indexed === null) {
             PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的图片" });
             return false;
         }

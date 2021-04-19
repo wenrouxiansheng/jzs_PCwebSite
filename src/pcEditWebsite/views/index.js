@@ -6,6 +6,7 @@ import EditorSuspension from "../components/suspensionEditor";//编辑器容器
 import ImgGalleryEditor from "../components/imgGalleryEditor";//图片库
 import ModalWindow from "../components/modalWindow";//悬浮模态窗
 import Toolbar from "../components/toolbar";//左侧工具栏
+import RichTextEditor from "../components/richTextEditor";//富文本编辑器
 
 const style = {
     position: 'relative',
@@ -91,6 +92,7 @@ export default class pcEditWebsite extends Component {
                 <ImgGalleryEditor />
                 <ModalWindow />
                 <Toolbar />
+                <RichTextEditor />
             </div>
         )
     }

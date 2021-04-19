@@ -3,10 +3,63 @@ import { Timeline } from 'antd';
 import './style.scss'
 
 export default class history extends Component {
+    state = {
+        indexed: 0,
+        data: [
+            {
+                time: 2019,
+                info: [
+                    { type: 'text', text: "1、3月20日，桔子树七周年庆典，七百余名教职员工在朝阳区蓝调薰衣草庄园共同庆祝" },
+                    { type: 'text', text: "2、4月，中国舞蹈家协会授予桔子树艺术教育“中国舞蹈家协会《中国舞蹈考级》2018年度北京地区考级示范基地”" },
+                    { type: 'text', text: "3、4月，桔子树艺术教育获得创业黑马主办的“2019黑马大赛教育产业赛决赛”亚军" },
+                    { type: 'img', text: "05月 桔子树上海七宝校区成立", img: require('../../../assets/brandIntroduction/history/school20_05.png').default },
+                    { type: 'text', text: "4、6月，桔子树第三届金桔杯艺术大赛第三次被北京市文资办主办的第七届北京惠民文化消费季纳入“视听飨宴”板块。" },
+                    { type: 'img', text: "07月 桔子树石景山校区成立", img: require('../../../assets/brandIntroduction/history/school16_05.png').default },
+                    { type: 'text', text: "5、7月，数百名桔子树学员在北京音乐厅录制CCTV《童心唱祖国》献礼祖国70周年" },
+                    { type: 'text', text: "6、12月，先后荣获腾讯新闻2019知名素质教育品牌、百度文库2019素质教育行业杰出品牌、巨量引擎2019城市教育行业影响力机构等多项殊荣" },
+                    { type: 'text', text: "2019年桔子树全国直营校区达18家（北京16家、上海2家）" },
+                ]
+            }
+        ]
+    }
+    switchData = () => {
+        const { data, indexed } = this.state;
+        let str = ''
+        data[indexed].info.forEach((item, index) => {
+            if (item.type === 'text') {
+                str += item.text + '<br />'
+            }
+            if (item.type === 'img') {
+                str += `<div class="img_text">
+                <img src=${item.img} alt="" />
+                <span>${item.text}</span>
+            </div>`
+            }
+        })
+            console.log(str)
+
+        return str;
+    }
     render() {
         return (
             <div className="developmentHistory">
-                <Timeline>
+                <Timeline className="nav">
+                    <Timeline.Item>
+                        <h1>2013</h1>
+                    </Timeline.Item>
+                    <Timeline.Item>
+                        <h1>2013</h1>
+                    </Timeline.Item>
+                    <Timeline.Item>
+                        <h1>2013</h1>
+                    </Timeline.Item>
+                    <Timeline.Item>
+                        <h1>2013</h1>
+                    </Timeline.Item>
+                </Timeline>
+                <div className="container" dangerouslySetInnerHTML={{ __html: this.switchData() }}>
+                </div>
+                {/* <Timeline>
                     <Timeline.Item>
                         <h3>2019</h3>
                         <div className="container">
@@ -98,9 +151,7 @@ export default class history extends Component {
                             8、6月10日-11日，第13届世界华人青少年艺术节，桔子树小选手星光璀璨！
                         </div>
                     </Timeline.Item>
-                    <Timeline.Item>
-                    </Timeline.Item>
-                </Timeline>
+                </Timeline> */}
             </div>
         )
     }

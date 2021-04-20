@@ -7,9 +7,9 @@ import './style.scss'
 let imgMessage = null;
 export default class listOptionsImgEdit extends Component {
     state = {
-        level1: 0,
-        level2: 0,
-        level2Img: 0,
+        level1: null,
+        level2: null,
+        level2Img: null,
         templateObj: {
             "text": "文案",
             "level2": [
@@ -126,12 +126,15 @@ export default class listOptionsImgEdit extends Component {
             this.setState({});
         }
     }
-    deleteImg = () => {
+    deleteImg = (e) => {
+        e.stopPropagation();
         //删除图片
         const { level1, level2Img } = this.state,
             { props: { list } } = this.props.detail[0];
         list[level1].imgList.splice(level2Img, 1);
-        this.setState({});
+        this.setState({
+            level2Img: null
+        });
     }
     addImg = () => {
         //添加图片
@@ -155,9 +158,33 @@ export default class listOptionsImgEdit extends Component {
             PubSub.unsubscribe(imgMessage);
         });
     }
+    deleteData = (type) => {
+        return (e) => {
+            //删除一级数据   或  二级文字
+            e.stopPropagation();
+            const { props: { list } } = this.props.detail[0]
+            const { level1, level2 } = this.state;
+            if (type === 'level1') {
+                list.splice(level1, 1);
+                this.setState({
+                    level1: null
+                })
+            }
+
+            if (type === 'level2') {
+                list[level1].level2.splice(level2, 1);
+                this.setState({
+                    level2: null
+                })
+            }
+
+        }
+
+    }
     render() {
         const { props: { list } } = this.props.detail[0]
         const { level1, level2, level2Img } = this.state;
+        console.log(list)
         return (
             <div className="listOptionsImgEdit">
                 <div className="input_box" style={{ marginBottom: '10px' }}>
@@ -166,56 +193,79 @@ export default class listOptionsImgEdit extends Component {
                 <ul className="level">
                     {
                         list.map((item, index) => {
-                            return <li className={level1 === index ? 'active' : ''} key={index} onClick={this.switchLevel1(index)}>{item.text}</li>
+                            return <li className={level1 === index ? 'active' : ''} key={index} onClick={this.switchLevel1(index)}>
+                                <Popconfirm placement="rightTop" title="确认删除？" onConfirm={this.deleteData('level1')} okText="是" cancelText="否">
+                                    <CloseCircleOutlined />
+                                </Popconfirm>
+                                {item.text}</li>
                         })
                     }
                     <li className="add" onClick={this.addLevel1}>+</li>
                 </ul>
-                <div className="input_box">
-                    <label><span>更改文字：</span><input type="text" name="level1Text" placeholder="请输入文字" onChange={this.changeLevel1Text} /></label>
-                </div>
-                <div className="input_box" style={{ marginBottom: '10px' }}>
-                    <label ><span style={{ fontSize: '18px', fontWeight: 'bold' }}>二级导航：</span></label>
-                </div>
-                <ul className="level">
-                    {
-                        list[level1].level2.map((item, index) => {
-                            return <li className={level2 === index ? 'active' : ''} key={index} onClick={this.switchLevel2(index)}>{item.text}</li>
-                        })
-                    }
-                    <li className="add" onClick={this.addLevel2}>+</li>
-                </ul>
-                <div className="input_box">
-                    <label><span>更改文字：</span><input type="text" name="level2Text" placeholder="请输入文字" onChange={this.changeLevel2Text('text')} /></label>
-                </div>
-                <div className="input_box">
-                    <label><span>更改跳转链接：</span><input type="text" name="level2Address" placeholder="请输入文字" onChange={this.changeLevel2Text('address')} /></label>
-                </div>
-                <div className="input_box" style={{ marginBottom: '10px' }}>
-                    <label ><span style={{ fontSize: '18px', fontWeight: 'bold' }}>二级图片导航：</span></label>
-                </div>
-                <div className="initElementImgList">
-                    {
-                        list[level1].imgList.map((item, index) => {
-                            return <div key={index} className={level2Img === index ? "active" : ""} onClick={this.switchlevel2Img(index)}>
-                                <img src={item.src} alt="" />
-                                <Popconfirm placement="rightTop" title="确认删除？" onConfirm={this.deleteImg} okText="是" cancelText="否">
-                                    <CloseCircleOutlined />
-                                </Popconfirm>
+                {
+                    level1 !== null ?
+                        <div>
+                            <div className="input_box">
+                                <label><span>更改文字：</span><input type="text" name="level1Text" key={level1} placeholder="请输入文字" defaultValue={list[level1].text} onChange={this.changeLevel1Text} /></label>
                             </div>
-                        })
-                    }
-                    <div className="add" onClick={this.addImg}>+</div>
-                </div>
-                <div className="input_box">
-                    <span>更改选中图片：</span><button className="changeImg" onClick={this.changeImage}>点击更改</button>
-                </div>
-                <div className="input_box">
-                    <label><span>更改文案：</span><input type="text" name="text" placeholder="请输入文字" onChange={this.changeLevel2ImgText('text')} /></label>
-                </div>
-                <div className="input_box">
-                    <label><span>更改跳转链接：</span><input type="text" name="href" placeholder="请输入文字" onChange={this.changeLevel2ImgText('address')} /></label>
-                </div>
+                            <div className="input_box" style={{ marginBottom: '10px' }}>
+                                <label ><span style={{ fontSize: '18px', fontWeight: 'bold' }}>二级导航：</span></label>
+                            </div>
+                            <ul className="level">
+                                {
+                                    list[level1].level2.map((item, index) => {
+                                        return <li className={level2 === index ? 'active' : ''} key={index} onClick={this.switchLevel2(index)}>
+                                            <Popconfirm placement="rightTop" title="确认删除？" onConfirm={this.deleteData('level2')} okText="是" cancelText="否">
+                                                <CloseCircleOutlined />
+                                            </Popconfirm>
+                                            {item.text}</li>
+                                    })
+                                }
+                                <li className="add" onClick={this.addLevel2}>+</li>
+                            </ul>
+                            {
+                                level1 !== null && level2 !== null ?
+                                    <div>
+                                        <div className="input_box">
+                                            <label><span>更改文字：</span><input type="text" name="level2Text" key={level1 + level2} placeholder="请输入文字" defaultValue={list[level1].level2[level2].text} onChange={this.changeLevel2Text('text')} /></label>
+                                        </div>
+                                        <div className="input_box">
+                                            <label><span>更改跳转链接：</span><input type="text" name="level2Address" key={level1 + level2} placeholder="请输入文字" onChange={this.changeLevel2Text('address')} defaultValue={list[level1].level2[level2].adress} /></label>
+                                        </div>
+                                    </div> : null
+                            }
+                            <div className="input_box" style={{ marginBottom: '10px' }}>
+                                <label ><span style={{ fontSize: '18px', fontWeight: 'bold' }}>二级图片导航：</span></label>
+                            </div>
+                            <div className="initElementImgList">
+                                {
+                                    list[level1].imgList.map((item, index) => {
+                                        return <div key={index} className={level2Img === index ? "active" : ""} onClick={this.switchlevel2Img(index)}>
+                                            <img src={item.src} alt="" />
+                                            <Popconfirm placement="rightTop" title="确认删除？" onConfirm={this.deleteImg} okText="是" cancelText="否">
+                                                <CloseCircleOutlined />
+                                            </Popconfirm>
+                                        </div>
+                                    })
+                                }
+                                <div className="add" onClick={this.addImg}>+</div>
+                            </div>
+                            {
+                                level1 !== null && level2Img !== null ?
+                                    <div>
+                                        <div className="input_box">
+                                            <span>更改选中图片：</span><button className="changeImg" onClick={this.changeImage}>点击更改</button>
+                                        </div>
+                                        <div className="input_box">
+                                            <label><span>更改文案：</span><input type="text" name="text" key={level1 + level2Img} defaultValue={list[level1].imgList[level2Img].text} placeholder="请输入文字" onChange={this.changeLevel2ImgText('text')} /></label>
+                                        </div>
+                                        <div className="input_box">
+                                            <label><span>更改跳转链接：</span><input type="text" name="href" key={level1 + level2Img} defaultValue={list[level1].imgList[level2Img].adress} placeholder="请输入文字" onChange={this.changeLevel2ImgText('address')} /></label>
+                                        </div>
+                                    </div> : null
+                            }
+                        </div> : null
+                }
                 <div className="changeComponentConf">
                     <button onClick={this.changeData} >确认</button>
                 </div>

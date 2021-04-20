@@ -32,7 +32,6 @@ export function throttle(func, time) {
 
 export function homePageMouseMove(componentJson, type) {
     return (e) => {
-        console.log(type)
         //在编辑时调整右上角悬浮窗位置
         const target = getParents(e.target, 'componentContainer');
         if (!target || !target.parentNode) return;

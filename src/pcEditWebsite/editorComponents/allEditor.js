@@ -14,6 +14,7 @@ const GloryListEdit = lazy(() => import('./homePage/gloryListEdit'))//学员荣�
 const BrandHonorEdit = lazy(() => import('./homePage/brandHonorEdit'))//品牌荣誉列表编辑器
 const ExhibitionEdit = lazy(() => import('./brandIntroduction/exhibitionEdit'))//品牌介绍 - 介绍编辑器
 const IntroduceEdit = lazy(() => import('./brandIntroduction/introduceEdit'))//品牌介绍 - 介绍列表编辑器
+const HistoryEdit = lazy(() => import('./brandIntroduction/HistoryEdit'))//品牌介绍 - 历史历程编辑器
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
@@ -30,6 +31,7 @@ export default function switchComponentEdit(componentInfo) {
         case 'BrandHonor': return <BrandHonorEdit detail={componentInfo} />;
         case 'Exhibition': return <ExhibitionEdit detail={componentInfo} />;
         case 'Introduce': return <IntroduceEdit detail={componentInfo} />;
+        case 'History': return <HistoryEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
 }

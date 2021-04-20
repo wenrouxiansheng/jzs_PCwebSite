@@ -33,8 +33,7 @@ export default class bannerEdit extends Component {
                 this.setState({
                     list
                 })
-                //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-                PubSub.unsubscribe(imgMessage);
+
             });
         }
     }
@@ -46,7 +45,6 @@ export default class bannerEdit extends Component {
             inputIsShow: false
         })
         PubSub.publish('revisedDataList', list);
-
     }
     componentDidMount() {
         //挂载数据
@@ -54,6 +52,10 @@ export default class bannerEdit extends Component {
         this.setState({
             list: detail
         })
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+        PubSub.unsubscribe(imgMessage);
     }
     move = (num, type) => {
         return () => {

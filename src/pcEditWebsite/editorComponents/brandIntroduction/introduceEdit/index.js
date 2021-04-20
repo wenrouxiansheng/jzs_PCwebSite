@@ -67,8 +67,7 @@ export default class introduceEdit extends Component {
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
             data[indexed].img = imgData;
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(imgMessage);
+            
         });
     }
     awakenRichText = () => {
@@ -85,14 +84,18 @@ export default class introduceEdit extends Component {
             let str = data.replace(/<\/?p>/g, '');
             list[indexed].text = str;
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(textMessage);
+
         });
     }
     changeData = () => {
         //传递修改数据
         const { detail } = this.props
         PubSub.publish('revisedDataList', detail);
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅 
+        PubSub.unsubscribe(textMessage);
+        PubSub.unsubscribe(imgMessage);
     }
     render() {
         const { indexed } = this.state;

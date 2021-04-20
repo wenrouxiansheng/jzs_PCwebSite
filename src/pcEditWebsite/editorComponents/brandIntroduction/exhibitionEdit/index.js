@@ -25,10 +25,8 @@ export default class exhibitionEdit extends Component {
         //订阅 - 接收修改后的富文本值
         textMessage = PubSub.subscribe('amendRichText', (msg, data) => {
             info.text = data;
-            
+
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(textMessage);
         });
     }
     changeImage = () => {
@@ -39,9 +37,13 @@ export default class exhibitionEdit extends Component {
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
             data.img = imgData;
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(imgMessage);
+
         });
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+        PubSub.unsubscribe(imgMessage);
+        PubSub.unsubscribe(textMessage);
     }
     render() {
         const { props: { data: { number1, number2, title, img } } } = this.props.detail[0]

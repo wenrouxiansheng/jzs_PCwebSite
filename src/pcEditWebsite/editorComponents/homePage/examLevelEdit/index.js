@@ -4,6 +4,7 @@ import PubSub from 'pubsub-js'
 import { Popconfirm } from 'antd';
 import './style.scss'
 
+let imgMessage = null;
 export default class examLevelEdit extends Component {
     state = {
         indexed: null
@@ -16,7 +17,20 @@ export default class examLevelEdit extends Component {
             })
         }
     }
-    deleteData = () => {
+    chaneImage = () => {
+        const { props: { list } } = this.props.detail[0]
+        const { indexed } = this.state;
+        //唤醒图片库
+        PubSub.publish('awakenPhotoGallery', true);
+
+        //订阅 - 更改图片后回调
+        imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
+            list[indexed].src = imgData;
+            this.setState({})
+        });
+    }
+    deleteData = (e) => {
+        e.stopPropagation();
         //删除一条数据
         const { indexed } = this.state,
             { props: { list } } = this.props.detail[0];
@@ -50,6 +64,10 @@ export default class examLevelEdit extends Component {
         const { detail } = this.props;
         PubSub.publish('revisedDataList', detail);
     }
+    componentWillUnmount() {
+        //卸载订阅
+        PubSub.unsubscribe(imgMessage);
+    }
     render() {
         const { props: { list } } = this.props.detail[0]
         const { indexed } = this.state;
@@ -71,15 +89,23 @@ export default class examLevelEdit extends Component {
                     }
                     <div className="add" onClick={this.addData}>+</div>
                 </div>
-                <div className="input_box">
-                    <label><span>标题：</span><input type="text" name="title" placeholder="请输入标题" key={indexed || 1} defaultValue={list[indexed] ? list[indexed].text : ''} onChange={this.onInputChange('text')} /></label>
-                </div>
-                <div className="input_box">
-                    <label><span>副标题：</span><input type="text" name="subtitle" placeholder="请输入副标题" key={indexed || 1} defaultValue={list[indexed] ? list[indexed].subText : ''} onChange={this.onInputChange('subText')} /></label>
-                </div>
-                <div className="input_box">
-                    <label><span>跳转地址：</span><input type="text" name="address" placeholder="请输入地址" key={indexed || 1} defaultValue={list[indexed] ? list[indexed].adress : ''} onChange={this.onInputChange('adress')} /></label>
-                </div>
+                {
+                    indexed !== null ?
+                        <div>
+                            <div className="input_box">
+                                <label><span>点击图片更改：</span><button className="changeImg" onClick={this.chaneImage}>点击图片更改：</button></label>
+                            </div>
+                            <div className="input_box">
+                                <label><span>标题：</span><input type="text" name="title" placeholder="请输入标题" key={indexed} defaultValue={list[indexed].text} onChange={this.onInputChange('text')} /></label>
+                            </div>
+                            <div className="input_box">
+                                <label><span>副标题：</span><input type="text" name="subtitle" placeholder="请输入副标题" key={indexed} defaultValue={list[indexed].subText} onChange={this.onInputChange('subText')} /></label>
+                            </div>
+                            <div className="input_box">
+                                <label><span>跳转地址：</span><input type="text" name="address" placeholder="请输入地址" key={indexed} defaultValue={list[indexed].adress} onChange={this.onInputChange('adress')} /></label>
+                            </div>
+                        </div> : null
+                }
                 <div className="changeComponentConf">
                     <button onClick={this.changeData} >确认</button>
                 </div>

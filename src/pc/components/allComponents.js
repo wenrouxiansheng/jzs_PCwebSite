@@ -11,7 +11,8 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     AddModule = lazy(() => import('./common/addModule')),
     Exhibition = lazy(() => import('./brandIntroduction/index/exhibition')),
     Introduce = lazy(() => import('./brandIntroduction/index/introduce')),
-    ClassScene = lazy(() => import('./brandIntroduction/index/classScene'));
+    ClassScene = lazy(() => import('./brandIntroduction/index/classScene')),
+    History = lazy(() => import('./brandIntroduction/history'));
 
 export default function switchComponents(name, props) {
     switch (name) {
@@ -27,7 +28,8 @@ export default function switchComponents(name, props) {
         case 'AddModule': return <AddModule />; //添加模块
         case 'Exhibition': return <Exhibition {...props} />; //品牌介绍
         case 'Introduce': return <Introduce {...props} />; //品牌介绍 规模
-        case 'ClassScene': return <ClassScene {...props} />; //品牌介绍 规模
+        case 'ClassScene': return <ClassScene {...props} />; //品牌介绍 这个没写
+        case 'History': return <History {...props} />; //历史历程
         default: return <div>没有找到组件</div>
     }
 }

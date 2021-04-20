@@ -93,9 +93,12 @@ export default class brandHonorEdit extends Component {
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
             list[flag1][flag2].img = imgData;
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(imgMessage);
+
         });
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+        PubSub.unsubscribe(imgMessage);
     }
     changeData = () => {
         //传递修改的数据

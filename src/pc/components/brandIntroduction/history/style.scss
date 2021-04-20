@@ -6,10 +6,27 @@
     justify-content: center;
     .nav {
         width: 150px;
-    }
-    .container {
-        width: 970px;
-        min-height: 400px;
+        h1{
+            width: 70px !important;
+            position: relative;
+            cursor: pointer;
+            &::before{
+                content: "";
+                display: block;
+                width: 0px;
+                height: 4px;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                background-color: #fca603;
+                transition: .3s;
+            }
+            &.active{
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
     }
     .ant-timeline-item-head-blue {
         border-color: #fca603;
@@ -22,11 +39,22 @@
     }
     .container {
         width: 1100px;
-        min-height: 300px;
+        min-height: 800px;
         border-radius: 5px;
         // box-shadow: 0px 0px 8px #d4d1cf;
         line-height: 26px;
         padding: 10px 10px 100px 10px;
+        animation: developmentHistory .3s ease-in-out;
+        @keyframes developmentHistory {
+            0%{
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
         .img_text {
             margin: 10px 0px;
             display: flex;

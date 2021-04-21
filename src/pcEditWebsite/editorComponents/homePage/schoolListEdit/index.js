@@ -81,8 +81,6 @@ export default class schoolListEdit extends Component {
                 props.list.smallList[num].src = imgData;
             }
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(imgMessage);
         });
     }
     addSchoolList = () => {
@@ -100,6 +98,10 @@ export default class schoolListEdit extends Component {
             smallList.splice(num, 1);
             this.setState({})
         }
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+        PubSub.unsubscribe(imgMessage);
     }
     render() {
         const { props: { list: { src, title, smallList } } } = this.props.detail[0]

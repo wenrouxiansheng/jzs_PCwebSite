@@ -154,8 +154,7 @@ export default class listOptionsImgEdit extends Component {
             list[level1].imgList[level2Img].src = imgData;
 
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(imgMessage);
+
         });
     }
     deleteData = (type) => {
@@ -167,10 +166,11 @@ export default class listOptionsImgEdit extends Component {
             if (type === 'level1') {
                 list.splice(level1, 1);
                 this.setState({
-                    level1: null
+                    level1: null,
+                    level2: null,
+                    level2Img: null
                 })
             }
-
             if (type === 'level2') {
                 list[level1].level2.splice(level2, 1);
                 this.setState({
@@ -180,6 +180,10 @@ export default class listOptionsImgEdit extends Component {
 
         }
 
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+        PubSub.unsubscribe(imgMessage);
     }
     render() {
         const { props: { list } } = this.props.detail[0]

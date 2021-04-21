@@ -51,6 +51,7 @@ export default class gloryListEdit extends Component {
             })
         }
     }
+
     addData = () => {
         //添加一条数据
         const { props: { data } } = this.props.detail[0],
@@ -98,9 +99,11 @@ export default class gloryListEdit extends Component {
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
             data[flag1][flag2].src = imgData;
             this.setState({})
-            //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
-            PubSub.unsubscribe(imgMessage);
         });
+    }
+    componentWillUnmount() {
+        //每次订阅接收到后 去除订阅   所有编辑器更改图片共用该订阅名称
+        PubSub.unsubscribe(imgMessage);
     }
     changeData = () => {
         //传递修改的数据

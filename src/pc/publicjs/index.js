@@ -2,7 +2,7 @@ import PubSub from 'pubsub-js'
 
 export function getParents(el, name) {//向上查找指定类名，如父元素有指定类名则返回自身
     let dom = el;
-    if (el.nodeName === 'svg') return;
+    if (!(el?.className?.indexOf)) return;
     if (el.className.indexOf(name) === -1) {
         for (let i = 0; i < Infinity; i++) {
             if (!dom.parentNode) return;

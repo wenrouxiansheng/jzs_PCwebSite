@@ -6,28 +6,24 @@ import circular from '@assets/danceTraining/childrenDance/circular.png'
 
 export default class learningGoal extends Component {
     render() {
-        const { textList } = this.props;
+        const { textList, info:{title, subTitle} } = this.props;
         return (
             <div className="learningGoal" style={{ backgroundImage: `url(${bg})` }}>
-                <Title info={{ title: "学习目标", subTitle: "" }} />
+                <Title info={{ title: title, subTitle: subTitle }} />
                 <div className="circular-box">
                     <div className="circular"></div>
                     <div className="circular-center"></div>
                     <div className="circular-spot">
                         <img src={circular} alt="" />
                     </div>
-                    <p className="line1"></p>
-                    <p className="line2"></p>
-                    <p className="line3"></p>
-                    <p className="line4"></p>
-                    <p className="line5"></p>
-                    <p className="line6"></p>
-                    <p className="line7"></p>
-                    <p className="line8"></p>
-                    <p className="line9"></p>
+                    {
+                        textList.map((_, index) => {
+                            return <p className={`line${index + 1}`} key={index}></p>
+                        })
+                    }
                     {
                         textList.map((item, index) => {
-                            return <span className={`text${index + 1}`} key={index}>{item}</span>
+                            return <span className={`text${index + 1}`} key={index} title={item}>{item}</span>
                         })
                     }
                 </div>

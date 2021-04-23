@@ -55,6 +55,8 @@ export default class imgGalleryEditor extends Component {
         this.setState({
             isShow: false
         })
+        //这里涉及到唤醒图片库后不更改图片直接关闭也需要通知唤醒页面   取消订阅
+        PubSub.publish('transmitSelectedImg', { type: 'close' });
     }
     componentDidMount() {
         awaken = PubSub.subscribe('awakenPhotoGallery', (msg, data) => {

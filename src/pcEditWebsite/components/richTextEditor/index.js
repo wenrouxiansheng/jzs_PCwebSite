@@ -38,9 +38,11 @@ export default class richTextEditor extends Component {
         this.setState({ editorState })
     }
     onClose = () => {
+        //关闭编辑器   不会传递
         this.setState({
             isShow: false
         })
+        PubSub.publish('amendRichText', { type: 'close' });
     }
     render() {
         const { editorState, isShow } = this.state;

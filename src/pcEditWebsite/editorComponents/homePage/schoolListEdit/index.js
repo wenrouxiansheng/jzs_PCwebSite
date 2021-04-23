@@ -73,14 +73,18 @@ export default class schoolListEdit extends Component {
 
         //订阅 - 更改图片后回调
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
-            const { props } = this.props.detail[0]
-            if (type === 'big') {//大图
-                props.list.src = imgData;
+            if (typeof imgData === 'string') {
+                const { props } = this.props.detail[0]
+                if (type === 'big') {//大图
+                    props.list.src = imgData;
+                }
+                if (type === 'small') {//小图列表
+                    props.list.smallList[num].src = imgData;
+                }
+                this.setState({})
             }
-            if (type === 'small') {//小图列表
-                props.list.smallList[num].src = imgData;
-            }
-            this.setState({})
+            //接收之后也需要卸载订阅
+            PubSub.unsubscribe(imgMessage);
         });
     }
     addSchoolList = () => {

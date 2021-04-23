@@ -24,9 +24,12 @@ export default class exhibitionEdit extends Component {
         PubSub.publish('awakenRichTextEditor', { isShow: true, text });
         //订阅 - 接收修改后的富文本值
         textMessage = PubSub.subscribe('amendRichText', (msg, data) => {
-            info.text = data;
-
-            this.setState({})
+            if (typeof data === 'string') {
+                let str = data.replace(/<\/?p>/g, '');
+                info.text = str;
+                this.setState({})
+            }
+            PubSub.unsubscribe(textMessage);
         });
     }
     changeImage = () => {
@@ -35,9 +38,12 @@ export default class exhibitionEdit extends Component {
         PubSub.publish('awakenPhotoGallery', true);
         //订阅 - 更改图片后回调
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
-            data.img = imgData;
-            this.setState({})
-
+            if (typeof imgData === 'string') {
+                data.img = imgData;
+                this.setState({})
+            }
+            //接收之后也需要卸载订阅
+            PubSub.unsubscribe(imgMessage);
         });
     }
     componentWillUnmount() {

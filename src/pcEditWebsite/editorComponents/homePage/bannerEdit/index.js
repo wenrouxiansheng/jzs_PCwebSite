@@ -26,14 +26,17 @@ export default class bannerEdit extends Component {
             PubSub.publish('awakenPhotoGallery', true);
             //订阅 - 更改图片后回调
             imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, data) => {
-                const { list, indexed } = this.state;
-                const { props: detailList } = list[0];
-                detailList.bannerList[indexed].src = data;
-                //使用的是props数据源  更改state时 props.detail会更改
-                this.setState({
-                    list
-                })
-
+                if (typeof imgData === 'string') {
+                    const { list, indexed } = this.state,
+                        { props: detailList } = list[0];
+                    detailList.bannerList[indexed].src = data;
+                    //使用的是props数据源  更改state时 props.detail会更改
+                    this.setState({
+                        list
+                    })
+                }
+                //接收之后也需要卸载订阅
+                PubSub.unsubscribe(imgMessage);
             });
         }
     }

@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
+import './style.scss'
 import { CloseCircleOutlined } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
 import { Popconfirm } from 'antd';
 
-import './style.scss'
-let imgMessage = null,
-    textMessage = null;
-export default class introduceEdit extends Component {
+let imgMessage = null;
+export default class courseFlowEdit extends Component {
     state = {
         indexed: null
     }
     switchData = (num) => {
-        //切换选中
+        //切换选中样式
         return () => {
             this.setState({
                 indexed: num
@@ -19,48 +18,45 @@ export default class introduceEdit extends Component {
         }
     }
     deleteData = (e) => {
-        //删除一条数据
         e.stopPropagation();
-        const { props: { list: data } } = this.props.detail[0],
+        //删除一条数据
+        const { props: { data } } = this.props.detail[0],
             { indexed } = this.state;
-
         data.splice(indexed, 1);
         this.setState({
             indexed: null
-        })
+        });
     }
     addData = () => {
-        //添加一条数据
-        const { props: { list: data } } = this.props.detail[0],
+        //增加一条数据
+        const { props: { data } } = this.props.detail[0],
             obj = {
-                "subtitle": "办学规模",
-                "title": "强大的办学规模",
-                "text": "文案",
-                "img": require('../../../assets/template/honor3.png').default
+                "img": require('../../../assets/template/img5.png').default,
+                "num": "01",
+                "text": "专业测评，了解学员上课愿望"
             };
-        data.push(obj)
+        data.push(obj);
         this.setState({});
     }
     chaneText = (type) => {
-        //更改值
         return (e) => {
-            const { indexed } = this.state;
+            const { props: { data } } = this.props.detail[0],
+                { indexed } = this.state;
             if (indexed === null) {
                 PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的数据" });
-                return;
+                return false;
             }
-            const { props: { list } } = this.props.detail[0];
-            list[indexed][type] = e.target.value
-            this.setState({});
+            data[indexed][type] = e.target.value;
+            this.setState({})
         }
     }
     changeImage = () => {
-        const { indexed } = this.state;
+        const { props: { data } } = this.props.detail[0],
+            { indexed } = this.state;
         if (indexed === null) {
             PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的图片" });
-            return;
+            return false;
         }
-        const { props: { list: data } } = this.props.detail[0];
         //唤醒图片库
         PubSub.publish('awakenPhotoGallery', true);
         //订阅 - 更改图片后回调
@@ -73,40 +69,16 @@ export default class introduceEdit extends Component {
             PubSub.unsubscribe(imgMessage);
         });
     }
-    awakenRichText = () => {
-        const { props: { list } } = this.props.detail[0];
-        const { indexed } = this.state;
-        if (indexed === null) {
-            PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的数据" });
-            return;
-        }
-        //唤醒富文本编辑器并传值
-        PubSub.publish('awakenRichTextEditor', { isShow: true, text: list[indexed].text });
-        //订阅 - 接收修改后的富文本值
-        textMessage = PubSub.subscribe('amendRichText', (msg, data) => {
-            if (typeof data === 'string') {
-                let str = data.replace(/<\/?p>/g, '');
-                list[indexed].text = str;
-                this.setState({});
-            }
-            PubSub.unsubscribe(textMessage);
-        });
-    }
     changeData = () => {
-        //传递修改数据
-        const { detail } = this.props
+        //传递修改的数据
+        const { detail } = this.props;
         PubSub.publish('revisedDataList', detail);
     }
-    componentWillUnmount() {
-        //每次订阅接收到后 去除订阅 
-        PubSub.unsubscribe(textMessage);
-        PubSub.unsubscribe(imgMessage);
-    }
     render() {
-        const { indexed } = this.state;
-        const { props: { list: data } } = this.props.detail[0];
+        const { props: { data } } = this.props.detail[0],
+            { indexed } = this.state;
         return (
-            <div className="introduceEdit">
+            <div className="courseFlowEdit">
                 <div className="input_box" style={{ marginBottom: '10px' }}>
                     <label ><span>列表：</span></label>
                 </div>
@@ -127,13 +99,10 @@ export default class introduceEdit extends Component {
                     <span>更改选中图片：</span><button className="changeImg" onClick={this.changeImage}>点击更改</button>
                 </div>
                 <div className="input_box">
-                    <label><span>标志：</span><input type="text" name="subtitle" placeholder="请输入文字" key={indexed} onChange={this.chaneText('subtitle')} defaultValue={indexed !== null ? data[indexed].subtitle : ''} /></label>
+                    <label><span>号码：</span><input type="text" name="title" placeholder="请输入文字" key={indexed} onChange={this.chaneText('num')} defaultValue={indexed !== null ? data[indexed].num : ''} /></label>
                 </div>
                 <div className="input_box">
-                    <label><span>标题：</span><input type="text" name="title" placeholder="请输入文字" key={indexed} onChange={this.chaneText('title')} defaultValue={indexed !== null ? data[indexed].title : ''} /></label>
-                </div>
-                <div className="input_box">
-                    <span>更改文案：</span><button className="changeImg" onClick={this.awakenRichText}>点击更改</button>
+                    <label><span>文案：</span><input type="text" name="address" placeholder="请输入文字" key={indexed} onChange={this.chaneText('text')} defaultValue={indexed !== null ? data[indexed].text : ''} /></label>
                 </div>
                 <div className="changeComponentConf">
                     <button onClick={this.changeData} >确认</button>

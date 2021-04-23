@@ -15,6 +15,10 @@ const BrandHonorEdit = lazy(() => import('./homePage/brandHonorEdit'))//品牌�
 const ExhibitionEdit = lazy(() => import('./brandIntroduction/exhibitionEdit'))//品牌介绍 - 介绍编辑器
 const IntroduceEdit = lazy(() => import('./brandIntroduction/introduceEdit'))//品牌介绍 - 介绍列表编辑器
 const HistoryEdit = lazy(() => import('./brandIntroduction/HistoryEdit'))//品牌介绍 - 历史历程编辑器
+const CurriculumPlanEdit = lazy(() => import('./brandIntroduction/curriculumPlanEdit'))//品牌介绍 - 课程介绍编辑器
+const ImageNavListEdit = lazy(() => import('./trainingCourse/imageNavListEdit'))//舞蹈培训 - 图片导航 
+const CourseFlowEdit = lazy(() => import('./trainingCourse/courseFlowEdit'))//舞蹈培训 - 课程流程
+const LearningGoalEdit = lazy(() => import('./trainingCourse/learningGoalEdit'))//舞蹈培训 - 学习目标
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
@@ -32,6 +36,10 @@ export default function switchComponentEdit(componentInfo) {
         case 'Exhibition': return <ExhibitionEdit detail={componentInfo} />;
         case 'Introduce': return <IntroduceEdit detail={componentInfo} />;
         case 'History': return <HistoryEdit detail={componentInfo} />;
+        case 'CurriculumPlan': return <CurriculumPlanEdit detail={componentInfo} />;
+        case 'CourseNavList': return <ImageNavListEdit detail={componentInfo} />;
+        case 'CourseFlow': return <CourseFlowEdit detail={componentInfo} />;
+        case 'LearningGoal': return <LearningGoalEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
 }

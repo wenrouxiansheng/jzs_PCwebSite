@@ -157,43 +157,56 @@ $borderColor: #ffab32;
             font-size: 26px;
             display: inline-block;
             position: absolute;
+            width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             top: -100px;
             font-weight: bold;
             &.text1 {
-                left: 100px;
+                left: 60px;
                 top: 20px;
+                text-align: right;
             }
             &.text2 {
-                left: 40px;
-                top: 130px;
+                left: -17px;
+                top: 115px;
+                text-align: right;
             }
             &.text3 {
-                left: 40px;
-                top: 325px;
+                left: -20px;
+                top: 340px;
+                text-align: right;
             }
             &.text4 {
-                left: 120px;
-                top: 435px;
+                left: 60px;
+                top: 440px;
+                text-align: right;
             }
             &.text5 {
-                right: 90px;
+                right: 55px;
                 top: -40px;
+                text-align: left;
             }
             &.text6 {
-                right: 10px;
+                right: -50px;
                 top: 60px;
+                text-align: left;
             }
             &.text7 {
                 right: -40px;
                 top: 225px;
+                text-align: left;
             }
             &.text8 {
-                right: 5px;
-                top: 395px;
+                right: -50px;
+                top: 400px;
+                text-align: left;
             }
             &.text9 {
-                right: 115px;
+                right: 55px;
                 top: 495px;
+                text-align: left;
             }
         }
     }

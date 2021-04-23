@@ -16,7 +16,6 @@ export default class imgNav extends Component {
                             </Link>
                         })
                     }
-
                 </nav >
             </div>
 

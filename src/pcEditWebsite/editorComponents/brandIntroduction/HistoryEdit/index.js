@@ -102,9 +102,13 @@ export default class HistoryEdit extends Component {
 
         //订阅 - 更改图片后回调
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
-            data[indexed].info[level2].img = imgData;
-            data[indexed].info[level2].type = 'img';
-            this.setState({})
+            if (typeof imgData === 'string') {
+                data[indexed].info[level2].img = imgData;
+                data[indexed].info[level2].type = 'img';
+                this.setState({})
+            }
+            //接收之后也需要卸载订阅
+            PubSub.unsubscribe(imgMessage);
         });
     }
 
@@ -120,9 +124,12 @@ export default class HistoryEdit extends Component {
         PubSub.publish('awakenRichTextEditor', { isShow: true, text: list[indexed].info[level2].text });
         //订阅 - 接收修改后的富文本值
         textMessage = PubSub.subscribe('amendRichText', (msg, data) => {
-            let str = data.replace(/<\/?p>/g, '');
-            list[indexed].info[level2].text = str;
-            this.setState({})
+            if (typeof data === 'string') {
+                let str = data.replace(/<\/?p>/g, '');
+                list[indexed].info[level2].text = str;
+                this.setState({});
+            }
+            PubSub.unsubscribe(textMessage);
         });
     }
     deleteLevel2 = (e) => {

@@ -12,7 +12,14 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     Exhibition = lazy(() => import('./brandIntroduction/index/exhibition')),
     Introduce = lazy(() => import('./brandIntroduction/index/introduce')),
     ClassScene = lazy(() => import('./brandIntroduction/index/classScene')),
-    History = lazy(() => import('./brandIntroduction/history'));
+    History = lazy(() => import('./brandIntroduction/history')),
+    CurriculumPlan = lazy(() => import('./brandIntroduction/curriculumPlan')),
+    CourseNavList = lazy(() => import('./danceTraining/imgNav')),
+    CourseFlow = lazy(() => import('./danceTraining/courseFlow')),
+    LearningGoal = lazy(() => import('./danceTraining/learningGoal')),
+    Table = lazy(() => import('./common/table')),
+    QuestionConsultation = lazy(() => import('./common/questionConsultation')),
+    Form = lazy(() => import('./common/form'));
 
 export default function switchComponents(name, props) {
     switch (name) {
@@ -29,7 +36,14 @@ export default function switchComponents(name, props) {
         case 'Exhibition': return <Exhibition {...props} />; //品牌介绍
         case 'Introduce': return <Introduce {...props} />; //品牌介绍 规模
         case 'ClassScene': return <ClassScene {...props} />; //品牌介绍 这个没写
-        case 'History': return <History {...props} />; //历史历程
+        case 'History': return <History {...props} />; //品牌介绍 - 历史历程
+        case 'CurriculumPlan': return <CurriculumPlan {...props} />;//品牌介绍 - 课程计划介绍
+        case 'CourseNavList': return <CourseNavList {...props} />;//儿童舞蹈 图片导航
+        case 'CourseFlow': return <CourseFlow {...props} />;//儿童舞蹈 图片导航
+        case 'LearningGoal': return <LearningGoal {...props} />;//儿童舞蹈 学习目标
+        case 'Table': return <Table {...props} />;//儿童舞蹈 学习目标
+        case 'QuestionConsultation': return <QuestionConsultation {...props} />;//儿童舞蹈 问题列表
+        case 'Form': return <Form {...props} />;//提交表单公共使用
         default: return <div>没有找到组件</div>
     }
 }

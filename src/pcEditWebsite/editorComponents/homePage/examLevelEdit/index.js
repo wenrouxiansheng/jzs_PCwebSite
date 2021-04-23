@@ -25,8 +25,12 @@ export default class examLevelEdit extends Component {
 
         //订阅 - 更改图片后回调
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
-            list[indexed].src = imgData;
-            this.setState({})
+            if (typeof imgData === 'string') {
+                list[indexed].src = imgData;
+                this.setState({})
+            }
+            //接收之后也需要卸载订阅
+            PubSub.unsubscribe(imgMessage);
         });
     }
     deleteData = (e) => {

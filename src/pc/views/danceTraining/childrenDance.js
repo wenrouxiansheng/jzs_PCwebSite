@@ -190,7 +190,6 @@ export default class childrenDance extends Component {
         })
     }
     render() {
-        const { questionList } = this.state;
         return (
             <div>
                 {

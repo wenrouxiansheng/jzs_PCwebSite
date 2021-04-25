@@ -29,7 +29,6 @@ export default class zoomCarousel extends Component {
             if (type === 'next') {
                 if (len > (currentSub + 1)) {
                     currentSub++;
-
                 }
             }
             if (type === 'prev') {
@@ -46,10 +45,11 @@ export default class zoomCarousel extends Component {
         const { currentSub, imgList } = this.state;
         const { list: classList } = this.props;
         let list = classList || imgList;
+
         return (
             <div className="zoomCarousel">
                 <div className="carousel-container">
-                    <div className="carousel-list" flag={currentSub} ref={this.carouselList} style={{ transform: `translateX(${-((currentSub * 370) - 370)}px)` }}>
+                    <div className="carousel-list" flag={currentSub} ref={this.carouselList} style={{ transform: `translateX(${-((currentSub * 370) - 370)}px)`, width: `${370 * list.length}px` }}>
                         {
                             list.map((item, index) => {
                                 return <div className={`carousel-slide ${currentSub === index ? 'active' : ""}`} key={index}>

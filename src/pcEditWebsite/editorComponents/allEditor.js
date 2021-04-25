@@ -19,6 +19,10 @@ const CurriculumPlanEdit = lazy(() => import('./brandIntroduction/curriculumPlan
 const ImageNavListEdit = lazy(() => import('./trainingCourse/imageNavListEdit'))//舞蹈培训 - 图片导航 
 const CourseFlowEdit = lazy(() => import('./trainingCourse/courseFlowEdit'))//舞蹈培训 - 课程流程
 const LearningGoalEdit = lazy(() => import('./trainingCourse/learningGoalEdit'))//舞蹈培训 - 学习目标
+const QuestionEdit = lazy(() => import('./trainingCourse/questionEdit'))//舞蹈培训 - 问题列表
+const CategoryEdit = lazy(() => import('./trainingCourse/categoryEdit'))//舞蹈培训 - 种类介绍
+const ZoomCarouselEdit = lazy(() => import('./trainingCourse/zoomCarouselEdit'))//舞蹈培训 - 课堂实景列表图
+const TeacherStandardsEdit = lazy(() => import('./aboutUs/TeacherStandardsEdit'))//关于我们 - 教师介绍
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
@@ -40,6 +44,10 @@ export default function switchComponentEdit(componentInfo) {
         case 'CourseNavList': return <ImageNavListEdit detail={componentInfo} />;
         case 'CourseFlow': return <CourseFlowEdit detail={componentInfo} />;
         case 'LearningGoal': return <LearningGoalEdit detail={componentInfo} />;
+        case 'QuestionConsultation': return <QuestionEdit detail={componentInfo} />;
+        case 'CategoryIntroduction': return <CategoryEdit detail={componentInfo} />;
+        case 'ZoomCarousel': return <ZoomCarouselEdit detail={componentInfo} />;
+        case 'TeacherStandards': return <TeacherStandardsEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
 }

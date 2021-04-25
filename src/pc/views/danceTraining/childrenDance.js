@@ -157,7 +157,6 @@ export default class childrenDance extends Component {
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            console.log(data)
             if (data.type !== 'childrenDance') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',

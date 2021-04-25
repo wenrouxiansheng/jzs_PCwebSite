@@ -19,7 +19,10 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     LearningGoal = lazy(() => import('./danceTraining/learningGoal')),
     Table = lazy(() => import('./common/table')),
     QuestionConsultation = lazy(() => import('./common/questionConsultation')),
-    Form = lazy(() => import('./common/form'));
+    Form = lazy(() => import('./common/form')),
+    CategoryIntroduction = lazy(() => import('./danceTraining/categoryIntroduction')),
+    ZoomCarousel = lazy(() => import('./brandIntroduction/index/classScene/zoomCarousel')),
+    TeacherStandards = lazy(() => import('./aboutUs/teacherStandards'));
 
 export default function switchComponents(name, props) {
     switch (name) {
@@ -44,6 +47,9 @@ export default function switchComponents(name, props) {
         case 'Table': return <Table {...props} />;//儿童舞蹈 学习目标
         case 'QuestionConsultation': return <QuestionConsultation {...props} />;//儿童舞蹈 问题列表
         case 'Form': return <Form {...props} />;//提交表单公共使用
+        case 'CategoryIntroduction': return <CategoryIntroduction {...props} />;//课程类别介绍
+        case 'ZoomCarousel': return <ZoomCarousel {...props} />;//课程类别介绍
+        case 'TeacherStandards': return <TeacherStandards {...props} />;//关于我们教师介绍
         default: return <div>没有找到组件</div>
     }
 }

@@ -13,7 +13,7 @@ export default class categoryIntroduction extends Component {
                 </div>
                 <div className="text">
                     <h1>{introduction.title}</h1>
-                    <p>{introduction.text}</p>
+                    <p dangerouslySetInnerHTML={{ __html: introduction.text }}></p>
                 </div>
             </div>
         )

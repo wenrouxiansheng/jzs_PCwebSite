@@ -2,7 +2,7 @@
     width: 1200px;
     height: auto;
     min-height: 300px;
-    margin: 0px auto 150px; 
+    margin: 0px auto 150px;
     position: relative;
     padding-top: 95px;
     display: flex;
@@ -26,12 +26,13 @@
         }
         div {
             margin-left: 50px;
-            h1{
+            h1 {
                 font-size: 28px;
                 color: #333;
                 font-weight: bold;
+                margin-bottom: 20px;
             }
-            p{
+            p {
                 color: #666;
                 font-size: 16px;
             }
@@ -72,15 +73,22 @@
             & > div {
                 display: flex;
                 width: 100%;
+                &>p{
+                    width: 200px;
+                    span{
+                        display: block;
+                        
+                    }
+                }
             }
         }
-        .QR{
-            img{
+        .QR {
+            img {
                 width: 248px;
                 height: 248px;
                 object-fit: cover;
             }
-            p{
+            p {
                 width: 248px;
                 color: #555;
                 font-size: 16px;

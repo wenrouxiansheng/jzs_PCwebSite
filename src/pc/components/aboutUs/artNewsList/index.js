@@ -37,7 +37,7 @@ export default class artNewsList extends Component {
             <div className="artNewsList">
                 {
                     list.map((item, index) => {
-                        return <div key={index}>
+                        return <div className="news" key={index}>
                             <img src={item.img} alt="" />
                             <div className="container">
                                 <h1>{item.title}<img src={newImg} alt=""/></h1>

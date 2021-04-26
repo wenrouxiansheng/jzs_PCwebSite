@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import './style.scss'
 
 import { CloseCircleOutlined } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
-import { Popconfirm } from 'antd';
+import { Popconfirm, Radio } from 'antd';
 
 let imgMessage = null,
     textMessage = null;
-export default class TeacherStandardsEdit extends Component {
+export default class imgTextCrossingEdit extends Component {
     state = {
         indexed: null
     }
@@ -18,32 +17,40 @@ export default class TeacherStandardsEdit extends Component {
             })
         }
     }
+    addData = () => {
+        const { props: { list } } = this.props.detail[0],
+            obj = {
+                "img": require('../../../assets/template/honor2.png').default,
+                text: {
+                    "title": "李斯特怀香港国际钢琴公开赛",
+                    "subTitle": "桔子树学员登上世界级舞台，在国家未来大剧院奏响华美乐章"
+                },
+                "type": "left"
+            };
+        list.push(obj);
+        this.setState({})
+    }
     deleteData = (e) => {
-        //删除一条数据
+        //删除数据
         e.stopPropagation();
-        const { indexed } = this.state,
-            { props: { list } } = this.props.detail[0];
+
+        const { props: { list } } = this.props.detail[0],
+            { indexed } = this.state;
+
         list.splice(indexed, 1);
         this.setState({
             indexed: null
         })
     }
-    addData = () => {
-        //添加一条数据
-        const { props: { list } } = this.props.detail[0],
-            obj = {
-                img: require('../../../assets/template/honor3.png').default, title: "丰富一线教学经验", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
-            };
-        list.push(obj);
-        this.setState({})
-    }
     chaneImage = () => {
-        //更换图片
-        const { props: { list } } = this.props.detail[0]
-        const { indexed } = this.state;
+        const { props: { list } } = this.props.detail[0],
+            { indexed } = this.state;
+        if (indexed === null) {
+            PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的数据" });
+            return;
+        }
         //唤醒图片库
         PubSub.publish('awakenPhotoGallery', true);
-
         //订阅 - 更改图片后回调
         imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, imgData) => {
             if (typeof imgData === 'string') {
@@ -55,15 +62,16 @@ export default class TeacherStandardsEdit extends Component {
         });
     }
     changeTitle = (e) => {
-        //更改标题
+        //修改标题
         const { props: { list } } = this.props.detail[0],
-            { indexed } = this.state;
+            { indexed } = this.state,
+            { text } = list[indexed];
         if (indexed === null) {
             PubSub.publish('operationMessage', { type: 'warning', message: "请先选择更改的数据" });
             return;
         }
-        list[indexed].title = e.target.value;
-        this.setState({});
+        text.title = e.target.value;
+        this.setState({})
     }
     awakenRichText = () => {
         //唤醒富文本编辑
@@ -75,35 +83,43 @@ export default class TeacherStandardsEdit extends Component {
             return;
         }
         //唤醒富文本编辑器并传值
-        PubSub.publish('awakenRichTextEditor', { isShow: true, text: list[indexed].text });
+        PubSub.publish('awakenRichTextEditor', { isShow: true, text: list[indexed].text.subTitle });
         //订阅 - 接收修改后的富文本值
         textMessage = PubSub.subscribe('amendRichText', (msg, data) => {
             if (typeof data === 'string') {
                 let str = data.replace(/<\/?p>/g, '');
-                list[indexed].text = str;
+                list[indexed].text.subTitle = str;
                 this.setState({});
             }
             PubSub.unsubscribe(textMessage);
         });
     }
     changeData = () => {
-        //传递修改数据
+        //传递修改的数据
         const { detail } = this.props;
         PubSub.publish('revisedDataList', detail);
     }
+    onRadioChange = (e) => {
+        //更改图片位置
+        const { target: { value } } = e,
+            { props: { list } } = this.props.detail[0],
+            { indexed } = this.state;
+
+        list[indexed].type = value;
+        this.setState({})
+    }
     componentWillUnmount() {
-        //接收之后也需要卸载订阅
         PubSub.unsubscribe(imgMessage);
         PubSub.unsubscribe(textMessage);
     }
     render() {
         const { props: { list } } = this.props.detail[0],
             { indexed } = this.state;
-        console.log(list)
+        console.log(this.props)
         return (
-            <div className="teacherStandardsEdit">
+            <div className="imgTextCrossingEdit">
                 <div className="input_box" style={{ marginBottom: '10px' }}>
-                    <label ><span style={{ width: "200px" }}>图片列表(不需要背景颜色)：</span></label>
+                    <label ><span>图片列表：</span></label>
                 </div>
                 <div className="initElementImgList">
                     {
@@ -122,11 +138,21 @@ export default class TeacherStandardsEdit extends Component {
                     <label><span>点击图片更改：</span><button className="changeImg" onClick={this.chaneImage}>点击更改</button></label>
                 </div>
                 <div className="input_box">
-                    <label><span>标题：</span><input type="text" name="level1Text" key={indexed} defaultValue={indexed !== null ? list[indexed].title : ''} placeholder="请输入文字" onChange={this.changeTitle} /></label>
+                    <label><span>标题：</span><input type="text" name="title" key={indexed} defaultValue={indexed !== null ? list[indexed].text.title : ''} placeholder="请输入文字" onChange={this.changeTitle} /></label>
                 </div>
                 <div className="input_box">
                     <span>更改文案：</span><button className="changeImg" onClick={this.awakenRichText}>点击更改</button>
                 </div>
+                {
+                    indexed !== null ? <div className="redio">
+                        <span style={{ width: "150px", display: "inline-block", textAlign: "right" }}>图片位置：</span>
+                        <Radio.Group onChange={this.onRadioChange} value={list[indexed].type}>
+                            <Radio value={"left"}>图片居左</Radio>
+                            <Radio value={"right"}>图片居右</Radio>
+                        </Radio.Group>
+                    </div> : null
+                }
+
                 <div className="changeComponentConf">
                     <button onClick={this.changeData} >确认</button>
                 </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import TeachersClassification from '@components/aboutUs/teachersClassification'
 
 import switchComponents from '@components/allComponents'//汇总的组件
 import { homePageMouseMove, throttle } from '../../publicjs'
@@ -29,6 +28,12 @@ export default class teacherList extends Component {
                     ]
                 }
             },
+            {
+                component: 'TeachersClassification',
+                props: {
+
+                }
+            },
         ],
     }
     componentDidMount() {
@@ -36,10 +41,7 @@ export default class teacherList extends Component {
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
             if (data.type !== 'teacherList') {
-                window.parent.PubSub.publish('operationMessage', {
-                    message: '组件名不对应',
-                    type: 'error'
-                });
+                //这里不用提醒错误     因为这是个嵌套组件会有两个相同的消息
                 return false;
             }
             this.setState({
@@ -72,7 +74,6 @@ export default class teacherList extends Component {
                 {
                     this.seekComponents()
                 }
-                <TeachersClassification />
             </div>
         )
     }

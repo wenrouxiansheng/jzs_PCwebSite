@@ -23,21 +23,11 @@ const Teachers = class teachers extends Component {
         ],
     }
     componentDidMount() {
-        // this.props.history.listen((e) => {
-        //     //监听路由跳转返回顶部
-        //     console.log('>>>>>>>>>>>>>>>>>', e)
-        // })
-        this.mountMessage()
-    }
-    mountMessage = () => {
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
             if (data.type !== 'teachersCommon') {
-                window.parent.PubSub.publish('operationMessage', {
-                    message: '组件名不对应',
-                    type: 'error'
-                });
+                //这里不用提醒错误     因为这是个嵌套组件会有两个相同的消息
                 return false;
             }
             this.setState({

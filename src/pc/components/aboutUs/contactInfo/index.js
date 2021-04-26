@@ -6,24 +6,56 @@ import service from '@assets/aboutUs/contactUs/service.png'
 import wb from '@assets/aboutUs/contactUs/wb.png'
 
 export default class contactInfo extends Component {
+    state = {
+        info: {
+            headOffice: {
+                img,
+                title: "全国总部",
+                address: "北京市通州区新华西街60号万达广场A座30层"
+            },
+            phoneInfo: {
+                title: "联系我们",
+                subTitle: "Contact Us",
+                phone: [
+                    { text: "咨询电话：", number: ["400-900-8898"] },
+                    { text: "商务合作：", number: ["010-5956-2885"] },
+                    {
+                        text: "人才招聘：", number: ["010-5956-2862", "010-5956-2861"]
+                    },
+                ]
+            }
+        }
+    }
     render() {
+        const { info } = this.state,
+            { headOffice, phoneInfo } = info;
         return (
             <div className="contactInfo">
                 <div className="suspension">
-                    <img src={img} alt="" />
+                    <img src={headOffice.img} alt="" />
                     <div>
-                        <h1>全国总部</h1>
-                        <p>北京市通州区新华西街60号万达广场A座30层</p>
+                        <h1>{headOffice.title}</h1>
+                        <p>{headOffice.address}</p>
                     </div>
                 </div>
                 <div className="info">
-                    <h1>联系我们</h1>
-                    <h3>Contact Us</h3>
+                    <h1>{phoneInfo.title}</h1>
+                    <h3>{phoneInfo.subTitle}</h3>
                     <div className="phone">
-                        <div><span>咨询电话：</span>400-900-8898</div>
-                        <div><span>商务合作：</span>010-5956-2885</div>
-                        <div><span>人才招聘：</span><p>010-5956-2862<br />010-5956-2861</p>
-                        </div>
+                        {
+                            phoneInfo.phone.map((item, index) => {
+                                return <div key={index}>
+                                    <span>{item.text}</span>
+                                    <p>
+                                        {
+                                            item.number.map((number, j) => {
+                                                return <span key={j}>{number}</span>
+                                            })
+                                        }
+                                    </p>
+                                </div>
+                            })
+                        }
                     </div>
                 </div>
                 <div className="info">

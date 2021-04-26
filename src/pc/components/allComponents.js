@@ -22,7 +22,14 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     Form = lazy(() => import('./common/form')),
     CategoryIntroduction = lazy(() => import('./danceTraining/categoryIntroduction')),
     ZoomCarousel = lazy(() => import('./brandIntroduction/index/classScene/zoomCarousel')),
-    TeacherStandards = lazy(() => import('./aboutUs/teacherStandards'));
+    TeacherStandards = lazy(() => import('./aboutUs/teacherStandards')),
+    TeachersClassification = lazy(() => import('./aboutUs/teachersClassification')),
+    TeacherDetail = lazy(() => import('./aboutUs/teacherDetail')),
+    Paragraph = lazy(() => import('./aboutUs/paragraph')),
+    ImgTextCrossing = lazy(() => import('./aboutUs/imgTextCrossing')),
+    ImgBlindPlatoon = lazy(() => import('./aboutUs/imgBlindPlatoon')),
+    ArtNewsList = lazy(() => import('./aboutUs/artNewsList')),
+    ContactInfo = lazy(() => import('./aboutUs/contactInfo'));
 
 export default function switchComponents(name, props) {
     switch (name) {
@@ -50,6 +57,13 @@ export default function switchComponents(name, props) {
         case 'CategoryIntroduction': return <CategoryIntroduction {...props} />;//课程类别介绍
         case 'ZoomCarousel': return <ZoomCarousel {...props} />;//课程类别介绍
         case 'TeacherStandards': return <TeacherStandards {...props} />;//关于我们教师介绍
+        case 'TeachersClassification': return <TeachersClassification {...props} />;//关于我们 教师列表
+        case 'TeacherDetail': return <TeacherDetail {...props} />;//关于我们 教师详情
+        case 'Paragraph': return <Paragraph {...props} />;//关于我们 段落
+        case 'ImgTextCrossing': return <ImgTextCrossing {...props} />;//关于我们 图文宫格
+        case 'ImgBlindPlatoon': return <ImgBlindPlatoon {...props} />;//关于我们 图片菱形排版
+        case 'ArtNewsList': return <ArtNewsList {...props} />;//关于我们 新闻列表
+        case 'ContactInfo': return <ContactInfo {...props} />;//关于我们 联系方式
         default: return <div>没有找到组件</div>
     }
 }

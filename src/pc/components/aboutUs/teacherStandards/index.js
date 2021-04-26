@@ -36,7 +36,7 @@ export default class teacherStandards extends Component {
                                 <img src={item.img} alt="" />
                             </div>
                             <h1>{item.title}</h1>
-                            <p>{item.text}</p>
+                            <p dangerouslySetInnerHTML={{ __html: item.text }}></p>
                         </div>
                     })
                 }

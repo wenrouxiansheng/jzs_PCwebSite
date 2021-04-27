@@ -25,6 +25,7 @@ const ZoomCarouselEdit = lazy(() => import('./trainingCourse/zoomCarouselEdit'))
 const TeacherStandardsEdit = lazy(() => import('./aboutUs/teacherStandardsEdit'))//关于我们 - 教师介绍
 const ImgTextCrossingEdit = lazy(() => import('./aboutUs/imgTextCrossingEdit'))//关于我们 - 图片宫格
 const ImgBlindPlatoonEdit = lazy(() => import('./aboutUs/imgBlindPlatoonEdit'))//关于我们 - 图片菱形排版
+const ContactInfoEdit = lazy(() => import('./aboutUs/contactInfoEdit'))//关于我们 - 联系信息
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
@@ -55,6 +56,7 @@ export default function switchComponentEdit(componentInfo) {
         case 'ImgTextCrossing': return <ImgTextCrossingEdit detail={componentInfo} />;
         case 'ImgBlindPlatoon': return <ImgBlindPlatoonEdit detail={componentInfo} />;
         case 'ArtNewsList': return <div>该组件依据传输数据显示，不可更改</div>;
+        case 'ContactInfo': return <ContactInfoEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
 }

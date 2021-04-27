@@ -23,12 +23,32 @@ export default class contactInfo extends Component {
                         text: "人才招聘：", number: ["010-5956-2862", "010-5956-2861"]
                     },
                 ]
-            }
+            },
+            emailInfo: {
+                title: "官方邮箱",
+                subTitle: "The official E-mail",
+                email: "juzishuyishu2011@163.com"
+            },
+            weChatInfo: {
+                title: "微信有约",
+                subTitle: "WeChat about",
+                detail: [
+                    { text: "订阅号：juzishujiaoyu", img: subscribe },
+                    { text: "服务号：juzishuyishujiaoyu", img: service }
+                ]
+            },
+            microBlogInfo: {
+                title: "官方微博",
+                subTitle: "official micro-blog",
+                detail: [
+                    { text: "官方微博：桔子树艺术教育培训", img: wb },
+                ]
+            },
         }
     }
     render() {
-        const { info } = this.state,
-            { headOffice, phoneInfo } = info;
+        const { info } = this.props?.info ? this.props : this.state,
+            { headOffice, phoneInfo, emailInfo, weChatInfo, microBlogInfo } = info;
         return (
             <div className="contactInfo">
                 <div className="suspension">
@@ -59,34 +79,38 @@ export default class contactInfo extends Component {
                     </div>
                 </div>
                 <div className="info">
-                    <h1>官方邮箱</h1>
-                    <h3>The official E-mail</h3>
+                    <h1>{emailInfo.title}</h1>
+                    <h3>{emailInfo.subTitle}</h3>
                     <div className="phone">
-                        <div>juzishuyishu2011@163.com</div>
+                        <div>{emailInfo.email}</div>
                     </div>
                 </div>
                 <div className="info">
-                    <h1>微信有约</h1>
-                    <h3>WeChat about</h3>
+                    <h1>{weChatInfo.title}</h1>
+                    <h3>{weChatInfo.subTitle}</h3>
                     <div className="QR">
-                        <div>
-                            <img src={subscribe} alt="" />
-                            <p>订阅号：juzishujiaoyu</p>
-                        </div>
-                        <div>
-                            <img src={service} alt="" />
-                            <p>服务号：juzishuyishujiaoyu</p>
-                        </div>
+                        {
+                            weChatInfo.detail.map((item, index) => {
+                                return <div key={index}>
+                                    <img src={item.img} alt="" />
+                                    <p>{item.text}</p>
+                                </div>
+                            })
+                        }
                     </div>
                 </div>
                 <div className="info">
-                    <h1>官方微博</h1>
-                    <h3>The official weibo</h3>
+                    <h1>{microBlogInfo.title}</h1>
+                    <h3>{microBlogInfo.subTitle}</h3>
                     <div className="QR">
-                        <div>
-                            <img src={wb} alt="" />
-                            <p>官方微博：桔子树艺术教育培训</p>
-                        </div>
+                        {
+                            microBlogInfo.detail.map((item, index) => {
+                                return <div key={index}>
+                                    <img src={item.img} alt="" />
+                                    <p>{item.text}</p>
+                                </div>
+                            })
+                        }
                     </div>
                 </div>
             </div>

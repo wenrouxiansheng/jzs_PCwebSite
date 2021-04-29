@@ -11,7 +11,6 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     AddModule = lazy(() => import('./common/addModule')),
     Exhibition = lazy(() => import('./brandIntroduction/index/exhibition')),
     Introduce = lazy(() => import('./brandIntroduction/index/introduce')),
-    ClassScene = lazy(() => import('./brandIntroduction/index/classScene')),
     History = lazy(() => import('./brandIntroduction/history')),
     CurriculumPlan = lazy(() => import('./brandIntroduction/curriculumPlan')),
     CourseNavList = lazy(() => import('./danceTraining/imgNav')),
@@ -21,7 +20,7 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     QuestionConsultation = lazy(() => import('./common/questionConsultation')),
     Form = lazy(() => import('./common/form')),
     CategoryIntroduction = lazy(() => import('./danceTraining/categoryIntroduction')),
-    ZoomCarousel = lazy(() => import('./brandIntroduction/index/classScene/zoomCarousel')),
+    ZoomCarousel = lazy(() => import('./brandIntroduction/index/zoomCarousel')),
     TeacherStandards = lazy(() => import('./aboutUs/teacherStandards')),
     TeachersClassification = lazy(() => import('./aboutUs/teachersClassification')),
     TeacherDetail = lazy(() => import('./aboutUs/teacherDetail')),
@@ -29,7 +28,9 @@ const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在
     ImgTextCrossing = lazy(() => import('./aboutUs/imgTextCrossing')),
     ImgBlindPlatoon = lazy(() => import('./aboutUs/imgBlindPlatoon')),
     ArtNewsList = lazy(() => import('./aboutUs/artNewsList')),
-    ContactInfo = lazy(() => import('./aboutUs/contactInfo'));
+    ContactInfo = lazy(() => import('./aboutUs/contactInfo')),
+    SchoolList = lazy(() => import('./campusDistribution/schoolList')),
+    ComponentContainer = lazy(() => import('./common/componentContainer'));
 
 export default function switchComponents(name, props) {
     switch (name) {
@@ -45,7 +46,6 @@ export default function switchComponents(name, props) {
         case 'AddModule': return <AddModule />; //添加模块
         case 'Exhibition': return <Exhibition {...props} />; //品牌介绍
         case 'Introduce': return <Introduce {...props} />; //品牌介绍 规模
-        case 'ClassScene': return <ClassScene {...props} />; //品牌介绍 这个没写
         case 'History': return <History {...props} />; //品牌介绍 - 历史历程
         case 'CurriculumPlan': return <CurriculumPlan {...props} />;//品牌介绍 - 课程计划介绍
         case 'CourseNavList': return <CourseNavList {...props} />;//儿童舞蹈 图片导航
@@ -64,6 +64,8 @@ export default function switchComponents(name, props) {
         case 'ImgBlindPlatoon': return <ImgBlindPlatoon {...props} />;//关于我们 图片菱形排版
         case 'ArtNewsList': return <ArtNewsList {...props} />;//关于我们 新闻列表
         case 'ContactInfo': return <ContactInfo {...props} />;//关于我们 联系方式
+        case 'SchoolList': return <SchoolList {...props} />;//校区分布
+        case 'ComponentContainer': return <ComponentContainer {...props} />;//组件容器
         default: return <div>没有找到组件</div>
     }
 }

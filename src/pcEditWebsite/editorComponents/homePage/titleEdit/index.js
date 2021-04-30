@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
-
+import { containerStatus } from '../../../../store/store'
 import './style.scss'
 
 
@@ -27,9 +27,12 @@ export default class titleEdit extends Component {
                 <div className="input_box">
                     <label><span>副标题：</span><input type="text" name="subTitle" placeholder="可选输入" defaultValue={subTitle} onChange={this.changeTitle('subTitle')} /></label>
                 </div>
-                <div className="changeComponentConf">
-                    <button onClick={this.changeData}>确认</button>
-                </div>
+                {
+                    containerStatus.getState() ? null :
+                        <div className="changeComponentConf">
+                            <button onClick={this.changeData} >确认</button>
+                        </div>
+                }
             </div>
         )
     }

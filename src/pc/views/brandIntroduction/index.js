@@ -69,7 +69,7 @@ export default class brandIntroduction extends Component {
                         {
                             component: 'ZoomCarousel',
                             props: {
-                                imgList: [
+                                list: [
                                     { src: require('../../assets/brandIntroduction/classScene/swiper1.png').default },
                                     { src: require('../../assets/brandIntroduction/classScene/swiper2.png').default },
                                     { src: require('../../assets/brandIntroduction/classScene/swiper3.png').default },
@@ -87,6 +87,7 @@ export default class brandIntroduction extends Component {
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
+            console.log(data)
             if (data.type !== 'brandIntroduction') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',

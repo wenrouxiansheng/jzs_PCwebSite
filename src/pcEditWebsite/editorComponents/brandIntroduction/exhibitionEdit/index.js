@@ -72,7 +72,6 @@ export default class exhibitionEdit extends Component {
                 <div className="input_box" style={{ marginBottom: '10px' }}>
                     <label ><span>图片模块</span></label>
                 </div>
-
                 <div className="input_box">
                     <label><span>数字顺序：</span><input type="text" name="number1"
                         placeholder="请输入" defaultValue={number2} onInput={this.changeText('number2')} /></label>

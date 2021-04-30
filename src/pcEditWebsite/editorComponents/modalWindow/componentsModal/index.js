@@ -3,7 +3,7 @@ import './style.scss'
 import { RightCircleFilled, AlignLeftOutlined, BoldOutlined, AreaChartOutlined, FontColorsOutlined } from '@ant-design/icons';
 
 import switchComponentInfo from '../../../componentsPropsInfo'
-
+import { containerStatus } from '../../../../store/store'
 export default class componentsModal extends Component {
     state = {
         headeList: ["新增模块", "页面模块"],
@@ -75,14 +75,18 @@ export default class componentsModal extends Component {
     }
     addComponent = (value) => {
         return () => {
-            let iframe = document.getElementById('iframe').contentWindow;
-            iframe.PubSub.publish('addComponent', {component: value, info: switchComponentInfo(value)});
+            if (!containerStatus.getState()) {//如果不是组件容器 就是往iframe页面中添加
+                let iframe = document.getElementById('iframe').contentWindow;
+                iframe.PubSub.publish('addComponent', { component: value, info: switchComponentInfo(value) });
+            }
+            
         }
     }
     render() {
         const { record, componentList, headeList } = this.state;
         return (
             <div className='suspendedWindow_box'>
+
                 <ul className="suspendedWindow_boxHead">
                     {
                         headeList.map((item, index) => {
@@ -91,6 +95,7 @@ export default class componentsModal extends Component {
                     }
                     <li className="line" style={{ left: `${10 * (record + 1) + (70 * record)}px` }}></li>
                 </ul>
+
                 <div className={`suspendedWindow_boxBody ${record === 0 ? 'active' : ''}`}>
                     {
                         componentList.map((item, index) => {

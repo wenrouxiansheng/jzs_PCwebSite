@@ -35,18 +35,21 @@ export function homePageMouseMove(componentJson, type) {
         //在编辑时调整右上角悬浮窗位置
         const target = getParents(e.target, 'componentContainer');
         if (!target || !target.parentNode) return;
-        const num = target.parentNode.getAttribute('flag'),//选中组件的下标
-            info = {
-                display: 'block',
-                width: `${target.offsetWidth}px`,
-                height: `0px`,
-                left: `${target.offsetLeft}px`,
-                top: `${target.offsetTop}px`,
-            },
+
+        const num = target.parentNode.getAttribute('flag');//选中组件的下标
+        console.log(componentJson, componentJson[num], num)
+        const info = {
+            display: 'block',
+            width: `${target.offsetWidth}px`,
+            height: `0px`,
+            left: `${target.offsetLeft}px`,
+            top: `${target.offsetTop}px`,
+        },
             activeObjInfo = {
                 num,
                 componentJson,
-                type
+                type,
+                isContainer: num && componentJson[num].component === "ComponentContainer" ? true : false
             };
         //更改悬浮窗位置
         PubSub.publish('changeSelectionPosition', info);

@@ -30,7 +30,7 @@ const ComponentContainerEdit = lazy(() => import('./brandIntroduction/componentC
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
-    const { component } = componentInfo[0];
+    const { component } = componentInfo[0] || componentInfo;
     switch (component) {
         case 'Banner': return <BannerEdit detail={componentInfo} />;
         case 'Title': return <TitleEdit detail={componentInfo} />;

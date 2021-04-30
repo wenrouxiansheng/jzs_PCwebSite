@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
 import { message, Popconfirm } from 'antd';
 
+
 import './style.scss'
 
 import {
@@ -49,7 +50,6 @@ export default class selectionModifiers extends Component {
                 addModuleIndexed: null,
                 selectedActiveObj
             })
-            console.log(selectedActiveObj.componentJson)
             PubSub.publish('getChangeComponentData', selectedActiveObj);
         });
     }
@@ -60,6 +60,7 @@ export default class selectionModifiers extends Component {
     }
     reviseModule = () => {
         const { selectedActiveObj } = this.state;
+        
         //发布消息 - 点击编辑组件把activeobj信息 传递给顶层编辑器页面
         if (!selectedActiveObj) {
             message.warning('请先选择组件');

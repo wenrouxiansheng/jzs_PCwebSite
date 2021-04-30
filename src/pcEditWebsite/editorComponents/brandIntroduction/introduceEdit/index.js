@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { CloseCircleOutlined } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
 import { Popconfirm } from 'antd';
+import { containerStatus } from '../../../../store/store'
 
 import './style.scss'
 let imgMessage = null,
@@ -135,9 +136,13 @@ export default class introduceEdit extends Component {
                 <div className="input_box">
                     <span>更改文案：</span><button className="changeImg" onClick={this.awakenRichText}>点击更改</button>
                 </div>
-                <div className="changeComponentConf">
-                    <button onClick={this.changeData} >确认</button>
-                </div>
+                {
+                    containerStatus.getState() ? null :
+                        <div className="changeComponentConf">
+                            <button onClick={this.changeData} >确认</button>
+                        </div>
+                }
+
             </div>
         )
     }

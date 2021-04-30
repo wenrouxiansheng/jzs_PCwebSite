@@ -8,6 +8,7 @@ import picture5 from '@assets/brandIntroduction/introduce/Picture5_03.png'
 import picture6 from '@assets/brandIntroduction/introduce/Picture6_03.png'
 import picture7 from '@assets/brandIntroduction/introduce/Picture7_03.png'
 
+
 export default class introduce extends Component {
     state = {
         list: [

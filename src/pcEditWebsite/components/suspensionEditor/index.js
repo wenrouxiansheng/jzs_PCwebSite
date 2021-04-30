@@ -4,7 +4,7 @@ import './style.scss'
 import switchComponentEdit from '../../editorComponents/allEditor'
 // 编辑组件悬浮窗
 
-const Loading = <div style={{ fontSize: '14px', textAlign: 'center', lineHeight: '100px'}}>稍等...</div>;
+const Loading = <div style={{ fontSize: '14px', textAlign: 'center', lineHeight: '100px' }}>稍等...</div>;
 export default class editorSuspension extends Component {
     state = {
         isShow: false,
@@ -43,7 +43,6 @@ export default class editorSuspension extends Component {
                         <div className="container">
                             <Suspense fallback={Loading}>
                                 <div style={{ display: indexed === 0 ? 'block' : 'none' }}>
-
                                     {
                                         switchComponentEdit(componentInfo)
                                     }

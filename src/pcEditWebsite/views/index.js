@@ -7,6 +7,8 @@ import ImgGalleryEditor from "../components/imgGalleryEditor";//图片库
 import ModalWindow from "../components/modalWindow";//悬浮模态窗
 import Toolbar from "../components/toolbar";//左侧工具栏
 import RichTextEditor from "../components/richTextEditor";//富文本编辑器
+import { containerStatus } from '../../store/store'
+import { checkComponentContainer } from '../../store/actions'
 
 const style = {
     position: 'relative',
@@ -69,6 +71,8 @@ export default class pcEditWebsite extends Component {
         iframe.PubSub.publish('getChangeComponentData', changedComponents);
     }
     filterComponentInfo = (info) => {
+        //更新编辑组件是否是组件容器
+        containerStatus.dispatch(checkComponentContainer(info.isContainer))
         //筛选要更改的组件信息
         let obj = info.componentJson.filter((item, index) => {
             return (info.num * 1) === index ? item : null;

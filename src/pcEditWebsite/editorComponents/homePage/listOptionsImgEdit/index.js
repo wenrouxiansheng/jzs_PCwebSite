@@ -22,7 +22,6 @@ export default class listOptionsImgEdit extends Component {
                     "adress": "/"
                 }
             ],
-            "active": true,
             "imgList": [
                 {
                     "text": "文案",
@@ -46,7 +45,6 @@ export default class listOptionsImgEdit extends Component {
             "adress": "/"
         }
     }
-
     changeData = () => {
         //传递修改后的数据
         const { detail } = this.props;

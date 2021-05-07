@@ -64,19 +64,19 @@ export default class danceGrading extends Component {
                                 row: ["少儿舞蹈"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["1-3级", "4-6岁零基础少儿", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["4-5级", "6-8岁少儿", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["6-7级", "8-10岁少儿", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["8-10级", "10-13岁青少年", "<span>考级咨询</span>"]
                             },
                             {
@@ -84,35 +84,35 @@ export default class danceGrading extends Component {
                                 row: ["国标舞考级"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["1-9级", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["铜牌", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["银牌", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["金牌", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["金星一级", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["金星二级", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["金星三级", "不限", "<span>考级咨询</span>"]
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["美术考级<p>(油画、国画、速写、水粉、动漫、山水等）</p>", "1-9级", "不限", "<span>考级咨询</span>"]
                             },
                         ]

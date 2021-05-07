@@ -71,23 +71,23 @@ export default class childrenDance extends Component {
                         title: ["课程", "人数", "上课时长", "咨询"],
                         list: [
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["少儿舞蹈1V1", "1人", "45分钟", "<span>咨询详情</span>"],
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["少儿舞蹈1V2", "2人", "45分钟", "<span>咨询详情</span>"],
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["少儿舞蹈1V3", "3人", "45分钟", "<span>咨询详情</span>"],
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["少儿舞蹈精品小班课", "6-8人", "90分钟", "<span>咨询详情</span>"],
                             },
                             {
-                                owspan: 1,
+                                rowspan: 1,
                                 row: ["少儿舞蹈排练班课程", "8-10人", "90分钟", "<span>咨询详情</span>"],
                             },
                         ]

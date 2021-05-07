@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { CloseCircleOutlined } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
 import { Popconfirm } from 'antd';
+import { containerStatus } from '../../../../store/store'
 
 let imgMessage = null;
 export default class zoomCarouselEdit extends Component {
@@ -85,9 +86,12 @@ export default class zoomCarouselEdit extends Component {
                 <div className="input_box">
                     <label><span>点击图片更改：</span><button className="changeImg" onClick={this.chaneImage}>点击图片更改：</button></label>
                 </div>
-                <div className="changeComponentConf">
-                    <button onClick={this.changeData} >确认</button>
-                </div>
+                {
+                    containerStatus.getState() ? null :
+                        <div className="changeComponentConf">
+                            <button onClick={this.changeData} >确认</button>
+                        </div>
+                }
             </div>
         )
     }

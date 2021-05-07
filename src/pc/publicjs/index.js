@@ -37,7 +37,7 @@ export function homePageMouseMove(componentJson, type) {
         if (!target || !target.parentNode) return;
 
         const num = target.parentNode.getAttribute('flag');//选中组件的下标
-        console.log(componentJson, componentJson[num], num)
+        // console.log(componentJson, componentJson[num], num)
         const info = {
             display: 'block',
             width: `${target.offsetWidth}px`,

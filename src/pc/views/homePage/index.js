@@ -102,7 +102,6 @@ export default class homePage extends Component {
                         {
                             text: "舞蹈培训",
                             level2: [{ text: "少儿舞蹈", adress: "/" }, { text: "成人舞蹈", adress: "/" }],
-                            active: true,
                             imgList: [
                                 { text: "民族舞0", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
                                 { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
@@ -115,7 +114,6 @@ export default class homePage extends Component {
                         {
                             text: "声乐培训",
                             level2: [{ text: "少儿声乐", adress: "/" }, { text: "成人声乐", adress: "/" }],
-                            active: false,
                             imgList: [
                                 { text: "民族舞1", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
                                 { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
@@ -126,7 +124,6 @@ export default class homePage extends Component {
                         {
                             text: "器乐培训",
                             level2: [{ text: "少儿器乐", adress: "/" }, { text: "成人器乐", adress: "/" }],
-                            active: false,
                             imgList: [
                                 { text: "民族舞2", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
                                 { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
@@ -139,7 +136,6 @@ export default class homePage extends Component {
                         {
                             text: "美术培训",
                             level2: [{ text: "少儿美术", adress: "/" }, { text: "成人美术", adress: "/" }],
-                            active: false,
                             imgList: [
                                 { text: "民族舞3", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
                                 { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },

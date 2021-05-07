@@ -1,4 +1,4 @@
-import React, { Suspense, Component} from 'react'
+import React, { Suspense, Component } from 'react'
 import { ConfigProvider, Skeleton } from 'antd';
 import { Route, Redirect, Switch } from 'react-router-dom'
 import zhCN from 'antd/lib/locale/zh_CN';
@@ -9,7 +9,7 @@ import Nav from '@components/common/horizontalNav'
 import Footer from '@components/common/footer'
 import SuspendedWindow from '@components/common/suspendedWindow'  //右侧悬浮窗
 import SelectionModifiers from '@components/common/selectionModifiers'  //右侧悬浮窗
-import routeList from '../router'
+import { routeList, pcPathName } from '../router'
 import { editingStatus } from '../../store/store'
 import { changeEditingStatus } from '../../store/actions'
 
@@ -34,11 +34,6 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
     <Skeleton active />
 </div>;
 
-const childRoute = detail => {//二级路由遍历
-    return detail.children.map((item, index) => {
-        return <Route path={routeList.path + detail.path + item.path} component={item.component} key={index} />
-    })
-}
 let changeSelection = null;
 export default class page extends Component {
     state = {
@@ -72,6 +67,12 @@ export default class page extends Component {
         // 组件销毁前去除订阅消息
         PubSub.unsubscribe(changeSelection);
     }
+    childRoute = detail => {//二级路由遍历
+
+        return detail.children.map((item, index) => {
+            return <Route path={pcPathName + detail.path + item.path} component={item.component} key={index} />
+        })
+    }
     render() {
         return (
             <ConfigProvider locale={zhCN}>
@@ -80,11 +81,11 @@ export default class page extends Component {
                 <Suspense fallback={Loading}>
                     <Switch>
                         {
-                            routeList.children.map((item, index) => {
-                                return item.children ? childRoute(item) : <Route path={routeList.path + item.path} component={item.component} key={index} />
+                            routeList.map((item, index) => {
+                                return item.children ? this.childRoute(item) : <Route path={pcPathName + item.path} component={item.component} key={index} />
                             })
                         }
-                        <Redirect to="/pc/home" />
+                        <Redirect to="/site/pc/home" />
                     </Switch>
                     {
                         this.isEdit()

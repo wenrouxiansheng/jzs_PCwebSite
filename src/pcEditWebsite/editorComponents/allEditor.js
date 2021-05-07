@@ -27,6 +27,8 @@ const ImgTextCrossingEdit = lazy(() => import('./aboutUs/imgTextCrossingEdit'))/
 const ImgBlindPlatoonEdit = lazy(() => import('./aboutUs/imgBlindPlatoonEdit'))//关于我们 - 图片菱形排版
 const ContactInfoEdit = lazy(() => import('./aboutUs/contactInfoEdit'))//关于我们 - 联系信息
 const ComponentContainerEdit = lazy(() => import('./brandIntroduction/componentContainerEdit'))//品牌介绍   组件容器
+const ParagraphEdit = lazy(() => import('./aboutUs/paragraphEdit'))//段落组件
+const TableEdit = lazy(() => import('./trainingCourse/tableEdit'))//表格组件
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
@@ -60,6 +62,8 @@ export default function switchComponentEdit(componentInfo) {
         case 'ContactInfo': return <ContactInfoEdit detail={componentInfo} />;
         case 'SchoolList': return <div>该组件依据传输数据显示，不可更改</div>;
         case 'ComponentContainer': return <ComponentContainerEdit detail={componentInfo} />;
+        case 'Paragraph': return <ParagraphEdit detail={componentInfo} />;
+        case 'Table': return <TableEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
 }

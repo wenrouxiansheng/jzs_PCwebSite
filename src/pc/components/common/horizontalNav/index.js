@@ -50,7 +50,7 @@ export default class nav extends Component {
             },
             {
                 level1: "器乐培训",
-                adress: "pc/danceTraining",
+                adress: "/site/pc/danceTraining",
                 type: '',
                 level2: [{ text: "少儿器乐", adress: "/site/pc/danceTraining/childrenDance", type: '' },
                 { text: "成人器乐", adress: "/site/pc/brandIntroduction/course", type: '' },

@@ -1,105 +1,59 @@
-import React, { Component } from 'react'
-import PubSub from 'pubsub-js'
-import { message } from 'antd';
+import React, { Component, lazy, Suspense } from 'react'
+import { Skeleton } from 'antd';
+import { Route, Switch, Redirect } from 'react-router-dom'
 
-import EditorSuspension from "../components/suspensionEditor";//编辑器容器
-import Header from "../components/header";//编辑器容器
-import ImgGalleryEditor from "../components/imgGalleryEditor";//图片库
-import ModalWindow from "../components/modalWindow";//悬浮模态窗
-import Toolbar from "../components/toolbar";//左侧工具栏
-import RichTextEditor from "../components/richTextEditor";//富文本编辑器
-import { containerStatus } from '../../store/store'
-import { checkComponentContainer } from '../../store/actions'
+const loadingStyle = {
+    width: '1200px',
+    margin: '0 auto',
+    minHeight: '1000px',
+    padding: '50px 0px'
+}
+const Loading = <div className="lazyLoading" style={loadingStyle}>
+    <Skeleton.Image active style={{ width: '1200px', height: '480px' }} />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+</div>;
 
-const style = {
-    position: 'relative',
-    minWidth: '1200px',
-    maxWidth: '1920px',
-    height: '100vh'
-};
-let selectPageMessage = null,
-    revisedMessage = null,
-    operationMessage = null;
-export default class pcEditWebsite extends Component {
-    iframe = React.createRef()
-    state = {
-        suspensionIsShow: false,//组件编辑器是否显示
-        changedComponents: null,//传过来的页面组件和选中组件的下标
-        componentInfo: null//选中组件的信息
-    }
-    componentDidMount() {
-        //接收要更改页面组件和组件信息 打开编辑悬浮窗
-        selectPageMessage = PubSub.subscribe('selectPageComponent', (msg, data) => {
-            this.setState({
-                suspensionIsShow: true,
-                changedComponents: data
-            })
-            this.filterComponentInfo(data)
-        });
+const routeList = [
+    { path: "/site/pcEdit/editor", name: "edit", component: lazy(() => import('./editor')), auth: true },
+    { path: "/site/pcEdit/home", name: "home", component: lazy(() => import('./home')), auth: true },
+    { path: "/site/pcEdit/login", name: "home", component: lazy(() => import('./login')), auth: false },
+]
+export default class pcEditRouter extends Component {
+    //这里作为HOC 路由守卫 先简易实现
+    guard = () => {
+        const { location: { pathname } } = this.props,//页面访问路径
+            isLogin = localStorage.getItem("state"),//模拟登录信息
+            targetRouterConfig = routeList.find(item => item.path === pathname);//筛选路径是否有效
 
-        //订阅 - 修改后的数据都会走这个消息 拿到后在此页面判断更改那条数据
-        revisedMessage = PubSub.subscribe('revisedDataList', (msg, data) => {
-            this.changeRevisedDataList(data)
-        });
+        if (!targetRouterConfig) return <Redirect to='/site/pcEdit/login' />;//如果路径无效就重置到login页面   目前没有404
 
-        //订阅 - 修改组件后的消息是成功还是什么失败
-        operationMessage = PubSub.subscribe('operationMessage', (msg, data) => {
-            if (data.type === 'success') message.success(data.message);
+        const { component } = targetRouterConfig;
 
-            if (data.type === 'warning') message.warning(data.message);
-
-            if (data.type === 'error') message.error(data.message);
-        });
-
-    }
-    componentWillUnmount() {
-        // 组件销毁前去除订阅消息
-        PubSub.unsubscribe(selectPageMessage);
-        PubSub.unsubscribe(revisedMessage);
-        PubSub.unsubscribe(operationMessage);
-    }
-    changeRevisedDataList = (data) => {
-
-        if (!Array.isArray(data)) {
-            throw new Error("传递的值应为数组");
+        if (isLogin) {//有登录信息的情况下
+            if (pathname === '/site/pcEdit/login') {//有登录信息不可进入login页面重定向到home页面
+                return <Redirect to='/site/pcEdit/home' />
+            } else {
+                return <Route path={pathname} component={component} />;//有登录信息编辑页面除登录都可以进入
+            }
+        } else {//没有登录信息的情况
+            if (targetRouterConfig.auth) return <Redirect to='/site/pcEdit/login' />;//需要授权的路由
+            else return <Route path={pathname} component={component} />;//无需授权没有登录信息直接进入
         }
-        const iframe = this.iframe.current.contentWindow;
-        //获得修改后的数据 根据下标替换
-        const { changedComponents } = this.state,
-            { num, componentJson } = changedComponents;
-        componentJson[num] = data[0];
-        //这里要获取iframe下的window
-        iframe.PubSub.publish('getChangeComponentData', changedComponents);
     }
-    filterComponentInfo = (info) => {
-        //更新编辑组件是否是组件容器
-        containerStatus.dispatch(checkComponentContainer(info.isContainer))
-        //筛选要更改的组件信息
-        let obj = info.componentJson.filter((item, index) => {
-            return (info.num * 1) === index ? item : null;
-        })
-        this.setState({
-            componentInfo: obj
-        })
-    }
-    closeSuspension = () => {
-        //关闭组件编辑器
-        this.setState({
-            suspensionIsShow: false
-        })
-    }
+    
     render() {
-        const { suspensionIsShow, componentInfo } = this.state;
         return (
-            <div className="editorPage" style={style}>
-                <Header />
-                <iframe id="iframe" src="../../pc/views/index.js" title="pc" ref={this.iframe} style={{ width: "100%", height: "calc(100vh - 80px)" }} />
-                <EditorSuspension suspensionIsShow={suspensionIsShow} closeSuspension={this.closeSuspension} componentInfo={componentInfo} />
-                <ImgGalleryEditor />
-                <ModalWindow />
-                <Toolbar />
-                <RichTextEditor />
-            </div>
+            <Suspense fallback={Loading}>
+                <Switch>
+                    {
+                        this.guard()
+                    }
+                </Switch>
+            </Suspense>
         )
     }
 }

@@ -91,7 +91,6 @@ export default class page extends Component {
                         this.isEdit()
                     }
                 </Suspense>
-
                 <SuspendedWindow />
                 <Footer />
             </ConfigProvider>

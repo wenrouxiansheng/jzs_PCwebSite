@@ -9,7 +9,8 @@ export default class editorSuspension extends Component {
     state = {
         isShow: false,
         top: 0,
-        indexed: 0
+        indexed: 0,
+        hasError: false
     }
     closeEditorSuspension = () => {
         this.setState({
@@ -24,9 +25,22 @@ export default class editorSuspension extends Component {
             })
         }
     }
+    static getDerivedStateFromError(error) {
+        // 更新 state 使下一次渲染能够显示降级后的 UI
+        return { hasError: true };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        // 你同样可以将错误日志上报给服务器
+        console.log(error, errorInfo);
+    }
     render() {
-        const { top, indexed } = this.state;
+        const { top, indexed, hasError } = this.state;
         const { suspensionIsShow, closeSuspension, componentInfo } = this.props;
+        console.log(hasError)
+        if (hasError) {
+            return <div>运行时错误</div>;
+        }
         return (
             <div className="control_editorSuspension" style={{ display: suspensionIsShow ? 'flex' : 'none' }}>
                 <div className="zoom">

@@ -87,7 +87,6 @@ module.exports = function (webpackEnv) {
   // passed into alias object. Uses a flag if passed into the build command
   const isEnvProductionProfile =
     isEnvProduction && process.argv.includes('--profile');
-
   // We will provide `paths.publicUrlOrPath` to our app
   // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
   // Omit trailing slash as %PUBLIC_URL%/xyz looks better than %PUBLIC_URL%xyz.
@@ -565,7 +564,7 @@ module.exports = function (webpackEnv) {
     },
     plugins: [
       // Generates an `index.html` file with the <script> injected.
-      new BundleAnalyzerPlugin({analyzerPort: 9090}),
+      new BundleAnalyzerPlugin({ analyzerPort: 9090 }),
       new HtmlWebpackPlugin(
         Object.assign(
           {},

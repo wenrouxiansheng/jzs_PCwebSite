@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { Skeleton } from 'antd';
 import PcPage from '@pcPage';
@@ -19,17 +19,20 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
     <Skeleton active />
     <Skeleton active />
 </div>;
-const routeDom = () => {
-    return (
-        <main>
-            <Suspense fallback={Loading}>
-                <Switch>
-                    <Route path="/site/pcEdit" component={lazy(() => import('../pcEditWebsite/views'))} />{/**pc编辑 */}
-                    <Route path="/site/pc" component={PcPage} /> {/**pc官网 */}
-                    <Redirect from="/" to="/site/pc/home" />
-                </Switch>
-            </Suspense>
-        </main>
-    )
+
+export default class routeDom extends Component {
+    
+    render() {
+        return (
+            <main>
+                <Suspense fallback={Loading}>
+                    <Switch>
+                        <Route path="/site/pcEdit" component={lazy(() => import('../pcEditWebsite/views'))} />{/**pc编辑 */}
+                        <Route path="/site/pc" component={PcPage} /> {/**pc官网 */}
+                        <Redirect to="/site/pc" />
+                    </Switch>
+                </Suspense>
+            </main>
+        )
+    }
 }
-export default routeDom

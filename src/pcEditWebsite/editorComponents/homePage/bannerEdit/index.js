@@ -18,6 +18,7 @@ export default class bannerEdit extends Component {
         inputIsShow: false
     }
     awakenPhotoGallery = (num) => {
+        //更换图片
         return () => {
             this.setState({
                 indexed: num
@@ -26,10 +27,11 @@ export default class bannerEdit extends Component {
             PubSub.publish('awakenPhotoGallery', true);
             //订阅 - 更改图片后回调
             imgMessage = PubSub.subscribe('transmitSelectedImg', (msg, data) => {
-                if (typeof imgData === 'string') {
+                if (typeof data === 'string') {
                     const { list, indexed } = this.state,
                         { props: detailList } = list[0];
                     detailList.bannerList[indexed].src = data;
+                    console.log(detailList);
                     //使用的是props数据源  更改state时 props.detail会更改
                     this.setState({
                         list

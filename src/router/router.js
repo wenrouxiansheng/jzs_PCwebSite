@@ -21,7 +21,7 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 </div>;
 
 export default class routeDom extends Component {
-    
+    //这里可以当作hoc 判断移动还是pc
     render() {
         return (
             <main>

@@ -2,6 +2,7 @@ import React, { Component, Suspense } from 'react'
 import { CloseOutlined } from '@ant-design/icons';
 import './style.scss'
 import switchComponentEdit from '../../editorComponents/allEditor'
+import StyleEdit from '../../editorComponents/modalWindow/styleEdit'
 // 编辑组件悬浮窗
 
 const Loading = <div style={{ fontSize: '14px', textAlign: 'center', lineHeight: '100px' }}>稍等...</div>;
@@ -61,7 +62,9 @@ export default class editorSuspension extends Component {
                                         switchComponentEdit(componentInfo)
                                     }
                                 </div>
-                                <div style={{ display: indexed === 1 ? 'block' : 'none' }}>2</div>
+                                <div style={{ display: indexed === 1 ? 'block' : 'none' }}>
+                                    <StyleEdit />
+                                </div>
                             </Suspense>
                         </div>
                     </div>

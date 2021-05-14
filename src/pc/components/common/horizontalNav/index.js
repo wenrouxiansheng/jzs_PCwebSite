@@ -120,28 +120,20 @@ export default class nav extends Component {
                 left = 60 + (num * 130);
             }
             this.line.current.style.left = `${left}px`;
-        }
-    }
-    navMouseenter = (num) => {
-        //进入时二级导航高度设置为子元素*50  设置为true
-        return () => {
+
+            //进入元素显示下拉
             const { navList } = this.state;
-            let ary = navList.map((item, index) => {
-                if (num === index) return true;
-                return item;
-            })
+            navList[num] = true;
             this.setState({
-                navList: ary
+                navList
             })
         }
     }
-    navMouseleave = (num) => {
+    navMouseleave = () => {
         //离开时二级导航全部高度设置为0
-        return () => {
-            this.setState({
-                navList: [false, false, false, false, false, false, false, false, false]
-            })
-        }
+        this.setState({
+            navList: [false, false, false, false, false, false, false, false, false]
+        })
     }
     render() {
         const { navList, dataList } = this.state;
@@ -150,9 +142,9 @@ export default class nav extends Component {
                 <ul onMouseOver={this.navMouseover}>
                     {
                         dataList.map((item, index) => {
-                            return <li key={item.id} className={item.level2 ? 'pullDown' : ''} onMouseEnter={item.level2 ? this.navMouseenter(index) : null} onMouseLeave={item.level2 ? this.navMouseleave(index) : null}><Link to={item.adress} target={item.type}>{item.level1}</Link>
+                            return <li key={item.id} className={item.level2 ? 'pullDown' : ''} onMouseLeave={item.level2 ? this.navMouseleave : null}><Link to={item.adress} target={item.type}>{item.level1}</Link>
                                 {item.level2 ?
-                                    <div style={{ height: navList[index] ? `${item.level2.length * 50}px` : '0px' }}>
+                                    <div style={{ height: navList[index] ? `${(item.level2.length ?? 0) * 50}px` : '0px' }}>
                                         {
                                             item.level2.map((child, j) => {
                                                 return <Link to={child.adress} target={child.type} key={j}>{child.text}</Link>

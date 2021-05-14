@@ -1,9 +1,22 @@
 .tableEdit{
+    .table_container{
+        position: relative;
+    }
     table{
         td{
             border: 1px solid slateblue;
             text-align: center;
+            width: 150px;
+            height: 40px;
+            vertical-align: middle
         }
+    }
+    .addRow{
+        position: absolute;
+        width: 70px;
+        height: 50px;
+        background-color: rosybrown;
+        left: 0px;
     }
     textarea{
         width: 500px;

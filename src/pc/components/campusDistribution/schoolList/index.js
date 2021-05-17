@@ -23,8 +23,9 @@ export default class schoolList extends Component {
     }
     render() {
         const { list } = this.state;
+        const { style } = this.props;
         return (
-            <div className="schoolList">
+            <div className="schoolList" style={{...style}}>
                 <Title info={{ title: "校区分布", subTitle: "Campus Distribution" }} />
                 <div className="list">
                     {

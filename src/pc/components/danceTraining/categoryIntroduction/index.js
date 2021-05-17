@@ -4,9 +4,9 @@ import './style.scss'
 
 export default class categoryIntroduction extends Component {
     render() {
-        const { introduction } = this.props;
+        const { introduction, style } = this.props;
         return (
-            <div className="categoryIntroduction">
+            <div className="categoryIntroduction" style={{ ...style }}>
                 <div className="img">
                     <img src={introduction.img} alt="" />
                     <p>{introduction.subTitle}</p>

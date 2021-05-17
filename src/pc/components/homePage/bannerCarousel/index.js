@@ -3,15 +3,10 @@ import './style.scss'
 import { Carousel } from 'antd';
 import { Link } from 'react-router-dom'
 export default class bannerCarousel extends Component {
-    componentDidMount() {
-        if (window.self !== window.top) {//判断是否被iframe嵌套 挂载监听
-            
-        }
-    }
     render() {
-        const { bannerList } = this.props
+        const { bannerList, style } = this.props
         return (
-            <section className="bannerContent">
+            <section className="bannerContent" style={{...style}}>
                 <Carousel autoplay>
                     {
                         bannerList.map(item => {

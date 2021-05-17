@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
-import switchComponents from '@components/allComponents'//汇总的组件
-import { homePageMouseMove, throttle } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
 import PubSub from 'pubsub-js'
+import { seekComponents } from '../../publicjs'
 
 
 const h1Style = {
@@ -200,22 +199,12 @@ export default class studentHonor extends Component {
         //组件即将销毁后移除订阅
         PubSub.unsubscribe(getChangeComponent);
     }
-    seekComponents = () => {
-        const { componentJson } = this.state;
-        //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
-        return componentJson.map((item, index) => {
-            return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`}
-                onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, 'studentHonor'), 300) : null}
-                key={index} flag={index}>
-                {switchComponents(item.component, item.props)}
-            </div>
-        })
-    }
     render() {
+        const { componentJson } = this.state;
         return (
             <div>
                 {
-                    this.seekComponents()
+                    seekComponents(componentJson)
                 }
             </div>
         )

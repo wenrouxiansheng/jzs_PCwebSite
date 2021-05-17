@@ -13,8 +13,9 @@ export default class form extends Component {
         this.form.current.resetFields();
     };
     render() {
+        const { style } = this.props;
         return (
-            <div className="formContainer" style={{ background: `url(${bg}) no-repeat center center` }}>
+            <div className="formContainer" style={{ background: `url(${bg}) no-repeat center center`, ...style }}>
                 <div className="container">
                     <Form
                         onFinish={this.onFinish}

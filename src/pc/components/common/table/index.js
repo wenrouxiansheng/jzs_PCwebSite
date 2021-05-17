@@ -3,9 +3,9 @@ import './style.scss'
 
 export default class table extends Component {
     render() {
-        const { tableData } = this.props;
+        const { tableData, style } = this.props;
         return (
-            <div className="dataTable">
+            <div className="dataTable" style={{ ...style }}>
                 <table>
                     <thead>
                         <tr>

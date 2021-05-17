@@ -43,12 +43,16 @@ export default class page extends Component {
             height: '0px',
             left: '50px',
             top: '60px'
-        }
+        },
+        routeType: false
     }
     componentDidMount() {
+        //判断顶部window是否是当前的window 不是就是嵌套当作编辑状态   这个判断可能在后期用iframe去集成会有问题
         if (window.self === window.top) return;
         editingStatus.dispatch(changeEditingStatus(true))
-
+        this.setState({
+            routeType: true
+        })
         //是编辑状态 订阅更改信息
         changeSelection = PubSub.subscribe('changeSelectionPosition', (msg, data) => {
             this.setState({
@@ -68,16 +72,16 @@ export default class page extends Component {
         PubSub.unsubscribe(changeSelection);
     }
     childRoute = detail => {//二级路由遍历
-
         return detail.children.map((item, index) => {
             return <Route path={pcPathName + detail.path + item.path} component={item.component} key={index} />
         })
     }
     render() {
+        const { routeType } = this.state;
         return (
             <ConfigProvider locale={zhCN}>
                 <Header />
-                <Nav />
+                <Nav routeType={routeType} />
                 <Suspense fallback={Loading}>
                     <Switch>
                         {

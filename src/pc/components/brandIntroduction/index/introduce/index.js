@@ -22,9 +22,9 @@ export default class introduce extends Component {
         ]
     }
     render() {
-        const { list } = this.props?.list ? this.props : this.state;
+        const { list, style } = this.props?.list ? this.props : this.state;
         return (
-            <div className="introduce">
+            <div className="introduce" style={{ ...style }}>
                 <div className="listContainer">
                     {
                         list.map((item, index) => {

@@ -67,9 +67,9 @@ export default class history extends Component {
     }
     render() {
         const { indexed } = this.state;
-        const { data } = this.props?.data ? this.props : this.state;
+        const { data, style } = this.props?.data ? this.props : this.state;
         return (
-            <div className="developmentHistory">
+            <div className="developmentHistory" style={{...style}}>
                 <Timeline className="nav">
                     {
                         data.map((item, index) => {

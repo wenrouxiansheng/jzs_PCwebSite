@@ -26,9 +26,9 @@ export default class teacherStandards extends Component {
         ]
     }
     render() {
-        const { list } = this.props?.list ? this.props : this.state;
+        const { list, style } = this.props?.list ? this.props : this.state;
         return (
-            <div className="teacherStandards">
+            <div className="teacherStandards" style={{ ...style }}>
                 {
                     list.map((item, index) => {
                         return <div key={index}>

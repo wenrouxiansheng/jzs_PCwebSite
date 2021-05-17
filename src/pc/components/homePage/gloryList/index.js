@@ -32,10 +32,10 @@ export default class gloryList extends Component {
         this.carousel.current.prev();
     }
     render() {
-        const { data: detail } = this.props;
+        const { data: detail, style } = this.props;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="bottom" duration="1000" className="gloryList-antMotion-box">
+                <QueueAnim type="bottom" duration="1000" className="gloryList-antMotion-box" style={{...style}}>
                     <div className="gloryList" key="gloryList">
                         <div className="listBox">
                             <Carousel ref={this.carousel}>

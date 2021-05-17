@@ -13,11 +13,11 @@ export default class exhibition extends Component {
         }
     }
     render() {
-        const { data: propsData } = this.props;
+        const { data: propsData, style } = this.props;
         const { data: stateDate } = this.state;
         let data = propsData || stateDate
         return (
-            <div className="exhibition">
+            <div className="exhibition" style={{...style}}>
                 <div className="fontContainer">
                     <div>
                         <h3>{data.title}</h3>

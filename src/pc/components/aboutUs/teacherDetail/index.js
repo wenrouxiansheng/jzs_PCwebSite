@@ -4,20 +4,21 @@ import img from '@assets/aboutUs/teacherDetail/teacher.jpg'
 
 export default class teacherDetail extends Component {
     render() {
+        const { style } = this.props;
         return (
-            <div className="teacherDetail">
+            <div className="teacherDetail" style={{ ...style }}>
                 <img src={img} alt="" />
                 <div className="info">
                     <h1>范培熠</h1>
                     <h3>个人简介</h3>
                     <div>
-                        <span>教龄<span style={{width: '100%'}}></span></span>：
+                        <span>教龄<span style={{ width: '100%' }}></span></span>：
                         <div>
                             10年
                         </div>
                     </div>
                     <div>
-                        <span>教学课程<span style={{width: '100%'}}></span> </span>：
+                        <span>教学课程<span style={{ width: '100%' }}></span> </span>：
                         <div className="text">
                             高级精品课、竞赛课、少儿中国舞、
                             少儿拉丁、少儿芭蕾

@@ -18,10 +18,10 @@ export default class examLevelList extends Component {
         ]
     }
     render() {
-        const { list } = this.props;
+        const { list, style } = this.props;
         return (
-            <ScrollOverPack always={false}>
-                <QueueAnim type="right" duration="1000" className="examLevelList-antMotion-box">
+            <ScrollOverPack always={false} >
+                <QueueAnim type="right" duration="1000" className="examLevelList-antMotion-box" style={{ ...style }}>
                     <div className="examLevelList" key="examLevelList">
                         {
                             list.map((item, index) => {

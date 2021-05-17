@@ -9,9 +9,9 @@ export default class title extends Component {
         }
     }
     render() {
-        const { info } = this.props;
+        const { info, style } = this.props;
         return (
-            <div className="animationTitle" style={{ marginTop: `${info.top || 50}px`, marginBottom: `${info.bottom || 40}px` }}>
+            <div className="animationTitle" style={{ ...style }}>
                 <h3><b>{info.title}</b></h3>
                 <h6>{info.subTitle}</h6>
             </div>

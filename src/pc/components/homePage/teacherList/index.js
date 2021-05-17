@@ -28,10 +28,10 @@ export default class teacherList extends Component {
         ]
     }
     render() {
-        const { list } = this.props?.list ? this.props : this.state;
+        const { list, style } = this.props?.list ? this.props : this.state;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="scale" duration="1000" className="teacherListLoop-antMotion-box">
+                <QueueAnim type="scale" duration="1000" className="teacherListLoop-antMotion-box" style={{ ...style }}>
                     <div className="teacherListLoop" key="teacherListLoop">
                         <Carousel className="teacherBox">
                             {

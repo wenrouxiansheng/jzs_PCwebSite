@@ -105,11 +105,11 @@ export default class listOfOptionsImg extends Component {
     }
     render() {
         const { selectedIndex, switchIndex } = this.state;
-        const { list } = this.props;
+        const { list, style } = this.props;
         const imgList = list[selectedIndex].imgList;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="left" duration="1000" className="listOfOptionsImg-antMotion-box">
+                <QueueAnim type="left" duration="1000" className="listOfOptionsImg-antMotion-box"  style={{...style}}>
                     <div className="listOfOptionsImg" key="listOfOptionsImg">
                         <ul className="level1">
                             {

@@ -30,9 +30,10 @@ export default class imgAndText extends Component {
         </div>
     }
     render() {
+        const {style} = this.props;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="bottom" duration="1000" className="imgAndText-antMotion-box">
+                <QueueAnim type="bottom" duration="1000" className="imgAndText-antMotion-box" style={{...style}}>
                     {this.modeleType()}
                 </QueueAnim>
             </ScrollOverPack>

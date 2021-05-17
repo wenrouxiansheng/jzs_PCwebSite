@@ -40,10 +40,10 @@ export default class imgTextCrossing extends Component {
         ]
     }
     render() {
-        const { list } = this.props?.list ? this.props : this.state;
+        const { list, style } = this.props?.list ? this.props : this.state;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="scaleX" duration="1000" className="imgTextCrossing imgTextCrossing-antMotion-box">
+                <QueueAnim type="scaleX" duration="1000" className="imgTextCrossing imgTextCrossing-antMotion-box" style={{ ...style }}>
                     {
                         list.map((item, index) => {
                             if (item.type === 'left') {

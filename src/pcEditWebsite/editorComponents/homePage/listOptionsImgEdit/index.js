@@ -189,7 +189,6 @@ export default class listOptionsImgEdit extends Component {
     render() {
         const { props: { list } } = this.props.detail[0]
         const { level1, level2, level2Img } = this.state;
-        console.log(list)
         return (
             <div className="listOptionsImgEdit">
                 <div className="input_box" style={{ marginBottom: '10px' }}>

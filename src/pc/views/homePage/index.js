@@ -3,8 +3,7 @@ import PubSub from 'pubsub-js'
 
 
 import DropDownPrompt from '@components/homePage/dropDownPrompt'
-import switchComponents from '@components/allComponents'//汇总的组件
-import { homePageMouseMove, throttle } from '../../publicjs'
+import { seekComponents } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
 
 let getChangeComponent = null;
@@ -268,17 +267,6 @@ export default class homePage extends Component {
             })
         });
     }
-    seekComponents = () => {
-        const { componentJson } = this.state;
-        //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
-        return componentJson.map((item, index) => {
-            return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`}
-                onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, 'homePage'), 300) : null}
-                key={index} flag={index}>
-                {switchComponents(item.component, item.props)}
-            </div>
-        })
-    }
     bindHandleScroll = (event) => {
         // 滚动的高度
         const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false)
@@ -296,12 +284,12 @@ export default class homePage extends Component {
         PubSub.unsubscribe(getChangeComponent);
     }
     render() {
-        const { status } = this.state
+        const { status, componentJson } = this.state
         return (
             <div style={{ minHeight: '5313px' }}>
                 <DropDownPrompt status={status} />
                 {
-                    this.seekComponents()
+                    seekComponents(componentJson)
                 }
             </div>
         )

@@ -39,10 +39,10 @@ export default class brandHonor extends Component {
         ]
     }
     render() {
-        const { list, introduceList } = this.props.list ? this.props : this.state;
+        const { list, introduceList, style } = this.props.list ? this.props : this.state;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box">
+                <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box" style={{...style}}>
                     <div className="brandHonor" style={{ backgroundImage: `url(${bgImg})` }} key="brandHonor">
                         <Carousel className="honorBox" autoplay>
                             {

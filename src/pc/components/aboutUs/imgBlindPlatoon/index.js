@@ -41,10 +41,10 @@ export default class imgBlindPlatoon extends Component {
         ]
     }
     render() {
-        const { imgList } = this.props?.imgList ? this.props : this.state;
+        const { imgList, style } = this.props?.imgList ? this.props : this.state;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="right" duration="1000" className="imgBlindPlatoon" interval="200">
+                <QueueAnim type="right" duration="1000" className="imgBlindPlatoon" interval="200" style={{ ...style }}>
                     {
                         imgList.map(item => {
                             return <div className={`imgBox${item.id}`} key={item.id}>

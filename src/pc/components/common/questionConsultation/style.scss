@@ -1,4 +1,4 @@
-.questionConsultation{
+.questionConsultation {
     width: 1080px;
     margin: 0 auto;
     box-shadow: 0px 0px 8px #d4d4d4;
@@ -8,29 +8,29 @@
     position: relative;
     overflow: hidden;
     z-index: 0;
-    &>img{
+    & > img {
         position: absolute;
         width: 238px;
         height: 176px;
         object-fit: cover;
         z-index: -1;
-        &:nth-of-type(1){
+        &:nth-of-type(1) {
             top: -40px;
             right: 50px;
-            transform: scale(.9);
+            transform: scale(0.9);
         }
-        &:nth-of-type(2){
+        &:nth-of-type(2) {
             bottom: 40px;
             left: -45px;
-            transform: scale(.8);
+            transform: scale(0.8);
         }
-        &:nth-of-type(3){
+        &:nth-of-type(3) {
             bottom: -90px;
             right: 45px;
-            transform: scale(.8);
+            transform: scale(0.8);
         }
     }
-    p{
+    p {
         display: flex;
         height: 50px;
         justify-content: space-between;
@@ -39,10 +39,10 @@
         color: #333;
         font-size: 16px;
         border-bottom: solid 1px rgba($color: #000000, $alpha: 0.2);
-        &:last-of-type{
+        &:last-of-type {
             border: 0px;
         }
-        span{
+        & > span {
             font-weight: 400;
             display: inline-block;
             width: 860px;
@@ -50,13 +50,16 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        button{
+        button {
             border: 0px;
             background-color: white;
             color: #666666;
             font-size: 16px;
             cursor: pointer;
             background-color: transparent;
+            span{
+                font-size: 14px;
+            }
         }
     }
 }

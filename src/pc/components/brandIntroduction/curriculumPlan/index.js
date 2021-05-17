@@ -66,8 +66,9 @@ export default class curriculumPlanComponent extends Component {
         })
     }
     render() {
+        const { style } = this.props
         return (
-            <div className="curriculumPlan">
+            <div className="curriculumPlan" style={{...style}}>
                 {
                     this.retrievalNode()
                 }

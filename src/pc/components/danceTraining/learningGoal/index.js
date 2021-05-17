@@ -6,9 +6,9 @@ import circular from '@assets/danceTraining/childrenDance/circular.png'
 
 export default class learningGoal extends Component {
     render() {
-        const { textList, info:{title, subTitle} } = this.props;
+        const { textList, info: { title, subTitle }, style } = this.props;
         return (
-            <div className="learningGoal" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="learningGoal" style={{ backgroundImage: `url(${bg})`, ...style }}>
                 <Title info={{ title: title, subTitle: subTitle }} />
                 <div className="circular-box">
                     <div className="circular"></div>

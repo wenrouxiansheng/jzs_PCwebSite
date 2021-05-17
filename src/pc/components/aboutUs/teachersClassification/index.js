@@ -46,8 +46,9 @@ export default class teachersClassification extends Component {
     }
     render() {
         const { teacherList, selectList, category } = this.state;
+        const { style } = this.props;
         return (
-            <div className="teachersClassification">
+            <div className="teachersClassification" style={{ ...style }}>
                 <Title info={{ title: "师资力量", subTitle: "汇聚国内外艺术名师", bottom: "20" }} />
                 <ul className="nav">
                     {

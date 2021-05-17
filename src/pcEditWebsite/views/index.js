@@ -1,6 +1,8 @@
 import React, { Component, lazy, Suspense } from 'react'
 import { Skeleton } from 'antd';
 import { Route, Switch, Redirect } from 'react-router-dom'
+import { editingStatus } from '../../store/store'
+import { changeEditingStatus } from '../../store/actions'
 
 const loadingStyle = {
     width: '1200px',
@@ -44,7 +46,10 @@ export default class pcEditRouter extends Component {
             else return <Route path={pathname} component={component} />;//无需授权没有登录信息直接进入
         }
     }
-    
+    componentDidMount() {
+        editingStatus.dispatch(changeEditingStatus(true))
+
+    }
     render() {
         return (
             <Suspense fallback={Loading}>

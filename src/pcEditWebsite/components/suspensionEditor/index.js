@@ -38,7 +38,6 @@ export default class editorSuspension extends Component {
     render() {
         const { top, indexed, hasError } = this.state;
         const { suspensionIsShow, closeSuspension, componentInfo } = this.props;
-        console.log(hasError)
         if (hasError) {
             return <div>运行时错误</div>;
         }
@@ -63,7 +62,7 @@ export default class editorSuspension extends Component {
                                     }
                                 </div>
                                 <div style={{ display: indexed === 1 ? 'block' : 'none' }}>
-                                    <StyleEdit />
+                                    <StyleEdit detail={componentInfo}/>
                                 </div>
                             </Suspense>
                         </div>

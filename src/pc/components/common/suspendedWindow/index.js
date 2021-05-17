@@ -22,6 +22,20 @@ export default class suspendedWindow extends Component {
             return false;
         }
     }
+    returnTop = (event) => {
+        // 返回顶部
+        let scrollTop = document.documentElement.scrollTop;
+        if (scrollTop > 0) {
+            let timer = setInterval(() => {
+
+                document.documentElement.scrollTop -= 60;
+                if (document.documentElement.scrollTop <= 0) {
+                    clearInterval(timer)
+                }
+
+            }, 10);
+        }
+    }
     render() {
         //以下是弹出组件
         const QRcontent = (
@@ -55,7 +69,7 @@ export default class suspendedWindow extends Component {
                     <img src={consult} alt="" />
                     <p>在线咨询</p>
                 </div>
-                <div className="container">
+                <div className="container" onClick={this.returnTop}>
                     <UpOutlined />
                 </div>
             </div>

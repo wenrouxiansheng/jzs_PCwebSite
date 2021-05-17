@@ -1,4 +1,6 @@
 import PubSub from 'pubsub-js'
+import { editingStatus } from '../../store/store'
+import switchComponents from '@components/allComponents'//汇总的组件
 
 export function getParents(el, name) {//向上查找指定类名，如父元素有指定类名则返回自身
     let dom = el;
@@ -56,4 +58,25 @@ export function homePageMouseMove(componentJson, type) {
         //选中之后把页面的组件数据   以及选择的组件下标传到悬浮小窗口中
         PubSub.publish('getActiveObj', activeObjInfo);
     }
+}
+
+
+export function seekComponents(componentJson) {
+    //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
+
+    if (!editingStatus.getState()) {//不是编辑状态下少一层div
+        const ary = [];
+        componentJson.forEach((item, index) => {
+            ary.push(switchComponents(item.component, item.props, index))
+        })
+        return ary;
+    }
+
+    return componentJson.map((item, index) => {
+        return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`}
+            onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, 'homePage'), 300) : null}
+            key={index} flag={index}>
+            {switchComponents(item.component, item.props)}
+        </div>
+    })
 }

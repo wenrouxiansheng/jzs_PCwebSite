@@ -47,10 +47,10 @@ export default class contactInfo extends Component {
         }
     }
     render() {
-        const { info } = this.props?.info ? this.props : this.state,
+        const { info, style } = this.props?.info ? this.props : this.state,
             { headOffice, phoneInfo, emailInfo, weChatInfo, microBlogInfo } = info;
         return (
-            <div className="contactInfo">
+            <div className="contactInfo" style={{ ...style }}>
                 <div className="suspension">
                     <img src={headOffice.img} alt="" />
                     <div>

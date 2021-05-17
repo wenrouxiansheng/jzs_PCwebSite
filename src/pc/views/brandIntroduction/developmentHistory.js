@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
 
-import { homePageMouseMove, throttle } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
-import switchComponents from '@components/allComponents'//汇总的组件
+import { seekComponents } from '../../publicjs'
 
 //品牌介绍  - 历史历程
 let getChangeComponent = null;
@@ -103,22 +102,12 @@ export default class developmentHistory extends Component {
     componentWillUnmount() {
         PubSub.unsubscribe(getChangeComponent);
     }
-    seekComponents = () => {
-        const { componentJson } = this.state;
-        //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
-        return componentJson.map((item, index) => {
-            return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`}
-                onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, 'history'), 300) : null}
-                key={index} flag={index}>
-                {switchComponents(item.component, item.props)}
-            </div>
-        })
-    }
     render() {
+        const { componentJson } = this.state;
         return (
             <div>
                 {
-                    this.seekComponents()
+                    seekComponents(componentJson)
                 }
             </div>
         )

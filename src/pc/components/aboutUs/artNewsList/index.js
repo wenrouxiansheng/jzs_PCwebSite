@@ -33,14 +33,15 @@ export default class artNewsList extends Component {
     }
     render() {
         const { list } = this.state;
+        const { style } = this.props;
         return (
-            <div className="artNewsList">
+            <div className="artNewsList" style={{ ...style }}>
                 {
                     list.map((item, index) => {
                         return <div className="news" key={index}>
                             <img src={item.img} alt="" />
                             <div className="container">
-                                <h1>{item.title}<img src={newImg} alt=""/></h1>
+                                <h1>{item.title}<img src={newImg} alt="" /></h1>
                                 <p>{item.text}</p>
                                 <time>{item.time}</time>
                             </div>

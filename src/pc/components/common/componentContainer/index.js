@@ -13,8 +13,9 @@ export default class componentsContainer extends Component {
         })
     }
     render() {
+        const {style} = this.props
         return (
-            <div className="componentsContainer">
+            <div className="componentsContainer"  style={{...style}}>
                 {
                     this.seekComponents()
                 }

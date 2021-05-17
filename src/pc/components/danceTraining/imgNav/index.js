@@ -4,9 +4,9 @@ import './style.scss'
 
 export default class imgNav extends Component {
     render() {
-        const { navList } = this.props;
+        const { navList, style } = this.props;
         return (
-            <div className="courseImgNav">
+            <div className="courseImgNav" style={{ ...style }}>
                 <nav>
                     {
                         navList.map((item, index) => {

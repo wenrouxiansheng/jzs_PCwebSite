@@ -51,6 +51,13 @@ const LoginForm = class loginForm extends Component {
             this.props.history.push('/site/pcEdit/home');
         }
     }
+    onKeyDown = (e) => {
+        var theEvent = window.event || e;
+        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+        if (code === 13) {
+            this.signIn();
+        }
+    }
     render() {
         const { inputShow, inputBox } = this.state;
         return (
@@ -96,7 +103,7 @@ const LoginForm = class loginForm extends Component {
                                     <div className="import-form">
                                         <div className="icon password"></div>
                                         <input autoComplete="off" className="import-input"
-                                            placeholder="请输入密码" type="password" ref={e => { this.accountPassword = e }} />
+                                            placeholder="请输入密码" type="password" ref={e => { this.accountPassword = e }} onKeyDown={this.onKeyDown} />
                                         <div className="forget_password" onClick={this.switchInput}>忘记密码</div>
                                     </div>
                                 </div>

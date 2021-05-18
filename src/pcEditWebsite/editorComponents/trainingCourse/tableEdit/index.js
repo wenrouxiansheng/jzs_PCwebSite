@@ -3,7 +3,10 @@ import './style.scss'
 
 export default class tableEdit extends Component {
     state = {
-        top: 0
+        toolPosition: {
+            top: 0,
+            left: 0
+        }
     }
     stringData = () => {
         const { props: { tableData } } = this.props.detail[0];
@@ -15,16 +18,22 @@ export default class tableEdit extends Component {
             top: e.currentTarget.offsetTop
         })
     }
+    moveTool = (e) => {
+        let { layerX, layerY } = e.nativeEvent.currentTarget;
+        console.log(layerX)
+        this.setState({
+            toolPosition: {
+                top: layerY,    
+                left: layerX
+            }
+        })
+    }
     render() {
         const { props: { tableData } } = this.props.detail[0];
-        const { top } = this.state;
-        console.log(top)
-
-        console.log(this.props)
-
+        const { toolPosition: { top, left } } = this.state;
         return (
             <div className="tableEdit">
-                <div className="table_container">
+                <div className="table_container" onMouseMove={this.moveTool}>
                     <table>
                         <thead>
                             <tr>
@@ -49,7 +58,7 @@ export default class tableEdit extends Component {
                             }
                         </tbody>
                     </table>
-                    <div className="addRow" style={{ top: `${top}px` }}>
+                    <div className="addRow" style={{ top: `${top}px`, left: `${left}px` }}>
                         asd
                     </div>
                 </div>

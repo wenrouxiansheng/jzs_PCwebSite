@@ -28,22 +28,78 @@ export default class latinGrading extends Component {
                     tableData: {
                         title: ["课程", "人数", "上课时常", "咨询"],
                         list: [
-                            {
-                                rowspan: 1,
-                                row: ["艺考国标舞1V1", "1人", "60分钟", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["艺考乐理1V1", "1人", "60分钟", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["艺考乐理精品小班", "6-8人", "90分钟", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["艺考舞蹈考试模拟班", "6-8人", "90分钟", "<span>考级咨询</span>"]
-                            }
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "艺考国标舞1V1"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "60分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "艺考乐理1V1"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "60分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "艺考乐理精品小班"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "6-8人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "艺考舞蹈考试模拟班"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "6-8人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ]
                         ]
                     }
                 }
@@ -176,7 +232,7 @@ export default class latinGrading extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'latinGrading')
                 }
             </div>
         )

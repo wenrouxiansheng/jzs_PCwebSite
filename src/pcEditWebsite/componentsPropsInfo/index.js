@@ -28,6 +28,31 @@ export default function switchInfo(name) {
                 ]
             }
         },
+        table: {
+            tableData: {
+                title: ["课程", "人数", "上课时常", "咨询"],
+                list: [
+                    [
+                        {
+                            rowspan: 1,
+                            text: "艺考国标舞1V1"
+                        },
+                        {
+                            rowspan: 1,
+                            text: "1人"
+                        },
+                        {
+                            rowspan: 1,
+                            text: "60分钟"
+                        },
+                        {
+                            rowspan: 1,
+                            text: "<span style='color: #ff8000;'>考级咨询</span>"
+                        },
+                    ],
+                ]
+            }
+        },
         listOfOptionsImg: {
             list: [
                 {
@@ -260,7 +285,7 @@ export default function switchInfo(name) {
             }
         }
     },
-        { title, banner, imgAndText, schoolListImgText, listOfOptionsImg, examLevelList, teacherList, gloryList, brandHonor, exhibition, introduce, componentContainer, history, curriculumPlan, courseNavList, courseFlow, learningGoal, questionConsultation, categoryIntroduction, teacherStandards, paragraph, zoomCarousel, imgTextCrossing, imgBlindPlatoon, contactInfo } = objInfo;
+        { title, banner, imgAndText, schoolListImgText, listOfOptionsImg, examLevelList, teacherList, gloryList, brandHonor, exhibition, introduce, componentContainer, history, curriculumPlan, courseNavList, courseFlow, learningGoal, questionConsultation, categoryIntroduction, teacherStandards, paragraph, zoomCarousel, imgTextCrossing, imgBlindPlatoon, contactInfo, table } = objInfo;
     switch (name) {
         case 'Title': return title;
         case 'Banner': return banner;
@@ -293,7 +318,8 @@ export default function switchInfo(name) {
         case 'ArtNewsList': return null;
         case 'ContactInfo': return contactInfo;
         case 'SchoolList': return null;
-        
+        case 'Table': return table;
+
         default: return "无"
     }
 }

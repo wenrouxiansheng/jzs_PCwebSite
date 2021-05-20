@@ -10,6 +10,85 @@ export default class componentsModal extends Component {
         headeList: ["新增模块", "页面模块"],
         componentList: [
             {
+                title: "导航组件",
+                icon: <RightCircleFilled />,
+                active: true,
+                id: "2",
+                list: [
+                    {
+                        text: "图文导航",
+                        icon: <AlignLeftOutlined />,
+                        id: "2-1",
+                        value: "CourseNavList"
+                    },
+                    {
+                        text: "图文考级导航",
+                        icon: <FontColorsOutlined />,
+                        id: "2-2",
+                        value: "ExamLevelList"
+                    },
+
+                ]
+            },
+            {
+                title: "交互组件",
+                icon: <RightCircleFilled />,
+                active: true,
+                id: "3",
+                list: [
+                    {
+                        text: "表单",
+                        icon: <AlignLeftOutlined />,
+                        id: "3-1",
+                        value: "Form"
+                    },
+                    {
+                        text: "新闻列表",
+                        icon: <BoldOutlined />,
+                        id: "3-2",
+                        value: "ArtNewsList"
+                    },
+                    {
+                        text: "教师列表",
+                        icon: <FontColorsOutlined />,
+                        id: "3-3",
+                        value: "TeachersClassification"
+                    },
+                    {
+                        text: "校区列表",
+                        icon: <BoldOutlined />,
+                        id: "3-4",
+                        value: "SchoolList"
+                    },
+                ]
+            },
+            {
+                title: "常用组件",
+                icon: <RightCircleFilled />,
+                active: true,
+                id: "4",
+                list: [
+                    {
+                        text: "横幅图",
+                        icon: <AreaChartOutlined />,
+                        id: "4-1",
+                        value: "Banner"
+                    },
+                    {
+                        text: "段落",
+                        icon: <AlignLeftOutlined />,
+                        id: "4-2",
+                        value: "Paragraph"
+                    },
+                    {
+                        text: "标题",
+                        icon: <FontColorsOutlined />,
+                        id: "4-3",
+                        value: "Title"
+                    },
+                ]
+            },
+            {
                 title: "组件",
                 icon: <RightCircleFilled />,
                 active: true,
@@ -135,87 +214,15 @@ export default class componentsModal extends Component {
                         id: "1-22",
                         value: "ContactInfo"
                     },
-                ]
-            },
-            {
-                title: "导航组件",
-                icon: <RightCircleFilled />,
-                active: true,
-                id: "2",
-                list: [
                     {
-                        text: "图文导航",
-                        icon: <AlignLeftOutlined />,
-                        id: "2-1",
-                        value: "CourseNavList"
-                    },
-                    {
-                        text: "图文考级导航",
+                        text: "表格",
                         icon: <FontColorsOutlined />,
-                        id: "2-2",
-                        value: "ExamLevelList"
-                    },
-
-                ]
-            },
-            {
-                title: "交互组件",
-                icon: <RightCircleFilled />,
-                active: true,
-                id: "3",
-                list: [
-                    {
-                        text: "表单",
-                        icon: <AlignLeftOutlined />,
-                        id: "3-1",
-                        value: "Form"
-                    },
-                    {
-                        text: "新闻列表",
-                        icon: <BoldOutlined />,
-                        id: "3-2",
-                        value: "ArtNewsList"
-                    },
-                    {
-                        text: "教师列表",
-                        icon: <FontColorsOutlined />,
-                        id: "3-3",
-                        value: "TeachersClassification"
-                    },
-                    {
-                        text: "校区列表",
-                        icon: <BoldOutlined />,
-                        id: "3-4",
-                        value: "SchoolList"
+                        id: "1-23",
+                        value: "Table"
                     },
                 ]
             },
-            {
-                title: "常用组件",
-                icon: <RightCircleFilled />,
-                active: true,
-                id: "4",
-                list: [
-                    {
-                        text: "横幅图",
-                        icon: <AreaChartOutlined />,
-                        id: "4-1",
-                        value: "Banner"
-                    },
-                    {
-                        text: "段落",
-                        icon: <AlignLeftOutlined />,
-                        id: "4-2",
-                        value: "Paragraph"
-                    },
-                    {
-                        text: "标题",
-                        icon: <FontColorsOutlined />,
-                        id: "4-3",
-                        value: "Title"
-                    },
-                ]
-            }
+            
         ],
         record: 0
     }

@@ -33,7 +33,8 @@ export default class selectionModifiers extends Component {
         //订阅- 增加组件 替换占位元素
         addComponentMessage = PubSub.subscribe('addComponent', (msg, data) => {
             const { selectedActiveObj, addModuleIndexed } = this.state;
-            const { component, info } = data
+            const { component, info } = data;
+            console.log(selectedActiveObj, addModuleIndexed, data);
             if (addModuleIndexed === null) {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '请先选择添加组件',
@@ -45,7 +46,7 @@ export default class selectionModifiers extends Component {
                 "component": component,
                 "props": info
             }
-            selectedActiveObj.componentJson.splice(addModuleIndexed + 1, 1, obj)
+            selectedActiveObj.componentJson.splice(addModuleIndexed * 1 + 1, 1, obj)
             this.setState({
                 addModuleIndexed: null,
                 selectedActiveObj
@@ -60,7 +61,7 @@ export default class selectionModifiers extends Component {
     }
     reviseModule = () => {
         const { selectedActiveObj } = this.state;
-        
+
         //发布消息 - 点击编辑组件把activeobj信息 传递给顶层编辑器页面
         if (!selectedActiveObj) {
             message.warning('请先选择组件');
@@ -114,13 +115,11 @@ export default class selectionModifiers extends Component {
         }
 
         //添加模块
-        let { selectedActiveObj } = this.state,
-            { num, componentJson } = selectedActiveObj,
+        let { selectedActiveObj, selectedActiveObj: { num, componentJson } } = this.state,
             addModule = {
                 component: 'AddModule'
-            }
-        num *= 1;
-        componentJson.splice(num + 1, 0, addModule);
+            };
+        componentJson.splice(num * 1 + 1, 0, addModule);
         PubSub.publish('getChangeComponentData', selectedActiveObj);//传送修改后的数据
         //addModuleIndexed只记录有没有站为元素  只在添加模块流程中开头判断用
         this.setState({
@@ -135,7 +134,8 @@ export default class selectionModifiers extends Component {
         deleteMessage = PubSub.subscribe('deleteAddModule', (msg, data) => {
             const { type } = data
             if (type === 'close') {
-                componentJson.splice(num + 1, 1);
+                console.log(componentJson, num);
+                componentJson.splice(num * 1 + 1, 1);
                 PubSub.publish('getChangeComponentData', selectedActiveObj);//传送修改后的数据
             }
             //执行后删除订阅

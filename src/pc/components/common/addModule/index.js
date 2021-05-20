@@ -12,7 +12,7 @@ export default class addModule extends Component {
     }
     openModuleWindow = () => {
         //唤醒模态窗  - 组件列表
-        window.parent.PubSub.publish('showModalWindow', { select: 0, isShow: true });
+        window.parent.PubSub.publish('showModalWindow', { select: 0, isShow: true });//select表示悬浮窗显示第一个模块
     }
     render() {
         return (

@@ -204,7 +204,7 @@ export default class studentHonor extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'studentHonor')
                 }
             </div>
         )

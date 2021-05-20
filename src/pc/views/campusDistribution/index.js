@@ -53,7 +53,7 @@ export default class campusDistribution extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'campusDistribution')
                 }
             </div>
         )

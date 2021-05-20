@@ -42,78 +42,258 @@ export default class danceGrading extends Component {
                     tableData: {
                         title: ["考级类别", "考级级别", "适合范围", "咨询"],
                         list: [
-                            {
-                                rowspan: 1,
-                                row: ["童声", "1-9级", "3-12岁", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["架子鼓", "1-9级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["尤克里里", "1-10级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["钢琴", "1-9级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 5,
-                                row: ["少儿舞蹈"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["1-3级", "4-6岁零基础少儿", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["4-5级", "6-8岁少儿", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["6-7级", "8-10岁少儿", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["8-10级", "10-13岁青少年", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 8,
-                                row: ["国标舞考级"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["1-9级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["铜牌", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["银牌", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["金牌", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["金星一级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["金星二级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["金星三级", "不限", "<span>考级咨询</span>"]
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["美术考级<p>(油画、国画、速写、水粉、动漫、山水等）</p>", "1-9级", "不限", "<span>考级咨询</span>"]
-                            },
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "童声"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-9级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "3-12岁"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "架子鼓"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-9级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "尤克里里"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-10级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "钢琴"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-9级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 4,
+                                    text: "少儿舞蹈"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-3级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "4-6岁零基础少儿"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "4-5级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "6-8岁少儿"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "6-7级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "8-10岁少儿"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "8-10级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "10-13岁青少年"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 7,
+                                    text: "国标舞考级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-9级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "铜牌"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "银牌"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "金牌"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "金星一级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "金星二级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "金星三级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "美术考级<p>(油画、国画、速写、水粉、动漫、山水等）</p>"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1-9级"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "不限"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                },
+                            ],
                         ]
                     }
                 }
@@ -181,6 +361,7 @@ export default class danceGrading extends Component {
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
+            console.log(data)
             if (data.type !== 'artExamDance') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
@@ -206,7 +387,7 @@ export default class danceGrading extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'artExamDance')
                 }
             </div>
         )

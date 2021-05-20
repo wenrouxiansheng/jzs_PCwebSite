@@ -91,7 +91,7 @@ export default class contactUs extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'contactUs')
                 }
             </div>
         )

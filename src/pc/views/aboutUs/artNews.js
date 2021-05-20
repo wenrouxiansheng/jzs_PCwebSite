@@ -54,7 +54,7 @@ export default class artNews extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'artNews')
                 }
             </div>
         )

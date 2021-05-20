@@ -107,7 +107,7 @@ export default class developmentHistory extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'history')
                 }
             </div>
         )

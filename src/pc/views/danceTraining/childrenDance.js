@@ -69,26 +69,96 @@ export default class childrenDance extends Component {
                     tableData: {
                         title: ["课程", "人数", "上课时长", "咨询"],
                         list: [
-                            {
-                                rowspan: 1,
-                                row: ["少儿舞蹈1V1", "1人", "45分钟", "<span>咨询详情</span>"],
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["少儿舞蹈1V2", "2人", "45分钟", "<span>咨询详情</span>"],
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["少儿舞蹈1V3", "3人", "45分钟", "<span>咨询详情</span>"],
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["少儿舞蹈精品小班课", "6-8人", "90分钟", "<span>咨询详情</span>"],
-                            },
-                            {
-                                rowspan: 1,
-                                row: ["少儿舞蹈排练班课程", "8-10人", "90分钟", "<span>咨询详情</span>"],
-                            },
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "少儿舞蹈1V1"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "45分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "少儿舞蹈1V2"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "2人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "45分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "少儿舞蹈1V3"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "3人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "45分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "少儿舞蹈精品小班课"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "6-8人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "少儿舞蹈排练班课程"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "8-10人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
+                                },
+                            ]
                         ]
                     }
                 }
@@ -181,7 +251,7 @@ export default class childrenDance extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'childrenDance')
                 }
             </div>
         )

@@ -47,7 +47,7 @@ const Teachers = class teachers extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'teachersCommon')
                 }
                 <Switch>
                     <Route path="/site/pc/aboutUs/teachers/detail" component={TeacherDeatil} />{/**教师详情 */}

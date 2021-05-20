@@ -61,7 +61,7 @@ export function homePageMouseMove(componentJson, type) {
 }
 
 
-export function seekComponents(componentJson) {
+export function seekComponents(componentJson, type) {
     //遍历页面结构  ,如果时编辑状态会监听鼠标移动事件 形成选中框加悬浮窗
 
     if (!editingStatus.getState()) {//不是编辑状态下少一层div
@@ -74,7 +74,7 @@ export function seekComponents(componentJson) {
 
     return componentJson.map((item, index) => {
         return <div className={`componentContainer ${editingStatus.getState() ? 'hoverBorder' : ''}`}
-            onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, 'homePage'), 300) : null}
+            onMouseMove={(editingStatus.getState() && item.component !== 'AddModule') ? throttle(homePageMouseMove(componentJson, type), 300) : null}
             key={index} flag={index}>
             {switchComponents(item.component, item.props)}
         </div>

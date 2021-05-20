@@ -111,7 +111,7 @@ export default class brandIntroduction extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'brandIntroduction')
                 }
             </div>
         )

@@ -3,26 +3,26 @@ import './style.scss'
 
 export default class table extends Component {
     render() {
-        const { tableData, style } = this.props;
+        const { tableData: { list, title }, style } = this.props;
         return (
             <div className="dataTable" style={{ ...style }}>
                 <table>
                     <thead>
                         <tr>
                             {
-                                tableData.title.map((title, index) => {
-                                    return <td key={index}>{title}</td>
+                                title.map((title, index) => {
+                                    return <td key={index} dangerouslySetInnerHTML={{ __html: title }}></td>
                                 })
                             }
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            tableData.list.map((item, index) => {
+                            list.map((item, index) => {
                                 return <tr key={index}>
                                     {
-                                        item.row.map((list, j) => {
-                                            return <td rowSpan={item.rowspan} dangerouslySetInnerHTML={{ __html: list }} key={j}></td>
+                                        item.map((obj, j) => {
+                                            return <td rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
                                         })
                                     }
                                 </tr>

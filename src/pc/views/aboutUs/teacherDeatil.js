@@ -71,7 +71,7 @@ export default class teacherDeatil extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'teacherDeatil')
                 }
             </div>
         )

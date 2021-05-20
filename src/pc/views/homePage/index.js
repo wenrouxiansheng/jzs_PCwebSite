@@ -289,7 +289,7 @@ export default class homePage extends Component {
             <div style={{ minHeight: '5313px' }}>
                 <DropDownPrompt status={status} />
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson,'homePage')
                 }
             </div>
         )

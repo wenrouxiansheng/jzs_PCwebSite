@@ -107,7 +107,7 @@ export default class curriculumPlan extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'curriculumPlan')
                 }
             </div>
         )

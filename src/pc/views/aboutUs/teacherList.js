@@ -61,7 +61,7 @@ export default class teacherList extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson)
+                    seekComponents(componentJson, 'teacherList')
                 }
             </div>
         )

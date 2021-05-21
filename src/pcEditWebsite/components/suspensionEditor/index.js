@@ -35,6 +35,7 @@ export default class editorSuspension extends Component {
         // 你同样可以将错误日志上报给服务器
         console.log(error, errorInfo);
     }
+    
     render() {
         const { top, indexed, hasError } = this.state;
         const { suspensionIsShow, closeSuspension, componentInfo } = this.props;
@@ -62,7 +63,9 @@ export default class editorSuspension extends Component {
                                     }
                                 </div>
                                 <div style={{ display: indexed === 1 ? 'block' : 'none' }}>
-                                    <StyleEdit detail={componentInfo}/>
+                                    {
+                                        suspensionIsShow ? <StyleEdit detail={componentInfo} /> : <div>数据传递错误</div>
+                                    }
                                 </div>
                             </Suspense>
                         </div>

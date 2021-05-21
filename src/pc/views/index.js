@@ -12,7 +12,7 @@ import SelectionModifiers from '@components/common/selectionModifiers'  //右侧
 import { routeList, pcPathName } from '../router'
 import { editingStatus } from '../../store/store'
 import { changeEditingStatus } from '../../store/actions'
-
+import '../assets/css/pcStyle.scss'//pc的固定样式
 
 //页面汇总文件
 
@@ -80,23 +80,26 @@ export default class page extends Component {
         const { routeType } = this.state;
         return (
             <ConfigProvider locale={zhCN}>
-                <Header />
-                <Nav routeType={routeType} />
-                <Suspense fallback={Loading}>
-                    <Switch>
+                <main className="pcResetStyle">
+                    <Header />
+                    <Nav routeType={routeType} />
+                    <Suspense fallback={Loading}>
+                        <Switch>
+                            {
+                                routeList.map((item, index) => {
+                                    return item.children ? this.childRoute(item) : <Route path={pcPathName + item.path} component={item.component} key={index} />
+                                })
+                            }
+                            <Redirect to="/site/pc/home" />
+                        </Switch>
                         {
-                            routeList.map((item, index) => {
-                                return item.children ? this.childRoute(item) : <Route path={pcPathName + item.path} component={item.component} key={index} />
-                            })
+                            this.isEdit()
                         }
-                        <Redirect to="/site/pc/home" />
-                    </Switch>
-                    {
-                        this.isEdit()
-                    }
-                </Suspense>
-                <SuspendedWindow />
-                <Footer />
+                    </Suspense>
+                    <SuspendedWindow />
+                    <Footer />
+                </main>
+
             </ConfigProvider>
         )
     }

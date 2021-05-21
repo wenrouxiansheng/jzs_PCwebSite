@@ -3,6 +3,7 @@ import { Skeleton } from 'antd';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { editingStatus } from '../../store/store'
 import { changeEditingStatus } from '../../store/actions'
+import '../assets/css/pcStyle.scss'//pc重置样式
 
 const loadingStyle = {
     width: '1200px',
@@ -52,13 +53,15 @@ export default class pcEditRouter extends Component {
     }
     render() {
         return (
-            <Suspense fallback={Loading}>
-                <Switch>
-                    {
-                        this.guard()
-                    }
-                </Switch>
-            </Suspense>
+            <main className="pcResetStyle">
+                <Suspense fallback={Loading}>
+                    <Switch>
+                        {
+                            this.guard()
+                        }
+                    </Switch>
+                </Suspense>
+            </main>
         )
     }
 }

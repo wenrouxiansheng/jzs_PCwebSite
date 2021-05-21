@@ -78,6 +78,7 @@ export default class pcEditWebsite extends Component {
         let obj = info.componentJson.filter((item, index) => {
             return (info.num * 1) === index ? item : null;
         })
+        obj[1] = info.num;
         this.setState({
             componentInfo: obj
         })

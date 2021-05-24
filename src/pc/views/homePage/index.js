@@ -284,7 +284,7 @@ export default class homePage extends Component {
         PubSub.unsubscribe(getChangeComponent);
     }
     render() {
-        const { status, componentJson } = this.state
+        const { status, componentJson } = this.state;
         return (
             <div style={{ minHeight: '5313px' }}>
                 <DropDownPrompt status={status} />

@@ -6,7 +6,7 @@ import StyleEdit from '../../editorComponents/modalWindow/styleEdit'
 // 编辑组件悬浮窗
 
 const Loading = <div style={{ fontSize: '14px', textAlign: 'center', lineHeight: '100px' }}>稍等...</div>;
-export default class editorSuspension extends Component {
+export default class suspensionEditor extends Component {
     state = {
         isShow: false,
         top: 0,

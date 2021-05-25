@@ -32,8 +32,46 @@ const TableEdit = lazy(() => import('./trainingCourse/tableEdit'))//表格组件
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
-    const { component } = componentInfo[0] || componentInfo;
-    switch (component) {
+
+    const { component } = componentInfo[0] || componentInfo,
+        componentsEditor = {
+            'Banner': <BannerEdit detail={componentInfo} />,
+            'Title': <TitleEdit detail={componentInfo} />,
+            'ImgAndText': <ImgAndTextEdit detail={componentInfo} />,
+            'SchoolListImgText': <SchoolListEdit detail={componentInfo} />,
+            'ListOfOptionsImg': <ListOfOptionsImg detail={componentInfo} />,
+            'ExamLevelList': <ExamLevelEdit detail={componentInfo} />,
+            'TeacherList': <TeacherListEdit detail={componentInfo} />,
+            'GloryList': <GloryListEdit detail={componentInfo} />,
+            'BrandHonor': <BrandHonorEdit detail={componentInfo} />,
+            'Exhibition': <ExhibitionEdit detail={componentInfo} />,
+            'Introduce': <IntroduceEdit detail={componentInfo} />,
+            'History': <HistoryEdit detail={componentInfo} />,
+            'CurriculumPlan': <CurriculumPlanEdit detail={componentInfo} />,
+            'CourseNavList': <ImageNavListEdit detail={componentInfo} />,
+            'CourseFlow': <CourseFlowEdit detail={componentInfo} />,
+            'LearningGoal': <LearningGoalEdit detail={componentInfo} />,
+            'QuestionConsultation': <QuestionEdit detail={componentInfo} />,
+            'CategoryIntroduction': <CategoryEdit detail={componentInfo} />,
+            'ZoomCarousel': <ZoomCarouselEdit detail={componentInfo} />,
+            'TeacherStandards': <TeacherStandardsEdit detail={componentInfo} />,
+            'TeachersClassification': <div>该组件依据传输数据显示，不可更改</div>,
+            'TeacherDetail': <div>该组件依据传输数据显示，不可更改</div>,
+            'ImgTextCrossing': <ImgTextCrossingEdit detail={componentInfo} />,
+            'ImgBlindPlatoon': <ImgBlindPlatoonEdit detail={componentInfo} />,
+            'ArtNewsList': <div>该组件依据传输数据显示，不可更改</div>,
+            'ContactInfo': <ContactInfoEdit detail={componentInfo} />,
+            'SchoolList': <div>该组件依据传输数据显示，不可更改</div>,
+            'ComponentContainer': <ComponentContainerEdit detail={componentInfo} />,
+            'Paragraph': <ParagraphEdit detail={componentInfo} />,
+            'Table': <TableEdit detail={componentInfo} />,
+        };
+    return componentsEditor[component] || <div>未找到编辑器</div>;
+}
+
+/**
+ * /**
+ * switch (component) {
         case 'Banner': return <BannerEdit detail={componentInfo} />;
         case 'Title': return <TitleEdit detail={componentInfo} />;
         case 'ImgAndText': return <ImgAndTextEdit detail={componentInfo} />;
@@ -66,4 +104,4 @@ export default function switchComponentEdit(componentInfo) {
         case 'Table': return <TableEdit detail={componentInfo} />;
         default: return <div>没有找到该组件编辑器</div>;
     }
-}
+ */

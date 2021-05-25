@@ -78,7 +78,7 @@ export default class pcEditWebsite extends Component {
         let obj = info.componentJson.filter((item, index) => {
             return (info.num * 1) === index ? item : null;
         })
-        obj[1] = info.num;
+        obj[1] = info.num;//这个属性是为了更新样式编辑器的个个数值
         this.setState({
             componentInfo: obj
         })

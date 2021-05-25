@@ -1,71 +1,109 @@
 import { lazy } from 'react'
-const Banner = lazy(() => import('./homePage/bannerCarousel')),//不能直接在判断里引入
-    Title = lazy(() => import('./homePage/title')),
-    ImgAndText = lazy(() => import('./homePage/imgAndText')),
-    SchoolListImgText = lazy(() => import('./homePage/schoolListImgText')),
-    ListOfOptionsImg = lazy(() => import('./homePage/listOfOptionsImg')),
-    ExamLevelList = lazy(() => import('./homePage/examLevelList')),
-    TeacherList = lazy(() => import('./homePage/teacherList')),
-    GloryList = lazy(() => import('./homePage/gloryList')),
-    BrandHonor = lazy(() => import('./homePage/brandHonor')),
-    AddModule = lazy(() => import('./common/addModule')),
-    Exhibition = lazy(() => import('./brandIntroduction/index/exhibition')),
-    Introduce = lazy(() => import('./brandIntroduction/index/introduce')),
-    History = lazy(() => import('./brandIntroduction/history')),
-    CurriculumPlan = lazy(() => import('./brandIntroduction/curriculumPlan')),
-    CourseNavList = lazy(() => import('./danceTraining/imgNav')),
-    CourseFlow = lazy(() => import('./danceTraining/courseFlow')),
-    LearningGoal = lazy(() => import('./danceTraining/learningGoal')),
-    Table = lazy(() => import('./common/table')),
-    QuestionConsultation = lazy(() => import('./common/questionConsultation')),
-    Form = lazy(() => import('./common/form')),
-    CategoryIntroduction = lazy(() => import('./danceTraining/categoryIntroduction')),
-    ZoomCarousel = lazy(() => import('./brandIntroduction/index/zoomCarousel')),
-    TeacherStandards = lazy(() => import('./aboutUs/teacherStandards')),
-    TeachersClassification = lazy(() => import('./aboutUs/teachersClassification')),
-    TeacherDetail = lazy(() => import('./aboutUs/teacherDetail')),
-    Paragraph = lazy(() => import('./aboutUs/paragraph')),
-    ImgTextCrossing = lazy(() => import('./aboutUs/imgTextCrossing')),
-    ImgBlindPlatoon = lazy(() => import('./aboutUs/imgBlindPlatoon')),
-    ArtNewsList = lazy(() => import('./aboutUs/artNewsList')),
-    ContactInfo = lazy(() => import('./aboutUs/contactInfo')),
-    SchoolList = lazy(() => import('./campusDistribution/schoolList')),
-    ComponentContainer = lazy(() => import('./common/componentContainer'));
+const Banner = lazy(() => import('./homePage/bannerCarousel')),//banner图 list数据一个就是单图显示多图就是轮播
+    Title = lazy(() => import('./homePage/title')),//标题
+    ImgAndText = lazy(() => import('./homePage/imgAndText')),//图文左右
+    SchoolListImgText = lazy(() => import('./homePage/schoolListImgText')),//学校多图
+    ListOfOptionsImg = lazy(() => import('./homePage/listOfOptionsImg')),//列表选项多图
+    ExamLevelList = lazy(() => import('./homePage/examLevelList')),//考级列表
+    TeacherList = lazy(() => import('./homePage/teacherList')),//教师列表
+    GloryList = lazy(() => import('./homePage/gloryList')),//学员风采
+    BrandHonor = lazy(() => import('./homePage/brandHonor')),//品牌荣誉列表
+    AddModule = lazy(() => import('./common/addModule')),//添加模块
+    Exhibition = lazy(() => import('./brandIntroduction/index/exhibition')),//品牌介绍
+    Introduce = lazy(() => import('./brandIntroduction/index/introduce')),//品牌介绍 规模
+    History = lazy(() => import('./brandIntroduction/history')), //品牌介绍 - 历史历程
+    CurriculumPlan = lazy(() => import('./brandIntroduction/curriculumPlan')),//品牌介绍 - 课程计划介绍
+    CourseNavList = lazy(() => import('./danceTraining/imgNav')),//儿童舞蹈 图片导航
+    CourseFlow = lazy(() => import('./danceTraining/courseFlow')),//儿童舞蹈 图片导航
+    LearningGoal = lazy(() => import('./danceTraining/learningGoal')),//儿童舞蹈 学习目标
+    Table = lazy(() => import('./common/table')),//表格
+    QuestionConsultation = lazy(() => import('./common/questionConsultation')),//儿童舞蹈 问题列表
+    Form = lazy(() => import('./common/form')),//提交表单公共使用
+    CategoryIntroduction = lazy(() => import('./danceTraining/categoryIntroduction')),//课程类别介绍
+    ZoomCarousel = lazy(() => import('./brandIntroduction/index/zoomCarousel')),//课程类别介绍
+    TeacherStandards = lazy(() => import('./aboutUs/teacherStandards')),//关于我们教师介绍
+    TeachersClassification = lazy(() => import('./aboutUs/teachersClassification')),//关于我们 教师列表
+    TeacherDetail = lazy(() => import('./aboutUs/teacherDetail')),//关于我们 教师详情
+    Paragraph = lazy(() => import('./aboutUs/paragraph')),//关于我们 段落
+    ImgTextCrossing = lazy(() => import('./aboutUs/imgTextCrossing')),//关于我们 图文宫格
+    ImgBlindPlatoon = lazy(() => import('./aboutUs/imgBlindPlatoon')),//关于我们 图片菱形排版
+    ArtNewsList = lazy(() => import('./aboutUs/artNewsList')),//关于我们 新闻列表
+    ContactInfo = lazy(() => import('./aboutUs/contactInfo')),//关于我们 联系方式
+    SchoolList = lazy(() => import('./campusDistribution/schoolList')),//校区分布
+    ComponentContainer = lazy(() => import('./common/componentContainer'));//组件容器
 
 export default function switchComponents(name, props, num) {
-    switch (name) {
-        case 'Banner': return <Banner {...props} key={num} />; //banner图 list数据一个就是单图显示多图就是轮播
-        case 'Title': return <Title {...props} key={num} />; //标题
-        case 'ImgAndText': return <ImgAndText {...props} key={num} />; //图文左右
-        case 'SchoolListImgText': return <SchoolListImgText {...props} key={num} />; //学校多图
-        case 'ListOfOptionsImg': return <ListOfOptionsImg {...props} key={num} />; //列表选项多图
-        case 'ExamLevelList': return <ExamLevelList {...props} key={num} />; //考级列表
-        case 'TeacherList': return <TeacherList {...props} key={num} />; //教师列表
-        case 'GloryList': return <GloryList {...props} key={num} />; //学员风采
-        case 'BrandHonor': return <BrandHonor {...props} key={num} />; //品牌荣誉列表
-        case 'AddModule': return <AddModule />; //添加模块
-        case 'Exhibition': return <Exhibition {...props} key={num} />; //品牌介绍
-        case 'Introduce': return <Introduce {...props} key={num} />; //品牌介绍 规模
-        case 'History': return <History {...props} key={num} />; //品牌介绍 - 历史历程
-        case 'CurriculumPlan': return <CurriculumPlan {...props} key={num} />;//品牌介绍 - 课程计划介绍
-        case 'CourseNavList': return <CourseNavList {...props} key={num} />;//儿童舞蹈 图片导航
-        case 'CourseFlow': return <CourseFlow {...props} key={num} />;//儿童舞蹈 图片导航
-        case 'LearningGoal': return <LearningGoal {...props} key={num} />;//儿童舞蹈 学习目标
-        case 'Table': return <Table {...props} key={num} />;//儿童舞蹈 学习目标
-        case 'QuestionConsultation': return <QuestionConsultation {...props} key={num} />;//儿童舞蹈 问题列表
-        case 'Form': return <Form {...props} key={num} />;//提交表单公共使用
-        case 'CategoryIntroduction': return <CategoryIntroduction {...props} key={num} />;//课程类别介绍
-        case 'ZoomCarousel': return <ZoomCarousel {...props} key={num} />;//课程类别介绍
-        case 'TeacherStandards': return <TeacherStandards {...props} key={num} />;//关于我们教师介绍
-        case 'TeachersClassification': return <TeachersClassification {...props} key={num} />;//关于我们 教师列表
-        case 'TeacherDetail': return <TeacherDetail {...props} key={num} />;//关于我们 教师详情
-        case 'Paragraph': return <Paragraph {...props} key={num} />;//关于我们 段落
-        case 'ImgTextCrossing': return <ImgTextCrossing {...props} key={num} />;//关于我们 图文宫格
-        case 'ImgBlindPlatoon': return <ImgBlindPlatoon {...props} key={num} />;//关于我们 图片菱形排版
-        case 'ArtNewsList': return <ArtNewsList {...props} key={num} />;//关于我们 新闻列表
-        case 'ContactInfo': return <ContactInfo {...props} key={num} />;//关于我们 联系方式
-        case 'SchoolList': return <SchoolList {...props} key={num} />;//校区分布
-        case 'ComponentContainer': return <ComponentContainer {...props} key={num} />;//组件容器
-        default: return <div>没有找到组件</div>
+    const components = {
+        'Banner': <Banner {...props} key={num} />,
+        'Title': <Title {...props} key={num} />,
+        'ImgAndText': <ImgAndText {...props} key={num} />,
+        'SchoolListImgText': <SchoolListImgText {...props} key={num} />,
+        'ListOfOptionsImg': <ListOfOptionsImg {...props} key={num} />,
+        'ExamLevelList': <ExamLevelList {...props} key={num} />,
+        'TeacherList': <TeacherList {...props} key={num} />,
+        'GloryList': <GloryList {...props} key={num} />,
+        'BrandHonor': <BrandHonor {...props} key={num} />,
+        'AddModule': <AddModule />,
+        'Exhibition': <Exhibition {...props} key={num} />,
+        'Introduce': <Introduce {...props} key={num} />,
+        'History': <History {...props} key={num} />,
+        'CurriculumPlan': <CurriculumPlan {...props} key={num} />,
+        'CourseNavList': <CourseNavList {...props} key={num} />,
+        'CourseFlow': <CourseFlow {...props} key={num} />,
+        'LearningGoal': <LearningGoal {...props} key={num} />,
+        'Table': <Table {...props} key={num} />,
+        'QuestionConsultation': <QuestionConsultation {...props} key={num} />,
+        'Form': <Form {...props} key={num} />,
+        'CategoryIntroduction': <CategoryIntroduction {...props} key={num} />,
+        'ZoomCarousel': <ZoomCarousel {...props} key={num} />,
+        'TeacherStandards': <TeacherStandards {...props} key={num} />,
+        'TeachersClassification': <TeachersClassification {...props} key={num} />,
+        'TeacherDetail': <TeacherDetail {...props} key={num} />,
+        'Paragraph': <Paragraph {...props} key={num} />,
+        'ImgTextCrossing': <ImgTextCrossing {...props} key={num} />,
+        'ImgBlindPlatoon': <ImgBlindPlatoon {...props} key={num} />,
+        'ArtNewsList': <ArtNewsList {...props} key={num} />,
+        'ContactInfo': <ContactInfo {...props} key={num} />,
+        'SchoolList': <SchoolList {...props} key={num} />,
+        'ComponentContainer': <ComponentContainer {...props} key={num} />,
     }
+
+    return components[name] || <div>组件名称错误</div>;
 }
+/**
+ * switch (name) {
+    case 'Banner': return <Banner {...props} key={num} />;
+    case 'Title': return <Title {...props} key={num} />;
+    case 'ImgAndText': return <ImgAndText {...props} key={num} />;
+    case 'SchoolListImgText': return <SchoolListImgText {...props} key={num} />;
+    case 'ListOfOptionsImg': return <ListOfOptionsImg {...props} key={num} />;
+    case 'ExamLevelList': return <ExamLevelList {...props} key={num} />;
+    case 'TeacherList': return <TeacherList {...props} key={num} />;
+    case 'GloryList': return <GloryList {...props} key={num} />;
+    case 'BrandHonor': return <BrandHonor {...props} key={num} />;
+    case 'AddModule': return <AddModule />;
+    case 'Exhibition': return <Exhibition {...props} key={num} />;
+    case 'Introduce': return <Introduce {...props} key={num} />;
+    case 'History': return <History {...props} key={num} />;
+    case 'CurriculumPlan': return <CurriculumPlan {...props} key={num} />;
+    case 'CourseNavList': return <CourseNavList {...props} key={num} />;
+    case 'CourseFlow': return <CourseFlow {...props} key={num} />;
+    case 'LearningGoal': return <LearningGoal {...props} key={num} />;
+    case 'Table': return <Table {...props} key={num} />;
+    case 'QuestionConsultation': return <QuestionConsultation {...props} key={num} />;
+    case 'Form': return <Form {...props} key={num} />;
+    case 'CategoryIntroduction': return <CategoryIntroduction {...props} key={num} />;
+    case 'ZoomCarousel': return <ZoomCarousel {...props} key={num} />;
+    case 'TeacherStandards': return <TeacherStandards {...props} key={num} />;
+    case 'TeachersClassification': return <TeachersClassification {...props} key={num} />;
+    case 'TeacherDetail': return <TeacherDetail {...props} key={num} />;
+    case 'Paragraph': return <Paragraph {...props} key={num} />;
+    case 'ImgTextCrossing': return <ImgTextCrossing {...props} key={num} />;
+    case 'ImgBlindPlatoon': return <ImgBlindPlatoon {...props} key={num} />;
+    case 'ArtNewsList': return <ArtNewsList {...props} key={num} />;
+    case 'ContactInfo': return <ContactInfo {...props} key={num} />;
+    case 'SchoolList': return <SchoolList {...props} key={num} />;
+    case 'ComponentContainer': return <ComponentContainer {...props} key={num} />;
+    default: return <div>没有找到组件</div>
+}
+ */

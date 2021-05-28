@@ -19,7 +19,7 @@ export default class TeacherStandardsEdit extends Component {
         }
     }
     deleteData = (e) => {
-        //删除一条数据
+        //删除一条数据s
         e.stopPropagation();
         const { indexed } = this.state,
             { props: { list } } = this.props.detail[0];

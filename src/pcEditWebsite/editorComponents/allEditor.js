@@ -32,7 +32,6 @@ const TableEdit = lazy(() => import('./trainingCourse/tableEdit'))//表格组件
 
 export default function switchComponentEdit(componentInfo) {
     if (!componentInfo) return;
-
     const { component } = componentInfo[0] || componentInfo,
         componentsEditor = {
             'Banner': <BannerEdit detail={componentInfo} />,

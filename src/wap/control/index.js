@@ -24,8 +24,7 @@ export default class wapRouterControl extends Component {
     }
     render() {
         return (
-            <div style={{ fontSize: "0.36rem", textAlign: 'center' }}>
-                wap端正在开发中
+            <div>
                 <Suspense fallback={Loading}>
                     <Switch>
                         <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/views'))} />{/* 北京站点 */}

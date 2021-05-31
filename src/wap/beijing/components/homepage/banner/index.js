@@ -9,27 +9,23 @@ export default class Banner extends Component {
 
     state = {
         list: [
-            { img: require('../../../assets/homepage/banner/banner1.png').default, address: "/#" },
-            { img: require('../../../assets/homepage/banner/banner2.png').default, address: "/#" },
-            { img: require('../../../assets/homepage/banner/banner3.png').default, address: "/#" },
+            { img: require('../../../assets/homepage/banner/banner1.png').default, address: "#" },
+            { img: require('../../../assets/homepage/banner/banner2.png').default, address: "#" },
+            { img: require('../../../assets/homepage/banner/banner3.png').default, address: "#" },
         ],
         num: 0,
-        type: 'default'
+        type: 'default',
+        timer: null
     }
-    switchBanner = () => {
-        const { type, num, list } = this.state,
-            propsList = {
-                list,
-                num
-            };
+    
+    render() {
+        const { type, list } = this.state
 
         const obj = {
-            'default': <DefaultBanner {...propsList} />
+            'default': <DefaultBanner list={list} />
         }
+
         return obj[type];
-    }
-    render() {
-        return this.switchBanner()
     }
 }
 

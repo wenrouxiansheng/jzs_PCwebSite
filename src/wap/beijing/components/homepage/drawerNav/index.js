@@ -36,7 +36,6 @@ export default function DrawerNav() {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-
         setState(open);
     };
     const { logoLink, logo, navList } = obj;

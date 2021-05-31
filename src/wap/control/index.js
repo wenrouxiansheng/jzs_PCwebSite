@@ -1,6 +1,6 @@
 import React, { Component, Suspense, lazy, } from 'react'
 
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 
 const Loading = <div>loading</div>;
@@ -29,6 +29,7 @@ export default class wapRouterControl extends Component {
                     <Switch>
                         <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/views'))} />{/* 北京站点 */}
                         <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai'))} />{/* 上海站点 */}
+                        <Redirect to="/site/wap/beijing" />
                     </Switch>
                 </Suspense>
             </div>

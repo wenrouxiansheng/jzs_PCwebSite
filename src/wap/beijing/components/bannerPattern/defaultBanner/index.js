@@ -5,96 +5,140 @@ import './style.scss'
 
 import React, { Component } from 'react'
 
+let timer = null//计时器
 export default class DefaultBanner extends Component {
     state = {
-        list: []
+        index: 0,//当前显示下标
+        flag: true,//是否执行过渡效果
+        width: 7.5,//宽度
+        wait: 2000,
+        startFlag: false,//标记是否开始循环,经过componentdidmount才会改变
+
+        continuous: true,//循环播放
+        move: false, //节流阀
+        moveInfo: {
+            begin: 0,
+            moveX: 0
+        }
+    }
+    dotsNode = React.createRef()//光标
+    componentDidMount() {
+        const { continuous, index } = this.state;
+        if (continuous) {
+            this.setState({
+                index: index + 1,
+                startFlag: true
+            })
+        }
+        this.autoSlide();
+    }
+    componentWillUnmount() {
+        clearInterval(timer);
+    }
+    slideFun = () => {//判断特定条件做出反应
+        const { continuous } = this.state;
+        if (continuous) {
+            this.loopSilde();
+        }
+
+    }
+    loopSilde = () => {//循环轮播判断
+        const { index } = this.state;
+        const { list } = this.props;
+
+        if (index > list.length) {
+            this.stopSlide();
+            setTimeout(() => {
+                this.setState({
+                    index: 1,
+                    flag: false
+                })
+                this.autoSlide()
+            }, 300);
+        }
+    }
+    autoSlide = () => {//启动
+        timer = setInterval(() => {
+            this.setState({
+                index: this.state.index + 1,
+                flag: true
+            })
+            this.slideFun();
+        }, this.state.wait);
     }
 
-    componentDidMount() {
-        const { list } = this.props
+    stopSlide = () => {//停止
+        clearInterval(timer)
+    }
+    bannerNode = (item, index) => {//封装节点
+        const { address, img } = item;
+        return <Link to={address} target='_self' key={index}>
+            <div className='slick-slide'>
+                <img src={img} alt="" />
+            </div>
+        </Link>
+    }
+    pre = null
+
+    beginTouch = (e) => {
         this.setState({
-            list
+            move: true
         })
     }
-
-    test = () => {
-
-        const { num, list: propsList } = this.props;
-
-        const { list } = this.state;
-        console.log(list)
-
-        // list.splice(0, 0, list[list.length - 1]);
-        // list.push(list[1]);
-
-        return <div>asdasd</div>;
-        
+    touchMove = (e) => {
+        const { move } = this.state;
+        if (move) {
+            const { pageX } = e.touches[0]
+            console.log(pageX)
+        }
+    }
+    endTouch = (e) => {
+        this.setState({
+            move: false
+        })
     }
     render() {
-        return this.test()
+        const { index, flag, width, continuous, startFlag } = this.state;
+        const { list } = this.props;
+
+        const style = {
+            width: `${(list.length + (continuous ? 2 : 0)) * width}rem`,//不是循环  不用加2
+            transform: `translateX(-${index * width}rem)`,
+            transition: `${flag ? '.3s' : 'none'}`
+        }
+
+        const banner = list.map((item, index) => {//节点
+            return this.bannerNode(item, index)
+        })
+
+        const dots = list.map((item, i) => {//光标
+            return <li key={i} className={!continuous && index === i ? 'active' : ''}></li>
+        })
+
+        if (continuous && startFlag) {//循环播放并且是正式开始轮播
+            let num = index - 1;
+            num = num === -1 ? list.length - 1 : num;//第一张图判断
+            num = num === list.length ? 0 : num;//最后一张图判断
+            const node = this.dotsNode.current.children;
+
+            if (this.pre !== null) node[this.pre].className = '';//第一次不清空
+
+            node[num].className = 'active';
+            this.pre = num;
+        }
+
+
+
+        return <div className='DefaultBanner'>
+            <div className='container' style={style} onTouchStart={this.beginTouch} onTouchMove={this.touchMove} onTouchEnd={this.endTouch}>
+                {continuous ? this.bannerNode(list[list.length - 1]) : null}
+                {banner}
+                {continuous ? this.bannerNode(list[0]) : null}
+            </div>
+            <ul className='slick-dots' ref={this.dotsNode}>
+                {dots}
+            </ul>
+        </div >;
 
     }
 }
-/**
- * <div className='DefaultBanner'>
-            <div className='container' style={{ width: `${list.length * 7.5}rem`, left: `-${(num * 1 + 1) * 7.5}rem` }}>
-                {
-                    list.map((item, index) => {
-                        return <Link to={item.address} target='_self' key={index}>
-                            <div className='slick-slide'>
-                                <img src={item.img} alt="" />
-                            </div>
-                        </Link>
-                    })
-                }
-                <ul className='slick-dots'>
-
-                </ul>
-            </div>
-        </div >
- */
-
-// export default function DefaultBanner(props) {
-//     let { list, changeNum, num } = props;
-
-//     const memoizedCallback = useCallback(() => {
-//         list.splice(0, 0, list[list.length - 1]);
-//         list.push(list[1]);
-//         return list
-//     }, [num]);
-
-
-//     const SHAM = 2;//减去为了无缝增加的元素
-//     const [flag, setFlag] = useState(true)
-
-
-
-//     useEffect(() => {
-//         if (num > list.length - SHAM) {
-//             setFlag(false)
-//             changeNum(0)
-//         } else {
-//             setFlag(true)
-//         }
-//     })
-//     console.log(num)
-//     console.log(props)
-
-
-// return <div className='DefaultBanner'>
-//     <div className='container' style={{ width: `${list.length * 7.5}rem`, left: `-${(num * 1 + 1) * 7.5}rem`, transition: `${flag ? '.3s' : 'none'}` }}>
-//         {
-//             list.map((item, index) => {
-//                 return <Link to={item.address} target='_self' key={index}>
-//                     <div className='slick-slide'>
-//                         <img src={item.img} alt="" />
-//                     </div>
-//                 </Link>
-//             })
-//         }
-//         <ul className='slick-dots'>
-
-//         </ul>
-//     </div>
-// </div >
-// }

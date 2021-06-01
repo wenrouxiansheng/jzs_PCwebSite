@@ -15,8 +15,8 @@ export default class DefaultBanner extends Component {
         startFlag: false,//标记是否开始循环,经过componentdidmount才会改变
         continuous: true,//循环播放
         move: 0,//移动距离
-        onOff: false, //节流阀
         moveInfo: {
+            onOff: false, //节流阀
             begin: 0,
             moveX: 0
         }
@@ -86,18 +86,20 @@ export default class DefaultBanner extends Component {
     pre = null
 
     beginTouch = (e) => {
-        const { pageX, moveInfo } = e.touches[0]
+        const { pageX, moveInfo } = e.touches[0];
         this.stopSlide();
         this.setState({
-            onOff: true,
-            moveInfo: { ...moveInfo, begin: pageX }
+            moveInfo: { ...moveInfo, begin: pageX, onOff: true }
         })
     }
     touchMove = (e) => {//手指移动
-        const { onOff, moveInfo: { begin }, moveInfo, index, width } = this.state;
+        const { moveInfo: { begin, onOff }, moveInfo, index, width } = this.state;
         if (onOff) {
             let num = document.querySelector('html')?.style?.fontSize?.split('px')[0] || 50;
             const { pageX } = e.touches[0];
+            console.log(index)
+            console.log(((pageX - begin) / num) - index * width)
+
             this.setState({
                 moveInfo: { ...moveInfo, moveX: (pageX - begin) / num },
                 move: (pageX - begin) / num - (index * width)
@@ -108,13 +110,13 @@ export default class DefaultBanner extends Component {
         const { moveInfo: { moveX }, index, width } = this.state;
         let newIndex = moveX > 0 ? index - 1 : index + 1;
         console.log(newIndex, index)
-        this.setState({
-            onOff: false,
-            moveInfo: { begin: 0, moveX: 0 },
-            index: newIndex
-        })
+        // this.setState({
+        //     moveInfo: { begin: 0, moveX: 0, onOff: false, },
+        //     index: newIndex
+        // })
         // this.autoSlide();
     }
+
     render() {
         const { index, flag, width, continuous, startFlag, move } = this.state;
         const { list } = this.props;
@@ -124,7 +126,6 @@ export default class DefaultBanner extends Component {
             transform: `translateX(${move}rem)`,
             transition: `${flag ? '.3s' : 'none'}`
         }
-        console.log(move)
 
         const banner = list.map((item, index) => {//节点
             return this.bannerNode(item, index)

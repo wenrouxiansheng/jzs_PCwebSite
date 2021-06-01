@@ -1,3 +1,31 @@
+# PC & Wap(wap只包含官网) 建站
+
+![消息传递大致图](src/pcEditWebsite/消息传递大致图.png)
+
+### 安装依赖项
+```
+npm install
+```
+### 运行项目
+```
+npm run start
+```
+### 打包项目
+```
+npm run build
+```
+### 部署项目
+```
+npm install
+
+npm run build
+
+node server.js
+```
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

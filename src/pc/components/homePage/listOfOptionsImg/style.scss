@@ -1,0 +1,146 @@
+/* 多图列表 层级选项 */
+.listOfOptionsImg-antMotion-box{
+    min-height: 503px;
+}
+.listOfOptionsImg {
+    width: 1200px;
+    margin: 0 auto;
+}
+.listOfOptionsImg .level1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listOfOptionsImg .level1 li {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    color: #ffac32;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ffac32;
+    text-align: center;
+    line-height: 38px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.listOfOptionsImg .level1 li.active {
+    background-color: #ffac32;
+    color: white;
+}
+.listOfOptionsImg .level1 li:hover {
+    background-color: #ffac32;
+    color: white;
+}
+.listOfOptionsImg .level2 {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    display: none;
+    animation: show .3s;
+}
+.listOfOptionsImg .level2.active {
+    display: flex;
+}
+.listOfOptionsImg .level2 li a {
+    margin: 0 15px;
+    color: #333;
+}
+.listOfOptionsImg .multiPictureLoop {
+    display: none;
+}
+.listOfOptionsImg .multiPictureLoop.active {
+    display: block;
+}
+/* 多图文轮播  */
+.multiPictureLoop {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    animation: show .3s;
+}
+.multiPictureLoop .loopContent {
+    width: 92%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.multiPictureLoop ul {
+    width: 4000px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 360px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.multiPictureLoop li {
+    width: 265px;
+    height: 350px;
+    margin-right: 11px;
+    background-color: white;
+    transition: .3s;
+    margin-bottom: 10px;
+}
+.multiPictureLoop li:hover {
+    box-shadow: 0px 0px 10px #bfbbb8;
+}
+.multiPictureLoop li img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.multiPictureLoop li p {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #333;
+}
+.multiPictureLoop .controlButton {
+    font-size: 26px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cecece;
+    width: 25px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.multiPictureLoop .prev {
+    left: 10px;
+}
+.multiPictureLoop .next {
+    right: 20px;
+}
+.multiPictureLoop .next.active {
+    background-color: #ffab32;
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+}
+.multiPictureLoop .prev.active {
+    background-color: #ffab32;
+    color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+@keyframes show{
+    0%{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

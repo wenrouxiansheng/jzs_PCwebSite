@@ -1,0 +1,17 @@
+{
+    "apps": [
+        {
+            "name": "nova",
+            "max_memory_restart": "800M",
+            "cwd": "./pcSite",
+            "script": "./pcSite/server.js",
+            "out_file": "./logs/nova_out.log",
+            "error_file": "./logs/nova_error.log",
+            "instances": 1,
+            "exec_mode": "fork",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}

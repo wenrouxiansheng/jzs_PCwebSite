@@ -1,0 +1,51 @@
+.imgTextCrossing-antMotion-box {
+    min-height: 200px;
+}
+.imgTextCrossing {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    & > div {
+        width: 600px;
+        height: 200px;
+        background-color: #fecf40;
+        display: flex;
+        overflow: hidden;
+        & > div {
+            width: 300px;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            h1 {
+                font-weight: bold;
+                font-size: 20px;
+                padding: 0px 15px;
+            }
+            h3 {
+                font-size: 16px;
+                padding: 0px 15px;
+                color: white;
+                line-height: 30px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 1s;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

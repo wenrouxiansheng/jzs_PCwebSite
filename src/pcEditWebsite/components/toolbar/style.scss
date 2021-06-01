@@ -1,0 +1,45 @@
+/* 左侧工具栏 */
+.control_leftToolBar {
+    width: 70px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    z-index: 10;
+    & > div {
+        color: #636776;
+        font-size: 26px;
+        width: 50px;
+        height: 50px;
+        margin: 1px;
+        background-color: white;
+        box-shadow: 2px 3px 7px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding-left: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-bottom: 15px;
+        padding-left: 11px;
+        span:nth-of-type(2) {
+            font-size: 16px;
+            margin-left: 10px;
+            text-align: center;
+            display: none;
+            color: white;
+        }
+        span:nth-of-type(1) {
+            font-size: 28px;
+        }
+        &:hover {
+            width: 100px;
+            border-radius: 28px;
+            background-color: #5874d8;
+            color: white;
+        }
+    }
+}
+

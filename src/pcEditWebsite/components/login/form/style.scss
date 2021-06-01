@@ -1,0 +1,517 @@
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    .slogan {
+        font-size: 54px;
+        line-height: 61px;
+        color: #fff;
+        margin-bottom: 67px;
+        letter-spacing: 1px;
+        font-weight: 800;
+        .slogan-title {
+            font-weight: 800;
+        }
+        .slogan-subtitle {
+            position: relative;
+            line-height: 17px;
+            opacity: 0.8;
+            margin-top: 14px;
+        }
+        .slogan-subtitle:after,
+        .slogan-subtitle:before {
+            content: "";
+            display: block;
+            width: 74px;
+            height: 2px;
+            position: absolute;
+            top: calc(50% - 1px);
+            background-image: linear-gradient(270deg, hsla(0, 0%, 100%, 0), #fff 47%, hsla(0, 0%, 100%, 0));
+        }
+        .slogan-subtitle:before {
+            left: 0;
+        }
+        .slogan-subtitle:after {
+            right: 0;
+        }
+    }
+    .import-content {
+        width: 420px;
+        height: 208px;
+        margin: 0 auto;
+    }
+
+    .inputContent {
+        animation-name: "inputContentIn";
+        animation-duration: 0.6s;
+        animation-timing-function: cubic-bezier(0.22, -0.15, 0.27, 1.55);
+    position: relative;
+    object-fit: cover;
+    }
+    @keyframes inputContentIn {
+        0% {
+            transform: translateX(200px);
+            opacity: 0.2;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    .passwordStrengthStyle {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .passwordStrengthStyle li {
+        float: left;
+        background-color: white;
+        width: 40px;
+        height: 5px;
+        margin-left: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .passwordStrengthStyle li::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        transition: 0.3s;
+    }
+
+    .passwordStrengthStyle li.active::after {
+        width: 100%;
+    }
+
+    .passwordStrengthStyle li:nth-of-type(1).active::after {
+        background-color: red;
+    }
+
+    .passwordStrengthStyle li:nth-of-type(2).active::after {
+        background-color: #ff7f00;
+    }
+
+    .passwordStrengthStyle li:nth-of-type(3).active::after {
+        background-color: #2aa11f;
+    }
+
+    .passwordStrengthStyle span {
+        color: white;
+        font-size: 12px;
+    }
+
+     #confirmPassword {
+         animation-name: errorAnimation;
+         animation-duration: 0.4s;
+         animation-timing-function: cubic-bezier(0.22, -0.15, 0.27, 1.55);
+         position: relative;
+     }
+
+     #confirmPassword::after {
+         background-color: red;
+         width: 100%;
+         height: 100%;
+     }
+
+     @keyframes errorAnimation {
+         0% {
+             transform: translateX(-5px);
+         }
+         20% {
+             transform: translateX(5px);
+         }
+         40% {
+             transform: translateX(-5px);
+         }
+         60% {
+             transform: translateX(5px);
+         }
+         80% {
+             transform: translateX(-5px);
+         }
+         100% {
+             transform: translateX(0);
+         }
+     }
+
+     .findPassword {
+         height: 345px !important;
+     }
+
+     .findPasswordBox {
+         height: 310px !important;
+     }
+
+     .import-content .import-form {
+         position: relative;
+         width: 100%;
+         height: 56px;
+         margin-bottom: 20px;
+         border-radius: 10px;
+         color: #1f2329;
+         overflow: hidden;
+     }
+
+     .import-content .import-form::after {
+         position: absolute;
+         left: 0;
+         top: 0;
+         content: "";
+         display: block;
+         width: 0%;
+         height: 0%;
+         background-color: #fe9325;
+         transition: 1s cubic-bezier(0.22, -0.15, 0.27, 1.55);
+     }
+
+     .import-content .import-form:hover::after {
+         width: 420px;
+         height: 56px;
+     }
+
+     .import-input {
+         position: absolute;
+         left: 50%;
+         top: 0;
+         margin-left: -208px;
+         width: 416px;
+         height: 52px;
+         margin-top: 2px;
+         font-size: 16px;
+         line-height: 18px;
+         border-radius: 10px;
+         padding: 19px 0 19px 55px;
+         border-color: rgba(0, 0, 0, 0);
+         z-index: 8;
+     }
+
+    /* input:focus{
+     } */
+
+     .import-content .import-form .icon {
+         position: absolute;
+         left: 15px;
+         top: 50%;
+         margin-top: -14px;
+         width: 24px;
+         height: 24px;
+         z-index: 10;
+     }
+
+     .import-content .import-form .userName {
+         background: url("../../../assets/login/userName.png") no-repeat center;
+         background-size: 100% 100%;
+     }
+
+     .import-content .import-form .password {
+         background: url("../../../assets/login/password.png") no-repeat center;
+         background-size: 100% 100%;
+     }
+
+     .import-content .import-form .iphone {
+         background: url("../../../assets/login/iphone.png") no-repeat center;
+         background-size: 100% 100%;
+     }
+
+     .import-content .import-form .codeNum {
+         background: url("../../../assets/login/codeNum.png") no-repeat center;
+         background-size: 100% 100%;
+     }
+
+     /* 动画 */
+
+     .code_animation {
+         position: relative;
+         display: flex;
+         width: 100%;
+         height: 142px;
+     }
+
+     /* 验证码 */
+
+     .verification_code {
+         position: absolute;
+         top: 0;
+         left: 0;
+         opacity: 1;
+         transition: 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+         width: 100%;
+     }
+
+     /* 密码  */
+
+     .password_code {
+         position: absolute;
+         top: 0;
+         left: 440px;
+         opacity: 0;
+         transition: 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+         width: 100%;
+     }
+
+     /* 验证码 */
+
+     .verification_switching {
+         display: block;
+     }
+
+     /* 密码 */
+
+     .password_switching {
+         display: none;
+     }
+
+     .import-content .sendVerification_code {
+         position: absolute;
+         right: 20px;
+         top: 50%;
+         margin-top: -7px;
+         font-size: 14px;
+         font-weight: 500;
+         color: #4d4d4d;
+         cursor: pointer;
+         z-index: 9;
+     }
+
+     .import-content .sendVerification_code:hover {
+         transition: 0.5s all;
+         color: #ccc;
+     }
+
+     .import-content .countDown {
+         display: none;
+         position: absolute;
+         right: 20px;
+         top: 50%;
+         margin-top: -7px;
+         font-size: 14px;
+         font-weight: 500;
+         color: #4d4d4d;
+         cursor: pointer;
+         z-index: 9;
+     }
+
+     .import-content .forget_password {
+         position: absolute;
+         right: 20px;
+         top: 50%;
+         margin-top: -7px;
+         font-size: 14px;
+         font-weight: 500;
+         color: #4d4d4d;
+         cursor: pointer;
+         z-index: 9;
+     }
+
+     .import-content .forget_password:hover {
+         transition: 0.5s all;
+         color: #ccc;
+     }
+
+     /* 切换登录 */
+
+     .switchingMode {
+         position: relative;
+         width: 420px;
+         height: auto;
+         margin: 0 auto;
+         margin-top: 5px;
+         cursor: pointer;
+     }
+
+     .switchText {
+         width: 100%;
+         padding-right: 25px;
+         text-align: right;
+         color: #fff;
+     }
+
+     .switchText:hover {
+         transition: 0.4s all;
+         color: #fe9325;
+     }
+
+      .switchIcon {
+          position: absolute;
+          right: 0;
+          top: -0.5px;
+          width: 21px;
+          height: 21px;
+          background: url("../../../assets/login/nextStep.svg") no-repeat center;
+          background-size: 100% 100%;
+      }
+
+      .switchIcon:hover {
+          transition: 0.4s all;
+          background: url("../../../assets/login/nextStep_hover.svg") no-repeat center;
+          background-size: 100% 100%;
+      }
+
+      .switchText:hover + .switchIcon {
+          transition: 0.4s all;
+          background: url("../../../assets/login/nextStep_hover.svg") no-repeat center;
+          background-size: 100% 100%;
+      }
+
+     .switchIcon:hover + .switchText {
+         transition: 0.4s all;
+         color: #fe9325;
+     }
+
+     /* 登录按钮 */
+
+     .loginBtn {
+         position: relative;
+         width: 100%;
+         height: 56px;
+         font-size: 18px;
+         font-weight: bold;
+         line-height: 56px;
+         margin: 0 auto;
+         margin-top: 10px;
+         color: #fff;
+         border: none;
+         cursor: pointer;
+         transition: 800ms ease all;
+         border-radius: 0px;
+         background: #fe9325;
+     }
+
+     .loginBtn:hover {
+         color: #fe9325;
+         border-radius: 0px;
+         background: #fff;
+     }
+
+     .loginBtn:hover:before,
+     .loginBtn:hover:after {
+         width: 100%;
+         transition: 800ms ease all;
+     }
+
+     .loginBtn:before,
+     .loginBtn:after {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: 0;
+         height: 3px;
+         width: 0;
+         transition: 400ms ease all;
+     }
+
+     .loginBtn:before {
+         content: "";
+         background-image: linear-gradient(to right, #fff 10%, #fe9325 100%);
+     }
+
+     .loginBtn:after {
+         content: "";
+         background-image: linear-gradient(to right, #fe9325 10%, #fff 100%);
+     }
+
+     .loginBtn:after {
+         right: inherit;
+         top: inherit;
+         left: 0px;
+         bottom: 0;
+     }
+
+     .loginBtn:before {
+         right: 0;
+         top: 0;
+         left: inherit;
+         bottom: inherit;
+     }
+
+     /* 协议 */
+
+     .protocol {
+         width: 420px;
+         margin: 0 auto;
+         margin-top: 20px;
+         line-height: 20px;
+         color: #fff;
+     }
+
+     .protocol #agreement_href {
+         color: #fe9325;
+     }
+
+     .lightHintMessage {
+         position: absolute;
+         top: 50px;
+         left: 50%;
+         padding: 10px 20px 10px 30px;
+         transform: translateX(-50%);
+         border-radius: 5px;
+         font-size: 14px;
+         animation-duration: 0.3s;
+         animation-timing-function: linear;
+     }
+
+     .lightHintMessage i {
+         position: absolute;
+         left: 10px;
+     }
+
+     .lightHintMessage.error {
+         color: #f56c6c;
+         background-color: #fde2e2;
+     }
+
+     .lightHintMessage.success {
+         color: #67c23a;
+         background-color: #f0f9eb;
+     }
+
+     .lightHintMessage.fadeIn {
+         animation-name: lightHintFadeIn;
+     }
+
+     .lightHintMessage.fadeOut {
+         animation-name: lightHintFadeOut;
+     }
+     @keyframes lightHintFadeIn {
+         0% {
+             opacity: 0;
+             top: 0px;
+         }
+         50% {
+             opacity: 0.5;
+             top: 25px;
+         }
+         100% {
+             opacity: 1;
+             top: 50px;
+         }
+     }
+     @keyframes lightHintFadeOut {
+         0% {
+             opacity: 1;
+             top: 50px;
+         }
+         50% {
+             opacity: 0.5;
+             top: 25px;
+         }
+         100% {
+             opacity: 0;
+             top: 0px;
+         }
+     }
+}

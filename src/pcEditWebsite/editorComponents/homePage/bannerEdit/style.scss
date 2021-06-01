@@ -1,0 +1,69 @@
+.bannerEdit {
+    width: 100%;
+    margin-top: 20px;
+    table {
+        thead {
+            font-size: 14px;
+        }
+        td {
+            width: 25%;
+            text-align: center;
+            overflow: hidden;
+            max-width: 25%;
+        }
+        tbody {
+            td {
+                height: 90px;
+                vertical-align: middle;
+                span {
+                    color: #999;
+                    margin: 0px 5px;
+                    cursor: pointer;
+                    font-size: 18px;
+                    &:hover {
+                        color: #5874d8;
+                    }
+                }
+                img {
+                    width: 90px;
+                    height: 50px;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+            }
+            .href {
+                width: 180px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .addBanner {
+        width: 90%;
+        height: 50px;
+        border: dashed 1px #ccc;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #aaa8a8;
+        font-size: 15px;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+    .input_box {
+        padding-left: 50px;
+        label {
+            animation: labelShow .5s ease-in;
+        }
+    }
+    @keyframes labelShow {
+        0% {
+            transform: translateX(-100px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.addModule {
+    width: 1200px;
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    p {
+        width: 150px;
+        height: 40px;
+        border: 1px solid rgba(127, 155, 255, .6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #5874d8;
+        cursor: pointer;
+        transition: .3s;
+        margin: 0 5px;
+        span {
+            margin-right: 5px;
+            font-size: 18px;
+        }
+        &:hover {
+            color: white;
+            background-color: #5874d8;
+        }
+    }
+}
+
+
+

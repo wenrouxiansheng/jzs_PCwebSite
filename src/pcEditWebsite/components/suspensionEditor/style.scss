@@ -1,0 +1,231 @@
+.control_editorSuspension {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    /*更改组件确认     是子组件用的样式*/
+    .changeComponentConf {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            width: 100px;
+            height: 40px;
+            border: 0px;
+            background-color: #5874d8;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+    }
+    & > div {
+        width: 800px;
+        height: 600px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #7d8083;
+        overflow: hidden;
+        animation: editorSuspension 0.5s;
+        .editorHead {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 15px;
+            border-bottom: 1px solid #e3e2e8;
+            h3 {
+                font-size: 16px;
+            }
+            span {
+                color: #555;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+        .editorBody {
+            width: 100%;
+            height: 540px;
+            display: flex;
+
+            nav {
+                width: 150px;
+                height: 100%;
+                border-right: 1px solid #e3e2e8;
+                position: relative;
+                margin-top: -1px;
+                p {
+                    width: 100%;
+                    height: 60px;
+                    line-height: 60px;
+                    text-align: center;
+                    cursor: pointer;
+                    font-size: 15px;
+                    &.line {
+                        position: absolute;
+                        left: 0px;
+                        top: 0px;
+                        background-color: #557ce1;
+                        width: 4px;
+                        transition: 0.3s;
+                    }
+                    &.active {
+                        width: 101%;
+                        border: solid 1px #e3e2e8;
+                        border-right: solid 1px white;
+                        color: #557ce1;
+                    }
+                }
+            }
+            .container {
+                width: 650px;
+                height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+                display: flex;
+                & > div {
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+                    animation: editorComponentBox 0.5s;
+                    .input_box {
+                        display: block;
+                        /*公共输入样式*/
+                        min-height: 40px;
+                        margin: 30px 0px;
+                        img {
+                            object-fit: cover;
+                            cursor: pointer;
+                        }
+                        span {
+                            display: inline-block;
+                            width: auto;
+                            margin-right: 15px;
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 14px;
+                            width: 150px;
+                            text-align: right;
+                        }
+                        label {
+                            display: flex;
+                            align-items: center;
+                        }
+                        input[type="text"],[type="number"] {
+                            height: 40px;
+                            border-radius: 8px;
+                            border: 1px solid #ccc;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            transition: 0.5s all;
+                            width: 200px;
+                            &:focus {
+                                border: #40a9ff 1px solid;
+                                outline: 0;
+                                box-shadow: 0 0 5px 0px #54b4c0;
+                            }
+                        }
+                        button {
+                            width: 120px;
+                            height: 40px;
+                            cursor: pointer;
+                            background-color: #5874d8;
+                            border: 0px;
+                            color: white;
+                            border-radius: 5px;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+                .initElementImgList {
+                    width: 90%;
+                    height: auto;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    & > div {
+                        width: 100px;
+                        height: 100px;
+                        margin: 5px 8px;
+                        position: relative;
+                        cursor: pointer;
+                        border: solid 1px transparent;
+                        &:hover span {
+                            display: block;
+                        }
+                        span {
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            top: 3px;
+                            right: 3px;
+                            color: red;
+                            font-size: 16px;
+                            text-align: center;
+                            display: none;
+                        }
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        &.active {
+                            border-color: #5874d8;
+                            &::after {
+                                position: absolute;
+                                content: "√";
+                                display: block;
+                                width: 20px;
+                                height: 20px;
+                                right: 0px;
+                                bottom: 0px;
+                                font-size: 14px;
+                                color: white;
+                                background-color: #5874d8;
+                                text-align: center;
+                                line-height: 20px;
+                            }
+                        }
+                        &.add {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 20px;
+                            color: rgba(127, 155, 255, 0.6);
+                            border-color: rgba(127, 155, 255, 0.6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @keyframes editorSuspension {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    @keyframes editorComponentBox {
+        0% {
+            transform: translateX(200px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+}

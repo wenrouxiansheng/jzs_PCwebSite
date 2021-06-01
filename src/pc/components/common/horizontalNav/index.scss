@@ -1,0 +1,75 @@
+/* 
+导航
+*/
+.horizontalPullDownNav {
+    width           : 100%;
+    background-color: #1f1f1f;
+    height          : 50px;
+    margin          : 0 auto;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    ul {
+        width           : 1200px;
+        margin          : 0 auto;
+        height          : 100%;
+        position        : relative;
+        background-color: #1f1f1f;
+    }
+
+    .line {
+        position        : absolute;
+        width           : 24px;
+        height          : 3px;
+        bottom          : 8px;
+        background-color: #ffab32;
+        left            : 60px;
+        transform       : translateX(-12px);
+        transition      : 0.3s cubic-bezier(0.32, 0, 0.43, 1.59);
+    }
+
+    li {
+        float      : left;
+        width      : 120px;
+        text-align : center;
+        height     : 100%;
+        line-height: 50px;
+        margin     : 0px 5px;
+        font-size  : 15px;
+        color      : white;
+
+    }
+
+    .pullDown {
+        position: relative;
+
+        div {
+            position        : absolute;
+            top             : 100%;
+            width           : 100%;
+            height          : 0;
+            background-color: #1f1f1f;
+            overflow        : hidden;
+            transition      : 0.3s;
+            z-index         : 99;
+
+            a {
+                color     : white;
+                display   : block;
+                height    : 50px;
+                font-size : 14px;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: #ffab32;
+                }
+            }
+        }
+    }
+}

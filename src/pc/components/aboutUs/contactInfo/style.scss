@@ -1,0 +1,99 @@
+.contactInfo {
+    width: 1200px;
+    height: auto;
+    min-height: 300px;
+    margin: 0px auto 150px;
+    position: relative;
+    padding-top: 95px;
+    display: flex;
+    flex-wrap: wrap;
+    .suspension {
+        position: absolute;
+        width: 1110px;
+        height: 190px;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        top: -95px;
+        left: 45px;
+        padding: 0px 20px;
+        box-shadow: 0px 0px 8px #bcbcbc;
+        img {
+            width: 190px;
+            height: 155px;
+            object-fit: cover;
+        }
+        div {
+            margin-left: 50px;
+            h1 {
+                font-size: 28px;
+                color: #333;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            p {
+                color: #666;
+                font-size: 16px;
+            }
+        }
+    }
+    .info {
+        width: 50%;
+        line-height: 30px;
+        margin-top: 50px;
+        h1 {
+            color: #333;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0px;
+        }
+        h3 {
+            color: #888;
+            font-size: 16px;
+            display: inline-block;
+            position: relative;
+            &::after {
+                content: "";
+                width: 150%;
+                height: 4px;
+                background-color: #ffab32;
+                position: absolute;
+                bottom: -5px;
+                left: 0px;
+            }
+        }
+        & > div {
+            padding: 20px 0px 0px 100px;
+        }
+        .phone {
+            color: #555;
+            font-size: 16px;
+
+            & > div {
+                display: flex;
+                width: 100%;
+                &>p{
+                    width: 200px;
+                    span{
+                        display: block;
+                        
+                    }
+                }
+            }
+        }
+        .QR {
+            img {
+                width: 248px;
+                height: 248px;
+                object-fit: cover;
+            }
+            p {
+                width: 248px;
+                color: #555;
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+}

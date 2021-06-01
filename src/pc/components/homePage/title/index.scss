@@ -1,0 +1,72 @@
+/* 标题 */
+
+.animationTitle {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 65px;
+    margin-bottom: 30px;
+}
+
+.animationTitle h3 {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    font-size: 26px;
+    margin: 0px;
+}
+
+.animationTitle h3 b {
+    font-weight: bold;
+    color: #333;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+}
+
+.animationTitle h3::after,
+.animationTitle h3::before {
+    position: absolute;
+    content: "";
+    top: 55%;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-image: linear-gradient(to bottom, #ff8d13, #ffcd54);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.animationTitle h3::after {
+    left: -40px;
+}
+.animationTitle h3::before {
+    right: -40px;
+}
+
+.animationTitle h3 b::after,
+.animationTitle h3 b::before {
+    position: absolute;
+    content: "";
+    top: 55%;
+    display: block;
+    width: 20px;
+    height: 6px;
+    background-image: linear-gradient(to bottom, #ff8d13, #ffcd54);
+    transform: translateY(-50%) rotate(-55deg);
+    border-radius: 10px;
+}
+.animationTitle h3 b::after {
+    left: -30px;
+}
+.animationTitle h3 b::before {
+    right: -30px;
+}
+
+.animationTitle h6 {
+    line-height: 20px;
+    font-size: 12px;
+    color: #999999;
+}

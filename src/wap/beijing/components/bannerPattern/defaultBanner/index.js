@@ -24,6 +24,7 @@ export default class DefaultBanner extends Component {
     dotsNode = React.createRef()//光标
     componentDidMount() {//初始化轮播
         const { continuous, index, width } = this.state;
+        //这里可以加判断  循环才+1
         let newIndex = index + 1;
         if (continuous) {
             this.setState({
@@ -32,47 +33,59 @@ export default class DefaultBanner extends Component {
                 move: -(newIndex * width)
             })
         }
-        this.autoSlide();
+        this.autoSlide('next');
     }
     componentWillUnmount() {
         clearInterval(timer);
     }
-    slideFun = () => {//判断特定条件做出反应
+    slideFun = (type, num) => {//判断特定条件做出反应
         const { continuous } = this.state;
         if (continuous) {
-            this.loopSilde();
+            this.loopSilde(type, num);
         }
     }
-    loopSilde = () => {//循环轮播判断
-        const { index, width } = this.state;
+    loopSilde = (type, num) => {//循环轮播判断
         const { list } = this.props;
-        if (index > list.length) {
-            this.stopSlide();
-            setTimeout(() => {
-                let newIndex = 1;
-                this.setState({
-                    index: newIndex,
-                    flag: false,
-                    move: -(newIndex * width)
-                })
-                this.autoSlide()
-            }, 300);
-        }else{
+        const { width, index } = this.state;
+        let newIndex;
+        if (type === 'next') newIndex = index + 1;
+        if (type === 'prev') newIndex = index - 1;
 
-            this.autoSlide()
-        }
-    }
-    autoSlide = () => {//启动
-        this.stopSlide();
-        timer = setInterval(() => {
-            const { width, index } = this.state;
-            let newIndex = index + 1;
+        if (index > list.length) {
+            //返回第一张图
+            let defaultVal = 1;//这里是默认的1 第0张是最后一张
+
+            this.setState({
+                index: defaultVal,
+                flag: false,
+                move: -(defaultVal * width),
+                wait: 0
+            })
+            this.autoSlide('next')
+        } else if (index <= 0) {
+            let lenNum = list.length;
+            this.setState({
+                index: lenNum,
+                flag: false,
+                move: -(lenNum * width),
+                wait: 0
+            })
+            this.autoSlide('next')
+        } else {
+            //正常继续调用
             this.setState({
                 index: newIndex,
                 flag: true,
-                move: -(newIndex * width)
+                move: -(newIndex * width),
+                wait: 2000
             })
-            this.slideFun();
+            this.autoSlide('next')
+        }
+    }
+    autoSlide = (type, num) => {//启动
+        this.stopSlide();
+        timer = setInterval(() => {
+            this.slideFun(type, num);
         }, this.state.wait);
     }
 
@@ -97,7 +110,7 @@ export default class DefaultBanner extends Component {
         })
     }
     touchMove = (e) => {//手指移动
-        const { moveInfo: { begin, onOff },moveInfo, index, width } = this.state;
+        const { moveInfo: { begin, onOff }, moveInfo, index, width } = this.state;
         if (onOff) {
             //获取根元素缩放比例
             let num = document.querySelector('html')?.style?.fontSize?.split('px')[0] || 50;
@@ -105,21 +118,18 @@ export default class DefaultBanner extends Component {
             let left = ((pageX - begin) / num - index * width).toFixed(1)
 
             this.setState({
-                moveInfo: {...moveInfo, moveX: pageX - begin},
+                moveInfo: { ...moveInfo, moveX: pageX - begin },
                 move: left
             })
         }
     }
     endTouch = (e) => {
-        const { moveInfo: { moveX }, index, width } = this.state;
-        let newIndex = moveX > 0 ? index - 1 : index + 1;
-        console.log(newIndex, moveX)
+        const { moveInfo: { moveX } } = this.state;
+        let newIndex = moveX > 0 ? 'prev' : 'next';
         this.setState({
-            moveInfo: { begin: 0, moveX: 0, onOff: false, },
-            index: newIndex,
-            move: -(newIndex * width)
+            moveInfo: { begin: 0, moveX: 0, onOff: false }
         })
-        this.loopSilde();
+        this.loopSilde(newIndex);
     }
 
     render() {
@@ -145,7 +155,6 @@ export default class DefaultBanner extends Component {
             num = num === -1 ? list.length - 1 : num;//第一张图判断
             num = num === list.length ? 0 : num;//最后一张图判断
             const node = this.dotsNode.current.children;
-
             if (this.pre !== null) node[this.pre].className = '';//第一次不清空
 
             node[num].className = 'active';

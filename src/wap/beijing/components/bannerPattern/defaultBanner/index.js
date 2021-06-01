@@ -57,9 +57,13 @@ export default class DefaultBanner extends Component {
                 })
                 this.autoSlide()
             }, 300);
+        }else{
+
+            this.autoSlide()
         }
     }
-    autoSlide = (num) => {//启动
+    autoSlide = () => {//启动
+        this.stopSlide();
         timer = setInterval(() => {
             const { width, index } = this.state;
             let newIndex = index + 1;
@@ -93,28 +97,29 @@ export default class DefaultBanner extends Component {
         })
     }
     touchMove = (e) => {//手指移动
-        const { moveInfo: { begin, onOff }, moveInfo, index, width } = this.state;
+        const { moveInfo: { begin, onOff },moveInfo, index, width } = this.state;
         if (onOff) {
+            //获取根元素缩放比例
             let num = document.querySelector('html')?.style?.fontSize?.split('px')[0] || 50;
             const { pageX } = e.touches[0];
-            console.log(index)
-            console.log(((pageX - begin) / num) - index * width)
+            let left = ((pageX - begin) / num - index * width).toFixed(1)
 
             this.setState({
-                moveInfo: { ...moveInfo, moveX: (pageX - begin) / num },
-                move: (pageX - begin) / num - (index * width)
+                moveInfo: {...moveInfo, moveX: pageX - begin},
+                move: left
             })
         }
     }
     endTouch = (e) => {
         const { moveInfo: { moveX }, index, width } = this.state;
         let newIndex = moveX > 0 ? index - 1 : index + 1;
-        console.log(newIndex, index)
-        // this.setState({
-        //     moveInfo: { begin: 0, moveX: 0, onOff: false, },
-        //     index: newIndex
-        // })
-        // this.autoSlide();
+        console.log(newIndex, moveX)
+        this.setState({
+            moveInfo: { begin: 0, moveX: 0, onOff: false, },
+            index: newIndex,
+            move: -(newIndex * width)
+        })
+        this.loopSilde();
     }
 
     render() {

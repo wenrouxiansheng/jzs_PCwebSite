@@ -1,7 +1,5 @@
 # PC & Wap(wap只包含官网) 建站
 
-![消息传递大致图](src/pcEditWebsite/消息传递大致图.png)
-
 ### 安装依赖项
 ```
 npm install
@@ -22,7 +20,8 @@ npm run build
 
 node server.js
 ```
-
+### 消息大致图
+![消息传递大致图](src/pcEditWebsite/消息传递大致图.png)
 
 
 

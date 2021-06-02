@@ -1,9 +1,11 @@
-import React, { Component, Suspense, lazy, } from 'react'
-
+import React, { Component, Suspense, lazy } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
+
+import './clearUIdefaultStyle.scss'
 
 
 const Loading = <div>loading</div>;
+
 export default class wapRouterControl extends Component {
     //这个文件作为区分北京上海官网跳转  hoc
     componentDidMount() {
@@ -24,16 +26,13 @@ export default class wapRouterControl extends Component {
     }
     render() {
         return (
-            <div>
-                <Suspense fallback={Loading}>
-                    <Switch>
-                        <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/views'))} />{/* 北京站点 */}
-                        <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai'))} />{/* 上海站点 */}
-                        <Redirect to="/site/wap/beijing" />
-                    </Switch>
-                </Suspense>
-            </div>
-
+            <Suspense fallback={Loading}>
+                <Switch>
+                    <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/router'))} />{/* 北京站点 */}
+                    <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai'))} />{/* 上海站点 */}
+                    <Redirect to="/site/wap/beijing" />
+                </Switch>
+            </Suspense>
         )
     }
 }

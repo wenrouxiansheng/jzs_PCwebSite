@@ -1,0 +1,105 @@
+.ImgIntroductionPicture {
+    width: 85%;
+    min-height: 3rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .img_box {
+        width: 45%;
+        height: 2.2rem;
+        position: absolute;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            border: 1px solid #fcae03;
+            top: 0.08rem;
+            z-index: -1;
+        }
+    }
+    .text_box {
+        width: 50%;
+        position: absolute;
+        min-height: 2.3rem;
+        p {
+            position: relative;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            color: white;
+            font-size: 0.26rem;
+            background-image: linear-gradient(to right, #fcb103, #ff7f00);
+            display: inline-block;
+            padding: 0 0.2rem 0 0.2rem;
+
+            .title_flag {
+                font-size: 0.3rem;
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 0.08rem;
+                height: 0.08rem;
+                border: 1px solid white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 0.5rem;
+                border: 1px solid #fcae03;
+                position: absolute;
+                top: 0.03rem;
+                left: 0.03rem;
+                z-index: -1;
+            }
+        }
+        h3 {
+            font-size: 0.3rem;
+            margin: 0.2rem 0 0.2rem 0;
+        }
+        .text {
+            display: inline-block;
+            font-size: 0.26rem;
+            color: #666666;
+            line-height: 0.35rem;
+        }
+    }
+}
+
+/* ImgIntroductionPicture 图片左侧模式 */
+.ImgIntroductionPicture1 {
+    .img_box {
+        left: 0px;
+        &::after {
+            right: 0.08rem;
+        }
+    }
+    .text_box {
+        right: 0px;
+    }
+}
+
+/* ImgIntroductionPicture 图片右侧模式 */
+.ImgIntroductionPicture2 {
+    .img_box {
+        right: 0px;
+        &::after {
+            left: 0.08rem;
+        }
+    }
+    .text_box {
+        left: 0px;
+    }
+}

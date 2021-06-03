@@ -1,0 +1,39 @@
+.titleSpindrift {
+    width: 100%;
+    text-align: center;
+    margin: 0.4rem 0;
+    cursor: pointer;
+    font-size: 0.36rem;
+    .titleSpindriftContent{
+        position: relative;
+        width: auto;
+        display: inline-block;
+        font-weight: bold;
+        background: linear-gradient(-90deg, #FF7E00 0%, #FCB303 100%);
+        -webkit-background-clip: text;
+        line-height: 0.8rem;
+        -webkit-text-fill-color: transparent;
+        &::before {
+            content: '';
+            position: absolute;
+            left: -0.64rem;
+            top: 0.3rem;
+            display: block;
+            width: 0.54rem;
+            height: 0.24rem;
+            background: url("../../../assets/componentRelyOnImage/title/titleSpindrift_icon.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: -0.44rem;
+            top: 0.2rem;
+            display: block;
+            width: 0.35rem;
+            height: 0.37rem;
+            background: url("../../../assets/componentRelyOnImage/title/titleSpindrift_icon2.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+    }
+}

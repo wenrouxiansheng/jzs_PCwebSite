@@ -16,7 +16,6 @@ export default class TitleBar extends Component {
     render() {
         const { data: { icon, title, linkList, rightLink, subtitle } } = this.props;
         if (linkList && linkList.length > 2) return <div>副链接不超过2个</div>;
-
         return (
             <div className="TitleBar">
                 <div className="tabControl_icon">

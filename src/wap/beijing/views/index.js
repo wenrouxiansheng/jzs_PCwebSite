@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import DrawerNav from '../components/common/drawerNav'
 import { seekComponents } from '../public'
 
 
@@ -8,13 +7,20 @@ export default class homePage extends Component {
   state = {
     componentsJson: [
       {
+        component: 'DrawerNav',
+        props: {}
+      },
+      {
         component: 'Banner',
         props: {
-          data: [
-            { img: require('../assets/homepage/banner/banner1.png').default, address: "#" },
-            { img: require('../assets/homepage/banner/banner2.png').default, address: "#" },
-            { img: require('../assets/homepage/banner/banner3.png').default, address: "#" },
-          ]
+          data: {
+            list: [
+              { img: require('../assets/homepage/banner/banner1.png').default, address: "#" },
+              { img: require('../assets/homepage/banner/banner2.png').default, address: "#" },
+              { img: require('../assets/homepage/banner/banner3.png').default, address: "#" },
+            ],
+            type: 'default'
+          }
         }
       },
       {
@@ -146,6 +152,42 @@ export default class homePage extends Component {
         component: 'TitleBar',
         props: {
           data: {
+            icon: require('../assets/homepage/tabControl/homePage3_03.png').default,
+            title: { address: "#", text: "学员风采" },
+            linkList: null,
+            rightLink: { text: "MORE>>", address: "#" },
+            subtitle: "桔子树STAR 闪耀中外"
+          }
+        },
+      },
+      {
+        component: 'TitleBar',
+        props: {
+          data: {
+            icon: require('../assets/homepage/tabControl/homePage4_03.png').default,
+            title: { address: "#", text: "课堂实景" },
+            linkList: null,
+            rightLink: { text: "MORE>>", address: "#" },
+            subtitle: "精品小班 专职教师"
+          }
+        },
+      },
+      {
+        component: 'TitleBar',
+        props: {
+          data: {
+            icon: require('../assets/homepage/tabControl/homePage5_03.png').default,
+            title: { address: "#", text: "品牌荣誉" },
+            linkList: null,
+            rightLink: null,
+            subtitle: null
+          }
+        },
+      },
+      {
+        component: 'TitleBar',
+        props: {
+          data: {
             icon: require('../assets/homepage/tabControl/homePage2_03.png').default,
             title: { address: "#", text: "品牌介绍" },
             linkList: null,
@@ -157,8 +199,99 @@ export default class homePage extends Component {
       {
         component: 'BrandImageText',
         props: {
+          data: {
+            title: "办学规模",
+            subtitle: "强大的办学规模",
+            text: '已开设<span style="color: #f2aa46;">18</span>家直营校区 （北京<span style="color: #f2aa46;">16</span>家，上海<span style="color: #f2aa46;">2</span>家） 总教学面积近<span style="color: #f2aa46;">35000</span>平米',
+            img: require('../assets/homepage/brand/Picture1_03.png').default,
+            type: 2
+          }
         },
-      }
+      },
+      {
+        component: 'BrandImageText',
+        props: {
+          data: {
+            title: "师资力量",
+            subtitle: "雄厚的师资力量",
+            text: '数百名全职专业教师，毕业于国内外专业艺术院校',
+            img: require('../assets/homepage/brand/Picture2_03.png').default,
+            type: 1
+          }
+        },
+      },
+      {
+        component: 'BrandImageText',
+        props: {
+          data: {
+            title: "教研团队",
+            subtitle: "专业的教研团队",
+            text: '艺术培训行业专业的科学、系统、完善的课程研发团队',
+            img: require('../assets/homepage/brand/Picture3_03.png').default,
+            type: 2
+          }
+        },
+      },
+      {
+        component: 'BrandImageText',
+        props: {
+          data: {
+            title: "教学模式",
+            subtitle: "私人定制教学模式",
+            text: '专属“私人订制教学模式”，一位学员、一份计划、一种方法',
+            img: require('../assets/homepage/brand/Picture4_03.png').default,
+            type: 1
+          }
+        },
+      },
+      {
+        component: 'BrandImageText',
+        props: {
+          data: {
+            title: "艺术综合体",
+            subtitle: "艺术培训综合体",
+            text: '声乐、器乐、舞蹈、美术齐头并进，培养孩子综合素养',
+            img: require('../assets/homepage/brand/Picture5_03.png').default,
+            type: 2
+          }
+        },
+      },
+      {
+        component: 'BrandImageText',
+        props: {
+          data: {
+            title: "个性化教育",
+            subtitle: "个性化教育",
+            text: '尊重学员个性差异，因材施教，为青少年提供适合的艺术教育',
+            img: require('../assets/homepage/brand/Picture6_03.png').default,
+            type: 1
+          }
+        },
+      },
+      {
+        component: 'BrandImageText',
+        props: {
+          data: {
+            title: "学员口碑",
+            subtitle: "良好的学员口碑",
+            text: '九年累计培训数十万学员，许多新学员由老学员转介绍而来',
+            img: require('../assets/homepage/brand/Picture7_03.png').default,
+            type: 2
+          }
+        },
+      },
+      {
+        component: 'Footer',
+        props: {},
+      },
+      {
+        component: 'SuspensionTool',
+        props: {},
+      },
+      {
+        component: 'FooterBar',
+        props: {},
+      },
     ],
 
   }
@@ -166,7 +299,6 @@ export default class homePage extends Component {
     const { componentsJson } = this.state;
     return (
       <>
-        <DrawerNav />
         {seekComponents(componentsJson)}
       </>
     )

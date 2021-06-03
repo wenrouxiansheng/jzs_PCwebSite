@@ -1,4 +1,3 @@
-// import React, { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 
 import './style.scss'
@@ -24,6 +23,13 @@ export default class DefaultBanner extends Component {
     dotsNode = React.createRef()//光标
     componentDidMount() {//初始化轮播
         const { continuous, index, width } = this.state;
+        const { list } = this.props;
+        const isLoop = list.length > 1 ? true : false;
+
+        //如果图片只有一张不执行轮播逻辑
+        if (!isLoop) return;
+
+
         //这里可以加判断  循环才+1
         let newIndex = index + 1;
         if (continuous) {
@@ -135,6 +141,7 @@ export default class DefaultBanner extends Component {
     render() {
         const { index, flag, width, continuous, startFlag, move } = this.state;
         const { list } = this.props;
+        const isLoop = list.length > 1 ? true : false;
 
         const style = {
             width: `${(list.length + (continuous ? 2 : 0)) * width}rem`,//不是循环  不用加2
@@ -150,7 +157,7 @@ export default class DefaultBanner extends Component {
             return <li key={i} className={!continuous && index === i ? 'active' : ''}></li>
         })
 
-        if (continuous && startFlag) {//循环播放并且是正式开始轮播
+        if (continuous && startFlag && isLoop) {//循环播放并且是正式开始轮播
             let num = index - 1;
             num = num === -1 ? list.length - 1 : num;//第一张图判断
             num = num === list.length ? 0 : num;//最后一张图判断
@@ -164,13 +171,13 @@ export default class DefaultBanner extends Component {
 
 
         return <div className='DefaultBanner'>
-            <div className='container' style={style} onTouchStart={this.beginTouch} onTouchMove={this.touchMove} onTouchEnd={this.endTouch}>
-                {continuous ? this.bannerNode(list[list.length - 1]) : null}
+            <div className='container' style={style} onTouchStart={isLoop ? this.beginTouch : null} onTouchMove={isLoop ? this.touchMove : null} onTouchEnd={isLoop ? this.endTouch : null }>
+                {continuous && isLoop ? this.bannerNode(list[list.length - 1]) : null}
                 {banner}
-                {continuous ? this.bannerNode(list[0]) : null}
+                {continuous && isLoop ? this.bannerNode(list[0]) : null}
             </div>
             <ul className='slick-dots' ref={this.dotsNode}>
-                {dots}
+                {isLoop ? dots : null}
             </ul>
         </div >;
 

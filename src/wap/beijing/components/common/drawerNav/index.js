@@ -19,8 +19,8 @@ export default function DrawerNav() {
         logoLink: "#",
         logo: require('../../../assets/homepage/drawerNav/nav_logo.png').default,
         navList: [
-            { text: "首页", address: "/site/wap/shanghai", img: require('../../../assets/homepage/drawerNav/home_page.png').default },
-            { text: "品牌介绍", address: "#", img: require('../../../assets/homepage/drawerNav/Brand_introduction.png').default },
+            { text: "首页", address: "/site/wap/beijing/home", img: require('../../../assets/homepage/drawerNav/home_page.png').default },
+            { text: "品牌介绍", address: "/site/wap/beijing/brandIntroduction", img: require('../../../assets/homepage/drawerNav/Brand_introduction.png').default },
             { text: "师资力量", address: "#", img: require('../../../assets/homepage/drawerNav/teachers.png').default },
             { text: "学员风采", address: "#", img: require('../../../assets/homepage/drawerNav/user_photo.png').default },
             { text: "艺术头条", address: "#", img: require('../../../assets/homepage/drawerNav/art_news.png').default },

@@ -7,7 +7,8 @@ export default class wapBeijingRouter extends Component {
         return (
             <Suspense fallback={Loading}>
                 <Switch>
-                    <Route path="/site/wap/beijing/home" component={lazy(() => import('../views/index.js'))} />{/* 北京站点 */}
+                    <Route path="/site/wap/beijing/home" component={lazy(() => import('../views'))} />
+                    <Route path="/site/wap/beijing/brandIntroduction" component={lazy(() => import('../views/brandIntroduction'))} />
                     <Redirect to="/site/wap/beijing/home" />
                 </Switch>
             </Suspense>

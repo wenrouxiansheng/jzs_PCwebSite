@@ -9,7 +9,9 @@ const Banner = lazy(() => import('../components/homepage/banner')),//banner图 l
     SuspensionTool = lazy(() => import('../components/common/suspensionTool')),//右侧悬浮工具
     Title = lazy(() => import('../components/common/title')),//浪花标题
     Paragraph = lazy(() => import('../components/common/paragraph')),//段落组件
-    Timeline = lazy(() => import('../components/brandIntroduction/timeline'))//时间轴
+    History = lazy(() => import('../components/brandIntroduction/timeline')),//时间轴
+    TeacherCard = lazy(() => import('../components/teacherList/teacherCard')),//教师名片
+    NewsImageText = lazy(() => import('../components/newsList/imageText'))//教师名片
     ;
 
 export default function switchComponents(name, props, num) {
@@ -24,7 +26,9 @@ export default function switchComponents(name, props, num) {
         'SuspensionTool': <SuspensionTool {...props} key={num} />,
         'Title': <Title {...props} key={num} />,
         'Paragraph': <Paragraph {...props} key={num} />,
-        'Timeline': <Timeline {...props} key={num} />,
+        'History': <History {...props} key={num} />,
+        'TeacherCard': <TeacherCard {...props} key={num} />,
+        'NewsImageText': <NewsImageText {...props} key={num} />,
     }
 
     return components[name] || <div>组件名称错误</div>;

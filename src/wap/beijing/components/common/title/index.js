@@ -4,9 +4,9 @@ import './style.scss'
 export default class Title extends Component {
     
     render() {
-        const { text } = this.props;
+        const { text, style } = this.props;
         return (
-            <div className="titleSpindrift">
+            <div className="titleSpindrift" style={{...style}}>
                 <div className="titleSpindriftContent">{text}</div>
             </div>
         )

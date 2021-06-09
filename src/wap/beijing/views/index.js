@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { seekComponents } from '../public'
 
 
@@ -293,14 +293,13 @@ export default class homePage extends Component {
         props: {},
       },
     ],
-
+    
+  }
+  componentDidMount() {
+    document.title = "桔子树艺术教育";
   }
   render() {
     const { componentsJson } = this.state;
-    return (
-      <>
-        {seekComponents(componentsJson)}
-      </>
-    )
+    return seekComponents(componentsJson)
   }
 }

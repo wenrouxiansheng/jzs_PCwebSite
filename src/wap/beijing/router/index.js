@@ -9,6 +9,9 @@ export default class wapBeijingRouter extends Component {
                 <Switch>
                     <Route path="/site/wap/beijing/home" component={lazy(() => import('../views'))} />
                     <Route path="/site/wap/beijing/brandIntroduction" component={lazy(() => import('../views/brandIntroduction'))} />
+                    <Route path="/site/wap/beijing/teachersList" component={lazy(() => import('../views/teachersList'))} />
+                    <Route path="/site/wap/beijing/studentShow" component={lazy(() => import('../views/studentShow'))} />
+                    <Route path="/site/wap/beijing/newsList" component={lazy(() => import('../views/newsList'))} />
                     <Redirect to="/site/wap/beijing/home" />
                 </Switch>
             </Suspense>

@@ -21,9 +21,9 @@ export default function DrawerNav() {
         navList: [
             { text: "首页", address: "/site/wap/beijing/home", img: require('../../../assets/homepage/drawerNav/home_page.png').default },
             { text: "品牌介绍", address: "/site/wap/beijing/brandIntroduction", img: require('../../../assets/homepage/drawerNav/Brand_introduction.png').default },
-            { text: "师资力量", address: "#", img: require('../../../assets/homepage/drawerNav/teachers.png').default },
-            { text: "学员风采", address: "#", img: require('../../../assets/homepage/drawerNav/user_photo.png').default },
-            { text: "艺术头条", address: "#", img: require('../../../assets/homepage/drawerNav/art_news.png').default },
+            { text: "师资力量", address: "/site/wap/beijing/teachersList", img: require('../../../assets/homepage/drawerNav/teachers.png').default },
+            { text: "学员风采", address: "/site/wap/beijing/studentShow", img: require('../../../assets/homepage/drawerNav/user_photo.png').default },
+            { text: "艺术头条", address: "/site/wap/beijing/newsList", img: require('../../../assets/homepage/drawerNav/art_news.png').default },
             { text: "教学模式", address: "#", img: require('../../../assets/homepage/drawerNav/teaching_model.png').default },
             { text: "校区分布", address: "#", img: require('../../../assets/homepage/drawerNav/campus_distribution.png').default },
             { text: "联系我们", address: "#", img: require('../../../assets/homepage/drawerNav/tell.png').default }

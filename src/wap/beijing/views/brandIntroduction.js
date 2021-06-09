@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { seekComponents } from '../public'
 
 export default class brandIntroduction extends Component {
@@ -156,7 +156,7 @@ export default class brandIntroduction extends Component {
                 }
             },
             {
-                component: 'Timeline',
+                component: 'History',
                 props: {
                     
                 }
@@ -194,12 +194,11 @@ export default class brandIntroduction extends Component {
         ],
 
     }
+    componentDidMount() {
+        document.title = "桔子树艺术-品牌介绍";
+    }
     render() {
         const { componentsJson } = this.state;
-        return (
-            <>
-                {seekComponents(componentsJson)}
-            </>
-        )
+        return seekComponents(componentsJson)
     }
 }

@@ -24,9 +24,9 @@ export default function DrawerNav() {
             { text: "师资力量", address: "/site/wap/beijing/teachersList", img: require('../../../assets/homepage/drawerNav/teachers.png').default },
             { text: "学员风采", address: "/site/wap/beijing/studentShow", img: require('../../../assets/homepage/drawerNav/user_photo.png').default },
             { text: "艺术头条", address: "/site/wap/beijing/newsList", img: require('../../../assets/homepage/drawerNav/art_news.png').default },
-            { text: "教学模式", address: "#", img: require('../../../assets/homepage/drawerNav/teaching_model.png').default },
-            { text: "校区分布", address: "#", img: require('../../../assets/homepage/drawerNav/campus_distribution.png').default },
-            { text: "联系我们", address: "#", img: require('../../../assets/homepage/drawerNav/tell.png').default }
+            { text: "教学模式", address: "/site/wap/beijing/modelOfTeaching", img: require('../../../assets/homepage/drawerNav/teaching_model.png').default },
+            { text: "校区分布", address: "/site/wap/beijing/schoolList", img: require('../../../assets/homepage/drawerNav/campus_distribution.png').default },
+            { text: "联系我们", address: "/site/wap/beijing/aboutUs", img: require('../../../assets/homepage/drawerNav/tell.png').default }
         ]
     }
     const classes = useStyles();

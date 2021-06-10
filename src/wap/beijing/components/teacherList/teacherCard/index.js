@@ -18,7 +18,7 @@ export default class teacherCard extends Component {
         const { data } = this.state;
 
         const node = data.map((item, index) => {
-            return <div className="CharacterIntroduction">
+            return <div className="CharacterIntroduction" key={index}>
                 <a href={item.address}>
                     <img src={item.img} alt="" />
                     <div>

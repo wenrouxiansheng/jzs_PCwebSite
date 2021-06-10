@@ -23,7 +23,7 @@ export default class DefaultBanner extends Component {
     dotsNode = React.createRef()//光标
     componentDidMount() {//初始化轮播
         const { continuous, index, width } = this.state;
-        const { list } = this.props;
+        const { data: { list } } = this.props.propsData;
         const isLoop = list.length > 1 ? true : false;
 
         //如果图片只有一张不执行轮播逻辑
@@ -51,7 +51,7 @@ export default class DefaultBanner extends Component {
         }
     }
     loopSilde = (type, num) => {//循环轮播判断
-        const { list } = this.props;
+        const { data: { list } } = this.props.propsData;
         const { width, index } = this.state;
         let newIndex;
         if (type === 'next') newIndex = index + 1;
@@ -140,7 +140,8 @@ export default class DefaultBanner extends Component {
 
     render() {
         const { index, flag, width, continuous, startFlag, move } = this.state;
-        const { list } = this.props;
+        const { data: { list }, style:propsStyle } = this.props.propsData;
+        
         const isLoop = list.length > 1 ? true : false;
 
         const style = {
@@ -168,10 +169,10 @@ export default class DefaultBanner extends Component {
             this.pre = num;
         }
 
+        
 
-
-        return <div className='DefaultBanner'>
-            <div className='container' style={style} onTouchStart={isLoop ? this.beginTouch : null} onTouchMove={isLoop ? this.touchMove : null} onTouchEnd={isLoop ? this.endTouch : null }>
+        return <div className='DefaultBanner' style={{...propsStyle}}>
+            <div className='container' style={style} onTouchStart={isLoop ? this.beginTouch : null} onTouchMove={isLoop ? this.touchMove : null} onTouchEnd={isLoop ? this.endTouch : null}>
                 {continuous && isLoop ? this.bannerNode(list[list.length - 1]) : null}
                 {banner}
                 {continuous && isLoop ? this.bannerNode(list[0]) : null}

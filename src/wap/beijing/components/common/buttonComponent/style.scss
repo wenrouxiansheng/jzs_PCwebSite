@@ -1,0 +1,17 @@
+.Button_single{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.3rem;
+    button{
+        background-image: linear-gradient(to right, #fcb004, #ff7f00);
+        color: white;
+        font-size: 0.3rem;
+        padding: 0rem 0.4rem 0rem 0.4rem;
+        box-sizing: content-box;
+        height: 0.6rem;
+        border-radius: 0.3rem;
+        border: 1px solid #bf7946;
+        margin: 0 0.2rem;
+        transition: .3s;
+    }
+}

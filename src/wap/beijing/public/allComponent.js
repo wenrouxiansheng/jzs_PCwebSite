@@ -11,7 +11,13 @@ const Banner = lazy(() => import('../components/homepage/banner')),//banner图 l
     Paragraph = lazy(() => import('../components/common/paragraph')),//段落组件
     History = lazy(() => import('../components/brandIntroduction/timeline')),//时间轴
     TeacherCard = lazy(() => import('../components/teacherList/teacherCard')),//教师名片
-    NewsImageText = lazy(() => import('../components/newsList/imageText'))//教师名片
+    NewsImageText = lazy(() => import('../components/newsList/imageText')),//教师名片
+    Picture = lazy(() => import('../components/common/picture')),//单图组件
+    ButtonComponent = lazy(() => import('../components/common/buttonComponent')),//按钮组件
+    CampusShow = lazy(() => import('../components/schoolList/campusShow')),//校区展示
+    Supernatant = lazy(() => import('../components/schoolList/supernatant')),//电话浮层
+    CompanyImgText = lazy(() => import('../components/aboutUs/companyImgText')),//总部图文浮层
+    ContactWay = lazy(() => import('../components/aboutUs/contactWay'))//电话浮层
     ;
 
 export default function switchComponents(name, props, num) {
@@ -29,6 +35,12 @@ export default function switchComponents(name, props, num) {
         'History': <History {...props} key={num} />,
         'TeacherCard': <TeacherCard {...props} key={num} />,
         'NewsImageText': <NewsImageText {...props} key={num} />,
+        'Picture': <Picture {...props} key={num} />,
+        'ButtonComponent': <ButtonComponent {...props} key={num} />,
+        'CampusShow': <CampusShow {...props} key={num} />,
+        'Supernatant': <Supernatant {...props} key={num} />,
+        'CompanyImgText': <CompanyImgText {...props} key={num} />,
+        'ContactWay': <ContactWay {...props} key={num} />,
     }
 
     return components[name] || <div>组件名称错误</div>;

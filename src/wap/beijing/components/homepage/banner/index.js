@@ -10,9 +10,9 @@ export default class Banner extends Component {
         })
     }
     render() {
-        const { type, list } = this.props.data
+        const { type } = this.props.data
         const obj = {
-            'default': <DefaultBanner list={list} />
+            'default': <DefaultBanner propsData={this.props} />
         }
         return obj[type];
     }

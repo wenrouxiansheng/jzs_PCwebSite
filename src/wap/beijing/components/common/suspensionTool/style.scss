@@ -1,9 +1,10 @@
 .suspensionTool {
     width: 1rem;
     position: fixed;
-    bottom: 4rem;
+    bottom: 30vh;
     right: 0.4rem;
     z-index: 99;
+    animation: suspensionTool 1s;
     & > div {
         width: 0.9rem;
         height: 0.9rem;
@@ -20,7 +21,7 @@
             background-color: rgba(0, 0, 0, 0.3);
         }
     }
-    a{
+    a {
         display: flex;
         align-items: center;
     }
@@ -32,5 +33,24 @@
         width: 0.4rem;
         height: 0.4rem;
         object-fit: cover;
+    }
+    @keyframes suspensionTool {
+        0% {
+            opacity: 0;
+            transform: translate3d(3000px,0,0) scaleX(3);
+        }
+        60% {
+            opacity: 1;
+            transform: translate3d(-25px,0,0) scaleX(1);
+        }
+        75% {
+            transform: translate3d(10px,0,0) scaleX(.98);
+        }
+        90% {
+            transform: translate3d(-5px,0,0) scaleX(.995);
+        }
+        100% {
+            transform: translateZ(0);
+        }
     }
 }

@@ -137,6 +137,14 @@ export default class homePage extends Component {
         },
       },
       {
+        component: 'Banner',
+        props: {
+          data: {
+            type: 'gradingTest'
+          }
+        }
+      },
+      {
         component: 'TitleBar',
         props: {
           data: {

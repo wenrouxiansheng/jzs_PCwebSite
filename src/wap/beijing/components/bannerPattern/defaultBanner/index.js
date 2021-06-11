@@ -5,6 +5,7 @@ import './style.scss'
 import React, { Component } from 'react'
 
 let timer = null//计时器
+//没有写不循环的逻辑
 export default class DefaultBanner extends Component {
     state = {
         index: 0,//当前显示下标
@@ -21,6 +22,7 @@ export default class DefaultBanner extends Component {
         }
     }
     dotsNode = React.createRef()//光标
+    pre = null//记录上一个光标  好清除样式
     componentDidMount() {//初始化轮播
         const { continuous, index, width } = this.state;
         const { data: { list } } = this.props.propsData;
@@ -44,13 +46,14 @@ export default class DefaultBanner extends Component {
     componentWillUnmount() {
         clearInterval(timer);
     }
-    slideFun = (type, num) => {//判断特定条件做出反应
+    slideFun = (type, num) => {//判断特定条件做出反应 为循环轮播和不循环解耦
         const { continuous } = this.state;
         if (continuous) {
+            //continuous为true是循环播放 循环播放的动作
             this.loopSilde(type, num);
         }
     }
-    loopSilde = (type, num) => {//循环轮播判断
+    loopSilde = (type, num) => {//循环轮播条件判断
         const { data: { list } } = this.props.propsData;
         const { width, index } = this.state;
         let newIndex;
@@ -60,7 +63,6 @@ export default class DefaultBanner extends Component {
         if (index > list.length) {
             //返回第一张图
             let defaultVal = 1;//这里是默认的1 第0张是最后一张
-
             this.setState({
                 index: defaultVal,
                 flag: false,
@@ -106,15 +108,37 @@ export default class DefaultBanner extends Component {
             </div>
         </Link>
     }
-    pre = null
 
     beginTouch = (e) => {
-        const { pageX, moveInfo } = e.touches[0];
+        const { pageX } = e.touches[0];
+        const { data: { list } } = this.props.propsData;
+        const { continuous, width, index, moveInfo } = this.state;
         this.stopSlide();
+        if (continuous) {
+            //循环轮播的动作
+            if (index > list.length) {//返回第一张图
+                const first = 1;
+                this.setState({
+                    index: first,
+                    move: -(first * width),
+                    flag: false,
+                })
+            }
+            if (index === 0) {//返回最后一张图
+                const last = list.length;
+                this.setState({
+                    index: last,
+                    move: -(last * width),
+                    flag: false,
+                })
+            }
+
+        }
         this.setState({
-            moveInfo: { ...moveInfo, begin: pageX, onOff: true }
+            moveInfo: { ...moveInfo, begin: pageX, onOff: true },
         })
     }
+
     touchMove = (e) => {//手指移动
         const { moveInfo: { begin, onOff }, moveInfo, index, width } = this.state;
         if (onOff) {
@@ -131,18 +155,36 @@ export default class DefaultBanner extends Component {
     }
     endTouch = (e) => {
         const { moveInfo: { moveX } } = this.state;
-        let newIndex = moveX > 0 ? 'prev' : 'next';
+        //判断是返回还是下一个
+        let type = moveX > 0 ? 'prev' : 'next';
         this.setState({
             moveInfo: { begin: 0, moveX: 0, onOff: false }
         })
-        this.loopSilde(newIndex);
+        this.loopSilde(type);
     }
 
+    pagination = () => {//banner指示页码
+        const { index, continuous, startFlag, } = this.state;
+        const { data: { list } } = this.props.propsData;
+        const isLoop = list.length > 1 ? true : false;//一张图片不执行轮播逻辑
+        if (!isLoop) return;
+
+        if (continuous && startFlag) {//循环播放并且是正式开始轮播
+            let num = index - 1;
+            num = num === -1 ? list.length - 1 : num;//第一张图判断
+            num = num === list.length ? 0 : num;//最后一张图判断
+            const node = this.dotsNode.current.children;
+            if (this.pre !== null) node[this.pre].className = '';//第一次不清空
+
+            node[num].className = 'active';
+            this.pre = num;
+        }
+    }
     render() {
-        const { index, flag, width, continuous, startFlag, move } = this.state;
-        const { data: { list }, style:propsStyle } = this.props.propsData;
-        
-        const isLoop = list.length > 1 ? true : false;
+        const { index, flag, width, continuous, move } = this.state;
+        const { data: { list }, style: propsStyle } = this.props.propsData;
+
+        const isLoop = list.length > 1 ? true : false;//一张图片不执行轮播逻辑
 
         const style = {
             width: `${(list.length + (continuous ? 2 : 0)) * width}rem`,//不是循环  不用加2
@@ -154,24 +196,13 @@ export default class DefaultBanner extends Component {
             return this.bannerNode(item, index)
         })
 
-        const dots = list.map((item, i) => {//光标
+        const dots = list.map((_, i) => {//光标
             return <li key={i} className={!continuous && index === i ? 'active' : ''}></li>
         })
 
-        if (continuous && startFlag && isLoop) {//循环播放并且是正式开始轮播
-            let num = index - 1;
-            num = num === -1 ? list.length - 1 : num;//第一张图判断
-            num = num === list.length ? 0 : num;//最后一张图判断
-            const node = this.dotsNode.current.children;
-            if (this.pre !== null) node[this.pre].className = '';//第一次不清空
+        this.pagination()
 
-            node[num].className = 'active';
-            this.pre = num;
-        }
-
-        
-
-        return <div className='DefaultBanner' style={{...propsStyle}}>
+        return <div className='DefaultBanner' style={{ ...propsStyle }}>
             <div className='container' style={style} onTouchStart={isLoop ? this.beginTouch : null} onTouchMove={isLoop ? this.touchMove : null} onTouchEnd={isLoop ? this.endTouch : null}>
                 {continuous && isLoop ? this.bannerNode(list[list.length - 1]) : null}
                 {banner}

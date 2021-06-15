@@ -157,6 +157,14 @@ export default class homePage extends Component {
         },
       },
       {
+        component: 'Banner',
+        props: {
+          data: {
+            type: 'teacherLoop'
+          }
+        }
+      },
+      {
         component: 'TitleBar',
         props: {
           data: {
@@ -167,6 +175,14 @@ export default class homePage extends Component {
             subtitle: "桔子树STAR 闪耀中外"
           }
         },
+      },
+      {
+        component: 'Banner',
+        props: {
+          data: {
+            type: 'blurGradient'
+          }
+        }
       },
       {
         component: 'TitleBar',
@@ -181,6 +197,20 @@ export default class homePage extends Component {
         },
       },
       {
+        component: 'Banner',
+        props: {
+          data: {
+            type: 'classroom',
+            list: [
+              { img: require('../assets/homepage/classroom/class1.png').default },
+              { img: require('../assets/homepage/classroom/class2.png').default },
+              { img: require('../assets/homepage/classroom/class3.png').default },
+              { img: require('../assets/homepage/classroom/class4.png').default },
+            ]
+          }
+        }
+      },
+      {
         component: 'TitleBar',
         props: {
           data: {
@@ -191,6 +221,14 @@ export default class homePage extends Component {
             subtitle: null
           }
         },
+      },
+      {
+        component: 'Banner',
+        props: {
+          data: {
+            type: 'horizontal'
+          }
+        }
       },
       {
         component: 'TitleBar',
@@ -301,7 +339,7 @@ export default class homePage extends Component {
         props: {},
       },
     ],
-    
+
   }
   componentDidMount() {
     document.title = "桔子树艺术教育";

@@ -1,0 +1,39 @@
+.table {
+    width: 94%;
+    margin: 0 auto;
+    font-size: 0.24rem;
+    border-radius: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 0.15rem #cecece;
+    margin-top: 0.3rem;
+    thead {
+        th {
+            min-width: 1.5rem;
+            line-height: 0.8rem;
+            font-size: 0.28rem;
+            background-color: #f9d68b;
+        }
+    }
+    tbody{
+        tr {
+            line-height: 0.5rem;
+            &:nth-of-type(even) {
+                background: #fcf8ed;
+            }
+        }
+    }
+    td {
+        padding: 0.2rem 0.1rem 0.2rem 0.1rem;
+        border-left: solid 1px #f3e5ca;
+        border-right: solid 1px #f3e5ca;
+        vertical-align: middle;
+        &:first-child {
+            border: 0;
+        }
+        &:last-child {
+            border: 0;
+        }
+    }
+}

@@ -5,6 +5,7 @@ const titleStyle = {
     textAlign: 'center',
     fontSize: '0.3rem',
     fontWeight: 'bold',
+    marginTop: '0.3rem'
 }
 const subtitleStyle = {
     padding: '0px 0.3rem',
@@ -44,11 +45,26 @@ export default class studentShow extends Component {
                     style: titleStyle
                 }
             },
+
             {
                 component: 'Paragraph',
                 props: {
                     text: "桔子树学员登上国家级艺术殿堂——北京音乐厅，绽放青春风采",
                     style: subtitleStyle
+                }
+            },
+            {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            { img: require('../assets/studentShow/user1.png').default },
+                            { img: require('../assets/studentShow/user2.png').default },
+                            { img: require('../assets/studentShow/user3.png').default }
+                        ],
+                        wait: 1500
+                    }
                 }
             },
             {
@@ -58,6 +74,7 @@ export default class studentShow extends Component {
                     style: titleStyle
                 }
             },
+
             {
                 component: 'Paragraph',
                 props: {
@@ -65,7 +82,20 @@ export default class studentShow extends Component {
                     style: subtitleStyle
                 }
             },
-
+            {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            { img: require('../assets/studentShow/user4.png').default },
+                            { img: require('../assets/studentShow/user5.png').default },
+                            { img: require('../assets/studentShow/user6.png').default }
+                        ],
+                        wait: 2000
+                    }
+                }
+            },
             {
                 component: 'Paragraph',
                 props: {
@@ -78,6 +108,20 @@ export default class studentShow extends Component {
                 props: {
                     text: "桔子树学员绽放“海外桃李杯”舞蹈大赛，获得多项大奖",
                     style: subtitleStyle
+                }
+            },
+            {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            {img: require('../assets/studentShow/user7.png').default},
+                            {img: require('../assets/studentShow/user8.png').default},
+                            {img: require('../assets/studentShow/user9.png').default}
+                        ],
+                        wait: 1800
+                    }
                 }
             },
             {
@@ -95,6 +139,20 @@ export default class studentShow extends Component {
                 }
             },
             {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            {img: require('../assets/studentShow/user10.png').default},
+                            {img: require('../assets/studentShow/user11.png').default},
+                            {img: require('../assets/studentShow/user12.png').default}
+                        ],
+                        wait: 1900
+                    }
+                }
+            },
+            {
                 component: 'Paragraph',
                 props: {
                     text: "李斯特杯香港国际钢琴公开赛",
@@ -106,6 +164,20 @@ export default class studentShow extends Component {
                 props: {
                     text: "桔子树学员登上世界级舞台，在国家未来大剧院歌剧厅奏响华美乐章",
                     style: subtitleStyle
+                }
+            },
+            {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            {img: require('../assets/studentShow/user13.png').default},
+                            {img: require('../assets/studentShow/user14.png').default},
+                            {img: require('../assets/studentShow/user15.png').default}
+                        ],
+                        wait: 2100
+                    }
                 }
             },
             {
@@ -123,6 +195,20 @@ export default class studentShow extends Component {
                 }
             },
             {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            {img: require('../assets/studentShow/user16.png').default},
+                            {img: require('../assets/studentShow/user17.png').default},
+                            {img: require('../assets/studentShow/user18.png').default}
+                        ],
+                        wait: 2200
+                    }
+                }
+            },
+            {
                 component: 'Paragraph',
                 props: {
                     text: "美术写生",
@@ -137,6 +223,21 @@ export default class studentShow extends Component {
                 }
             },
             {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            {img: require('../assets/studentShow/user19.png').default},
+                            {img: require('../assets/studentShow/user20.png').default},
+                            {img: require('../assets/studentShow/user21.png').default},
+                            {img: require('../assets/studentShow/user22.png').default}
+                        ],
+                        wait: 1700
+                    }
+                }
+            },
+            {
                 component: 'Paragraph',
                 props: {
                     text: "考级",
@@ -148,6 +249,21 @@ export default class studentShow extends Component {
                 props: {
                     text: "每年桔子树组织数万名学员参加中国舞蹈家协会、国际舞蹈家协会、中国音乐学院、中央音乐学院、中国美术学院主办的社会考级，并且是中国舞蹈家协会考级师范基地，中国美术学员定点考级单位。",
                     style: subtitleStyle
+                }
+            },
+            {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'studentShowLoop',
+                        list: [
+                            {img: require('../assets/studentShow/user23.png').default},
+                            {img: require('../assets/studentShow/user24.png').default},
+                            {img: require('../assets/studentShow/user25.png').default},
+                            {img: require('../assets/studentShow/user26.png').default}
+                        ],
+                        wait: 2000
+                    }
                 }
             },
             {

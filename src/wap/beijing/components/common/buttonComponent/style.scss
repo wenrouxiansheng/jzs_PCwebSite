@@ -13,5 +13,8 @@
         border: 1px solid #bf7946;
         margin: 0 0.2rem;
         transition: .3s;
+        &:active{
+            transform: scale(0.9);
+        }
     }
 }

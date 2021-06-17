@@ -49,7 +49,6 @@ export default class pcEditRouter extends Component {
     }
     componentDidMount() {
         editingStatus.dispatch(changeEditingStatus(true))
-
     }
     render() {
         return (

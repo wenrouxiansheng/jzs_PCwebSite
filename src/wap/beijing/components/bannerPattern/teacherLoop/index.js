@@ -7,17 +7,8 @@ import 'swiper/swiper.scss';
 
 
 export default class TeacherLoop extends Component {
-    state = {
-        list: [
-            { name: "王晓玉1", duration: "5年", img: require("../../../assets/teacherList/teacher1_05.png").default, address: "#" },
-            { name: "王晓玉2", duration: "5年", img: require("../../../assets/teacherList/teacher2_05.png").default, address: "#" },
-            { name: "王晓玉3", duration: "5年", img: require("../../../assets/teacherList/teacher3_05.png").default, address: "#" },
-            { name: "王晓玉4", duration: "5年", img: require("../../../assets/teacherList/teacher4_05.png").default, address: "#" },
-            { name: "王晓玉5", duration: "5年", img: require("../../../assets/teacherList/teacher5_05.png").default, address: "#" },
-        ]
-    }
     render() {
-        const { list } = this.state;
+        const { list } = this.props.propsData.data;
         const node = list.map((item, index) => {
             return <SwiperSlide className="swiper-slide" key={index}>
                 <Link to={item.address}>

@@ -47,7 +47,7 @@ export default class aboutUs extends Component {
         ]
     }
     componentDidMount() {
-        document.title = "桔子树艺术-校区分布";
+        document.title = "桔子树艺术-联系我们";
     }
     render() {
 

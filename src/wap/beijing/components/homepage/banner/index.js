@@ -6,6 +6,9 @@ import TeacherLoop from '../../bannerPattern/teacherLoop'
 import Honor from '../../bannerPattern/honor'
 import RealityImages from '../../bannerPattern/realityImages'
 import BlurGradient from '../../bannerPattern/blurGradient'
+import StudentShowLoop from '../../bannerPattern/studentShow'
+import ClassLive from '../../bannerPattern/classLive'
+import VagueLoop from '../../bannerPattern/vagueLoop'
 
 export default class Banner extends Component {
     static propTypes = {
@@ -23,6 +26,9 @@ export default class Banner extends Component {
             'horizontal': <Honor propsData={this.props} />,
             'classroom': <RealityImages propsData={this.props} />,
             'blurGradient': <BlurGradient propsData={this.props} />,
+            'studentShowLoop': <StudentShowLoop propsData={this.props} />,
+            'classLive': <ClassLive propsData={this.props} />,
+            'vagueLoop': <VagueLoop propsData={this.props} />,
         }
         return obj[type];
     }

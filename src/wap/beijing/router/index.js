@@ -1,6 +1,7 @@
-import React, { Component, Suspense, lazy } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import React, { Component, Suspense } from 'react'
+import { Route, Redirect } from 'react-router-dom'
 import { Skeleton } from 'antd';
+import router from './router'
 //骨架屏
 const loadingStyle = {
     width: '100vw',
@@ -18,20 +19,26 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
     <Skeleton active />
 </div>;
 export default class wapBeijingRouter extends Component {
+
+    verify = () => {
+        const { location: { pathname } } = this.props;
+        const { publicPath, list } = router;
+
+        const page = list.filter(item => {
+            return pathname === publicPath + item.path
+        })
+
+        if (page.length === 0) { //路径无效进入
+            return <Redirect to="/site/wap/beijing/home" />
+        } else {
+            return <Route path={publicPath + page[0].path} component={page[0].component} />
+        }
+    }
+
     render() {
         return (
             <Suspense fallback={Loading}>
-                <Switch>
-                    <Route path="/site/wap/beijing/home" component={lazy(() => import('../views'))} />
-                    <Route path="/site/wap/beijing/brandIntroduction" component={lazy(() => import('../views/brandIntroduction'))} />
-                    <Route path="/site/wap/beijing/teachersList" component={lazy(() => import('../views/teachersList'))} />
-                    <Route path="/site/wap/beijing/studentShow" component={lazy(() => import('../views/studentShow'))} />
-                    <Route path="/site/wap/beijing/newsList" component={lazy(() => import('../views/newsList'))} />
-                    <Route path="/site/wap/beijing/modelOfTeaching" component={lazy(() => import('../views/modelOfTeaching'))} />
-                    <Route path="/site/wap/beijing/schoolList" component={lazy(() => import('../views/schoolList'))} />
-                    <Route path="/site/wap/beijing/aboutUs" component={lazy(() => import('../views/aboutUs'))} />
-                    <Redirect to="/site/wap/beijing/home" />
-                </Switch>
+                {this.verify()}
             </Suspense>
         )
     }

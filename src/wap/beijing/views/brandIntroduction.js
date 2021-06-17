@@ -150,6 +150,19 @@ export default class brandIntroduction extends Component {
                 }
             },
             {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'classLive',
+                        list: [
+                            {img: require('../assets/brandIntroduction/class/class1.png').default},
+                            {img: require('../assets/brandIntroduction/class/class2.png').default},
+                            {img: require('../assets/brandIntroduction/class/class3.png').default}
+                        ]
+                    }
+                }
+            },
+            {
                 component: 'Title',
                 props: {
                     text: "发展历程"
@@ -158,7 +171,7 @@ export default class brandIntroduction extends Component {
             {
                 component: 'History',
                 props: {
-                    
+
                 }
             },
             {
@@ -172,10 +185,18 @@ export default class brandIntroduction extends Component {
                 props: {
                     text: "先后获得“2018北京文化创意大赛全国总决赛二等奖”;“2018通州文创产业人才提升计划路演展示一等奖”;“2018世界移动互联网大会最具品牌影响力企业”;“百度教育2017年度教育行业典范”;“网易教育2014年度最具影响力教育集团”;“腾讯大燕网京津冀十佳教育辅导机构”等多项殊荣。",
                     style: {
-                        textAlign:'center',
+                        textAlign: 'center',
                         fontSize: '0.24rem',
                         color: '#555555',
                         padding: '0 0.3rem'
+                    }
+                }
+            },
+            {
+                component: 'Banner',
+                props: {
+                    data: {
+                        type: 'horizontal'
                     }
                 }
             },

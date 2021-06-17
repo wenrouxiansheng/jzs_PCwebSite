@@ -39,13 +39,13 @@ export default class homePage extends Component {
         component: 'TabControl',
         props: {
           data: [
-            { address: "#", text: "民族舞", img: require('../assets/homepage/tabControl/tabbar1_03.png').default },
-            { address: "#", text: "古典舞", img: require('../assets/homepage/tabControl/tabbar2_03.png').default },
-            { address: "#", text: "中国舞", img: require('../assets/homepage/tabControl/tabbar3_03.png').default },
-            { address: "#", text: "芭蕾舞", img: require('../assets/homepage/tabControl/tabbar4_03.png').default },
-            { address: "#", text: "爵士舞", img: require('../assets/homepage/tabControl/tabbar5_03.png').default },
-            { address: "#", text: "拉丁舞", img: require('../assets/homepage/tabControl/tabbar6_03.png').default },
-            { address: "#", text: "街舞", img: require('../assets/homepage/tabControl/tabbar7_03.png').default },
+            { address: "/site/wap/beijing/dance/folkDance", text: "民族舞", img: require('../assets/homepage/tabControl/tabbar1_03.png').default },
+            { address: "/site/wap/beijing/dance/classicalDance", text: "古典舞", img: require('../assets/homepage/tabControl/tabbar2_03.png').default },
+            { address: "/site/wap/beijing/dance/chineseDance", text: "中国舞", img: require('../assets/homepage/tabControl/tabbar3_03.png').default },
+            { address: "/site/wap/beijing/dance/ballet", text: "芭蕾舞", img: require('../assets/homepage/tabControl/tabbar4_03.png').default },
+            { address: "/site/wap/beijing/dance/jazz", text: "爵士舞", img: require('../assets/homepage/tabControl/tabbar5_03.png').default },
+            { address: "/site/wap/beijing/dance/latinDance", text: "拉丁舞", img: require('../assets/homepage/tabControl/tabbar6_03.png').default },
+            { address: "/site/wap/beijing/dance/hiphop", text: "街舞", img: require('../assets/homepage/tabControl/tabbar7_03.png').default },
           ]
         }
       },
@@ -65,7 +65,7 @@ export default class homePage extends Component {
         component: 'TabControl',
         props: {
           data: [
-            { address: "#", text: "流行唱法", img: require('../assets/homepage/tabControl/tabbar8_03.png').default },
+            { address: "/site/wap/beijing/music/popularSinging", text: "流行唱法", img: require('../assets/homepage/tabControl/tabbar8_03.png').default },
             { address: "#", text: "美声唱法", img: require('../assets/homepage/tabControl/tabbar9_03.png').default },
             { address: "#", text: "民族唱法", img: require('../assets/homepage/tabControl/tabbar10_03.png').default },
             { address: "#", text: "童声", img: require('../assets/homepage/tabControl/tabbar11_03.png').default },
@@ -160,7 +160,14 @@ export default class homePage extends Component {
         component: 'Banner',
         props: {
           data: {
-            type: 'teacherLoop'
+            type: 'teacherLoop',
+            list: [
+              { name: "王晓玉", duration: "5年", img: require("../assets/teacherList/teacher1_05.png").default, address: "#" },
+              { name: "许杨", duration: "9年", img: require("../assets/teacherList/teacher2_05.png").default, address: "#" },
+              { name: "孙亚秋", duration: "4年", img: require("../assets/teacherList/teacher3_05.png").default, address: "#" },
+              { name: "向定军", duration: "5年", img: require("../assets/teacherList/teacher6_05.png").default, address: "#" },
+              { name: "张培佩", duration: "3年", img: require("../assets/teacherList/teacher9.jpg").default, address: "#" },
+            ]
           }
         }
       },

@@ -104,7 +104,7 @@ export default class studentShow extends Component {
                 props: {
                     list: ['预约测评》', '咨询课程》'],
                     style: {
-                        marginTop: '0.2rem'
+                        marginTop: '0.4rem'
                     }
                 },
             },

@@ -1,4 +1,4 @@
-.blurGradient{
+.blurGradient {
     width: 100%;
     height: 4.16rem;
     position: relative;
@@ -6,13 +6,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-image: url(../../../assets/homepage/dance.png);
-    &::after{
+    background-image: url(../../../assets/homepage/show/dance.png);
+    margin-top: 0.2rem;
+    &::after {
         content: "";
         display: block;
         width: 0px;
         height: 0px;
-        border-left: 0.4rem solid #F7CB6A;
+        border-left: 0.4rem solid #f7cb6a;
         border-top: 0.4rem solid transparent;
         border-bottom: 0.4rem solid transparent;
         position: absolute;
@@ -20,12 +21,12 @@
         z-index: 20;
         left: 0rem;
     }
-    &::before{
+    &::before {
         content: "";
         display: block;
         width: 0px;
         height: 0px;
-        border-right: 0.4rem solid #F8918F;
+        border-right: 0.4rem solid #f8918f;
         border-top: 0.4rem solid transparent;
         border-bottom: 0.4rem solid transparent;
         position: absolute;
@@ -33,7 +34,7 @@
         right: 0rem;
         z-index: 20;
     }
-    .filter{
+    .filter {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -43,7 +44,7 @@
         left: 0px;
         z-index: 10;
     }
-    .swiper-pagination{
+    .swiper-pagination {
         position: absolute;
         bottom: 0.1rem;
         z-index: 5;
@@ -54,46 +55,54 @@
         width: 2.76rem;
         left: 0.61rem;
         z-index: 15;
-        span{
+        span {
             display: inline-block;
             width: 0.2rem;
             height: 0.2rem;
             border-radius: 50%;
-            background-color: #F8A424;
+            background-color: #f8a424;
             /* margin: 0rem 0.05rem 0rem 0.05rem; */
             position: relative;
-            transition: .3s;
+            transition: 0.3s;
             transform: scale(0.5);
-            &.active{
-                box-shadow:0px 0px 0.03rem 0.03rem #F8A424;
+            &.active {
+                box-shadow: 0px 0px 0.2rem 0.05rem #f8a424;
             }
         }
     }
-    .swiper-contentBox{
+    .swiper-contentBox {
         height: 100%;
         position: relative;
         z-index: 15;
-        
     }
-    .swiper-vague{
+    .swiper-vague {
         width: 7.5rem;
         height: 100%;
         display: flex;
         align-items: center;
         display: none;
-        &.active{
+        animation: show .3s;
+        &.active {
             display: flex;
         }
-        .flex_box{
+        @keyframes show {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .flex_box {
             width: 100%;
             display: flex;
             justify-content: center;
-            a{
+            a {
                 display: block;
                 width: 2.76rem;
                 height: 2.76rem;
                 position: relative;
-                &::after{
+                &::after {
                     content: "";
                     display: block;
                     box-sizing: border-box;
@@ -103,11 +112,11 @@
                     top: -0.25rem;
                     left: -0.25rem;
                     z-index: -5;
-                    border: solid 0.15rem #F8A424;
-                    border-image:linear-gradient(#da8436,#dba93f) 30 30;
+                    border: solid 0.15rem #f8a424;
+                    border-image: linear-gradient(#da8436, #dba93f) 30 30;
                 }
             }
-            .text{
+            .text {
                 margin-left: 0.3rem;
                 width: 3.2rem;
                 min-height: 1.7rem;
@@ -115,7 +124,7 @@
                 align-items: center;
                 flex-wrap: wrap;
                 align-content: center;
-                h4{
+                h4 {
                     font-size: 0.3rem;
                     color: white;
                     white-space: nowrap;
@@ -124,35 +133,35 @@
                     height: 0.36rem;
                     line-height: 0.36rem;
                 }
-                p{
+                p {
                     font-size: 0.24rem;
                     color: white;
                     margin-top: 0.2rem;
                     min-width: 100%;
                     line-height: 0.32rem;
                 }
-                button{
+                button {
                     font-size: 0.24rem;
                     border: 0px;
                     background-image: linear-gradient(to right, #fcb103, #ff7f00);
                     color: white;
                     padding: 0.05rem 0.1rem 0.05rem 0.1rem;
                     margin-top: 0.3rem;
-                    &:nth-of-type(2){
+                    &:nth-of-type(2) {
                         margin-left: 0.1rem;
                     }
                 }
-                em{
+                em {
                     font-size: 0.24rem;
                     margin-left: 0.1rem;
                     margin-top: 0.3rem;
                     color: white;
                 }
-                .color{
-                    color: #F8A424;
-                 }
+                .color {
+                    color: #f8a424;
+                }
             }
-            img{
+            img {
                 display: block;
                 width: 2.76rem;
                 height: 2.76rem;

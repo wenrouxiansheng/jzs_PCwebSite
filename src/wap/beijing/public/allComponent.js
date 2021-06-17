@@ -10,14 +10,17 @@ const Banner = lazy(() => import('../components/homepage/banner')),//banner图 l
     Title = lazy(() => import('../components/common/title')),//浪花标题
     Paragraph = lazy(() => import('../components/common/paragraph')),//段落组件
     History = lazy(() => import('../components/brandIntroduction/timeline')),//时间轴
-    TeacherCard = lazy(() => import('../components/teacherList/teacherCard')),//教师名片
+    TeacherCard = lazy(() => import('../components/showClass/teacherCard')),//教师名片
     NewsImageText = lazy(() => import('../components/newsList/imageText')),//教师名片
     Picture = lazy(() => import('../components/common/picture')),//单图组件
     ButtonComponent = lazy(() => import('../components/common/buttonComponent')),//按钮组件
     CampusShow = lazy(() => import('../components/schoolList/campusShow')),//校区展示
     Supernatant = lazy(() => import('../components/schoolList/supernatant')),//电话浮层
     CompanyImgText = lazy(() => import('../components/aboutUs/companyImgText')),//总部图文浮层
-    ContactWay = lazy(() => import('../components/aboutUs/contactWay'))//电话浮层
+    ContactWay = lazy(() => import('../components/aboutUs/contactWay')),//电话浮层
+    Table = lazy(() => import('../components/common/table')),//表格组件
+    PictureComponent = lazy(() => import('../components/showClass/pictureComponent')),//图片文案组件
+    QAList = lazy(() => import('../components/showClass/QAList'))//问答列表
     ;
 
 export default function switchComponents(name, props, num) {
@@ -41,6 +44,9 @@ export default function switchComponents(name, props, num) {
         'Supernatant': <Supernatant {...props} key={num} />,
         'CompanyImgText': <CompanyImgText {...props} key={num} />,
         'ContactWay': <ContactWay {...props} key={num} />,
+        'Table': <Table {...props} key={num} />,
+        'PictureComponent': <PictureComponent {...props} key={num} />,
+        'QAList': <QAList {...props} key={num} />,
     }
 
     return components[name] || <div>组件名称错误</div>;

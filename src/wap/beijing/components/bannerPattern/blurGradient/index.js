@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function switchData(val) {
     const type = val || 'all'
 
-    const obj = { 
+    const obj = {
         all: {
             background: require('../../../assets/homepage/show/dance.png').default,
             list: [
@@ -17,6 +17,15 @@ function switchData(val) {
                 { img: require('../../../assets/homepage/show/honor2.png').default, title: "花儿朵朵少儿舞蹈展演", text: "展演由中国舞蹈家协会主办，桔子树学员连续多届屡获殊荣" },
                 { img: require('../../../assets/homepage/show/honor6.png').default, title: "李斯特杯香港国际钢琴公开赛", text: "桔子树学员登上世界级舞台，在国家未来大剧院歌剧厅奏响华美乐章" },
                 { img: require('../../../assets/homepage/show/honor7.png').default, title: "金桔杯艺术大赛", text: "桔子树主办，连续三届被纳入由北京市文资办主办的北京惠民文化消费季" },
+            ]
+        },
+        music: {
+            background: require('../../../assets/music/show/bg.png').default,
+            list: [
+                { img: require('../../../assets/music/show/honor1.png').default, title: "“青春风采”国际青少年艺术节开幕式", text: "桔子树学员登上亮相国家级艺术殿堂——北京音乐厅，绽放青春风采" },
+                { img: require('../../../assets/music/show/honor2.png').default, title: "炫丽童年梦艺术大赛", text: "桔子树学员受关工委邀请参加全国总决赛，登上国家大剧院舞台" },
+                { img: require('../../../assets/music/show/honor3.png').default, title: "世界华人青少年艺术节", text: "桔子树学员在北京选拔赛、马来西亚吉隆坡总决赛中大放异彩" },
+                { img: require('../../../assets/music/show/honor5.png').default, title: "“青春风采”国金桔杯艺术大赛际青少年艺术节开幕式", text: "桔子树主办，连续三届被纳入由北京市文资办主办的北京惠民文化消费季" },
             ]
         }
     }
@@ -71,7 +80,7 @@ export default class BlurGradient extends Component {
     }
     onNext = () => {//下一个
         this.stopTimer();
-        const { indexed, list } = this.state;
+        const { indexed, objInfo: { list } } = this.state;
         let newIndexed = indexed + 1;
         if (newIndexed < list.length) {
             this.setState({

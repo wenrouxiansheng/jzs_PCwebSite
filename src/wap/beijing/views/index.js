@@ -66,13 +66,13 @@ export default class homePage extends Component {
         props: {
           data: [
             { address: "/site/wap/beijing/music/popularSinging", text: "流行唱法", img: require('../assets/homepage/tabControl/tabbar8_03.png').default },
-            { address: "#", text: "美声唱法", img: require('../assets/homepage/tabControl/tabbar9_03.png').default },
-            { address: "#", text: "民族唱法", img: require('../assets/homepage/tabControl/tabbar10_03.png').default },
-            { address: "#", text: "童声", img: require('../assets/homepage/tabControl/tabbar11_03.png').default },
-            { address: "#", text: "音基", img: require('../assets/homepage/tabControl/tabbar12_03.png').default },
-            { address: "#", text: "视唱练耳", img: require('../assets/homepage/tabControl/tabbar13_03.png').default },
-            { address: "#", text: "音乐大师课", img: require('../assets/homepage/tabControl/tabbar14_03.png').default },
-            { address: "#", text: "K歌训练营", img: require('../assets/homepage/tabControl/tabbar15_03.png').default },
+            { address: "/site/wap/beijing/music/belCanto", text: "美声唱法", img: require('../assets/homepage/tabControl/tabbar9_03.png').default },
+            { address: "/site/wap/beijing/music/folkSinging", text: "民族唱法", img: require('../assets/homepage/tabControl/tabbar10_03.png').default },
+            { address: "/site/wap/beijing/music/childrenVoice", text: "童声", img: require('../assets/homepage/tabControl/tabbar11_03.png').default },
+            { address: "/site/wap/beijing/music/soundBase", text: "音基", img: require('../assets/homepage/tabControl/tabbar12_03.png').default },
+            { address: "/site/wap/beijing/music/solfeggio", text: "视唱练耳", img: require('../assets/homepage/tabControl/tabbar13_03.png').default },
+            { address: "/site/wap/beijing/music/musicMaster", text: "音乐大师课", img: require('../assets/homepage/tabControl/tabbar14_03.png').default },
+            { address: "/site/wap/beijing/music/karaokeTraining", text: "K歌训练营", img: require('../assets/homepage/tabControl/tabbar15_03.png').default },
           ]
         }
       },
@@ -92,10 +92,10 @@ export default class homePage extends Component {
         component: 'TabControl',
         props: {
           data: [
-            { address: "#", text: "吉他", img: require('../assets/homepage/tabControl/tabbar16_03.png').default },
-            { address: "#", text: "钢琴", img: require('../assets/homepage/tabControl/tabbar17_03.png').default },
-            { address: "#", text: "架子鼓", img: require('../assets/homepage/tabControl/tabbar18_03.png').default },
-            { address: "#", text: "尤克里里", img: require('../assets/homepage/tabControl/tabbar19_03.png').default },
+            { address: "/site/wap/beijing/IM/guitar", text: "吉他", img: require('../assets/homepage/tabControl/tabbar16_03.png').default },
+            { address: "/site/wap/beijing/IM/piano", text: "钢琴", img: require('../assets/homepage/tabControl/tabbar17_03.png').default },
+            { address: "/site/wap/beijing/IM/drumKit", text: "架子鼓", img: require('../assets/homepage/tabControl/tabbar18_03.png').default },
+            { address: "/site/wap/beijing/IM/ukulele", text: "尤克里里", img: require('../assets/homepage/tabControl/tabbar19_03.png').default },
           ]
         }
       },
@@ -115,12 +115,12 @@ export default class homePage extends Component {
         component: 'TabControl',
         props: {
           data: [
-            { address: "#", text: "素描", img: require('../assets/homepage/tabControl/tabbar20_03.png').default },
-            { address: "#", text: "速写", img: require('../assets/homepage/tabControl/tabbar21_03.png').default },
-            { address: "#", text: "油画", img: require('../assets/homepage/tabControl/tabbar22_03.png').default },
-            { address: "#", text: "水粉", img: require('../assets/homepage/tabControl/tabbar23_03.png').default },
-            { address: "#", text: "漫画", img: require('../assets/homepage/tabControl/tabbar24_03.png').default },
-            { address: "#", text: "创意美术", img: require('../assets/homepage/tabControl/tabbar25_03.png').default },
+            { address: "/site/wap/beijing/fineArts/pencilSketch", text: "素描", img: require('../assets/homepage/tabControl/tabbar20_03.png').default },
+            { address: "/site/wap/beijing/fineArts/sketch", text: "速写", img: require('../assets/homepage/tabControl/tabbar21_03.png').default },
+            { address: "/site/wap/beijing/fineArts/oilPainting", text: "油画", img: require('../assets/homepage/tabControl/tabbar22_03.png').default },
+            { address: "/site/wap/beijing/fineArts/gouache", text: "水粉", img: require('../assets/homepage/tabControl/tabbar23_03.png').default },
+            { address: "/site/wap/beijing/fineArts/caricature", text: "漫画", img: require('../assets/homepage/tabControl/tabbar24_03.png').default },
+            { address: "/site/wap/beijing/fineArts/creativeArt", text: "创意美术", img: require('../assets/homepage/tabControl/tabbar25_03.png').default },
           ]
         }
       },

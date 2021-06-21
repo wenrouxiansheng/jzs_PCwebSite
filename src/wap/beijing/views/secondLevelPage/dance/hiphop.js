@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { seekComponents } from '../../../public'
-
+import publicData from '../../../public/pageData'
 export default class hiphop extends Component {
     state = {
         componentsJson: [
@@ -72,13 +72,7 @@ export default class hiphop extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/dance/folkDance/change1.png').default, text: "增加协调能力，锻炼身体协调适应性" },
-                            { img: require('../../../assets/dance/folkDance/change2.png').default, text: "增加身体柔韧度，身材匀称，身姿挺拔" },
-                            { img: require('../../../assets/dance/folkDance/change3.png').default, text: "提升个人气质，身体素质明显提升" },
-                            { img: require('../../../assets/dance/folkDance/change4.png').default, text: "社交类的舞蹈，可以和别人更好沟通" },
-                            { img: require('../../../assets/dance/folkDance/change5.png').default, text: "性格更开朗，气质优雅，具备一定审美能力" },
-                        ],
+                        list: publicData.danceChange,
                         type: 'vagueLoop'
                     }
                 }
@@ -131,11 +125,7 @@ export default class hiphop extends Component {
                 props: {
                     data: {
                         type: 'teacherLoop',
-                        list: [
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher1_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher2_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher3_11.png").default, address: "#" },
-                        ]
+                        list: publicData.musicTeacher
                     }
                 }
             },
@@ -162,11 +152,7 @@ export default class hiphop extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/dance/class/class1.png').default },
-                            { img: require('../../../assets/dance/class/class2.png').default },
-                            { img: require('../../../assets/dance/class/class3.png').default },
-                        ],
+                        list: publicData.danceClass,
                         type: 'classLive'
                     }
                 }

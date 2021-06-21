@@ -13,8 +13,7 @@ import VagueLoop from '../../bannerPattern/vagueLoop'
 export default class Banner extends Component {
     static propTypes = {
         data: PropTypes.shape({
-            type: PropTypes.string.isRequired,
-            list: PropTypes.array
+            type: PropTypes.string.isRequired
         })
     }
     render() {

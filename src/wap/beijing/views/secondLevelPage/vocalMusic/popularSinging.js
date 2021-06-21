@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import { seekComponents } from '../../../public'
+import publicData from '../../../public/pageData'
 
-export default class hiphop extends Component {
+export default class popularSinging extends Component {
     state = {
         componentsJson: [
             {
@@ -70,14 +71,7 @@ export default class hiphop extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/music/popularSinging/change1.png').default, text: "正确的发声是唱歌的基础，融入音乐知识学习，让您轻松发声" },
-                            { img: require('../../../assets/music/popularSinging/change2.png').default, text: "让声音更富有质感和情感" },
-                            { img: require('../../../assets/music/popularSinging/change3.png').default, text: "尝试更多种类的歌曲，唱得更高，嗓子不累" },
-                            { img: require('../../../assets/music/popularSinging/change4.png').default, text: "选择适合个人声音条件的歌曲进行学习，培养个人特色和魅力" },
-                            { img: require('../../../assets/music/popularSinging/change5.png').default, text: "乐曲蕴含丰富的文化内容，有助拓宽知识面" },
-                            { img: require('../../../assets/music/popularSinging/change6.png').default, text: "音乐助您情感更细腻，促进与人交流，提高社交能力" },
-                        ],
+                        list: publicData.adultMusic,
                         type: 'vagueLoop'
                     }
                 }
@@ -130,11 +124,7 @@ export default class hiphop extends Component {
                 props: {
                     data: {
                         type: 'teacherLoop',
-                        list: [
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher1_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher2_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher3_11.png").default, address: "#" },
-                        ]
+                        list: publicData.musicTeacher
                     }
                 }
             },
@@ -161,11 +151,7 @@ export default class hiphop extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/music/class/class1.png').default },
-                            { img: require('../../../assets/music/class/class2.png').default },
-                            { img: require('../../../assets/music/class/class3.png').default },
-                        ],
+                        list: publicData.musicClass,
                         type: 'classLive'
                     }
                 }
@@ -191,12 +177,13 @@ export default class hiphop extends Component {
                     }
                 }
             },
+
             {
                 component: 'Banner',
                 props: {
                     data: {
                         type: 'blurGradient',
-                        classType: 'music'
+                        list: publicData.musicShow
                     }
                 }
             },

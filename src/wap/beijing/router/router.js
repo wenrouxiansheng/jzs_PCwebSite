@@ -25,6 +25,30 @@ const router = {
         { path: '/dance/folkDance/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultFolk')) },
 
         { path: '/music/popularSinging', component: lazy(() => import('../views/secondLevelPage/vocalMusic/popularSinging')) },
+        { path: '/music/belCanto', component: lazy(() => import('../views/secondLevelPage/vocalMusic/belCanto')) },
+        { path: '/music/folkSinging', component: lazy(() => import('../views/secondLevelPage/vocalMusic/folkSinging')) },
+        { path: '/music/childrenVoice', component: lazy(() => import('../views/secondLevelPage/vocalMusic/childrenVoice')) },
+        { path: '/music/soundBase', component: lazy(() => import('../views/secondLevelPage/vocalMusic/soundBase')) },
+        { path: '/music/solfeggio', component: lazy(() => import('../views/secondLevelPage/vocalMusic/solfeggio')) },
+        { path: '/music/musicMaster', component: lazy(() => import('../views/secondLevelPage/vocalMusic/musicMaster')) },
+        { path: '/music/karaokeTraining', component: lazy(() => import('../views/secondLevelPage/vocalMusic/karaokeTraining')) },
+
+
+
+
+
+        { path: '/IM/guitar', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/guitar')) },
+        { path: '/IM/piano', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/piano')) },
+        { path: '/IM/drumKit', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/drumKit')) },
+        { path: '/IM/ukulele', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/ukulele')) },
+
+
+        { path: '/fineArts/pencilSketch', component: lazy(() => import('../views/secondLevelPage/fineArts/pencilSketch')) },
+        { path: '/fineArts/sketch', component: lazy(() => import('../views/secondLevelPage/fineArts/sketch')) },
+        { path: '/fineArts/oilPainting', component: lazy(() => import('../views/secondLevelPage/fineArts/oilPainting')) },
+        { path: '/fineArts/gouache', component: lazy(() => import('../views/secondLevelPage/fineArts/gouache')) },
+        { path: '/fineArts/caricature', component: lazy(() => import('../views/secondLevelPage/fineArts/caricature')) },
+        { path: '/fineArts/creativeArt', component: lazy(() => import('../views/secondLevelPage/fineArts/creativeArt')) },
 
     ]
 }

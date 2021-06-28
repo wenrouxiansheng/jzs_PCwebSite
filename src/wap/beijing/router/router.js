@@ -3,6 +3,7 @@ import { lazy } from 'react'
 const router = {
     publicPath: '/site/wap/beijing',
     list: [
+        //导航页面
         { path: '/home', component: lazy(() => import('../views')) },
         { path: '/brandIntroduction', component: lazy(() => import('../views/brandIntroduction')) },
         { path: '/teachersList', component: lazy(() => import('../views/teachersList')) },
@@ -12,7 +13,7 @@ const router = {
         { path: '/schoolList', component: lazy(() => import('../views/schoolList')) },
         { path: '/aboutUs', component: lazy(() => import('../views/aboutUs')) },
 
-
+        //舞蹈二级页面
         { path: '/dance/folkDance', component: lazy(() => import('../views/secondLevelPage/dance/folkDance')) },
         { path: '/dance/classicalDance', component: lazy(() => import('../views/secondLevelPage/dance/classicalDance')) },
         { path: '/dance/chineseDance', component: lazy(() => import('../views/secondLevelPage/dance/chineseDance')) },
@@ -21,9 +22,25 @@ const router = {
         { path: '/dance/latinDance', component: lazy(() => import('../views/secondLevelPage/dance/latinDance')) },
         { path: '/dance/hiphop', component: lazy(() => import('../views/secondLevelPage/dance/hiphop')) },
 
+        //舞蹈三级页面
         { path: '/dance/folkDance/child', component: lazy(() => import('../views/threeLevelPage/dance/childrenFolk')) },
         { path: '/dance/folkDance/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultFolk')) },
+        { path: '/dance/classicalDance/child', component: lazy(() => import('../views/threeLevelPage/dance/childrenClassical')) },
+        { path: '/dance/classicalDance/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultClassical')) },
+        { path: '/dance/chineseDance/child', component: lazy(() => import('../views/threeLevelPage/dance/childChinese')) },
+        { path: '/dance/chineseDance/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultChinese')) },
+        { path: '/dance/ballet/child', component: lazy(() => import('../views/threeLevelPage/dance/childBallet')) },
+        { path: '/dance/ballet/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultBallet')) },
+        { path: '/dance/jazz/child', component: lazy(() => import('../views/threeLevelPage/dance/childJazz')) },
+        { path: '/dance/jazz/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultJazz')) },
+        { path: '/dance/latinDance/child', component: lazy(() => import('../views/threeLevelPage/dance/childLatin')) },
+        { path: '/dance/latinDance/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultLatin')) },
+        { path: '/dance/hiphop/child', component: lazy(() => import('../views/threeLevelPage/dance/childHiphop')) },
+        { path: '/dance/hiphop/adult', component: lazy(() => import('../views/threeLevelPage/dance/adultHiphop')) },
 
+        
+
+        //声乐二级页面
         { path: '/music/popularSinging', component: lazy(() => import('../views/secondLevelPage/vocalMusic/popularSinging')) },
         { path: '/music/belCanto', component: lazy(() => import('../views/secondLevelPage/vocalMusic/belCanto')) },
         { path: '/music/folkSinging', component: lazy(() => import('../views/secondLevelPage/vocalMusic/folkSinging')) },
@@ -36,13 +53,13 @@ const router = {
 
 
 
-
+        //器乐二级
         { path: '/IM/guitar', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/guitar')) },
         { path: '/IM/piano', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/piano')) },
         { path: '/IM/drumKit', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/drumKit')) },
         { path: '/IM/ukulele', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/ukulele')) },
 
-
+        //美术二级
         { path: '/fineArts/pencilSketch', component: lazy(() => import('../views/secondLevelPage/fineArts/pencilSketch')) },
         { path: '/fineArts/sketch', component: lazy(() => import('../views/secondLevelPage/fineArts/sketch')) },
         { path: '/fineArts/oilPainting', component: lazy(() => import('../views/secondLevelPage/fineArts/oilPainting')) },

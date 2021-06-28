@@ -85,7 +85,7 @@ const historyData = [
         ]
     },
     {
-        time: 2015,
+        time: 2014,
         info: [
             { type: 'img', text: "07月09日 桔子树崇文门校区成立", src: require('../assets/brandIntroduction/history/school8_05.png').default },
             { type: 'text', text: " 1、桔子树公主坟校区成为<span style='color:#f2aa46;'>中国舞蹈家协会青少儿考级指定地点</span>" },
@@ -100,7 +100,7 @@ const historyData = [
         ]
     },
     {
-        time: 2014,
+        time: 2013,
         info: [
             { type: 'img', text: "09月10日 桔子树东直门校区成立", src: require('../assets/brandIntroduction/history/school3_05.png').default },
             { type: 'text', text: " 1、11月桔子树艺术教育第一届<span style='color:#f2aa46;'>“飞舞奇迹”</span>大赛成功举办。" },
@@ -113,7 +113,7 @@ const historyData = [
         ]
     },
     {
-        time: 2013,
+        time: 2012,
         info: [
             { type: 'img', text: "07月16日 桔子树五道口第二校区成立", src: require('../assets/brandIntroduction/history/school7_05.png').default },
             { type: 'text', text: "1、已有超70000人在桔子树学习才艺，桔子树成长为艺术培训行业优质品牌" },
@@ -122,7 +122,7 @@ const historyData = [
         ]
     },
     {
-        time: 2012,
+        time: 2011,
         info: [
             { type: 'img', text: "07月 桔子树百子湾校区（已迁址，现 大望路校区）成立", src: require('../assets/brandIntroduction/history/school5_05.png').default },
             { type: 'text', text: "1、<span style='color:#f2aa46;'>开设艺考培训，明确了桔子树发展目标</span>，打造艺术教育行业知名品牌" },

@@ -177,7 +177,7 @@ export default function switchInfo(name) {
                     img: require('../assets/template/honor2.png').default, title: "海外知名艺术院校归国教师", text: "此处写描述"
                 },
                 {
-                    img: require('../assets/template/honor3.png').default, title: "国内专业艺术院校毕业教师", text: "此处写描述"
+                    img: require('../assets/template/honor3.png').default, title: "国内艺术院校毕业教师", text: "此处写描述"
                 },
             ]
         },

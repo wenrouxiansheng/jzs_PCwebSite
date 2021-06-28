@@ -115,7 +115,7 @@ export default class gouache extends Component {
             {
                 component: 'Paragraph',
                 props: {
-                    text: "汇聚国内外专业院校优秀师资",
+                    text: "汇聚国内外艺术院校师资力量",
                     style: {
                         textAlign: 'center',
                         fontSize: '0.28rem',

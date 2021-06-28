@@ -156,7 +156,7 @@ export default class studentHonor extends Component {
                             img: require('../../assets/aboutUs/teachers/flag1.png').default, title: "海外知名艺术院校归国教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
                         },
                         {
-                            img: require('../../assets/aboutUs/teachers/flag2.png').default, title: "国内专业艺术院校毕业教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
+                            img: require('../../assets/aboutUs/teachers/flag2.png').default, title: "国内艺术院校毕业教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
                         },
                         {
                             img: require('../../assets/aboutUs/teachers/flag3.png').default, title: "覆盖艺术学习多科目", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"

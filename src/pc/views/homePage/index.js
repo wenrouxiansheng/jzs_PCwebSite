@@ -37,7 +37,7 @@ export default class homePage extends Component {
             {
                 component: 'ImgAndText',
                 props: {
-                    detail: { id: 2, title: "雄厚的师资力量", text: "数百名专业教师，毕业于国内外专业艺术院校", src: require("../../assets/homePage/imgText/inImg2.png").default, type: "right" },
+                    detail: { id: 2, title: "雄厚的师资力量", text: "数百名教师，毕业于国内外艺术院校", src: require("../../assets/homePage/imgText/inImg2.png").default, type: "right" },
                 }
             },
             {

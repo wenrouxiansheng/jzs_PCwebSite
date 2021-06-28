@@ -23,8 +23,8 @@ export default class classicalDance extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿民族舞", img: require('../../../assets/dance/classicalDance/nav1.png').default },
-                        { address: "#", text: "成人民族舞", img: require('../../../assets/dance/classicalDance/nav2.png').default },
+                        { address: "/site/wap/beijing/dance/classicalDance/child", text: "少儿古典舞", img: require('../../../assets/dance/classicalDance/nav1.png').default },
+                        { address: "/site/wap/beijing/dance/classicalDance/adult", text: "成人古典舞", img: require('../../../assets/dance/classicalDance/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'
@@ -112,7 +112,7 @@ export default class classicalDance extends Component {
             {
                 component: 'Paragraph',
                 props: {
-                    text: "汇聚国内外专业院校优秀师资",
+                    text: "汇聚国内外艺术院校师资力量",
                     style: {
                         textAlign: 'center',
                         fontSize: '0.28rem',

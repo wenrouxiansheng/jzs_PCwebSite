@@ -107,7 +107,7 @@ export default class latinGrading extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "专业顾问全天候在线解决您的学习问题", subTitle: "" }
+                    info: { title: "顾问全天候在线解决您的学习问题", subTitle: "" }
                 }
             },
             {

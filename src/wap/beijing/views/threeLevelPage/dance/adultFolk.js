@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { seekComponents } from '../../../public'
+import publicData from '../../../public/pageData'
 
 export default class adultFolk extends Component {
     state = {
@@ -74,13 +75,7 @@ export default class adultFolk extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/dance/folkDance/adult/change1.png').default, text: "增加协调能力，锻炼身体协调适应性" },
-                            { img: require('../../../assets/dance/folkDance/adult/change2.png').default, text: "增加身体柔韧度，身材匀称，身姿挺拔" },
-                            { img: require('../../../assets/dance/folkDance/adult/change3.png').default, text: "提升个人气质，身体素质明显提升" },
-                            { img: require('../../../assets/dance/folkDance/adult/change4.png').default, text: "社交类的舞蹈，可以和别人更好沟通" },
-                            { img: require('../../../assets/dance/folkDance/adult/change5.png').default, text: "性格更开朗，气质优雅，具备一定审美能力" },
-                        ],
+                        list: publicData.danceChangeAdult,
                         type: 'vagueLoop'
                     }
                 }
@@ -120,7 +115,7 @@ export default class adultFolk extends Component {
             {
                 component: 'Paragraph',
                 props: {
-                    text: "汇聚国内外专业院校优秀师资",
+                    text: "汇聚国内外艺术院校师资力量",
                     style: {
                         textAlign: 'center',
                         fontSize: '0.28rem',
@@ -133,11 +128,7 @@ export default class adultFolk extends Component {
                 props: {
                     data: {
                         type: 'teacherLoop',
-                        list: [
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher1_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher2_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher3_11.png").default, address: "#" },
-                        ]
+                        list: publicData.musicTeacher
                     }
                 }
             },
@@ -164,11 +155,7 @@ export default class adultFolk extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/dance/class/adult1.png').default },
-                            { img: require('../../../assets/dance/class/adult2.png').default },
-                            { img: require('../../../assets/dance/class/adult3.png').default },
-                        ],
+                        list: publicData.danceAdultClass,
                         type: 'classLive'
                     }
                 }

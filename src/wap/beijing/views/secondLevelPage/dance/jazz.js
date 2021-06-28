@@ -23,8 +23,8 @@ export default class jazz extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿爵士舞", img: require('../../../assets/dance/jazz/nav1.png').default },
-                        { address: "#", text: "成人爵士舞", img: require('../../../assets/dance/jazz/nav2.png').default },
+                        { address: "/site/wap/beijing/dance/jazz/child", text: "少儿爵士舞", img: require('../../../assets/dance/jazz/nav1.png').default },
+                        { address: "/site/wap/beijing/dance/jazz/adult", text: "成人爵士舞", img: require('../../../assets/dance/jazz/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'
@@ -112,7 +112,7 @@ export default class jazz extends Component {
             {
                 component: 'Paragraph',
                 props: {
-                    text: "汇聚国内外专业院校优秀师资",
+                    text: "汇聚国内外艺术院校师资力量",
                     style: {
                         textAlign: 'center',
                         fontSize: '0.28rem',

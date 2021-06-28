@@ -131,7 +131,7 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage1_03.png').default,
             title: { address: "#", text: "艺考考级" },
             linkList: null,
-            rightLink: { text: "MORE>>", address: "#" },
+            rightLink: { text: "更多>>", address: "#" },
             subtitle: null
           }
         },
@@ -151,8 +151,8 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage2_03.png').default,
             title: { address: "#", text: "全职教师" },
             linkList: null,
-            rightLink: { text: "MORE>>", address: "#" },
-            subtitle: "汇聚国内外专业院校优秀师资"
+            rightLink: { text: "更多>>", address: "#" },
+            subtitle: "汇聚国内外艺术院校师资力量"
           }
         },
       },
@@ -178,7 +178,7 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage3_03.png').default,
             title: { address: "#", text: "学员风采" },
             linkList: null,
-            rightLink: { text: "MORE>>", address: "#" },
+            rightLink: { text: "更多>>", address: "#" },
             subtitle: "桔子树STAR 闪耀中外"
           }
         },
@@ -198,7 +198,7 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage4_03.png').default,
             title: { address: "#", text: "课堂实景" },
             linkList: null,
-            rightLink: { text: "MORE>>", address: "#" },
+            rightLink: { text: "更多>>", address: "#" },
             subtitle: "精品小班 专职教师"
           }
         },
@@ -244,7 +244,7 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage2_03.png').default,
             title: { address: "#", text: "品牌介绍" },
             linkList: null,
-            rightLink: { text: "MORE>>", address: "#" },
+            rightLink: { text: "更多>>", address: "#" },
             subtitle: "中国艺术教育优质品牌"
           }
         },
@@ -267,7 +267,7 @@ export default class homePage extends Component {
           data: {
             title: "师资力量",
             subtitle: "雄厚的师资力量",
-            text: '数百名全职专业教师，毕业于国内外专业艺术院校',
+            text: '数百名全职教师，毕业于国内外艺术院校',
             img: require('../assets/homepage/brand/Picture2_03.png').default,
             type: 1
           }
@@ -278,8 +278,8 @@ export default class homePage extends Component {
         props: {
           data: {
             title: "教研团队",
-            subtitle: "专业的教研团队",
-            text: '艺术培训行业专业的科学、系统、完善的课程研发团队',
+            subtitle: "教研团队建设",
+            text: '艺术培训行业科学、系统、完善的课程研发团队',
             img: require('../assets/homepage/brand/Picture3_03.png').default,
             type: 2
           }
@@ -290,8 +290,8 @@ export default class homePage extends Component {
         props: {
           data: {
             title: "教学模式",
-            subtitle: "私人定制教学模式",
-            text: '专属“私人订制教学模式”，一位学员、一份计划、一种方法',
+            subtitle: "量身提供教学计划",
+            text: '只属于你的课程计划，一位学员、一份计划、一种方法',
             img: require('../assets/homepage/brand/Picture4_03.png').default,
             type: 1
           }

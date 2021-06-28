@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { seekComponents } from '../../../public'
+import publicData from '../../../public/pageData'
 
 export default class childrenFolk extends Component {
     state = {
@@ -75,15 +76,7 @@ export default class childrenFolk extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/dance/folkDance/child/change1.png').default, text: "形体优美，气质优雅，具备一定的审美能力" },
-                            { img: require('../../../assets/dance/folkDance/child/change2.png').default, text: "对舞蹈表演产生兴趣，善用肢体语言表现自己最美的一面" },
-                            { img: require('../../../assets/dance/folkDance/child/change3.png').default, text: "站有站相、坐有坐相，身材匀称，身姿挺拔" },
-                            { img: require('../../../assets/dance/folkDance/child/change4.png').default, text: "柔韧性、灵活性、协调性变好，身体素质明显提升" },
-                            { img: require('../../../assets/dance/folkDance/child/change5.png').default, text: "性格变得开朗活泼，自信大方，表现欲、表现力增强" },
-                            { img: require('../../../assets/dance/folkDance/child/change6.png').default, text: "得到很多比赛、表演的机会，自信满满，性格开朗活泼" },
-                            { img: require('../../../assets/dance/folkDance/child/change7.png').default, text: "与小伙伴一起跳舞，配合度、协作能力明显提升" },
-                        ],
+                        list: publicData.danceChangechild,
                         type: 'vagueLoop'
                     }
                 }
@@ -123,7 +116,7 @@ export default class childrenFolk extends Component {
             {
                 component: 'Paragraph',
                 props: {
-                    text: "汇聚国内外专业院校优秀师资",
+                    text: "汇聚国内外艺术院校师资力量",
                     style: {
                         textAlign: 'center',
                         fontSize: '0.28rem',
@@ -136,11 +129,7 @@ export default class childrenFolk extends Component {
                 props: {
                     data: {
                         type: 'teacherLoop',
-                        list: [
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher1_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher2_11.png").default, address: "#" },
-                            { name: "王晓玉", duration: "5年", img: require("../../../assets/dance/teacher/teacher3_11.png").default, address: "#" },
-                        ]
+                        list: publicData.musicTeacher
                     }
                 }
             },
@@ -167,11 +156,7 @@ export default class childrenFolk extends Component {
                 component: 'Banner',
                 props: {
                     data: {
-                        list: [
-                            { img: require('../../../assets/dance/class/child1.png').default },
-                            { img: require('../../../assets/dance/class/child2.png').default },
-                            { img: require('../../../assets/dance/class/child3.png').default },
-                        ],
+                        list: publicData.danceChildClass,
                         type: 'classLive'
                     }
                 }

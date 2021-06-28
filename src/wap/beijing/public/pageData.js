@@ -9,10 +9,36 @@ const data = {
         { img: require('../assets/dance/folkDance/change4.png').default, text: "社交类的舞蹈，可以和别人更好沟通" },
         { img: require('../assets/dance/folkDance/change5.png').default, text: "性格更开朗，气质优雅，具备一定审美能力" },
     ],
+    danceChangeAdult: [
+        { img: require('../assets/dance/folkDance/adult/change1.png').default, text: "增加协调能力，锻炼身体协调适应性" },
+        { img: require('../assets/dance/folkDance/adult/change2.png').default, text: "增加身体柔韧度，身材匀称，身姿挺拔" },
+        { img: require('../assets/dance/folkDance/adult/change3.png').default, text: "提升个人气质，身体素质明显提升" },
+        { img: require('../assets/dance/folkDance/adult/change4.png').default, text: "社交类的舞蹈，可以和别人更好沟通" },
+        { img: require('../assets/dance/folkDance/adult/change5.png').default, text: "性格更开朗，气质优雅，具备一定审美能力" },
+    ],
+    danceChangechild: [
+        { img: require('../assets/dance/folkDance/child/change1.png').default, text: "形体优美，气质优雅，具备一定的审美能力" },
+        { img: require('../assets/dance/folkDance/child/change2.png').default, text: "对舞蹈表演产生兴趣，善用肢体语言表现自己最美的一面" },
+        { img: require('../assets/dance/folkDance/child/change3.png').default, text: "站有站相、坐有坐相，身材匀称，身姿挺拔" },
+        { img: require('../assets/dance/folkDance/child/change4.png').default, text: "柔韧性、灵活性、协调性变好，身体素质明显提升" },
+        { img: require('../assets/dance/folkDance/child/change5.png').default, text: "性格变得开朗活泼，自信大方，表现欲、表现力增强" },
+        { img: require('../assets/dance/folkDance/child/change6.png').default, text: "得到很多比赛、表演的机会，自信满满，性格开朗活泼" },
+        { img: require('../assets/dance/folkDance/child/change7.png').default, text: "与小伙伴一起跳舞，配合度、协作能力明显提升" },
+    ],
     danceClass:[
         { img: require('../assets/dance/class/class1.png').default },
         { img: require('../assets/dance/class/class2.png').default },
         { img: require('../assets/dance/class/class3.png').default },
+    ],
+    danceChildClass: [
+        { img: require('../assets/dance/class/child1.png').default },
+        { img: require('../assets/dance/class/child2.png').default },
+        { img: require('../assets/dance/class/child3.png').default },
+    ],
+    danceAdultClass: [
+        { img: require('../assets/dance/class/adult1.png').default },
+        { img: require('../assets/dance/class/adult2.png').default },
+        { img: require('../assets/dance/class/adult3.png').default },
     ],
 
 

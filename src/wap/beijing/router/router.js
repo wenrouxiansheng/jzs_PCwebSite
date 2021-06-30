@@ -13,6 +13,9 @@ const router = {
         { path: '/schoolList', component: lazy(() => import('../views/schoolList')) },
         { path: '/aboutUs', component: lazy(() => import('../views/aboutUs')) },
 
+
+
+
         //舞蹈二级页面
         { path: '/dance/folkDance', component: lazy(() => import('../views/secondLevelPage/dance/folkDance')) },
         { path: '/dance/classicalDance', component: lazy(() => import('../views/secondLevelPage/dance/classicalDance')) },

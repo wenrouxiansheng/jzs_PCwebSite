@@ -49,7 +49,7 @@ export default class teachersClassification extends Component {
         const { style } = this.props;
         return (
             <div className="teachersClassification" style={{ ...style }}>
-                <Title info={{ title: "师资力量", subTitle: "汇聚国内外艺术名师", bottom: "20" }} />
+                <Title info={{ title: "师资力量", subTitle: "汇聚国内外艺术院校师资力量", bottom: "20" }} />
                 <ul className="nav">
                     {
                         selectList.map((item, index) => {

@@ -20,13 +20,13 @@ export default class childrenDance extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../assets/danceTraining/childrenDance/course1.png').default, text: "少儿民族舞", href: "/home" },
-                        { img: require('../../assets/danceTraining/childrenDance/course2.png').default, text: "少儿古典舞", href: "/home" },
-                        { img: require('../../assets/danceTraining/childrenDance/course3.png').default, text: "少儿芭蕾舞", href: "/home" },
-                        { img: require('../../assets/danceTraining/childrenDance/course4.png').default, text: "少儿中国舞", href: "/home" },
-                        { img: require('../../assets/danceTraining/childrenDance/course5.png').default, text: "少儿街舞", href: "/home" },
-                        { img: require('../../assets/danceTraining/childrenDance/course6.png').default, text: "少儿爵士舞", href: "/home" },
-                        { img: require('../../assets/danceTraining/childrenDance/course7.png').default, text: "少儿拉丁舞", href: "/home" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav1.png').default, text: "少儿民族舞", href: "/site/pc/danceTraining/folkDance/child" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav2.png').default, text: "少儿古典舞", href: "/site/pc/danceTraining/classicalDance/child" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav3.png').default, text: "少儿芭蕾舞", href: "/site/pc/danceTraining/balletDance/child" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav4.png').default, text: "少儿中国舞", href: "/site/pc/danceTraining/chineseDance/child" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav5.png').default, text: "少儿街舞", href: "/site/pc/danceTraining/hipHop/child" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav6.png').default, text: "少儿爵士舞", href: "/site/pc/danceTraining/jazzDance/child" },
+                        { img: require('../../assets/danceTraining/childrenDance/nav7.png').default, text: "少儿拉丁舞", href: "/site/pc/danceTraining/latinDance/child" },
                     ]
                 }
             },
@@ -39,22 +39,16 @@ export default class childrenDance extends Component {
             {
                 component: 'CourseFlow',
                 props: {
-                    data: [
-                        { img: require('../../assets/danceTraining/childrenDance/dance_1.png').default, num: "01", text: "专业测评，了解学员上课愿望" },
-                        { img: require('../../assets/danceTraining/childrenDance/dance_2.png').default, num: "02", text: "匹配专业老师，系统上课" },
-                        { img: require('../../assets/danceTraining/childrenDance/dance_3.png').default, num: "03", text: "完成学习愿景" },
-                        { img: require('../../assets/danceTraining/childrenDance/dance_4.png').default, num: "04", text: "登台演出，模拟考场训练" },
-                        { img: require('../../assets/danceTraining/childrenDance/dance_5.png').default, num: "05", text: "量身定制”一对一”教学计划" },
-                    ]
+                    type: 'dance'
                 }
             },
             {
                 component: 'LearningGoal',
                 props: {
                     textList: [
-                        "基本功大幅提升", "即兴反应迅速", "丰富专业知识", "熟悉乐理知识", "适合个人的表演", "形成个人特色", "展示完整个人技巧", "变得更加自信", "表演细节处理"
+                        "基本功大幅提升", "对舞蹈表演产生兴趣", "即兴反应迅速", "性格开朗活泼", "身体素质明显提升", "形体优美挺拔", "表现欲、表现力增强", "配合度、协作能力明显提升", "用肢体语言表现自己最美的一面"
                     ],
-                    info: { title: "课程流程", subTitle: "" }
+                    info: { title: "课程特色", subTitle: "" }
                 }
             },
             {
@@ -67,96 +61,48 @@ export default class childrenDance extends Component {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["课程", "人数", "上课时长", "咨询"],
+                        title: ["课程", "教学内容", "上课时长"],
                         list: [
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿舞蹈1V1"
+                                    text: "少儿集体班（4-15岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "45分钟"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "少儿舞蹈1V2"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "2人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "45分钟"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "少儿舞蹈1V3"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "3人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "45分钟"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "少儿舞蹈精品小班课"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "6-8人"
+                                    text: "基本功、能力素质与技巧培养、形体训练、舞蹈组合动作分解及连贯、音乐节奏训练。配合音乐完成一支成品舞或者组合"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
-                                },
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿舞蹈排练班课程"
+                                    text: "少儿精品班（4-15岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "8-10人"
+                                    text: "基本手型、手位、脚位、柔韧度练习及强化、能力素质与技巧培养，体态、仪态训练及提升，舞蹈组合动作分解及连贯。根据学员特点量身定制成品舞、排练及音乐配合"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
+                            ],
+                            [
                                 {
                                     rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>咨询详情</span>"
+                                    text: "考级综合班（4-15岁）"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "形体基训，柔韧，节奏，各舞种基本功，舞蹈考级综合课程。体能训练，成品舞表演"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
                                 },
                             ]
                         ]
@@ -166,52 +112,33 @@ export default class childrenDance extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "顾问全天候在线解决您的学习问题", subTitle: "" }
+                    info: { title: "课程顾问全天候在线解答您的学习问题", subTitle: "" }
                 }
             },
             {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "什么是小升初特长考试？",
-                        "声乐考级一年有几次？",
-                        "视听练耳怎么考？",
-                        "鼻音重如何解决？",
-                        "民族唱法的气息怎么能稳？",
-                        "钢琴考级第一次最高能考几级？",
-                        "几岁可以考级？",
-                        "成人声乐考级包括哪些曲目？",
-                        "什么是假声？",
+                        "我该为孩子选择什么样的舞种？",
+                        "孩子每周训练几次比较合适？每节课多长时间合适？",
+                        "孩子启蒙（3-5岁）应该学习舞蹈，什么内容更适合？",
+                        "学一个舞种要多少学费？",
+                        "女孩减肥跳什么舞？ ",
+                        "孩子8岁了，学舞会晚吗？",
+                        "芭蕾舞怎么学？",
+                        "立足尖多久能学会？"
                     ]
                 }
             },
             {
                 component: 'Title',
                 props: {
-                    info: { title: "师资力量", subTitle: "汇聚国内外艺术名师" }
+                    info: { title: "师资力量", subTitle: "汇聚国内外艺术院校师资力量" }
                 }
             },
             {
                 component: 'TeacherList',
                 props: {
-                    list: [
-                        {
-                            info: [
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵1", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher2.png').default, name: "余子涵2", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher3.png').default, name: "余子涵3", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher4.png').default, name: "余子涵4", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher5.png').default, name: "余子涵5", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                            ]
-                        },
-                        {
-                            info: [
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                            ]
-                        },
-                    ]
                 }
             },
             {

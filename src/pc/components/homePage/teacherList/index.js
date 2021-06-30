@@ -11,20 +11,13 @@ export default class teacherList extends Component {
         list: [
             {
                 info: [
-                    { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                    { img: require('../../../assets/homePage/teacher/teacher2.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                    { img: require('../../../assets/homePage/teacher/teacher3.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                    { img: require('../../../assets/homePage/teacher/teacher4.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                    { img: require('../../../assets/homePage/teacher/teacher5.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                    { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "许杨", duration: "9年", course: "童声、美声、民族、通俗唱法", adress: "/" },
+                    { img: require('../../../assets/homePage/teacher/teacher2.png').default, name: "孙亚秋", duration: "4年", course: "儿童画，创意美术，水彩，水粉，素描，彩铅，油画等", adress: "/" },
+                    { img: require('../../../assets/homePage/teacher/teacher3.png').default, name: "孟繁颖", duration: "7年", course: "古典舞、芭蕾舞、民族民间舞、爵士舞、踢踏舞、肚皮舞", adress: "/" },
+                    { img: require('../../../assets/homePage/teacher/teacher4.png').default, name: "任雅臣", duration: "5年", course: "流行声乐、音基", adress: "/" },
+                    { img: require('../../../assets/homePage/teacher/teacher5.png').default, name: "向定军", duration: "5年", course: "架子鼓、架子鼓考级、少儿架子鼓等", adress: "/" },
                 ]
-            },
-            {
-                info: [
-                    { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                    { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                    { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                ]
-            },
+            }
         ]
     }
     render() {

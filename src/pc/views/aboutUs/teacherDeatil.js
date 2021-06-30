@@ -17,7 +17,7 @@ export default class teacherDeatil extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "师资力量", subTitle: "汇聚国内外艺术名师" }
+                    info: { title: "师资力量", subTitle: "汇聚国内外艺术院校师资力量" }
                 }
             },
             {

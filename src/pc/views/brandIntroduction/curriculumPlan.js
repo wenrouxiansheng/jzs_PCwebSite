@@ -51,7 +51,7 @@ export default class curriculumPlan extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "品牌荣誉", subTitle: "汇聚国内外艺术名师" }
+                    info: { title: "品牌荣誉", subTitle: "汇聚国内外艺术院校师资力量" }
                 }
             },
             {

@@ -301,7 +301,7 @@ export default class danceGrading extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "顾问全天候在线解决您的学习问题", subTitle: "" }
+                    info: { title: "课程顾问全天候在线解答您的学习问题", subTitle: "" }
                 }
             },
             {
@@ -323,7 +323,7 @@ export default class danceGrading extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "师资力量", subTitle: "汇聚国内外艺术名师" }
+                    info: { title: "师资力量", subTitle: "汇聚国内外艺术院校师资力量" }
                 }
             },
             {

@@ -190,7 +190,7 @@ export default class popularSinging extends Component {
             {
                 component: 'Title',
                 props: {
-                    text: "顾问全天候在线解决您的学习问题",
+                    text: "课程顾问全天候在线解答您的学习问题",
                     style: {
                         marginTop: "0.8rem",
                         marginBottom: '0'

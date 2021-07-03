@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
-
-import { seekComponents } from '../../../publicjs'
-import { editingStatus } from '../../../../store/store'
-import { danceData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
+import { editingStatus } from '../../../store/store'
+import { seekComponents } from '../../publicjs'
+
 let getChangeComponent = null;
-export default class latinGrading extends Component {
+export default class drumKit extends Component {
     state = {
         componentJson: [
             {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/artGrading/artExamDance/latinGrading", src: require("../../../assets/artGrading/artExamDance/latin/banner.jpg").default },
+                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/drumKit/banner.jpg").default },
                     ]
                 }
             },
@@ -21,98 +20,86 @@ export default class latinGrading extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav1.jpg').default, text: "艺考国标舞1V1", href: "service" },
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav2.jpg').default, text: "艺考舞蹈考试模拟班", href: "service" },
+                        { img: require('../../assets/instrumentalMusic/child/nav3.jpg').default, text: "少儿架子鼓", href: "/site/pc/instrumentalMusic/drumKit/child" },
+                        { img: require('../../assets/instrumentalMusic/adult/nav3.jpg').default, text: "成人架子鼓", href: "/site/pc/instrumentalMusic/drumKit/adult" },
                     ]
                 }
             },
-            
             {
                 component: 'Title',
                 props: {
-                    info: { title: "桔子树社会考级考牌明细表", subTitle: "" }
+                    info: { title: "课程流程", subTitle: "" }
+                }
+            },
+            {
+                component: 'CourseFlow',
+                props: {
+                    type: 'instrumentalMusic'
+                }
+            },
+            {
+                component: 'LearningGoal',
+                props: {
+                    textList: [
+                        "基本功大幅提升", "促进手眼、手脚的协调与配合", "全面锻炼大脑", "即兴反应迅速", "表现欲、表现力增强", "大量练习，会让您更有耐心、坚持不懈", "演奏乐器是一种创造性行为，有助提高创新力", "乐曲蕴含丰富的文化内容，有助拓宽知识面", "情感更细腻，促进与人交流，提高社交能力"
+                    ],
+                    info: { title: "课程特色", subTitle: "" }
+                }
+            },
+            {
+                component: 'Title',
+                props: {
+                    info: { title: "班型设置与开课信息", subTitle: "" }
                 }
             },
             {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["考级类别", "考级级别", "适合范围"],
-                        list: danceData
-                    }
-                }
-            },
-            {
-                component: 'Title',
-                props: {
-                    info: { title: "小班授课，学习效果更显著", subTitle: "" }
-                }
-            },
-            {
-                component: 'Table',
-                props: {
-                    tableData: {
-                        title: ["课程", "人数", "上课时常"],
+                        title: ["课程", "教学内容", "上课时长"],
                         list: [
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考国标舞1V1"
+                                    text: "架子鼓集体班（4-80岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "60分钟"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "艺考乐理1V1"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "1人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "60分钟"
-                                },
-                                
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "艺考乐理精品小班"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "6-8人"
+                                    text: "节奏型 五线谱 演奏技巧 成品曲目等。根据学员特点强化成品曲目演奏"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
-                                
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考舞蹈考试模拟班"
+                                    text: "架子鼓精品班（4-80岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "6-8人"
+                                    text: "基本功 识谱 演奏技巧 合奏 初级乐理 初中级架子鼓打击技巧 成品曲目 简单即兴打击等。根据学员特点强化成品曲目打击"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
-                                
-                            ]
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "考级综合班（6-15岁）"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "成品曲目演奏、打击技巧，器乐考级综合提升课程。曲目演奏、打击处理"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                            ],
                         ]
                     }
                 }
@@ -127,14 +114,14 @@ export default class latinGrading extends Component {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "什么是舞蹈考级？",
-                        "为什么让孩子参加考级？",
-                        "国标舞考级有哪些注意事项？?",
-                        "什么是拉丁考级？",
-                        "拉丁舞考级需要注意什么？",
-                        "国标舞的考级要求有哪些？",
-                        "什么是小升初特长考试？",
-                        "一年有几次舞蹈考级？",
+                        "学打架子鼓多久时间能学会打击一首简单曲子？",
+                        "成人学打架子鼓大概多久学会？",
+                        "初学者如何学打架子鼓？",
+                        "架子鼓难学吗？",
+                        "架子鼓入门怎么学？",
+                        "架子鼓演奏坐姿注意哪些？",
+                        "如何持鼓棒和正确打鼓？ ",
+                        "架子鼓底鼓演奏方法？",
                     ]
                 }
             },
@@ -154,14 +141,16 @@ export default class latinGrading extends Component {
                 props: {
                 }
             },
+
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-拉丁舞考级';
+        document.title = '桔子树艺术-架子鼓综合';
+
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            if (data.type !== 'latinGrading') {
+            if (data.type !== 'drumKit') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -186,9 +175,10 @@ export default class latinGrading extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'latinGrading')
+                    seekComponents(componentJson, 'drumKit')
                 }
             </div>
         )
     }
 }
+

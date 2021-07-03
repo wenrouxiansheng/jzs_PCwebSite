@@ -6,14 +6,14 @@ import { danceData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
 let getChangeComponent = null;
-export default class latinGrading extends Component {
+export default class modernGrading extends Component {
     state = {
         componentJson: [
             {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/artGrading/artExamDance/latinGrading", src: require("../../../assets/artGrading/artExamDance/latin/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../assets/artGrading/artExamDance/modern/banner.jpg").default },
                     ]
                 }
             },
@@ -21,7 +21,7 @@ export default class latinGrading extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav1.jpg').default, text: "艺考国标舞1V1", href: "service" },
+                        { img: require('../../../assets/artGrading/artExamDance/modern/nav1.jpg').default, text: "艺考现代舞1V1", href: "service" },
                         { img: require('../../../assets/artGrading/artExamDance/latin/nav2.jpg').default, text: "艺考舞蹈考试模拟班", href: "service" },
                     ]
                 }
@@ -57,7 +57,7 @@ export default class latinGrading extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考国标舞1V1"
+                                    text: "艺考现代舞1V1"
                                 },
                                 {
                                     rowspan: 1,
@@ -129,12 +129,12 @@ export default class latinGrading extends Component {
                     questionList: [
                         "什么是舞蹈考级？",
                         "为什么让孩子参加考级？",
-                        "国标舞考级有哪些注意事项？?",
-                        "什么是拉丁考级？",
-                        "拉丁舞考级需要注意什么？",
-                        "国标舞的考级要求有哪些？",
+                        "考级去哪里考？",
+                        "现代舞考级有哪些注意事项？",
+                        "什么是现代舞考级？",
+                        "现代舞的考级要求有哪些？",
+                        "没有基础可以参加舞蹈考级吗？",
                         "什么是小升初特长考试？",
-                        "一年有几次舞蹈考级？",
                     ]
                 }
             },
@@ -157,11 +157,11 @@ export default class latinGrading extends Component {
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-拉丁舞考级';
+        document.title = '桔子树艺术-现代舞考级';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            if (data.type !== 'latinGrading') {
+            if (data.type !== 'modernGrading') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -186,7 +186,7 @@ export default class latinGrading extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'latinGrading')
+                    seekComponents(componentJson, 'modernGrading')
                 }
             </div>
         )

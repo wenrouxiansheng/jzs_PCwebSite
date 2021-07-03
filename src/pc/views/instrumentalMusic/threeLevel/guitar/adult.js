@@ -1,32 +1,22 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
 
-import { editingStatus } from '../../../store/store'
-import { seekComponents } from '../../publicjs'
+import { editingStatus } from '../../../../../store/store'
+import { seekComponents } from '../../../../publicjs'
 
 let getChangeComponent = null;
-export default class instrumentalMusic extends Component {
+export default class adultGuitar extends Component {
     state = {
         componentJson: [
             {
-                component: 'Banner',
+                component: 'CategoryIntroduction',
                 props: {
-                    bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/banner.jpg").default },
-                    ]
-                }
-            },
-            {
-                component: 'CourseNavList',
-                props: {
-                    navList: [
-                        { img: require('../../assets/instrumentalMusic/nav1.jpg').default, text: "少儿器乐", href: "/site/pc/instrumentalMusic/adultMusic" },
-                        { img: require('../../assets/instrumentalMusic/nav2.jpg').default, text: "成人器乐", href: "/site/pc/instrumentalMusic/childrenMusic" },
-                        { img: require('../../assets/instrumentalMusic/nav3.jpg').default, text: "吉他", href: "/site/pc/instrumentalMusic/guitar" },
-                        { img: require('../../assets/instrumentalMusic/nav4.jpg').default, text: "钢琴", href: "/site/pc/instrumentalMusic/piano" },
-                        { img: require('../../assets/instrumentalMusic/nav5.jpg').default, text: "架子鼓", href: "/site/pc/instrumentalMusic/drumKit" },
-                        { img: require('../../assets/instrumentalMusic/nav6.jpg').default, text: "尤克里里", href: "/site/pc/instrumentalMusic/ukulele" },
-                    ]
+                    introduction: {
+                        img: require('../../../../assets/instrumentalMusic/adult/nav1.jpg').default,
+                        subTitle: "吉他",
+                        title: "吉他介绍",
+                        text: "吉他在现代音乐中有着举足轻重的地位。为此桔子树教育为热爱吉他演奏的朋友开设了多种吉他课程，按照教学总计划从认识吉他和吉他谱、训练手指的力量和灵活性、学习乐理知识，认识和弦、双手配合加入节奏流行弹唱、深入学习和声，积累大量作品，演奏技巧灵活运用、和弦编配、即兴演奏、能独立识谱演奏、自如弹唱。"
+                    }
                 }
             },
             {
@@ -65,7 +55,7 @@ export default class instrumentalMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿器乐集体班（4-15岁）"
+                                    text: "成人吉他集体班（16-80岁）"
                                 },
                                 {
                                     rowspan: 1,
@@ -79,53 +69,11 @@ export default class instrumentalMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿器乐精品班（4-15岁）"
+                                    text: "成人吉他精品班（16-80岁）"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "节奏型 五线谱 初级乐理 初中级吉他演奏技巧 成品曲目 简单即兴伴奏等。根据学员特点强化成品曲目演奏、打击"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "90分钟"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "成人器乐集体班（16-80岁）"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "节奏型 五线谱 音乐启蒙 初级乐理 初级弹奏技巧等。根据学员特点弹奏、打击成品曲目"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "90分钟"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "成人器乐精品班（16-80岁）"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "节奏型 五线谱 初级乐理 初中级吉他演奏技巧 成品曲目 简单即兴伴奏等。根据学员特点强化成品曲目演奏、打击"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "90分钟"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "考级综合班（6-15岁）"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "成品曲目演奏、打击技巧，器乐考级综合提升课程。曲目演奏、打击处理"
                                 },
                                 {
                                     rowspan: 1,
@@ -146,14 +94,14 @@ export default class instrumentalMusic extends Component {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "弹吉它难吗？",
-                        "弹钢琴手指怎么放？",
-                        "爵士鼓和架子鼓的区别？",
-                        "尤克里里和乌克丽丽有什么区别？",
-                        "学钢琴多久时间能学会弹一首简单曲子？",
-                        "如何持鼓棒和正确打鼓？",
-                        "尤克里里适合小孩子学习吗？ ",
+                        "指弹是不是不能留指甲？",
+                        "成人学弹吉他大概多久学会？",
+                        "古典吉他难学吗？",
                         "吉他的和弦怎么弹？",
+                        "吉他泛音怎么弹？",
+                        "吉他分为哪几种？",
+                        "吉他滑音怎么弹？ ",
+                        "学吉他必须学习乐理知识吗？",
                     ]
                 }
             },
@@ -177,12 +125,12 @@ export default class instrumentalMusic extends Component {
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-器乐综合';
+        document.title = '桔子树艺术-成人吉他';
 
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            if (data.type !== 'instrumentalMusic') {
+            if (data.type !== 'adultGuitar') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -207,7 +155,7 @@ export default class instrumentalMusic extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'instrumentalMusic')
+                    seekComponents(componentJson, 'adultGuitar')
                 }
             </div>
         )

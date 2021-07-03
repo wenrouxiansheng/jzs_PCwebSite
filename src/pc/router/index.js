@@ -189,8 +189,63 @@ export const routeList = [
         children: [
             //三级页面
             {
-                path: '/adult/karaokeCamp',
-                component: lazy(() => import('@pcPage/vocalMusic/threeLevel/adult/karaokeCamp')),//卡拉OK
+                path: '/guitar/adult',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/guitar/adult')),//成人吉他
+            },
+            {
+                path: '/guitar/child',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/guitar/child')),//少儿吉他
+            },
+            {
+                path: '/piano/adult',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/piano/adult')),//成人钢琴
+            },
+            {
+                path: '/piano/child',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/piano/child')),//少儿钢琴
+            },
+            {
+                path: '/drumKit/adult',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/drumKit/adult')),//成人架子鼓
+            },
+            {
+                path: '/drumKit/child',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/drumKit/child')),//少儿架子鼓
+            },
+            {
+                path: '/ukulele/adult',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/ukulele/adult')),//成人尤克里里
+            },
+            {
+                path: '/ukulele/child',
+                component: lazy(() => import('@pcPage/instrumentalMusic/threeLevel/ukulele/child')),//少儿尤克里里
+            },
+
+
+            //二级
+            {
+                path: '/children',
+                component: lazy(() => import('@pcPage/instrumentalMusic/children')),//少儿器乐
+            },
+            {
+                path: '/adultIM',
+                component: lazy(() => import('@pcPage/instrumentalMusic/adult')),//成人器乐
+            },
+            {
+                path: '/guitar',
+                component: lazy(() => import('@pcPage/instrumentalMusic/guitar')),//吉他综合
+            },
+            {
+                path: '/piano',
+                component: lazy(() => import('@pcPage/instrumentalMusic/piano')),//钢琴综合
+            },
+            {
+                path: '/drumKit',
+                component: lazy(() => import('@pcPage/instrumentalMusic/drumKit')),//架子鼓综合
+            },
+            {
+                path: '/ukulele',
+                component: lazy(() => import('@pcPage/instrumentalMusic/ukulele')),//尤克里里综合
             },
 
             {
@@ -200,15 +255,147 @@ export const routeList = [
         ]
     },
     {
+        path: '/fineArt',//艺术考级
+        children: [
+            //三级页面
+            {
+                path: '/pencilSketch/adult',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/pencilSketch/adult')),//成人素描
+            },
+            {
+                path: '/pencilSketch/child',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/pencilSketch/child')),//少儿素描
+            },
+            {
+                path: '/oilPainting/adult',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/oilPainting/adult')),//成人油画
+            },
+            {
+                path: '/oilPainting/child',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/oilPainting/child')),//少儿油画
+            },
+            {
+                path: '/caricature/adult',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/caricature/adult')),//成人漫画
+            },
+            {
+                path: '/caricature/child',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/caricature/child')),//少儿漫画
+            },
+            {
+                path: '/gouache/adult',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/gouache/adult')),//成人水粉
+            },
+            {
+                path: '/gouache/child',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/gouache/child')),//少儿水粉
+            },
+            {
+                path: '/sketch/adult',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/sketch/adult')),//成人速写
+            },
+            {
+                path: '/sketch/child',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/sketch/child')),//少儿速写
+            },
+            {
+                path: '/chinesePainting/adult',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/chinesePainting/adult')),//成人国画
+            },
+            {
+                path: '/chinesePainting/child',
+                component: lazy(() => import('@pcPage/fineArt/threeLevel/chinesePainting/child')),//少儿国画
+            },
+
+
+            //二级页面
+            {
+                path: '/children',
+                component: lazy(() => import('@pcPage/fineArt/children')),//少儿美术
+            },
+            {
+                path: '/adult',
+                component: lazy(() => import('@pcPage/fineArt/adult')),//成人美术
+            },
+            {
+                path: '/pencilSketch',
+                component: lazy(() => import('@pcPage/fineArt/pencilSketch')),//素描综合
+            },
+            {
+                path: '/sketch',
+                component: lazy(() => import('@pcPage/fineArt/sketch')),//速写综合
+            },
+            {
+                path: '/oilPainting',
+                component: lazy(() => import('@pcPage/fineArt/oilPainting')),//油画综合
+            },
+            {
+                path: '/caricature',
+                component: lazy(() => import('@pcPage/fineArt/caricature')),//漫画综合
+            },
+            {
+                path: '/gouache',
+                component: lazy(() => import('@pcPage/fineArt/gouache')),//水粉综合
+            },
+            {
+                path: '/chinesePainting',
+                component: lazy(() => import('@pcPage/fineArt/chinesePainting')),//国画综合
+            },
+            {
+                path: '/creativeArt',
+                component: lazy(() => import('@pcPage/fineArt/creativeArt')),//创意美术
+            },
+            {
+                path: '/',
+                component: lazy(() => import('@pcPage/fineArt')),//美术综合
+            },
+        ]
+    },
+    {
         path: '/artGrading',//艺术考级
         children: [
+            //舞蹈考级
             {
                 path: '/artExamDance/latinGrading',
                 component: lazy(() => import('@pcPage/artGrading/artExamDance/latinGrading')),//国标舞考级
             },
             {
+                path: '/artExamDance/folkGrading',
+                component: lazy(() => import('@pcPage/artGrading/artExamDance/folkGrading')),//民族舞考级
+            },
+            {
+                path: '/artExamDance/jazzGrading',
+                component: lazy(() => import('@pcPage/artGrading/artExamDance/jazzGrading')),//爵士舞考级
+            },
+            {
+                path: '/artExamDance/balletGrading',
+                component: lazy(() => import('@pcPage/artGrading/artExamDance/balletGrading')),//芭蕾舞考级
+            },
+            {
+                path: '/artExamDance/classicalGrading',
+                component: lazy(() => import('@pcPage/artGrading/artExamDance/classicalGrading')),//古典舞考级
+            },
+            {
+                path: '/artExamDance/hiphopGrading',
+                component: lazy(() => import('@pcPage/artGrading/artExamDance/hiphopGrading')),//街舞考级
+            },
+            {
+                path: '/artExamDance/modernGrading',
+                component: lazy(() => import('@pcPage/artGrading/artExamDance/modernGrading')),//现代舞考级
+            },
+            {
                 path: '/artExamDance',
                 component: lazy(() => import('@pcPage/artGrading/artExamDance')),//舞蹈考级综合
+            },
+
+            //声乐考级
+            {
+                path: '/artExamMusic',
+                component: lazy(() => import('@pcPage/artGrading/artExamMusic')),//声乐考级综合
+            },
+            {
+                path: '/',
+                component: lazy(() => import('@pcPage/artGrading')),//考级综合
             },
         ]
     },

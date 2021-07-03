@@ -5,14 +5,14 @@ import { editingStatus } from '../../../store/store'
 import { seekComponents } from '../../publicjs'
 
 let getChangeComponent = null;
-export default class instrumentalMusic extends Component {
+export default class fineArt extends Component {
     state = {
         componentJson: [
             {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/banner.jpg").default },
+                        { id: 1, adress: "/", src: require("../../assets/fineArt/banner.jpg").default },
                     ]
                 }
             },
@@ -20,12 +20,13 @@ export default class instrumentalMusic extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../assets/instrumentalMusic/nav1.jpg').default, text: "少儿器乐", href: "/site/pc/instrumentalMusic/adultMusic" },
-                        { img: require('../../assets/instrumentalMusic/nav2.jpg').default, text: "成人器乐", href: "/site/pc/instrumentalMusic/childrenMusic" },
-                        { img: require('../../assets/instrumentalMusic/nav3.jpg').default, text: "吉他", href: "/site/pc/instrumentalMusic/guitar" },
-                        { img: require('../../assets/instrumentalMusic/nav4.jpg').default, text: "钢琴", href: "/site/pc/instrumentalMusic/piano" },
-                        { img: require('../../assets/instrumentalMusic/nav5.jpg').default, text: "架子鼓", href: "/site/pc/instrumentalMusic/drumKit" },
-                        { img: require('../../assets/instrumentalMusic/nav6.jpg').default, text: "尤克里里", href: "/site/pc/instrumentalMusic/ukulele" },
+                        { img: require('../../assets/fineArt/nav1.jpg').default, text: "素描", href: "/site/pc/fineArt/pencilSketch" },
+                        { img: require('../../assets/fineArt/nav2.jpg').default, text: "速写", href: "/site/pc/fineArt/sketch" },
+                        { img: require('../../assets/fineArt/nav3.jpg').default, text: "油画", href: "/site/pc/fineArt/oilPainting" },
+                        { img: require('../../assets/fineArt/nav4.jpg').default, text: "水粉", href: "/site/pc/fineArt/gouache" },
+                        { img: require('../../assets/fineArt/nav5.jpg').default, text: "漫画", href: "/site/pc/fineArt/caricature" },
+                        { img: require('../../assets/fineArt/nav6.jpg').default, text: "国画", href: "/site/pc/fineArt/chinesePainting" },
+                        { img: require('../../assets/fineArt/nav7.jpg').default, text: "创意美术", href: "/site/pc/fineArt/creativeArt" },
                     ]
                 }
             },
@@ -38,14 +39,14 @@ export default class instrumentalMusic extends Component {
             {
                 component: 'CourseFlow',
                 props: {
-                    type: 'instrumentalMusic'
+                    type: 'fineArt'
                 }
             },
             {
                 component: 'LearningGoal',
                 props: {
                     textList: [
-                        "基本功大幅提升", "促进手眼、手脚的协调与配合", "全面锻炼大脑", "即兴反应迅速", "表现欲、表现力增强", "大量练习，会让您更有耐心、坚持不懈", "演奏乐器是一种创造性行为，有助提高创新力", "乐曲蕴含丰富的文化内容，有助拓宽知识面", "情感更细腻，促进与人交流，提高社交能力"
+                        "基本功大幅提升", "对画画产生兴趣", "培养想象力和创造力", "拥有更丰富的人生体验", "有利于情绪的更好疏解", "提高对事物认知能力", "增强动手能力", "养成细致的观察能力", "培养专注、坚持等优秀品质"
                     ],
                     info: { title: "课程特色", subTitle: "" }
                 }
@@ -65,25 +66,11 @@ export default class instrumentalMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿器乐集体班（4-15岁）"
+                                    text: "少儿美术集体班（4-15岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "节奏型 五线谱 音乐启蒙 初级乐理 初级弹奏技巧等。根据学员特点弹奏、打击成品曲目"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "90分钟"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "少儿器乐精品班（4-15岁）"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "节奏型 五线谱 初级乐理 初中级吉他演奏技巧 成品曲目 简单即兴伴奏等。根据学员特点强化成品曲目演奏、打击"
+                                    text: "启发少儿对艺术的认识，通过美术课程的培养，开启右脑思维能力，充分发挥想象力"
                                 },
                                 {
                                     rowspan: 1,
@@ -93,11 +80,11 @@ export default class instrumentalMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人器乐集体班（16-80岁）"
+                                    text: "少儿美术精品班（4-15岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "节奏型 五线谱 音乐启蒙 初级乐理 初级弹奏技巧等。根据学员特点弹奏、打击成品曲目"
+                                    text: "开发少儿的美术潜能、充分发挥学员的个性，提高色彩运用能力、造型能力和绘画技巧"
                                 },
                                 {
                                     rowspan: 1,
@@ -107,11 +94,25 @@ export default class instrumentalMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人器乐精品班（16-80岁）"
+                                    text: "成人美术集体班（16-80岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "节奏型 五线谱 初级乐理 初中级吉他演奏技巧 成品曲目 简单即兴伴奏等。根据学员特点强化成品曲目演奏、打击"
+                                    text: "开发美术潜能、充分发挥学员的个性，训练学生的观察能力、分析能力和想象能力，根据自身绘画兴趣，针对性选择绘画类型。"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "成人美术精品班（16-80岁）"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "开发美术潜能、充分发挥学员的个性，提高色彩运用能力、造型能力和绘画技巧，临摹、写生及优秀作品赏析。"
                                 },
                                 {
                                     rowspan: 1,
@@ -125,7 +126,7 @@ export default class instrumentalMusic extends Component {
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "成品曲目演奏、打击技巧，器乐考级综合提升课程。曲目演奏、打击处理"
+                                    text: "色彩运用能力、造型能力和绘画技巧，美术考级综合提升课程。"
                                 },
                                 {
                                     rowspan: 1,
@@ -146,14 +147,14 @@ export default class instrumentalMusic extends Component {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "弹吉它难吗？",
-                        "弹钢琴手指怎么放？",
-                        "爵士鼓和架子鼓的区别？",
-                        "尤克里里和乌克丽丽有什么区别？",
-                        "学钢琴多久时间能学会弹一首简单曲子？",
-                        "如何持鼓棒和正确打鼓？",
-                        "尤克里里适合小孩子学习吗？ ",
-                        "吉他的和弦怎么弹？",
+                        "创意美术为什么要小时候学？",
+                        "创意美术有什么好处？",
+                        "素描如何分类？",
+                        "学好素描静物需要掌握那些基础知识？",
+                        "学漫画的好处？适合孩子学习吗？",
+                        "成人绘画课程有哪些？",
+                        "学习画画应该具备怎样的素质与心态？ ",
+                        "少儿学习画画，从哪种画法开始更好？",
                     ]
                 }
             },
@@ -177,12 +178,12 @@ export default class instrumentalMusic extends Component {
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-器乐综合';
+        document.title = '桔子树艺术-美术综合';
 
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            if (data.type !== 'instrumentalMusic') {
+            if (data.type !== 'fineArt') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -207,7 +208,7 @@ export default class instrumentalMusic extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'instrumentalMusic')
+                    seekComponents(componentJson, 'fineArt')
                 }
             </div>
         )

@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 
 import { seekComponents } from '../../../publicjs'
 import { editingStatus } from '../../../../store/store'
-import { danceData } from '../../../publicjs/pageData'
+import { musicData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
 let getChangeComponent = null;
-export default class latinGrading extends Component {
+export default class artExamMusic extends Component {
     state = {
         componentJson: [
             {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/artGrading/artExamDance/latinGrading", src: require("../../../assets/artGrading/artExamDance/latin/banner.jpg").default },
+                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamMusic/banner.jpg").default },
                     ]
                 }
             },
@@ -21,12 +21,17 @@ export default class latinGrading extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav1.jpg').default, text: "艺考国标舞1V1", href: "service" },
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav2.jpg').default, text: "艺考舞蹈考试模拟班", href: "service" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg1.png').default, text: "成人声乐", href: "/site/pc/artGrading/artExamDance/folkGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg2.png').default, text: "少儿声乐", href: "/site/pc/artGrading/artExamDance/jazzGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg3.png').default, text: "0基础音乐", href: "/site/pc/artGrading/artExamDance/balletGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg4.png').default, text: "K歌速成", href: "/site/pc/artGrading/artExamDance/classicalGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg5.png').default, text: "流行唱法", href: "/site/pc/artGrading/artExamDance/hiphopGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg6.png').default, text: "音基培训", href: "/site/pc/artGrading/artExamDance/modernGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg7.png').default, text: "艺考考级", href: "/site/pc/artGrading/artExamDance/latinGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg7.png').default, text: "视唱练耳", href: "/site/pc/artGrading/artExamDance/latinGrading" },
                     ]
                 }
             },
-            
             {
                 component: 'Title',
                 props: {
@@ -38,26 +43,54 @@ export default class latinGrading extends Component {
                 props: {
                     tableData: {
                         title: ["考级类别", "考级级别", "适合范围"],
-                        list: danceData
+                        list: musicData
                     }
                 }
             },
             {
                 component: 'Title',
                 props: {
-                    info: { title: "小班授课，学习效果更显著", subTitle: "" }
+                    info: { title: "班型设置与开课信息", subTitle: "" }
                 }
             },
             {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["课程", "人数", "上课时常"],
+                        title: ["考级类别", "考级级别", "适合范围"],
                         list: [
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考国标舞1V1"
+                                    text: "少儿声乐考级1V1"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "45分钟"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "少儿声乐考级精品小班"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "6-8人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "成人声乐考级1V1"
                                 },
                                 {
                                     rowspan: 1,
@@ -71,22 +104,7 @@ export default class latinGrading extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考乐理1V1"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "1人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "60分钟"
-                                },
-                                
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "艺考乐理精品小班"
+                                    text: "成人声乐考级精品小班"
                                 },
                                 {
                                     rowspan: 1,
@@ -96,23 +114,7 @@ export default class latinGrading extends Component {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
-                                
                             ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "艺考舞蹈考试模拟班"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "6-8人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "90分钟"
-                                },
-                                
-                            ]
                         ]
                     }
                 }
@@ -127,14 +129,14 @@ export default class latinGrading extends Component {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "什么是舞蹈考级？",
+                        "什么是声乐考级？",
                         "为什么让孩子参加考级？",
-                        "国标舞考级有哪些注意事项？?",
-                        "什么是拉丁考级？",
-                        "拉丁舞考级需要注意什么？",
-                        "国标舞的考级要求有哪些？",
+                        "考级去哪里考？",
+                        "声乐考级需要注意什么？",
+                        "声乐的考级要求有哪些？",
+                        "学习多久可以参加声乐考级？",
                         "什么是小升初特长考试？",
-                        "一年有几次舞蹈考级？",
+                        "一年有几次声乐考级？",
                     ]
                 }
             },
@@ -154,14 +156,16 @@ export default class latinGrading extends Component {
                 props: {
                 }
             },
+
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-拉丁舞考级';
+        document.title = '桔子树艺术-声乐考级综合';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            if (data.type !== 'latinGrading') {
+            console.log(data)
+            if (data.type !== 'artExamMusic') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -186,7 +190,7 @@ export default class latinGrading extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'latinGrading')
+                    seekComponents(componentJson, 'artExamMusic')
                 }
             </div>
         )

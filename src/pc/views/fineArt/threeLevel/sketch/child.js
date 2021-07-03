@@ -1,118 +1,100 @@
 import React, { Component } from 'react'
-
-import { seekComponents } from '../../../publicjs'
-import { editingStatus } from '../../../../store/store'
-import { danceData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
+import { editingStatus } from '../../../../../store/store'
+import { seekComponents } from '../../../../publicjs'
+
 let getChangeComponent = null;
-export default class latinGrading extends Component {
+export default class childSketch extends Component {
     state = {
         componentJson: [
             {
-                component: 'Banner',
+                component: 'CategoryIntroduction',
                 props: {
-                    bannerList: [
-                        { id: 1, adress: "/artGrading/artExamDance/latinGrading", src: require("../../../assets/artGrading/artExamDance/latin/banner.jpg").default },
-                    ]
-                }
-            },
-            {
-                component: 'CourseNavList',
-                props: {
-                    navList: [
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav1.jpg').default, text: "艺考国标舞1V1", href: "service" },
-                        { img: require('../../../assets/artGrading/artExamDance/latin/nav2.jpg').default, text: "艺考舞蹈考试模拟班", href: "service" },
-                    ]
+                    introduction: {
+                        img: require('../../../../assets/fineArt/nav2.jpg').default,
+                        subTitle: "速写",
+                        title: "速写介绍",
+                        text: "顾名思义是一种快速的写生方法。速写是中国原创词汇，属于素描的一种。速写同素描一样，不但是造型艺术的基础，也是一种独立的艺术形式。"
+                    }
                 }
             },
             
             {
                 component: 'Title',
                 props: {
-                    info: { title: "桔子树社会考级考牌明细表", subTitle: "" }
+                    info: { title: "课程流程", subTitle: "" }
                 }
             },
             {
-                component: 'Table',
+                component: 'CourseFlow',
                 props: {
-                    tableData: {
-                        title: ["考级类别", "考级级别", "适合范围"],
-                        list: danceData
-                    }
+                    type: 'fineArt'
+                }
+            },
+            {
+                component: 'LearningGoal',
+                props: {
+                    textList: [
+                        "基本功大幅提升", "对画画产生兴趣", "培养想象力和创造力", "拥有更丰富的人生体验", "有利于情绪的更好疏解", "提高对事物认知能力", "增强动手能力", "养成细致的观察能力", "培养专注、坚持等优秀品质"
+                    ],
+                    info: { title: "课程特色", subTitle: "" }
                 }
             },
             {
                 component: 'Title',
                 props: {
-                    info: { title: "小班授课，学习效果更显著", subTitle: "" }
+                    info: { title: "班型设置与开课信息", subTitle: "" }
                 }
             },
             {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["课程", "人数", "上课时常"],
+                        title: ["课程", "教学内容", "上课时长"],
                         list: [
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考国标舞1V1"
+                                    text: "少儿美术集体班（4-15岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "60分钟"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "艺考乐理1V1"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "1人"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "60分钟"
-                                },
-                                
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "艺考乐理精品小班"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "6-8人"
+                                    text: "启发少儿对艺术的认识，通过美术课程的培养，开启右脑思维能力，充分发挥想象力"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
-                                
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "艺考舞蹈考试模拟班"
+                                    text: "少儿美术精品班（4-15岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "6-8人"
+                                    text: "开发少儿的美术潜能、充分发挥学员的个性，提高色彩运用能力、造型能力和绘画技巧"
                                 },
                                 {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
-                                
-                            ]
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "考级综合班（6-15岁）"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "色彩运用能力、造型能力和绘画技巧，美术考级综合提升课程。"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                            ],
                         ]
                     }
                 }
@@ -127,14 +109,14 @@ export default class latinGrading extends Component {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "什么是舞蹈考级？",
-                        "为什么让孩子参加考级？",
-                        "国标舞考级有哪些注意事项？?",
-                        "什么是拉丁考级？",
-                        "拉丁舞考级需要注意什么？",
-                        "国标舞的考级要求有哪些？",
-                        "什么是小升初特长考试？",
-                        "一年有几次舞蹈考级？",
+                        "绘画课程有哪些？",
+                        "零基础怎么学习速写？",
+                        "全身人物速写的作画步骤？",
+                        "速写应该从何画起？",
+                        "在练习速写的时候，不敢画、画得慢、无从下笔怎么办？  ",
+                        "觉得每一次画的都与模特不“像”怎么办？",
+                        "学习画画，从哪种画法开始更好？ ",
+                        "学习画画应该具备怎样的素质与心态？ ",
                     ]
                 }
             },
@@ -154,14 +136,16 @@ export default class latinGrading extends Component {
                 props: {
                 }
             },
+
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-拉丁舞考级';
+        document.title = '桔子树艺术-少儿速写';
+
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            if (data.type !== 'latinGrading') {
+            if (data.type !== 'childSketch') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -186,9 +170,10 @@ export default class latinGrading extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'latinGrading')
+                    seekComponents(componentJson, 'childSketch')
                 }
             </div>
         )
     }
 }
+

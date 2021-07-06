@@ -12,7 +12,7 @@ export default class creativeArt extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/fineArt/creativeArt/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/fineArt/creativeArt/banner.jpg").default },
                     ]
                 }
             },

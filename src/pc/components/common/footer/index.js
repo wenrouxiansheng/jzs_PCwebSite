@@ -11,34 +11,34 @@ export default class footer extends Component {
         linkStyle: [
             {
                 title: "关于我们", list: [
-                    { text: "师资力量", adress: "/home" },
-                    { text: "教学模式", adress: "/home" },
-                    { text: "课程研发", adress: "/home" },
-                    { text: "加入我们", adress: "/home" },
-                    { text: "桔子树介绍", adress: "/home" }
+                    { text: "师资力量", adress: "/site/pc/aboutUs/teachers" },
+                    { text: "教学模式", adress: "/site/pc/brandIntroduction" },
+                    { text: "课程研发", adress: "/site/pc/brandIntroduction/course" },
+                    { text: "加入我们", adress: "/site/pc/aboutUs/contactUs" },
+                    { text: "桔子树介绍", adress: "/site/pc/brandIntroduction" }
                 ]
             },
             {
                 title: "课程设置", list: [
-                    { text: "声乐培训", adress: "/home" },
-                    { text: "舞蹈培训", adress: "/home" },
-                    { text: "器乐培训", adress: "/home" },
-                    { text: "美术培训", adress: "/home" }
+                    { text: "声乐培训", adress: "/site/pc/vocalMusic" },
+                    { text: "舞蹈培训", adress: "/site/pc/danceTraining" },
+                    { text: "器乐培训", adress: "/site/pc/instrumentalMusic" },
+                    { text: "美术培训", adress: "/site/pc/fineArt" }
                 ]
             },
             {
                 title: "精彩视频", list: [
-                    { text: "歌唱大赛", adress: "/BrandIntroduction" },
-                    { text: "才艺大赛", adress: "/home" },
-                    { text: "教学视频", adress: "/home" }
+                    { text: "歌唱大赛", adress: "/site/pc/aboutUs/studentHonor" },
+                    { text: "才艺大赛", adress: "/site/pc/aboutUs/studentHonor" },
+                    { text: "教学视频", adress: "#" }
                 ]
             },
             {
                 title: "服务专区", list: [
-                    { text: "我要报名", adress: "/home" },
-                    { text: "免费试听", adress: "/home" },
-                    { text: "校区地址", adress: "/home" },
-                    { text: "约课电话", adress: "/home" }
+                    { text: "我要报名", adress: "#" },
+                    { text: "免费试听", adress: "#" },
+                    { text: "校区地址", adress: "/site/pc/campusDistribution" },
+                    { text: "约课电话", adress: "/site/pc/aboutUs/contactUs" }
                 ]
             }
         ]
@@ -55,7 +55,14 @@ export default class footer extends Component {
                                     <dt>{item.title}</dt>
                                     {
                                         item.list.map((data, j) => {
-                                            return <dd key={j}><Link to={data.adress}>{data.text}</Link></dd>
+
+                                            return <dd key={j}>
+                                                {/* 如果没有跳转地址就唤醒客服 */}
+                                                <Link to={data.adress} className={data.adress === '#' ? 'btnsh_udesk_im' : ''}
+                                                    onClick={data.adress === '#' ? event => { event.preventDefault() } : null}>{data.text}</Link>
+
+
+                                            </dd>
                                         })
                                     }
                                 </dl>

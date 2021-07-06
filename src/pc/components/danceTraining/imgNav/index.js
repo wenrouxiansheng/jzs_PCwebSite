@@ -10,10 +10,16 @@ export default class imgNav extends Component {
                 <nav>
                     {
                         navList.map((item, index) => {
-                            return <Link to={item.href} key={index}>
-                                <img src={item.img} alt="" />
-                                <p>{item.text}</p>
-                            </Link>
+                            return item.href === 'service' ?
+                                <span  key={index} className="btnsh_udesk_im">
+                                    <img src={item.img} alt="" />
+                                    <p>{item.text}</p>
+                                </span>
+                                :
+                                <Link to={item.href} key={index}>
+                                    <img src={item.img} alt="" />
+                                    <p>{item.text}</p>
+                                </Link>
                         })
                     }
                 </nav >

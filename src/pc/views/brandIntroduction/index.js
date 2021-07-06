@@ -38,7 +38,7 @@ export default class brandIntroduction extends Component {
                 component: 'Introduce',
                 props: {
                     list: [
-                        { subtitle: "办学规模", title: "强大的办学规模", text: '已开设<span class="color">18</span>家直营校区 （北京<span style="color: #f2aa46;">16</span>家，上海<span style="color: #f2aa46;">2</span>家） 总教学面积近<span style="color: #f2aa46;">35000</span>平米', img: require('../../assets/brandIntroduction/introduce/Picture1_03.png').default },
+                        { subtitle: "办学规模", title: "强大的办学规模", text: '已开设<span class="color">20</span>家直营校区 （北京<span style="color: #f2aa46;">18</span>家，上海<span style="color: #f2aa46;">2</span>家） 总教学面积近<span style="color: #f2aa46;">40000</span>平米', img: require('../../assets/brandIntroduction/introduce/Picture1_03.png').default },
                         { subtitle: "师资力量", title: "雄厚的师资力量", text: '数百名全职教师，毕业于国内外艺术院校', img: require('../../assets/brandIntroduction/introduce/Picture2_03.png').default },
                         { subtitle: "教研团队", title: "教研团队建设", text: '艺术培训行业科学、系统、完善的课程研发团队', img: require('../../assets/brandIntroduction/introduce/Picture3_03.png').default },
                         { subtitle: "教学模式", title: "私人订制教学模式", text: '采用“私人订制教学模式”，一位学员、一份计划、一种方法', img: require('../../assets/brandIntroduction/introduce/Picture4_03.png').default },
@@ -83,6 +83,7 @@ export default class brandIntroduction extends Component {
         ]
     }
     componentDidMount() {
+        document.title = '桔子树艺术-品牌介绍';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {

@@ -10,7 +10,7 @@ export default class questionConsultation extends Component {
             <div className="questionConsultation" style={{ ...style }}>
                 {
                     questionList.map((item, index) => {
-                        return <p key={index}><span>{item}</span><button>点击咨询 <RightOutlined /></button></p>
+                        return <p key={index}><span>{item}</span><button className="btnsh_udesk_im">点击咨询 <RightOutlined /></button></p>
                     })
                 }
                 <img src={adorn} alt="" />

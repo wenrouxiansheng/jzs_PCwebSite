@@ -13,7 +13,7 @@ export default class musicBasis extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../../assets/music/musicBasis/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../../assets/music/musicBasis/banner.jpg").default },
                     ]
                 }
             },

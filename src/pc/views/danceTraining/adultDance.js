@@ -12,7 +12,7 @@ export default class adultDance extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/danceTraining/adult/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/danceTraining/adult/banner.jpg").default },
                     ]
                 }
             },
@@ -137,7 +137,7 @@ export default class adultDance extends Component {
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-成人舞蹈';
+        document.title = '桔子树艺术-成人舞蹈综合';
 
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据

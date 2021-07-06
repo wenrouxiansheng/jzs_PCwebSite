@@ -5,6 +5,8 @@ import PubSub from 'pubsub-js'
 import DropDownPrompt from '@components/homePage/dropDownPrompt'
 import { seekComponents } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
+import schoolJson from '../../components/campusDistribution/schoolList/schoolJson'
+
 
 let getChangeComponent = null;
 export default class homePage extends Component {
@@ -15,9 +17,8 @@ export default class homePage extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/homePage/banner/homepage1.png").default },
-                        { id: 2, adress: "/", src: require("../../assets/homePage/banner/banner.jpg").default },
-                        { id: 3, adress: "/", src: require("../../assets/homePage/banner/homepage2.png").default },
+                        { id: 1, adress: "#", src: require("../../assets/homePage/banner/banner.jpg").default },
+                        { id: 2, adress: "#", src: require("../../assets/homePage/banner/homepage2.png").default },
                     ]
                 }
             },
@@ -58,33 +59,7 @@ export default class homePage extends Component {
                     list: {
                         src: require('../../assets/homePage/schoolList/schoolBanner.png').default,
                         title: "桔子树——中国艺术教育素质教育品牌",
-                        smallList: [
-                            {
-                                src: require('../../assets/homePage/schoolList/school1.jpg').default,
-                                name: "通州校区",
-                                tel: "400-900-8898"
-                            },
-                            {
-                                src: require('../../assets/homePage/schoolList/school2.jpg').default,
-                                name: "大望路校区",
-                                tel: "400-900-8898"
-                            },
-                            {
-                                src: require('../../assets/homePage/schoolList/school3.jpg').default,
-                                name: "中关村校区",
-                                tel: "400-900-8898"
-                            },
-                            {
-                                src: require('../../assets/homePage/schoolList/school3.jpg').default,
-                                name: "中关村校区",
-                                tel: "400-900-8898"
-                            },
-                            {
-                                src: require('../../assets/homePage/schoolList/school3.jpg').default,
-                                name: "中关村校区",
-                                tel: "400-900-8898"
-                            },
-                        ]
+                        smallList: schoolJson
                     }
                 }
             },
@@ -100,48 +75,48 @@ export default class homePage extends Component {
                     list: [
                         {
                             text: "舞蹈培训",
-                            level2: [{ text: "少儿舞蹈", adress: "/" }, { text: "成人舞蹈", adress: "/" }],
+                            level2: [{ text: "少儿舞蹈", adress: "/site/pc/danceTraining/childrenDance" }, { text: "成人舞蹈", adress: "/site/pc/danceTraining/adultDance" }],
                             imgList: [
-                                { text: "民族舞0", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
-                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
+                                { text: "民族舞", src: require('../../assets/danceTraining/adult/nav1.jpg').default, adress: "/site/pc/danceTraining/folkDance" },
+                                { text: "古典舞", src: require('../../assets/danceTraining/adult/nav2.jpg').default, adress: "/site/pc/danceTraining/classicalDance" },
+                                { text: "芭蕾舞", src: require('../../assets/danceTraining/adult/nav3.jpg').default, adress: "/site/pc/danceTraining/balletDance" },
+                                { text: "中国舞", src: require('../../assets/danceTraining/adult/nav4.jpg').default, adress: "/site/pc/danceTraining/chineseDance" },
+                                { text: "街舞", src: require('../../assets/danceTraining/adult/nav5.jpg').default, adress: "/site/pc/danceTraining/hipHop" },
+                                { text: "爵士舞", src: require('../../assets/danceTraining/adult/nav6.jpg').default, adress: "/site/pc/danceTraining/jazzDance" },
+                                { text: "拉丁舞", src: require('../../assets/danceTraining/adult/nav7.jpg').default, adress: "/site/pc/danceTraining/latinDance" },
                             ]
                         },
                         {
                             text: "声乐培训",
-                            level2: [{ text: "少儿声乐", adress: "/" }, { text: "成人声乐", adress: "/" }],
+                            level2: [{ text: "少儿声乐", adress: "/site/pc/vocalMusic/childrenMusic" }, { text: "成人声乐", adress: "/site/pc/vocalMusic/adultMusic" }],
                             imgList: [
-                                { text: "民族舞1", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
+                                { text: "流行唱法", src: require('../../assets/music/nav5.jpg').default, adress: "/site/pc/vocalMusic/adult/popMusic" },
+                                { text: "美声唱法", src: require('../../assets/music/adultMusic/nav2.jpg').default, adress: "/site/pc/vocalMusic/adult/belCanto" },
+                                { text: "民族唱法", src: require('../../assets/music/adultMusic/nav3.jpg').default, adress: "/site/pc/vocalMusic/adult/folkSongs" },
+                                { text: "童声", src: require('../../assets/music/childMusic/nav4.jpg').default, adress: "/site/pc/vocalMusic/child/musicTheory" },
                             ]
                         },
                         {
                             text: "器乐培训",
-                            level2: [{ text: "少儿器乐", adress: "/" }, { text: "成人器乐", adress: "/" }],
+                            level2: [{ text: "少儿器乐", adress: "/site/pc/instrumentalMusic/children" }, { text: "成人器乐", adress: "/site/pc/instrumentalMusic/adultIM" }],
                             imgList: [
-                                { text: "民族舞2", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
-                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
+                                { text: "吉他", src: require('../../assets/instrumentalMusic/adult/nav1.jpg').default, adress: "/site/pc/instrumentalMusic/guitar" },
+                                { text: "钢琴", src: require('../../assets/instrumentalMusic/adult/nav2.jpg').default, adress: "/site/pc/instrumentalMusic/piano" },
+                                { text: "架子鼓", src: require('../../assets/instrumentalMusic/adult/nav3.jpg').default, adress: "/site/pc/instrumentalMusic/drumKit" },
+                                { text: "尤克里里", src: require('../../assets/instrumentalMusic/adult/nav4.jpg').default, adress: "/site/pc/instrumentalMusic/ukulele" },
                             ]
                         },
                         {
                             text: "美术培训",
-                            level2: [{ text: "少儿美术", adress: "/" }, { text: "成人美术", adress: "/" }],
+                            level2: [{ text: "少儿美术", adress: "/site/pc/fineArt/children" }, { text: "成人美术", adress: "/site/pc/fineArt/adult" }],
                             imgList: [
-                                { text: "民族舞3", src: require('../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "/" },
-                                { text: "古典舞", src: require('../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "/" },
-                                { text: "中国舞", src: require('../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "/" },
-                                { text: "舞", src: require('../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "/" },
-                                { text: "芭蕾舞", src: require('../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "/" },
+                                { text: "素描", src: require('../../assets/fineArt/nav1.jpg').default, adress: "/site/pc/fineArt/pencilSketch" },
+                                { text: "速写", src: require('../../assets/fineArt/nav2.jpg').default, adress: "/site/pc/fineArt/sketch" },
+                                { text: "油画", src: require('../../assets/fineArt/nav3.jpg').default, adress: "/site/pc/fineArt/oilPainting" },
+                                { text: "水粉", src: require('../../assets/fineArt/nav4.jpg').default, adress: "/site/pc/fineArt/gouache" },
+                                { text: "漫画", src: require('../../assets/fineArt/nav5.jpg').default, adress: "/site/pc/fineArt/caricature" },
+                                { text: "国画", src: require('../../assets/fineArt/nav6.jpg').default, adress: "/site/pc/fineArt/chinesePainting" },
+                                { text: "创意美术", src: require('../../assets/fineArt/nav7.jpg').default, adress: "/site/pc/fineArt/creativeArt" },
                             ]
                         },
                     ]
@@ -157,10 +132,10 @@ export default class homePage extends Component {
                 component: 'ExamLevelList',
                 props: {
                     list: [
-                        { src: require('../../assets/homePage/examLevelList/dance.png').default, text: "舞蹈考级", subText: "DANCE DISTINCTION", adress: "/" },
-                        { src: require('../../assets/homePage/examLevelList/music.png').default, text: "声乐考级", subText: "VOCAL MUSIC EMPLOYS", adress: "/" },
-                        { src: require('../../assets/homePage/examLevelList/instrumentalMusic.png').default, text: "器乐考级", subText: "INSTRUMENTAL MUSIC", adress: "/" },
-                        { src: require('../../assets/homePage/examLevelList/art.png').default, text: "美术考级", subText: "FINE ARTS", adress: "/" },
+                        { src: require('../../assets/homePage/examLevelList/dance.png').default, text: "舞蹈考级", subText: "DANCE DISTINCTION", adress: "/site/pc/artGrading/artExamDance" },
+                        { src: require('../../assets/homePage/examLevelList/music.png').default, text: "声乐考级", subText: "VOCAL MUSIC EMPLOYS", adress: "/site/pc/artGrading/artExamMusic" },
+                        { src: require('../../assets/homePage/examLevelList/instrumentalMusic.png').default, text: "器乐考级", subText: "INSTRUMENTAL MUSIC", adress: "/site/pc/artGrading/artExamIM" },
+                        { src: require('../../assets/homePage/examLevelList/art.png').default, text: "美术考级", subText: "FINE ARTS", adress: "/site/pc/artGrading/artExamFineArts" },
                     ]
                 }
             },

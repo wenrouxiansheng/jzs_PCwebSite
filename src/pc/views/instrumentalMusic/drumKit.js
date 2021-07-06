@@ -12,7 +12,7 @@ export default class drumKit extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/drumKit/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/instrumentalMusic/drumKit/banner.jpg").default },
                     ]
                 }
             },

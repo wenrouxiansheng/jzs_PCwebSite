@@ -12,7 +12,7 @@ export default class adultFineArt extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/fineArt/adult/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/fineArt/adult/banner.jpg").default },
                     ]
                 }
             },

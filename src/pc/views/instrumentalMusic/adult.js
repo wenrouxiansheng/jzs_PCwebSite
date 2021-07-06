@@ -12,7 +12,7 @@ export default class adultIM extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/adult/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/instrumentalMusic/adult/banner.jpg").default },
                     ]
                 }
             },

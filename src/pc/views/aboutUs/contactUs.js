@@ -12,7 +12,7 @@ export default class contactUs extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/aboutUs/contactUs/banner.png").default },
+                        { id: 1, adress: "#", src: require("../../assets/aboutUs/contactUs/banner.png").default },
                     ]
                 }
             },
@@ -63,6 +63,7 @@ export default class contactUs extends Component {
         ]
     }
     componentDidMount() {
+        document.title = '桔子树艺术-联系我们';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {

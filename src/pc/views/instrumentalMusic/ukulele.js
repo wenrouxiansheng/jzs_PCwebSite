@@ -12,7 +12,7 @@ export default class ukulele extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/ukulele/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/instrumentalMusic/ukulele/banner.jpg").default },
                     ]
                 }
             },

@@ -13,7 +13,7 @@ export default class folkSongs extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../../assets/music/folkSongs/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../../assets/music/folkSongs/banner.jpg").default },
                     ]
                 }
             },

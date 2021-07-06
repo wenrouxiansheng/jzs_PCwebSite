@@ -12,7 +12,7 @@ export default class vocalMusic extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/music/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/music/banner.jpg").default },
                     ]
                 }
             },

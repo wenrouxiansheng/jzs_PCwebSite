@@ -2,8 +2,21 @@ import React, { Component } from 'react'
 import './style.scss'
 
 export default class table extends Component {
+
     render() {
-        const { tableData: { list, title }, style } = this.props;
+        const { tableData, style } = this.props;
+
+        tableData.title.push('咨询');
+
+        const title = tableData.title;
+
+        const list = tableData.list.map(item => {
+            item.push({rowspan: 1, text: "<span style='color: #FF8000' class='btnsh_udesk_im'>咨询详情</span>"})
+            return item
+        })
+
+
+
         return (
             <div className="dataTable" style={{ ...style }}>
                 <table>

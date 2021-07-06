@@ -12,7 +12,7 @@ export default class childFineArt extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/fineArt/child/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/fineArt/child/banner.jpg").default },
                     ]
                 }
             },

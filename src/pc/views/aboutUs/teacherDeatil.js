@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 import { seekComponents } from '../../publicjs'
 import { editingStatus } from '../../../store/store'
 import PubSub from 'pubsub-js'
+import { withRouter } from 'react-router-dom'
+
 
 let getChangeComponent = null;
-export default class teacherDeatil extends Component {
+class teacherDeatil extends Component {
     state = {
         componentJson: [
             {
@@ -23,29 +25,31 @@ export default class teacherDeatil extends Component {
             {
                 component: 'TeacherList',
                 props: {
-                    list: [
-                        {
-                            info: [
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵1", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher2.png').default, name: "余子涵2", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher3.png').default, name: "余子涵3", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher4.png').default, name: "余子涵4", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher5.png').default, name: "余子涵5", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                            ]
-                        },
-                        {
-                            info: [
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                            ]
-                        },
-                    ]
                 }
             },
         ]
     }
     componentDidMount() {
+        document.title = '桔子树艺术-教师详情';
+
+        //接收并传递参数 显示对应老师详情
+        const { componentJson } = this.state,
+            type = this.props.match.params.sign ?? 1,
+            reset = componentJson.slice(1),
+            data = [{
+                component: 'TeacherDetail',
+                props: {
+                    sign: type
+                }
+            },
+            ...reset
+            ]
+
+        this.setState({
+            componentJson: data
+        })
+
+
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
@@ -77,3 +81,4 @@ export default class teacherDeatil extends Component {
         )
     }
 }
+export default withRouter(teacherDeatil)

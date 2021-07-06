@@ -36,6 +36,7 @@ export default class teacherList extends Component {
         ],
     }
     componentDidMount() {
+        document.title = '桔子树艺术-师资力量';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {

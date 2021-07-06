@@ -13,7 +13,7 @@ export default class karaokeCamp extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../../assets/music/karaokeCamp/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../../assets/music/karaokeCamp/banner.jpg").default },
                     ]
                 }
             },

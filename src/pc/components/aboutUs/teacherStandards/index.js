@@ -12,7 +12,7 @@ export default class teacherStandards extends Component {
     state = {
         list: [
             {
-                img: flag1, title: "海外知名艺术院校归国教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
+                img: flag1, title: "海外艺术院校归国教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
             },
             {
                 img: flag2, title: "国内艺术院校毕业教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"

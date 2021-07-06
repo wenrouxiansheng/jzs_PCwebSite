@@ -12,7 +12,7 @@ export default class childrenMusic extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/music/childMusic/banner.png").default },
+                        { id: 1, adress: "#", src: require("../../assets/music/childMusic/banner.png").default },
                     ]
                 }
             },

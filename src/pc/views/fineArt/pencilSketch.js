@@ -12,7 +12,7 @@ export default class pencilSketch extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/fineArt/pencilSketch/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/fineArt/pencilSketch/banner.jpg").default },
                     ]
                 }
             },

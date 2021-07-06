@@ -12,7 +12,7 @@ export default class instrumentalMusic extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/instrumentalMusic/banner.jpg").default },
                     ]
                 }
             },
@@ -20,8 +20,8 @@ export default class instrumentalMusic extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../assets/instrumentalMusic/nav1.jpg').default, text: "少儿器乐", href: "/site/pc/instrumentalMusic/adultMusic" },
-                        { img: require('../../assets/instrumentalMusic/nav2.jpg').default, text: "成人器乐", href: "/site/pc/instrumentalMusic/childrenMusic" },
+                        { img: require('../../assets/instrumentalMusic/nav1.jpg').default, text: "少儿器乐", href: "/site/pc/instrumentalMusic/children" },
+                        { img: require('../../assets/instrumentalMusic/nav2.jpg').default, text: "成人器乐", href: "/site/pc/instrumentalMusic/adultIM" },
                         { img: require('../../assets/instrumentalMusic/nav3.jpg').default, text: "吉他", href: "/site/pc/instrumentalMusic/guitar" },
                         { img: require('../../assets/instrumentalMusic/nav4.jpg').default, text: "钢琴", href: "/site/pc/instrumentalMusic/piano" },
                         { img: require('../../assets/instrumentalMusic/nav5.jpg').default, text: "架子鼓", href: "/site/pc/instrumentalMusic/drumKit" },

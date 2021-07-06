@@ -13,7 +13,7 @@ export default class danceGrading extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamDance/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../assets/artGrading/artExamDance/banner.jpg").default },
                     ]
                 }
             },

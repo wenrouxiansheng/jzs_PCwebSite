@@ -93,7 +93,7 @@ export default class nav extends Component {
             },
             {
                 level1: "关于我们",
-                adress: '#',
+                adress: '/site/pc/aboutUs/contactUs',
                 type: '',
                 level2: [
                     { text: "师资力量", adress: "/site/pc/aboutUs/teachers", type: '' },

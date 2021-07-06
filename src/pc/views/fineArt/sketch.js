@@ -12,7 +12,7 @@ export default class sketch extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/fineArt/sketch/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/fineArt/sketch/banner.jpg").default },
                     ]
                 }
             },

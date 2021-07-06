@@ -12,7 +12,7 @@ export default class childrenDance extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/danceTraining/childrenDance/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/danceTraining/childrenDance/banner.jpg").default },
                     ]
                 }
             },
@@ -150,6 +150,7 @@ export default class childrenDance extends Component {
         ]
     }
     componentDidMount() {
+        document.title = '桔子树艺术-少儿舞蹈综合';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {

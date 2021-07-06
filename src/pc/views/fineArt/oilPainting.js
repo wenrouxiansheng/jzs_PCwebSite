@@ -12,7 +12,7 @@ export default class oilPainting extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/fineArt/oilPainting/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/fineArt/oilPainting/banner.jpg").default },
                     ]
                 }
             },

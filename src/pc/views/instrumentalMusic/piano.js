@@ -12,7 +12,7 @@ export default class piano extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/instrumentalMusic/piano/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../assets/instrumentalMusic/piano/banner.jpg").default },
                     ]
                 }
             },

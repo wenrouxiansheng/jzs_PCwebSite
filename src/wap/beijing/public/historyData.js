@@ -87,21 +87,6 @@ const historyData = [
     {
         time: 2014,
         info: [
-            { type: 'img', text: "07月09日 桔子树崇文门校区成立", src: require('../assets/brandIntroduction/history/school8_05.png').default },
-            { type: 'text', text: " 1、桔子树公主坟校区成为<span style='color:#f2aa46;'>中国舞蹈家协会青少儿考级指定地点</span>" },
-            { type: 'text', text: " 2、2015年桔子树与新世界百货联合打造<span style='color:#f2aa46;'>“新百好声音”</span>活动" },
-            { type: 'text', text: " 3、桔子树联合北京交大举办《桔子树杯法学院“FA现爱”主题嘉年华晚会》" },
-            { type: 'img', text: "06月03日 桔子树中关村校区成立", src: require('../assets/brandIntroduction/history/school7_05.png').default },
-            { type: 'text', text: "4、桔子树举办“金翼杯”少儿才艺大赛" },
-            { type: 'text', text: "5、桔子树学员参加中央电视台CCTV少儿频道《大仓库》节目录制" },
-            { type: 'img', text: "05月06日 桔子树亚运村校区成立", src: require('../assets/brandIntroduction/history/school6_05.png').default },
-            { type: 'text', text: "6、桔子树艺术教育西直门校区成功举办<span style='color:#f2aa46;'>“第一届《M Queen》”</span>团队考核" },
-            { type: 'text', text: "7、桔子树艺术教育成功举办<span style='color:#f2aa46;'>第一届“全‘橙’舞动齐舞</span>" },
-        ]
-    },
-    {
-        time: 2013,
-        info: [
             { type: 'img', text: "09月10日 桔子树东直门校区成立", src: require('../assets/brandIntroduction/history/school3_05.png').default },
             { type: 'text', text: " 1、11月桔子树艺术教育第一届<span style='color:#f2aa46;'>“飞舞奇迹”</span>大赛成功举办。" },
             { type: 'text', text: " 2、12月桔子树荣获网易教育2014<span style='color:#f2aa46;'>“年度最具影响力教育集团”</span>大奖" },
@@ -113,12 +98,22 @@ const historyData = [
         ]
     },
     {
-        time: 2012,
+        time: 2013,
         info: [
             { type: 'img', text: "07月16日 桔子树五道口第二校区成立", src: require('../assets/brandIntroduction/history/school7_05.png').default },
             { type: 'text', text: "1、已有超70000人在桔子树学习才艺，桔子树成长为艺术培训行业优质品牌" },
             { type: 'img', text: "06月12日 桔子树军博校区（现公主 坟校区）成立", src: require('../assets/brandIntroduction/history/school2_05.png').default },
             { type: 'text', text: "2、桔子树共开设4个校区，拥有超过80位来自国内外专业艺术院校、3年以上教学经验的专职老师" },
+        ]
+    },
+    {
+        time: 2012,
+        info: [
+            { type: 'img', text: "10月20日 桔子树五道口校区成立", src: require('../assets/brandIntroduction/history/school7_05.png').default },
+            { type: 'text', text: "1、<span style='color:#f2aa46;'>组建课程教研团队</span>，使课程体系设置更全面，保障学员学习效果" },
+            { type: 'text', text: "2、<span style='color:#f2aa46;'>生活潮、hello精彩、悦享艺术杂志</span>等多家媒体对桔子树进行采访" },
+            { type: 'text', text: "3、举办<span style='color:#f2aa46;'>“老学员再聚首艺术沙龙”</span>，组建桔子树演出团队" },
+            { type: 'text', text: "4、先后为<span style='color:#f2aa46;'>中国五矿、三元集团、天鸿地产、中石油、中移动</span>等企业提供歌唱、舞蹈、乐器类等节目编排" },
         ]
     },
     {

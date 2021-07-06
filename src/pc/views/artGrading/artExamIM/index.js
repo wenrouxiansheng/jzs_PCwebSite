@@ -13,7 +13,7 @@ export default class artExamIM extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamIM/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../assets/artGrading/artExamIM/banner.jpg").default },
                     ]
                 }
             },

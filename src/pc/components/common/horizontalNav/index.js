@@ -84,9 +84,10 @@ export default class nav extends Component {
                 type: '',
                 level2: [{ text: "艺考舞蹈", adress: "/site/pc/artGrading/artExamDance", type: '' },
                 { text: "艺考声乐", adress: "/site/pc/artGrading/artExamMusic", type: '' },
-                { text: "艺考器乐", adress: "/site/pc/artGrading/course", type: '' },
-                { text: "社会考级", adress: "/site/pc/artGrading/course", type: '' },
-                { text: "特长考试", adress: "/site/pc/artGrading/course", type: '' }
+                { text: "艺考器乐", adress: "/site/pc/artGrading/artExamIM", type: '' },
+                { text: "艺考美术", adress: "/site/pc/artGrading/artExamFineArts", type: '' },
+                { text: "社会考级", adress: "/site/pc/artGrading/social", type: '' },
+                { text: "特长考试", adress: "/site/pc/artGrading/specialty", type: '' },
                 ],
                 id: "nav7"
             },

@@ -390,8 +390,135 @@ export const routeList = [
 
             //声乐考级
             {
+                path: '/artExamMusic/popMusic',
+                component: lazy(() => import('@pcPage/artGrading/artExamMusic/popMusic')),//流行唱法考级
+            },
+            {
+                path: '/artExamMusic/folkMusic',
+                component: lazy(() => import('@pcPage/artGrading/artExamMusic/folkMusic')),//民族唱法考级
+            },
+            {
+                path: '/artExamMusic/belCanto',
+                component: lazy(() => import('@pcPage/artGrading/artExamMusic/belCanto')),//美声唱法考级
+            },
+            {
                 path: '/artExamMusic',
                 component: lazy(() => import('@pcPage/artGrading/artExamMusic')),//声乐考级综合
+            },
+
+            //器乐考级
+            {
+                path: '/artExamIM/guitar',
+                component: lazy(() => import('@pcPage/artGrading/artExamIM/guitar')),//吉他考级
+            },
+            {
+                path: '/artExamIM/piano',
+                component: lazy(() => import('@pcPage/artGrading/artExamIM/piano')),//钢琴考级
+            },
+            {
+                path: '/artExamIM/drumKit',
+                component: lazy(() => import('@pcPage/artGrading/artExamIM/drumKit')),//架子鼓考级
+            },
+            {
+                path: '/artExamIM',
+                component: lazy(() => import('@pcPage/artGrading/artExamIM')),//器乐考级综合
+            },
+
+
+            //美术考级
+            {
+                path: '/artExamFineArts/pencilSketch',
+                component: lazy(() => import('@pcPage/artGrading/artExamFineArts/pencilSketch')),//素描考级
+            },
+            {
+                path: '/artExamFineArts/sketch',
+                component: lazy(() => import('@pcPage/artGrading/artExamFineArts/sketch')),//速写考级
+            },
+            {
+                path: '/artExamFineArts/colour',
+                component: lazy(() => import('@pcPage/artGrading/artExamFineArts/colour')),//色彩考级
+            },
+            {
+                path: '/artExamFineArts',
+                component: lazy(() => import('@pcPage/artGrading/artExamFineArts')),//美术考级综合
+            },
+
+            //社会考级
+            {
+                path: '/social/childDance',
+                component: lazy(() => import('@pcPage/artGrading/social/childDance')),//少儿舞蹈社会考级
+            },
+            {
+                path: '/social/adultDance',
+                component: lazy(() => import('@pcPage/artGrading/social/adultDance')),//成人舞蹈社会考级
+            },
+            {
+                path: '/social/childMusic',
+                component: lazy(() => import('@pcPage/artGrading/social/childMusic')),//少儿声乐社会考级
+            },
+            {
+                path: '/social/adultMusic',
+                component: lazy(() => import('@pcPage/artGrading/social/adultMusic')),//成人声乐社会考级
+            },
+            {
+                path: '/social/childIM',
+                component: lazy(() => import('@pcPage/artGrading/social/childIM')),//少儿器乐社会考级
+            },
+            {
+                path: '/social/adultIM',
+                component: lazy(() => import('@pcPage/artGrading/social/adultIM')),//成人器乐社会考级
+            },
+
+            {
+                path: '/social/childFineArt',
+                component: lazy(() => import('@pcPage/artGrading/social/childFineArt')),//少儿美术社会考级
+            },
+            {
+                path: '/social/adultFineArt',
+                component: lazy(() => import('@pcPage/artGrading/social/adultFineArt')),//成人美术社会考级
+            },
+            {
+                path: '/social',
+                component: lazy(() => import('@pcPage/artGrading/social')),//社会考级
+            },
+
+
+            //特长考试
+            {
+                path: '/specialty/childDance',
+                component: lazy(() => import('@pcPage/artGrading/specialty/childDance')),//小升初舞蹈考试
+            },
+            {
+                path: '/specialty/adultDance',
+                component: lazy(() => import('@pcPage/artGrading/specialty/adultDance')),//初升高舞蹈考试
+            },
+            {
+                path: '/specialty/childMusic',
+                component: lazy(() => import('@pcPage/artGrading/specialty/childMusic')),//小升初声乐考试
+            },
+            {
+                path: '/specialty/adultMusic',
+                component: lazy(() => import('@pcPage/artGrading/specialty/adultMusic')),//初升高声乐考试
+            },
+            {
+                path: '/specialty/childIM',
+                component: lazy(() => import('@pcPage/artGrading/specialty/childIM')),//小升初器乐考试
+            },
+            {
+                path: '/specialty/adultIM',
+                component: lazy(() => import('@pcPage/artGrading/specialty/adultIM')),//初升高器乐考试
+            },
+            {
+                path: '/specialty/childFineArts',
+                component: lazy(() => import('@pcPage/artGrading/specialty/childFineArts')),//小升初美术考试
+            },
+            {
+                path: '/specialty/adultFineArts',
+                component: lazy(() => import('@pcPage/artGrading/specialty/adultFineArts')),//初升高美术考试
+            },
+            {
+                path: '/specialty',
+                component: lazy(() => import('@pcPage/artGrading/specialty')),//特长考试
             },
             {
                 path: '/',

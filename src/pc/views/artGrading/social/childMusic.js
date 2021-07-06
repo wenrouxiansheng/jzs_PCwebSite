@@ -6,14 +6,14 @@ import { musicData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
 let getChangeComponent = null;
-export default class artExamMusic extends Component {
+export default class socialChildMusic extends Component {
     state = {
         componentJson: [
             {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamMusic/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../assets/artGrading/social/childMusic/banner.jpg").default },
                     ]
                 }
             },
@@ -21,12 +21,14 @@ export default class artExamMusic extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../../assets/music/nav5.jpg').default, text: "流行唱法", href: "/site/pc/artGrading/artExamMusic/popMusic" },
-                        { img: require('../../../assets/music/adultMusic/nav3.jpg').default, text: "民族唱法", href: "/site/pc/artGrading/artExamMusic/folkMusic" },
-                        { img: require('../../../assets/music/adultMusic/nav2.jpg').default, text: "美声唱法", href: "/site/pc/artGrading/artExamMusic/belCanto" },
+                        { img: require('../../../assets/artGrading/social/childMusic/nav1.jpg').default, text: "少儿声乐考级1V1", href: "service" },
+                        { img: require('../../../assets/artGrading/social/childMusic/nav2.jpg').default, text: "少儿声乐考级精品小班", href: "service" },
+                        { img: require('../../../assets/music/nav6.jpg').default, text: "音基考级1V1", href: "service" },
+                        { img: require('../../../assets/artGrading/social/childMusic/nav4.jpg').default, text: "音基考级精品小班", href: "service" },
                     ]
                 }
             },
+            
             {
                 component: 'Title',
                 props: {
@@ -45,14 +47,14 @@ export default class artExamMusic extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "班型设置与开课信息", subTitle: "" }
+                    info: { title: "小班授课，学习效果更显著", subTitle: "" }
                 }
             },
             {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["考级类别", "考级级别", "适合范围"],
+                        title: ["课程", "人数", "上课时常"],
                         list: [
                             [
                                 {
@@ -81,11 +83,12 @@ export default class artExamMusic extends Component {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
+                                
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人声乐考级1V1"
+                                    text: "音基考级1V1"
                                 },
                                 {
                                     rowspan: 1,
@@ -93,13 +96,14 @@ export default class artExamMusic extends Component {
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "60分钟"
+                                    text: "45分钟"
                                 },
+                                
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人声乐考级精品小班"
+                                    text: "音基考级精品小班"
                                 },
                                 {
                                     rowspan: 1,
@@ -109,6 +113,7 @@ export default class artExamMusic extends Component {
                                     rowspan: 1,
                                     text: "90分钟"
                                 },
+                                
                             ],
                         ]
                     }
@@ -151,16 +156,14 @@ export default class artExamMusic extends Component {
                 props: {
                 }
             },
-
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-声乐考级综合';
+        document.title = '桔子树艺术-少儿声乐考级';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
-            console.log(data)
-            if (data.type !== 'artExamMusic') {
+            if (data.type !== 'socialChildMusic') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -185,7 +188,7 @@ export default class artExamMusic extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'artExamMusic')
+                    seekComponents(componentJson, 'socialChildMusic')
                 }
             </div>
         )

@@ -6,14 +6,14 @@ import { musicData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
 let getChangeComponent = null;
-export default class artExamMusic extends Component {
+export default class artExamIM extends Component {
     state = {
         componentJson: [
             {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamMusic/banner.jpg").default },
+                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamIM/banner.jpg").default },
                     ]
                 }
             },
@@ -21,9 +21,10 @@ export default class artExamMusic extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../../assets/music/nav5.jpg').default, text: "流行唱法", href: "/site/pc/artGrading/artExamMusic/popMusic" },
-                        { img: require('../../../assets/music/adultMusic/nav3.jpg').default, text: "民族唱法", href: "/site/pc/artGrading/artExamMusic/folkMusic" },
-                        { img: require('../../../assets/music/adultMusic/nav2.jpg').default, text: "美声唱法", href: "/site/pc/artGrading/artExamMusic/belCanto" },
+                        { img: require('../../../assets/instrumentalMusic/nav3.jpg').default, text: "吉他", href: "/site/pc/artGrading/artExamIM/guitar" },
+                        { img: require('../../../assets/instrumentalMusic/nav4.jpg').default, text: "钢琴", href: "/site/pc/artGrading/artExamIM/piano" },
+                        { img: require('../../../assets/instrumentalMusic/nav5.jpg').default, text: "架子鼓", href: "/site/pc/artGrading/artExamIM/drumKit" },
+                        { img: require('../../../assets/instrumentalMusic/nav6.jpg').default, text: "尤克里里", href: "/site/pc/artGrading/artExamIM/guitar" },
                     ]
                 }
             },
@@ -57,7 +58,7 @@ export default class artExamMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿声乐考级1V1"
+                                    text: "少儿器乐考级1V1"
                                 },
                                 {
                                     rowspan: 1,
@@ -71,7 +72,7 @@ export default class artExamMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "少儿声乐考级精品小班"
+                                    text: "少儿器乐考级精品小班"
                                 },
                                 {
                                     rowspan: 1,
@@ -85,7 +86,7 @@ export default class artExamMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人声乐考级1V1"
+                                    text: "成人器乐考级1V1"
                                 },
                                 {
                                     rowspan: 1,
@@ -99,7 +100,35 @@ export default class artExamMusic extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人声乐考级精品小班"
+                                    text: "成人器乐考级精品小班"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "6-8人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "90分钟"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "音基考级1V1"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "1人"
+                                },
+                                {
+                                    rowspan: 1,
+                                    text: "45分钟"
+                                },
+                            ],
+                            [
+                                {
+                                    rowspan: 1,
+                                    text: "音基考级精品小班"
                                 },
                                 {
                                     rowspan: 1,
@@ -124,12 +153,12 @@ export default class artExamMusic extends Component {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
-                        "什么是声乐考级？",
+                        "什么是器乐考级？",
                         "为什么让孩子参加考级？",
-                        "考级去哪里考？",
-                        "声乐考级需要注意什么？",
-                        "声乐的考级要求有哪些？",
-                        "学习多久可以参加声乐考级？",
+                        "器乐考级需要考乐理吗？",
+                        "器乐考级需要注意什么？",
+                        "器乐考级的要求有哪些？",
+                        "学习多久可以参加器乐考级？",
                         "什么是小升初特长考试？",
                         "一年有几次声乐考级？",
                     ]
@@ -155,12 +184,12 @@ export default class artExamMusic extends Component {
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-声乐考级综合';
+        document.title = '桔子树艺术-器乐考级综合';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
             console.log(data)
-            if (data.type !== 'artExamMusic') {
+            if (data.type !== 'artExamIM') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -185,7 +214,7 @@ export default class artExamMusic extends Component {
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'artExamMusic')
+                    seekComponents(componentJson, 'artExamIM')
                 }
             </div>
         )

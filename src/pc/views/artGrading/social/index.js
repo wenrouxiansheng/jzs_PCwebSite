@@ -1,46 +1,34 @@
 import React, { Component } from 'react'
+
+import { seekComponents } from '../../../publicjs'
+import { editingStatus } from '../../../../store/store'
+import { allExam } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
-import { editingStatus } from '../../../store/store'
-import { seekComponents } from '../../publicjs'
-import { allExam } from '../../publicjs/pageData'
-//品牌介绍 - 页面汇总管理
 let getChangeComponent = null;
-export default class artGrading extends Component {
+export default class social extends Component {
     state = {
         componentJson: [
-            {
-                component: 'Banner',
-                props: {
-                    bannerList: [
-                        { id: 1, adress: "www.baidu.com", src: require("../../assets/artGrading/banner.jpg").default },
-                    ]
-                }
-            },
-            {
-                component: 'Title',
-                props: {
-                    info: { title: "舞蹈考级" }
-                }
-            },
             {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../assets/artGrading/artExamDance/indexImg1.png').default, text: "民族舞", href: "/home" },
-                        { img: require('../../assets/artGrading/artExamDance/indexImg2.png').default, text: "爵士舞", href: "/home" },
-                        { img: require('../../assets/artGrading/artExamDance/indexImg3.png').default, text: "芭蕾舞", href: "/home" },
-                        { img: require('../../assets/artGrading/artExamDance/indexImg4.png').default, text: "古典舞", href: "/home" },
-                        { img: require('../../assets/artGrading/artExamDance/indexImg5.png').default, text: "街舞", href: "/home" },
-                        { img: require('../../assets/artGrading/artExamDance/indexImg6.png').default, text: "现代舞", href: "/home" },
-                        { img: require('../../assets/artGrading/artExamDance/indexImg7.png').default, text: "国标舞", href: "/site/pc/artGrading/artExamDance/latinGrading" },
+                        { img: require('../../../assets/danceTraining/childrenDance/nav3.png').default, text: "少儿舞蹈", href: "/site/pc/artGrading/social/childDance" },
+                        { img: require('../../../assets/music/childMusic/nav3.jpg').default, text: "少儿声乐", href: "/site/pc/artGrading/social/childMusic" },
+                        { img: require('../../../assets/instrumentalMusic/child/nav1.jpg').default, text: "少儿器乐", href: "/site/pc/artGrading/social/childIM" },
+                        { img: require('../../../assets/fineArt/child/nav1.jpg').default, text: "少儿美术", href: "/site/pc/artGrading/social/childFineArt" },
+                        { img: require('../../../assets/danceTraining/adult/nav3.jpg').default, text: "成人舞蹈", href: "/site/pc/artGrading/social/adultDance" },
+                        { img: require('../../../assets/music/nav5.jpg').default, text: "成人声乐", href: "/site/pc/artGrading/social/adultMusic" },
+                        { img: require('../../../assets/instrumentalMusic/adult/nav1.jpg').default, text: "成人器乐", href: "/site/pc/artGrading/social/adultIM" },
+                        { img: require('../../../assets/fineArt/nav1.jpg').default, text: "成人美术", href: "/site/pc/artGrading/social/adultFineArt" },
+
                     ]
                 }
             },
             {
                 component: 'Title',
                 props: {
-                    info: { title: "2021年桔子树社会考级考牌明细表" }
+                    info: { title: "桔子树社会考级考牌明细表", subTitle: "" }
                 }
             },
             {
@@ -51,7 +39,7 @@ export default class artGrading extends Component {
                         list: allExam
                     }
                 }
-            }, 
+            },
             {
                 component: 'Title',
                 props: {
@@ -74,16 +62,32 @@ export default class artGrading extends Component {
                     ]
                 }
             },
+            {
+                component: 'Title',
+                props: {
+                    info: { title: "师资力量", subTitle: "汇聚国内外艺术院校师资力量" }
+                }
+            },
+            {
+                component: 'TeacherList',
+                props: {
+                }
+            },
+            {
+                component: 'Form',
+                props: {
+                }
+            },
+
         ]
     }
     componentDidMount() {
-        document.title = '桔子树艺术-考级综合';
-
+        document.title = '桔子树艺术-社会考级';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {
             console.log(data)
-            if (data.type !== 'artGrading') {
+            if (data.type !== 'social') {
                 window.parent.PubSub.publish('operationMessage', {
                     message: '组件名不对应',
                     type: 'error'
@@ -100,14 +104,15 @@ export default class artGrading extends Component {
         });
     }
     componentWillUnmount() {
+        //组件即将销毁后移除订阅
         PubSub.unsubscribe(getChangeComponent);
     }
     render() {
-        const { componentJson } = this.state
+        const { componentJson } = this.state;
         return (
             <div>
                 {
-                    seekComponents(componentJson, 'artGrading')
+                    seekComponents(componentJson, 'social')
                 }
             </div>
         )

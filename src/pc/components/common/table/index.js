@@ -47,7 +47,7 @@ export default class table extends Component {
                                 return <tr key={index}>
                                     {
                                         item.map((obj, j) => {
-                                            return <td  className={obj.rowspan > 1 ? 'line' : null} rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
+                                            return <td rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
                                         })
                                     }
                                 </tr>

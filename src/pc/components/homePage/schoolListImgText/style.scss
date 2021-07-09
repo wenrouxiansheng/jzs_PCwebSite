@@ -24,6 +24,9 @@
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .schoolListImgText .bigImg .top {
     bottom: 150px;

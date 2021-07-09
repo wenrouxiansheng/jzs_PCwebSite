@@ -28,7 +28,7 @@ export default class table extends Component {
         if (this.state.tableData === null) return null;
 
         const { tableData: { title, list }, style } = this.state;
-
+        
         return (
             <div className="dataTable" style={{ ...style }}>
                 <table>
@@ -47,7 +47,7 @@ export default class table extends Component {
                                 return <tr key={index}>
                                     {
                                         item.map((obj, j) => {
-                                            return <td rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
+                                            return <td  className={obj.rowspan > 1 ? 'line' : null} rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
                                         })
                                     }
                                 </tr>

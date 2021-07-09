@@ -165,8 +165,8 @@ export default class homePage extends Component {
                             { id: 2, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "“青春风采”国际青少年艺术节开幕式", detail: "桔子树学员登上亮相国家级艺术殿堂——北京音乐厅，绽放青春风采" },
                         ],
                         [
-                            { id: 3, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "炫丽童年梦艺术大赛", detail: "桔子树学员受关工委邀请参加全国总决赛，登上国家大剧院舞台" },
-                            { id: 4, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "世界华人青少年艺术节", detail: "桔子树学员在北京选拔赛、马来西亚吉隆坡总决赛中大放异彩" },
+                            { id: 3, src: require('../../assets/aboutUs/studentHonor/honor3.png').default, title: "炫丽童年梦艺术大赛", detail: "桔子树学员受关工委邀请参加全国总决赛，登上国家大剧院舞台" },
+                            { id: 4, src: require('../../assets/homePage/gloryList/perform4.png').default, title: "世界华人青少年艺术节", detail: "桔子树学员在北京选拔赛、马来西亚吉隆坡总决赛中大放异彩" },
                         ]
                     ]
                 }
@@ -180,24 +180,6 @@ export default class homePage extends Component {
             {
                 component: 'BrandHonor',
                 props: {
-                    list: [
-                        [
-                            { img: require('../../assets/homePage/brandHonor/glory1.png').default, detail: "2018北京文化创意大赛 全国总决赛二等奖" },
-                            { img: require('../../assets/homePage/brandHonor/glory2.png').default, detail: "2018通州文创产业人才提升计划路演展示一等奖" },
-                            { img: require('../../assets/homePage/brandHonor/glory3.png').default, detail: "2018世界移动互联网大会最具品牌影响力企业" },
-                            { img: require('../../assets/homePage/brandHonor/glory4.png').default, detail: "百度教育2017年度教育行业典范" },
-                            { img: require('../../assets/homePage/brandHonor/glory5.png').default, detail: "网易教育2014年度最具影响力教育集团" },
-                        ],
-                        [
-                            { img: require('../../assets/homePage/brandHonor/glory6.png').default, detail: "腾讯大燕网京津冀十佳教育辅导机构" },
-                        ]
-                    ],
-                    introduceList: [
-                        { img: require('../../assets/homePage/brandHonor/list1.png').default, text: "艺术教育培训经验", font: ["9", "年"] },
-                        { img: require('../../assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["20", "家"] },
-                        { img: require('../../assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["数百", "种"] },
-                        { img: require('../../assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["数十", "万"] },
-                    ]
                 }
             }
         ]

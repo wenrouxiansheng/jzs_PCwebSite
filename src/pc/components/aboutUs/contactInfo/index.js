@@ -39,7 +39,7 @@ export default class contactInfo extends Component {
             },
             microBlogInfo: {
                 title: "官方微博",
-                subTitle: "official micro-blog",
+                subTitle: "Official micro-blog",
                 detail: [
                     { text: "官方微博：桔子树艺术教育培训", img: wb },
                 ]

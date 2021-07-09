@@ -32,7 +32,7 @@ export default class homePage extends Component {
             {
                 component: 'ImgAndText',
                 props: {
-                    detail: { id: 1, title: "强大的办学规模", text: "已开设北京16家，上海2家，18家直营校区，总教学面积近35000平米", src: require("../../assets/homePage/imgText/inImg1.png").default, type: "left" }
+                    detail: { id: 1, title: "强大的办学规模", text: "已开设北京18家，上海2家，20家直营校区，总教学面积近40000平米", src: require("../../assets/homePage/imgText/inImg1.png").default, type: "left" }
                 }
             },
             {
@@ -161,12 +161,12 @@ export default class homePage extends Component {
                 props: {
                     data: [
                         [
-                            { id: 1, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "桔子树4岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
-                            { id: 2, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "桔子树5岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
+                            { id: 1, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "学员登各大电视台实践表演节目", detail: "桔子树学员多次受邀登上中央电视台、北京电视台等，在绚丽的舞台上，将才艺尽情展现" },
+                            { id: 2, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "“青春风采”国际青少年艺术节开幕式", detail: "桔子树学员登上亮相国家级艺术殿堂——北京音乐厅，绽放青春风采" },
                         ],
                         [
-                            { id: 3, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "桔子树6岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
-                            { id: 4, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "桔子树7岁小学员登上央视舞台", detail: "桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台桔子树4岁小学员登上央视舞台" },
+                            { id: 3, src: require('../../assets/homePage/gloryList/perform1.png').default, title: "炫丽童年梦艺术大赛", detail: "桔子树学员受关工委邀请参加全国总决赛，登上国家大剧院舞台" },
+                            { id: 4, src: require('../../assets/homePage/gloryList/perform2.png').default, title: "世界华人青少年艺术节", detail: "桔子树学员在北京选拔赛、马来西亚吉隆坡总决赛中大放异彩" },
                         ]
                     ]
                 }
@@ -194,9 +194,9 @@ export default class homePage extends Component {
                     ],
                     introduceList: [
                         { img: require('../../assets/homePage/brandHonor/list1.png').default, text: "艺术教育培训经验", font: ["9", "年"] },
-                        { img: require('../../assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["18", "家"] },
-                        { img: require('../../assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["88", "种"] },
-                        { img: require('../../assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["40", "余万"] },
+                        { img: require('../../assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["20", "家"] },
+                        { img: require('../../assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["数百", "种"] },
+                        { img: require('../../assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["数十", "万"] },
                     ]
                 }
             }

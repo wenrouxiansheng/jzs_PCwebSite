@@ -51,7 +51,7 @@ export default class curriculumPlan extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "品牌荣誉", subTitle: "汇聚国内外艺术院校师资力量" }
+                    info: { title: "品牌荣誉", subTitle: "艺术教育素质品牌" }
                 }
             },
             {
@@ -71,9 +71,9 @@ export default class curriculumPlan extends Component {
                     ],
                     introduceList: [
                         { img: require('../../assets/homePage/brandHonor/list1.png').default, text: "艺术教育培训经验", font: ["9", "年"] },
-                        { img: require('../../assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["18", "家"] },
-                        { img: require('../../assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["88", "种"] },
-                        { img: require('../../assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["40", "余万"] },
+                        { img: require('../../assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["20", "家"] },
+                        { img: require('../../assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["数百", "种"] },
+                        { img: require('../../assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["数十", "余万"] },
                     ]
                 }
             }

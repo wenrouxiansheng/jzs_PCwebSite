@@ -14,6 +14,9 @@ export default class schoolList extends Component {
         showList: []//当前显示的校区
     }
     pageChange = (pageNumber) => {
+
+        document.documentElement.scrollTop = 0//切换分页返回顶部
+
         const { list } = this.state,
         end = pageNumber * SHOWLENGTH,//结尾
         start = end - SHOWLENGTH;//开头

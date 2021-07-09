@@ -61,11 +61,11 @@ export default class guitar extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人器乐集体班（16-80岁）"
+                                    text: "吉他集体班（4-80岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "节奏型 五线谱 音乐启蒙 初级乐理 初级弹奏技巧等。根据学员特点弹奏、打击成品曲目"
+                                    text: "节奏型 五线谱 音乐启蒙 初级乐理 初级弹奏技巧等。根据学员特点弹奏成品曲目"
                                 },
                                 {
                                     rowspan: 1,
@@ -75,11 +75,11 @@ export default class guitar extends Component {
                             [
                                 {
                                     rowspan: 1,
-                                    text: "成人器乐精品班（16-80岁）"
+                                    text: "吉他精品班（4-80岁）"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "节奏型 五线谱 初级乐理 初中级吉他演奏技巧 成品曲目 简单即兴伴奏等。根据学员特点强化成品曲目演奏、打击"
+                                    text: "节奏型 五线谱 初级乐理 初中级吉他演奏技巧 成品曲目 简单即兴伴奏等。根据学员特点强化成品曲目演奏"
                                 },
                                 {
                                     rowspan: 1,

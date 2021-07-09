@@ -30,7 +30,7 @@ export default function switchInfo(name) {
         },
         table: {
             tableData: {
-                title: ["课程", "人数", "上课时常", "咨询"],
+                title: ["课程", "人数", "上课时长", "咨询"],
                 list: [
                     [
                         {

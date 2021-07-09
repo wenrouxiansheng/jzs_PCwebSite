@@ -44,7 +44,7 @@ export default class specialtyChildFineArts extends Component {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["课程", "人数", "上课时常"],
+                        title: ["课程", "人数", "上课时长"],
                         list: [
                             [
                                 {

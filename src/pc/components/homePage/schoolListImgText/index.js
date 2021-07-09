@@ -8,37 +8,6 @@ import QueueAnim from 'rc-queue-anim';
 const ScrollOverPack = ScrollAnim.OverPack;
 export default class schoolListImgText extends Component {
     state = {
-        list: {
-            src: require('../../../assets/homePage/schoolList/schoolBanner.png').default,
-            title: "桔子树——中国艺术教育素质教育品牌",
-            smallList: [
-                {
-                    src: require('../../../assets/homePage/schoolList/school1.jpg').default,
-                    name: "通州校区",
-                    tel: "400-900-8898"
-                },
-                {
-                    src: require('../../../assets/homePage/schoolList/school2.jpg').default,
-                    name: "大望路校区",
-                    tel: "400-900-8898"
-                },
-                {
-                    src: require('../../../assets/homePage/schoolList/school3.jpg').default,
-                    name: "中关村校区",
-                    tel: "400-900-8898"
-                },
-                {
-                    src: require('../../../assets/homePage/schoolList/school3.jpg').default,
-                    name: "中关村校区",
-                    tel: "400-900-8898"
-                },
-                {
-                    src: require('../../../assets/homePage/schoolList/school3.jpg').default,
-                    name: "中关村校区",
-                    tel: "400-900-8898"
-                },
-            ]
-        },//list数据没用到之后可能要做默认数据
         num: 0,
         offSet: 0
     }
@@ -84,10 +53,10 @@ export default class schoolListImgText extends Component {
                             {
                                 list.smallList.map((item, index) => {
                                     return <div className="smalllBox" key={index}>
-                                        <img src={item.src} alt="" />
+                                        <img src={item.img} alt="" />
                                         <div>
                                             <h3>{item.name}</h3>
-                                            <p><img src={tel} alt="" /><span>{item.tel}</span></p>
+                                            <p><img src={tel} alt="" /><span>400-900-8898</span></p>
                                         </div>
                                     </div>
                                 })

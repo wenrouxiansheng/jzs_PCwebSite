@@ -1,9 +1,24 @@
-import React, { Component, Suspense, lazy, } from 'react'
-
+import React, { Component, Suspense, lazy } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
+import './clearUIdefaultStyle.scss'
+import { Skeleton } from 'antd';
+//骨架屏
+const loadingStyle = {
+    width: '100vw',
+    margin: '0 auto',
+    height: '100vh',
+    padding: '0.5rem 0.3rem'
+}
 
-const Loading = <div>loading</div>;
+const Loading = <div className="lazyLoading" style={loadingStyle}>
+    <Skeleton.Image active style={{ width: '6.9rem', height: '3.2rem' }} />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+    <Skeleton active />
+</div>;
 export default class wapRouterControl extends Component {
     //这个文件作为区分北京上海官网跳转  hoc
     componentDidMount() {
@@ -24,16 +39,13 @@ export default class wapRouterControl extends Component {
     }
     render() {
         return (
-            <div>
-                <Suspense fallback={Loading}>
-                    <Switch>
-                        <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/views'))} />{/* 北京站点 */}
-                        <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai'))} />{/* 上海站点 */}
-                        <Redirect to="/site/wap/beijing" />
-                    </Switch>
-                </Suspense>
-            </div>
-
+            <Suspense fallback={Loading}>
+                <Switch>
+                    <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/router'))} />{/* 北京站点 */}
+                    <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai'))} />{/* 上海站点 */}
+                    <Redirect to="/site/wap/beijing" />
+                </Switch>
+            </Suspense>
         )
     }
 }

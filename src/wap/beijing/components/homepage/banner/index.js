@@ -1,77 +1,35 @@
-// import React, { useState, useEffect } from 'react'
-
-import DefaultBanner from '../../bannerPattern/defaultBanner'
-
-
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import DefaultBanner from '../../bannerPattern/defaultBanner'
+import GradingTest from '../../bannerPattern/gradingTest'
+import TeacherLoop from '../../bannerPattern/teacherLoop'
+import Honor from '../../bannerPattern/honor'
+import RealityImages from '../../bannerPattern/realityImages'
+import BlurGradient from '../../bannerPattern/blurGradient'
+import StudentShowLoop from '../../bannerPattern/studentShow'
+import ClassLive from '../../bannerPattern/classLive'
+import VagueLoop from '../../bannerPattern/vagueLoop'
 
 export default class Banner extends Component {
-
-    state = {
-        list: [
-            { img: require('../../../assets/homepage/banner/banner1.png').default, address: "#" },
-            { img: require('../../../assets/homepage/banner/banner2.png').default, address: "#" },
-            { img: require('../../../assets/homepage/banner/banner3.png').default, address: "#" },
-        ],
-        num: 0,
-        type: 'default',
-        timer: null
+    static propTypes = {
+        data: PropTypes.shape({
+            type: PropTypes.string.isRequired
+        })
     }
-    
     render() {
-        const { type, list } = this.state
-
+        const { type } = this.props.data
         const obj = {
-            'default': <DefaultBanner list={list} />
+            'default': <DefaultBanner propsData={this.props} />,
+            'gradingTest': <GradingTest propsData={this.props} />,
+            'teacherLoop': <TeacherLoop propsData={this.props} />,
+            'horizontal': <Honor propsData={this.props} />,
+            'classroom': <RealityImages propsData={this.props} />,
+            'blurGradient': <BlurGradient propsData={this.props} />,
+            'studentShowLoop': <StudentShowLoop propsData={this.props} />,
+            'classLive': <ClassLive propsData={this.props} />,
+            'vagueLoop': <VagueLoop propsData={this.props} />,
         }
-
         return obj[type];
     }
 }
-
-
-// export default function Banner(props) {
-//     const wait = 2000,
-//         list = [
-//             { img: require('../../../assets/homepage/banner/banner1.png').default, address: "/#" },
-//             { img: require('../../../assets/homepage/banner/banner2.png').default, address: "/#" },
-//             { img: require('../../../assets/homepage/banner/banner3.png').default, address: "/#" },
-//         ],
-//         type = 'default';
-
-
-//     const [num, setNum] = useState(0);
-
-//     useEffect(() => {//模拟didMount和willunMount
-
-//         const timer = setInterval(() => {
-//             setNum(num + 1)
-//         }, wait);
-
-
-//         return () => {//willunMount
-//             clearInterval(timer);
-//         }
-//     })
-
-//     const changeNum = (val) => {
-//         setNum(val);
-//         console.log(val)
-//     }
-//     const propsList = {
-//         list,
-//         num,
-//         changeNum
-//     }
-//     const obj = {
-//         'default': <DefaultBanner {...propsList}/>
-//     };
-
-//     return (
-//         <div>
-//             {obj[type]}
-//         </div>
-//     )
-// }
-
 

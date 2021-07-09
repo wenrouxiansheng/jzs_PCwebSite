@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { seekComponents } from '../../../publicjs'
 import { editingStatus } from '../../../../store/store'
+import { danceData } from '../../../publicjs/pageData'
 import PubSub from 'pubsub-js'
 
 let getChangeComponent = null;
@@ -12,7 +13,7 @@ export default class danceGrading extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../../assets/artGrading/artExamDance/banner.jpg").default },
+                        { id: 1, adress: "#", src: require("../../../assets/artGrading/artExamDance/banner.jpg").default },
                     ]
                 }
             },
@@ -20,12 +21,12 @@ export default class danceGrading extends Component {
                 component: 'CourseNavList',
                 props: {
                     navList: [
-                        { img: require('../../../assets/artGrading/artExamDance/indexImg1.png').default, text: "民族舞", href: "/home" },
-                        { img: require('../../../assets/artGrading/artExamDance/indexImg2.png').default, text: "爵士舞", href: "/home" },
-                        { img: require('../../../assets/artGrading/artExamDance/indexImg3.png').default, text: "芭蕾舞", href: "/home" },
-                        { img: require('../../../assets/artGrading/artExamDance/indexImg4.png').default, text: "古典舞", href: "/home" },
-                        { img: require('../../../assets/artGrading/artExamDance/indexImg5.png').default, text: "街舞", href: "/home" },
-                        { img: require('../../../assets/artGrading/artExamDance/indexImg6.png').default, text: "现代舞", href: "/home" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg1.png').default, text: "民族舞", href: "/site/pc/artGrading/artExamDance/folkGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg2.png').default, text: "爵士舞", href: "/site/pc/artGrading/artExamDance/jazzGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg3.png').default, text: "芭蕾舞", href: "/site/pc/artGrading/artExamDance/balletGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg4.png').default, text: "古典舞", href: "/site/pc/artGrading/artExamDance/classicalGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg5.png').default, text: "街舞", href: "/site/pc/artGrading/artExamDance/hiphopGrading" },
+                        { img: require('../../../assets/artGrading/artExamDance/indexImg6.png').default, text: "现代舞", href: "/site/pc/artGrading/artExamDance/modernGrading" },
                         { img: require('../../../assets/artGrading/artExamDance/indexImg7.png').default, text: "国标舞", href: "/site/pc/artGrading/artExamDance/latinGrading" },
                     ]
                 }
@@ -40,258 +41,77 @@ export default class danceGrading extends Component {
                 component: 'Table',
                 props: {
                     tableData: {
-                        title: ["考级类别", "考级级别", "适合范围", "咨询"],
+                        title: ["考级类别", "考级级别", "适合范围"],
+                        list: danceData
+                    }
+                }
+            },
+            {
+                component: 'Title',
+                props: {
+                    info: { title: "班型设置与开课信息", subTitle: "" }
+                }
+            },
+            {
+                component: 'Table',
+                props: {
+                    tableData: {
+                        title: ["考级类别", "考级级别", "适合范围"],
                         list: [
                             [
                                 {
                                     rowspan: 1,
-                                    text: "童声"
+                                    text: "少儿舞蹈考级1V1"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1-9级"
+                                    text: "1人"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "3-12岁"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                    text: "45分钟"
                                 },
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "架子鼓"
+                                    text: "少儿舞蹈考级精品小班"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1-9级"
+                                    text: "6-8人"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                    text: "90分钟"
                                 },
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "尤克里里"
+                                    text: "成人舞蹈考级1V1"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1-10级"
+                                    text: "1人"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                    text: "60分钟"
                                 },
                             ],
                             [
                                 {
                                     rowspan: 1,
-                                    text: "钢琴"
+                                    text: "成人舞蹈考级精品小班"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "1-9级"
+                                    text: "6-8人"
                                 },
                                 {
                                     rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 4,
-                                    text: "少儿舞蹈"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "1-3级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "4-6岁零基础少儿"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "4-5级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "6-8岁少儿"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "6-7级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "8-10岁少儿"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "8-10级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "10-13岁青少年"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 7,
-                                    text: "国标舞考级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "1-9级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "铜牌"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "银牌"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "金牌"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "金星一级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "金星二级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "金星三级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
-                                },
-                            ],
-                            [
-                                {
-                                    rowspan: 1,
-                                    text: "美术考级<p>(油画、国画、速写、水粉、动漫、山水等）</p>"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "1-9级"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "不限"
-                                },
-                                {
-                                    rowspan: 1,
-                                    text: "<span style='color: #ff8000;'>考级咨询</span>"
+                                    text: "90分钟"
                                 },
                             ],
                         ]
@@ -301,52 +121,33 @@ export default class danceGrading extends Component {
             {
                 component: 'Title',
                 props: {
-                    info: { title: "专业顾问全天候在线解决您的学习问题", subTitle: "" }
+                    info: { title: "课程顾问全天候在线解答您的学习问题", subTitle: "" }
                 }
             },
             {
                 component: 'QuestionConsultation',
                 props: {
                     questionList: [
+                        "什么是舞蹈考级？",
+                        "为什么让孩子参加考级？",
+                        "考级去哪里考？",
+                        "舞蹈考级需要注意什么？",
+                        "舞蹈考级的要求有哪些？",
+                        "没有基础可以参加舞蹈考级吗？",
                         "什么是小升初特长考试？",
-                        "声乐考级一年有几次？",
-                        "视听练耳怎么考？",
-                        "鼻音重如何解决？",
-                        "民族唱法的气息怎么能稳？",
-                        "钢琴考级第一次最高能考几级？",
-                        "几岁可以考级？",
-                        "成人声乐考级包括哪些曲目？",
-                        "什么是假声？",
+                        "一年有几次舞蹈考级？",
                     ]
                 }
             },
             {
                 component: 'Title',
                 props: {
-                    info: { title: "师资力量", subTitle: "汇聚国内外艺术名师" }
+                    info: { title: "师资力量", subTitle: "汇聚国内外艺术院校师资力量" }
                 }
             },
             {
                 component: 'TeacherList',
                 props: {
-                    list: [
-                        {
-                            info: [
-                                { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵1", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../../assets/homePage/teacher/teacher2.png').default, name: "余子涵2", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../../assets/homePage/teacher/teacher3.png').default, name: "余子涵3", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../../assets/homePage/teacher/teacher4.png').default, name: "余子涵4", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../../assets/homePage/teacher/teacher5.png').default, name: "余子涵5", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                            ]
-                        },
-                        {
-                            info: [
-                                { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                                { img: require('../../../assets/homePage/teacher/teacher1.png').default, name: "余子涵", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
-                            ]
-                        },
-                    ]
                 }
             },
             {
@@ -358,6 +159,7 @@ export default class danceGrading extends Component {
         ]
     }
     componentDidMount() {
+        document.title = '桔子树艺术-舞蹈考级综合';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {

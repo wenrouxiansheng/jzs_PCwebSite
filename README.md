@@ -20,6 +20,19 @@ npm run build
 
 node server.js
 ```
+## ui框架
+material-ui: [官网地址](https://material-ui.com/zh/)
+
+antd-ui: [官网地址](https://ant.design/components/overview-cn/)
+
+ant-Motion动画组件: [官网地址](https://motion.ant.design/components/scroll-anim-cn#components-scroll-anim-demo-parallax)
+
+braft-editor富文本编辑器: 
+1. [国内镜像说明地址](https://codechina.csdn.net/mirrors/margox/braft-editor?utm_source=csdn_github_accelerator)
+2. [gihub说明地址](https://github.com/margox/braft-editor)
+
+
+
 ### 消息大致图
 ![消息传递大致图](src/pcEditWebsite/消息传递大致图.png)
 

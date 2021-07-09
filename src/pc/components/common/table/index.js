@@ -2,8 +2,33 @@ import React, { Component } from 'react'
 import './style.scss'
 
 export default class table extends Component {
+    state = {
+        style: null,
+        tableData: null
+    }
+
+    componentDidMount() {
+        const { tableData, style } = this.props;
+
+        tableData.title.push('咨询');
+
+        const list = tableData.list.map(item => {
+            item.push({ rowspan: 1, text: "<span style='color: #FF8000' class='btnsh_udesk_im'>咨询详情</span>" })
+            return item
+        })
+        tableData.list = list;
+
+        this.setState({
+            style,
+            tableData
+        })
+    }
+
     render() {
-        const { tableData: { list, title }, style } = this.props;
+        if (this.state.tableData === null) return null;
+
+        const { tableData: { title, list }, style } = this.state;
+        
         return (
             <div className="dataTable" style={{ ...style }}>
                 <table>
@@ -22,7 +47,7 @@ export default class table extends Component {
                                 return <tr key={index}>
                                     {
                                         item.map((obj, j) => {
-                                            return <td rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
+                                            return <td  className={obj.rowspan > 1 ? 'line' : null} rowSpan={obj.rowspan} dangerouslySetInnerHTML={{ __html: obj.text }} key={j}></td>
                                         })
                                     }
                                 </tr>

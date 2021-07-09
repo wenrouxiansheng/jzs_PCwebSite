@@ -73,8 +73,8 @@ export default class curriculumPlanComponent extends Component {
                     this.retrievalNode()
                 }
                 <div className="consult-button">
-                    <button>预约测评</button>
-                    <button>咨询课程</button>
+                    <button className="btnsh_udesk_im">预约测评</button>
+                    <button className="btnsh_udesk_im">咨询课程</button>
                 </div>
             </div>
         )

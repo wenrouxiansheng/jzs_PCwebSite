@@ -67,16 +67,11 @@
         }
         .honor {
             display: block;
-            line-height: 30px;
             color: #666;
             font-size: 16px;
             height: 200px;
             overflow-y: auto;
-            p {
-                margin-bottom: 0px;
-                height: 40px;
-                line-height: 40px;
-            }
+            line-height: 40px;
         }
     }
 }

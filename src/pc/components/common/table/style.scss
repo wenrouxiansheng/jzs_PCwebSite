@@ -23,6 +23,10 @@
                 color: #333;
                 font-size: 15px;
                 max-width: 100px;
+                padding: 10px;
+                &.line{
+                    border: solid rgba(249, 214, 139, 0.5) 1px;
+                }
                 span {
                     cursor: pointer;
                 }

@@ -1,0 +1,26 @@
+.QAList {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 1.5rem;
+    box-shadow: 0px 0px 0.15rem #cecdcc;
+    font-size: 0.24rem;
+    padding: 0.15rem;
+    border-radius: 0.1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    p {
+        line-height: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #e5e5e5;
+        align-items: center;
+        padding: 0.15rem 0;
+        &:last-child {
+            border-bottom: 0;
+        }
+        span {
+            display: inline-block;
+            width: 5.2rem;
+        }
+    }
+}

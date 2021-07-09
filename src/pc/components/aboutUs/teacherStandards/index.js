@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import './style.scss'
-import flag1 from '@assets/aboutUs/teachers/flag1.png'
-import flag2 from '@assets/aboutUs/teachers/flag2.png'
-import flag3 from '@assets/aboutUs/teachers/flag3.png'
-import flag4 from '@assets/aboutUs/teachers/flag4.png'
 
 
 
@@ -12,16 +8,16 @@ export default class teacherStandards extends Component {
     state = {
         list: [
             {
-                img: flag1, title: "海外知名艺术院校归国教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
+                img: require('../../../assets/aboutUs/teachers/flag1.png').default, title: "艺术培训综合体", text: "声乐、器乐、舞蹈、美术齐头并进，培养青少年综合素养"
             },
             {
-                img: flag2, title: "国内专业艺术院校毕业教师", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
+                img: require('../../../assets/aboutUs/teachers/flag2.png').default, title: "雄厚的师资力量", text: "数百名专职教师，毕业于国内外艺术院校"
             },
             {
-                img: flag3, title: "覆盖艺术学习多科目", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
+                img: require('../../../assets/aboutUs/teachers/flag3.png').default, title: "教研团队建设", text: "艺术培训行业科学、系统、完善的课程研发团队"
             },
             {
-                img: flag4, title: "丰富一线教学经验", text: "此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述此处写描述"
+                img: require('../../../assets/aboutUs/teachers/flag4.png').default, title: "量身提供教学计划", text: "只属于你的课程计划，“一位学员、一份计划、一种方法”"
             },
         ]
     }

@@ -32,17 +32,17 @@ export default class brandHonor extends Component {
             ]
         ],
         introduceList: [
-            { img: list1, text: "艺术教育培训经验", font: ["9", "年"] },
-            { img: list2, text: "直营校区覆盖北京、上海", font: ["18", "家"] },
-            { img: list3, text: "专业课程精心设计", font: ["88", "种"] },
-            { img: list4, text: "学员信赖选择", font: ["40", "余万"] },
+            { img: list1, text: "艺术教育培训经验", font: "9年" },
+            { img: list2, text: "直营校区覆盖北京、上海", font: "20家" },
+            { img: list3, text: "专业课程精心设计", font: "数百种" },
+            { img: list4, text: "学员信赖选择", font: "数十万" },
         ]
     }
     render() {
         const { list, introduceList, style } = this.props.list ? this.props : this.state;
         return (
             <ScrollOverPack always={false}>
-                <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box" style={{...style}}>
+                <QueueAnim type="bottom" duration="1000" className="brandHonor-antMotion-box" style={{ ...style }}>
                     <div className="brandHonor" style={{ backgroundImage: `url(${bgImg})` }} key="brandHonor">
                         <Carousel className="honorBox" autoplay>
                             {
@@ -66,7 +66,7 @@ export default class brandHonor extends Component {
                             {
                                 introduceList.map((item, index) => {
                                     return <div key={index}>
-                                        <p><strong>{item.font[0]}</strong>{item.font[1]}</p>
+                                        <p>{item.font}</p>
                                         <p>{item.text}</p>
                                         <img src={item.img} alt="" />
                                     </div>

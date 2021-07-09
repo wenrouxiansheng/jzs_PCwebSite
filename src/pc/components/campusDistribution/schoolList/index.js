@@ -3,33 +3,51 @@ import './style.scss'
 import { Pagination } from 'antd';
 
 import Title from '@components/homePage/title'
-import img from '@assets/aboutUs/teacherDetail/teacher.jpg'
 import phone from '@assets/schoolList/phone.png'
 import position from '@assets/schoolList/position.png'
+import schoolJson from './schoolJson'
 
+const SHOWLENGTH = 5//一页显示条数
 export default class schoolList extends Component {
     state = {
-        list: [
-            { img: img, name: "青年路校区", course: "成人/少儿舞蹈培训班、成人/少儿美术培训班、学唱歌培训班、吉他/尤克里里/架子鼓/钢琴培训班等 ", classed: "1v1精品小班、1v2精品小班、1v3精品小班、系统集体大班等多种班型", position: "北京市朝阳区青年路地铁站佳亿青年汇" },
-            { img: img, name: "青年路校区", course: "成人/少儿舞蹈培训班、成人/少儿美术培训班、学唱歌培训班、吉他/尤克里里/架子鼓/钢琴培训班等", classed: "1v1精品小班、1v2精品小班、1v3精品小班、系统集体大班等多种班型", position: "北京市朝阳区青年路地铁站佳亿青年汇" },
-            { img: img, name: "青年路校区", course: "成人/少儿舞蹈培训班、成人/少儿美术培训班、学唱歌培训班、吉他/尤克里里/架子鼓/钢琴培训班等", classed: "1v1精品小班、1v2精品小班、1v3精品小班、系统集体大班等多种班型", position: "北京市朝阳区青年路地铁站佳亿青年汇" },
-            { img: img, name: "青年路校区", course: "成人/少儿舞蹈培训班、成人/少儿美术培训班、学唱歌培训班、吉他/尤克里里/架子鼓/钢琴培训班等", classed: "1v1精品小班、1v2精品小班、1v3精品小班、系统集体大班等多种班型", position: "北京市朝阳区青年路地铁站佳亿青年汇" },
-            { img: img, name: "青年路校区", course: "成人/少儿舞蹈培训班、成人/少儿美术培训班、学唱歌培训班、吉他/尤克里里/架子鼓/钢琴培训班等", classed: "1v1精品小班、1v2精品小班、1v3精品小班、系统集体大班等多种班型", position: "北京市朝阳区青年路地铁站佳亿青年汇" },
-            { img: img, name: "青年路校区", course: "成人/少儿舞蹈培训班、成人/少儿美术培训班、学唱歌培训班、吉他/尤克里里/架子鼓/钢琴培训班等", classed: "1v1精品小班、1v2精品小班、1v3精品小班、系统集体大班等多种班型", position: "北京市朝阳区青年路地铁站佳亿青年汇" },
-        ]
+        list: schoolJson,
+        showList: []//当前显示的校区
     }
     pageChange = (pageNumber) => {
-        console.log('Page: ', pageNumber);
+
+        document.documentElement.scrollTop = 0//切换分页返回顶部
+
+        const { list } = this.state,
+        end = pageNumber * SHOWLENGTH,//结尾
+        start = end - SHOWLENGTH;//开头
+
+        const showList = list.slice(start, end)
+
+        this.setState({
+            showList
+        })
+    }
+    componentDidMount() {
+        //初始化显示校区
+        const { list } = this.state,
+        end = SHOWLENGTH,//结尾
+        start = end - SHOWLENGTH;//开头
+
+        const showList = list.slice(start, end)
+
+        this.setState({
+            showList
+        })
     }
     render() {
-        const { list } = this.state;
+        const { showList,list } = this.state;
         const { style } = this.props;
         return (
-            <div className="schoolList" style={{...style}}>
+            <div className="schoolList" style={{ ...style }}>
                 <Title info={{ title: "校区分布", subTitle: "Campus Distribution" }} />
                 <div className="list">
                     {
-                        list.map((item, index) => {
+                        showList.map((item, index) => {
                             return <div key={index}>
                                 <img src={item.img} alt="" />
                                 <div className="container">
@@ -42,14 +60,14 @@ export default class schoolList extends Component {
                                     </div>
                                     <p className="position"><img src={position} alt="" />{item.position}</p>
                                     <p className="phone"><img src={phone} alt="" />400-900-8898</p>
-                                    <button>立即咨询</button>
+                                    <button className="btnsh_udesk_im">立即咨询</button>
                                 </div>
                             </div>
                         })
                     }
                 </div>
                 <div className="pagination">
-                    <Pagination showQuickJumper defaultCurrent={1} total={20} onChange={this.pageChange} pageSize={6} showSizeChanger={false} />
+                    <Pagination showQuickJumper defaultCurrent={1} total={list.length} onChange={this.pageChange} pageSize={SHOWLENGTH} showSizeChanger={false} />
                 </div>
             </div>
         )

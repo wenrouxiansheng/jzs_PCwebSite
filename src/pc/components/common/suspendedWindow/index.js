@@ -65,7 +65,7 @@ export default class suspendedWindow extends Component {
                         <p>电话咨询</p>
                     </div>
                 </Popover>
-                <div className="container">
+                <div className="container btnsh_udesk_im">
                     <img src={consult} alt="" />
                     <p>在线咨询</p>
                 </div>

@@ -50,7 +50,7 @@ const Teachers = class teachers extends Component {
                     seekComponents(componentJson, 'teachersCommon')
                 }
                 <Switch>
-                    <Route path="/site/pc/aboutUs/teachers/detail" component={TeacherDeatil} />{/**教师详情 */}
+                    <Route path="/site/pc/aboutUs/teachers/detail/:sign" component={TeacherDeatil} />{/**教师详情 */}
                     <Route path="/site/pc/aboutUs/teachers" component={TeacherList} />{/**教师列表 */}
                 </Switch>
             </div>

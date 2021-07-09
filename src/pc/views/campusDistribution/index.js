@@ -12,7 +12,7 @@ export default class campusDistribution extends Component {
                 component: 'Banner',
                 props: {
                     bannerList: [
-                        { id: 1, adress: "/", src: require("../../assets/schoolList/banner.png").default }
+                        { id: 1, adress: "#", src: require("../../assets/schoolList/banner.png").default }
                     ]
                 }
             },
@@ -25,6 +25,7 @@ export default class campusDistribution extends Component {
         ]
     }
     componentDidMount() {
+        document.title = '桔子树艺术-校区分布';
         if (!editingStatus.getState()) return false;
         //订阅 - 接收编辑器改变组件后的数据
         getChangeComponent = PubSub.subscribe('getChangeComponentData', (msg, data) => {

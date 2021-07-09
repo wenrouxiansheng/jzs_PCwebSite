@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Carousel } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom'
+
 import './style.scss'
 import img1 from '@assets/homePage/gloryList/perform1.png'
 import img2 from '@assets/homePage/gloryList/perform2.png'
@@ -65,7 +67,7 @@ export default class gloryList extends Component {
                             <p className="ctrolButton next" onClick={this.nextModule}><RightOutlined /></p>
                             <p className="ctrolButton prev" onClick={this.prevModule}><LeftOutlined /></p>
                         </div>
-                        <a href="/home" className="link">查看更多</a>
+                        <Link to="/site/pc/aboutUs/studentHonor" target="_blank" className="link">查看更多</Link>
                         <div className="background"></div>
                     </div>
                 </QueueAnim>

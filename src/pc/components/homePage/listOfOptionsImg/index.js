@@ -7,54 +7,6 @@ import QueueAnim from 'rc-queue-anim';
 const ScrollOverPack = ScrollAnim.OverPack;
 export default class listOfOptionsImg extends Component {
     state = {
-        list: [
-            {
-                text: "舞蹈培训",
-                level2: [{ text: "少儿舞蹈", adress: "www.baidu.com" }, { text: "成人舞蹈", adress: "www.baidu.com" }],
-                imgList: [
-                    { text: "民族舞0", src: require('../../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
-                    { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                    { text: "中国舞", src: require('../../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                    { text: "舞", src: require('../../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
-                ]
-            },
-            {
-                text: "声乐培训",
-                level2: [{ text: "少儿声乐", adress: "www.baidu.com" }, { text: "成人声乐", adress: "www.baidu.com" }],
-                imgList: [
-                    { text: "民族舞1", src: require('../../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
-                    { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                    { text: "中国舞", src: require('../../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                ]
-            },
-            {
-                text: "器乐培训",
-                level2: [{ text: "少儿器乐", adress: "www.baidu.com" }, { text: "成人器乐", adress: "www.baidu.com" }],
-                imgList: [
-                    { text: "民族舞2", src: require('../../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
-                    { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                    { text: "中国舞", src: require('../../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                    { text: "舞", src: require('../../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
-                ]
-            },
-            {
-                text: "美术培训",
-                level2: [{ text: "少儿美术", adress: "www.baidu.com" }, { text: "成人美术", adress: "www.baidu.com" }],
-                imgList: [
-                    { text: "民族舞3", src: require('../../../assets/homePage/listOfOptionsImg/dance1.png').default, adress: "www.baidu.com" },
-                    { text: "古典舞", src: require('../../../assets/homePage/listOfOptionsImg/dance2.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance3.png').default, adress: "www.baidu.com" },
-                    { text: "中国舞", src: require('../../../assets/homePage/listOfOptionsImg/dance4.png').default, adress: "www.baidu.com" },
-                    { text: "舞", src: require('../../../assets/homePage/listOfOptionsImg/dance5.png').default, adress: "www.baidu.com" },
-                    { text: "芭蕾舞", src: require('../../../assets/homePage/listOfOptionsImg/dance6.png').default, adress: "www.baidu.com" },
-                ]
-            },
-        ],
         selectedIndex: 0,
         switchIndex: 0
     }
@@ -74,7 +26,7 @@ export default class listOfOptionsImg extends Component {
             const { list } = this.props;
             const imgList = list[selectedIndex].imgList;
             let num = switchIndex;
-            console.log(num)
+            
             if (type === "prev") {
                 if (switchIndex === 0) return;
                 num--;

@@ -24,8 +24,8 @@ export default class childChinese extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿中国舞精品小班", img: require('../../../assets/dance/chineseDance/child/nav1.png').default },
-                        { address: "#", text: "少儿中国舞集体班", img: require('../../../assets/dance/chineseDance/child/nav2.png').default },
+                        { address: "service", text: "少儿中国舞精品小班", img: require('../../../assets/dance/chineseDance/child/nav1.png').default },
+                        { address: "service", text: "少儿中国舞集体班", img: require('../../../assets/dance/chineseDance/child/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

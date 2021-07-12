@@ -56,7 +56,7 @@ export default class homePage extends Component {
             {
                 component: 'SchoolListImgText',
                 props: {
-                    list: {
+                    data: {
                         src: require('../../assets/homePage/schoolList/schoolBanner.png').default,
                         title: "桔子树——中国艺术教育素质教育品牌",
                         smallList: schoolJson

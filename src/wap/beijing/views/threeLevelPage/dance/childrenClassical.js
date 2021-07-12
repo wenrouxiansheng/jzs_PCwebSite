@@ -24,9 +24,9 @@ export default class childrenClassical extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "/site/wap/beijing/dance/classicalDance/child", text: "古典舞基训", img: require('../../../assets/dance/classicalDance/child/nav1.png').default },
-                        { address: "/site/wap/beijing/dance/classicalDance/child", text: "古典舞成品", img: require('../../../assets/dance/classicalDance/child/nav2.png').default },
-                        { address: "/site/wap/beijing/dance/classicalDance/child", text: "古典身韵", img: require('../../../assets/dance/classicalDance/child/nav3.png').default },
+                        { address: "service", text: "古典舞基训", img: require('../../../assets/dance/classicalDance/child/nav1.png').default },
+                        { address: "service", text: "古典舞成品", img: require('../../../assets/dance/classicalDance/child/nav2.png').default },
+                        { address: "service", text: "古典身韵", img: require('../../../assets/dance/classicalDance/child/nav3.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

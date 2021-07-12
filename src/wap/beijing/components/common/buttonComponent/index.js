@@ -8,7 +8,7 @@ export default class ButtonComponent extends Component {
             <div className="Button_single" style={{...style}}>
                 {
                     list.map((item, index) => {
-                        return <button key={index}>{item}</button>
+                        return <button className="btnsh_udesk_im" key={index}>{item}</button>
                     })
                 }
             </div>

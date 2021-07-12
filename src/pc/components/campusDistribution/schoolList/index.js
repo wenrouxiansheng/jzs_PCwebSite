@@ -10,7 +10,7 @@ import schoolJson from './schoolJson'
 const SHOWLENGTH = 5//一页显示条数
 export default class schoolList extends Component {
     state = {
-        list: schoolJson,
+        list: schoolJson.list,
         showList: []//当前显示的校区
     }
     pageChange = (pageNumber) => {

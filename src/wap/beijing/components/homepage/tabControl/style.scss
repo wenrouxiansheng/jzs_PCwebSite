@@ -10,7 +10,7 @@
     .tabControl_li {
         width: 25%;
         margin-bottom: 0.4rem;
-        a {
+        &>a,&>div {
             width: 100%;
             display: flex;
             flex-wrap: wrap;

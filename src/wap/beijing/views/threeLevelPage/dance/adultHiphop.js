@@ -24,9 +24,9 @@ export default class adultHiphop extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "Hip-Hop", img: require('../../../assets/dance/hiphop/adult/nav1.png').default },
-                        { address: "#", text: "Breaking", img: require('../../../assets/dance/hiphop/adult/nav2.png').default },
-                        { address: "#", text: "Popping", img: require('../../../assets/dance/hiphop/adult/nav3.png').default },
+                        { address: "service", text: "Hip-Hop", img: require('../../../assets/dance/hiphop/adult/nav1.png').default },
+                        { address: "service", text: "Breaking", img: require('../../../assets/dance/hiphop/adult/nav2.png').default },
+                        { address: "service", text: "Popping", img: require('../../../assets/dance/hiphop/adult/nav3.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

@@ -24,7 +24,7 @@ export default class folkSinging extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "民族唱法", img: require('../../../assets/music/folkSinging/nav1.png').default },
+                        { address: "service", text: "民族唱法", img: require('../../../assets/music/folkSinging/nav1.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

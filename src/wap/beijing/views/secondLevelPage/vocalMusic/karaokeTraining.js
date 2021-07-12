@@ -24,8 +24,8 @@ export default class karaokeTraining extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "K歌训练营", img: require('../../../assets/music/karaokeTraining/nav1.png').default },
-                        { address: "#", text: "成人声乐", img: require('../../../assets/music/karaokeTraining/nav2.png').default },
+                        { address: "service", text: "K歌训练营", img: require('../../../assets/music/karaokeTraining/nav1.png').default },
+                        { address: "service", text: "成人声乐", img: require('../../../assets/music/karaokeTraining/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

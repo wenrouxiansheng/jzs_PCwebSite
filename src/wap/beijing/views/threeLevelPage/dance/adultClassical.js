@@ -24,9 +24,9 @@ export default class adultClassical extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "古典舞基训", img: require('../../../assets/dance/classicalDance/adult/nav1.png').default },
-                        { address: "#", text: "古典舞成品", img: require('../../../assets/dance/classicalDance/adult/nav2.png').default },
-                        { address: "#", text: "古典身韵", img: require('../../../assets/dance/classicalDance/adult/nav3.png').default },
+                        { address: "service", text: "古典舞基训", img: require('../../../assets/dance/classicalDance/adult/nav1.png').default },
+                        { address: "service", text: "古典舞成品", img: require('../../../assets/dance/classicalDance/adult/nav2.png').default },
+                        { address: "service", text: "古典身韵", img: require('../../../assets/dance/classicalDance/adult/nav3.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

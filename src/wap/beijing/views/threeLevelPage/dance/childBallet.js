@@ -24,9 +24,9 @@ export default class childBallet extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "芭蕾形体", img: require('../../../assets/dance/ballet/child/nav1.png').default },
-                        { address: "#", text: "芭蕾基础", img: require('../../../assets/dance/ballet/child/nav2.png').default },
-                        { address: "#", text: "芭蕾提升", img: require('../../../assets/dance/ballet/child/nav3.png').default },
+                        { address: "service", text: "芭蕾形体", img: require('../../../assets/dance/ballet/child/nav1.png').default },
+                        { address: "service", text: "芭蕾基础", img: require('../../../assets/dance/ballet/child/nav2.png').default },
+                        { address: "service", text: "芭蕾提升", img: require('../../../assets/dance/ballet/child/nav3.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

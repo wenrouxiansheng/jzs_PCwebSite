@@ -24,11 +24,11 @@ export default class adultLatin extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "伦巴", img: require('../../../assets/dance/latin/adult/nav1.png').default },
-                        { address: "#", text: "恰恰", img: require('../../../assets/dance/latin/adult/nav2.png').default },
-                        { address: "#", text: "桑巴", img: require('../../../assets/dance/latin/adult/nav3.png').default },
-                        { address: "#", text: "牛仔", img: require('../../../assets/dance/latin/adult/nav4.png').default },
-                        { address: "#", text: "斗牛", img: require('../../../assets/dance/latin/adult/nav5.png').default },
+                        { address: "service", text: "伦巴", img: require('../../../assets/dance/latin/adult/nav1.png').default },
+                        { address: "service", text: "恰恰", img: require('../../../assets/dance/latin/adult/nav2.png').default },
+                        { address: "service", text: "桑巴", img: require('../../../assets/dance/latin/adult/nav3.png').default },
+                        { address: "service", text: "牛仔", img: require('../../../assets/dance/latin/adult/nav4.png').default },
+                        { address: "service", text: "斗牛", img: require('../../../assets/dance/latin/adult/nav5.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

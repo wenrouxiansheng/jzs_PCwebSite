@@ -24,11 +24,11 @@ export default class adultFolk extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "蒙族舞", img: require('../../../assets/dance/folkDance/adult/nav1.png').default },
-                        { address: "#", text: "傣族舞", img: require('../../../assets/dance/folkDance/adult/nav2.png').default },
-                        { address: "#", text: "藏族舞", img: require('../../../assets/dance/folkDance/adult/nav3.png').default },
-                        { address: "#", text: "苗族舞", img: require('../../../assets/dance/folkDance/adult/nav4.png').default },
-                        { address: "#", text: "新疆舞", img: require('../../../assets/dance/folkDance/adult/nav5.png').default },
+                        { address: "service", text: "蒙族舞", img: require('../../../assets/dance/folkDance/adult/nav1.png').default },
+                        { address: "service", text: "傣族舞", img: require('../../../assets/dance/folkDance/adult/nav2.png').default },
+                        { address: "service", text: "藏族舞", img: require('../../../assets/dance/folkDance/adult/nav3.png').default },
+                        { address: "service", text: "苗族舞", img: require('../../../assets/dance/folkDance/adult/nav4.png').default },
+                        { address: "service", text: "新疆舞", img: require('../../../assets/dance/folkDance/adult/nav5.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

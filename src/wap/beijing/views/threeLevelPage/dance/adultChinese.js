@@ -24,8 +24,8 @@ export default class adultChinese extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "成人中国舞精品小班", img: require('../../../assets/dance/chineseDance/adult/nav1.png').default },
-                        { address: "#", text: "成人中国舞集体班", img: require('../../../assets/dance/chineseDance/adult/nav2.png').default },
+                        { address: "service", text: "成人中国舞精品小班", img: require('../../../assets/dance/chineseDance/adult/nav1.png').default },
+                        { address: "service", text: "成人中国舞集体班", img: require('../../../assets/dance/chineseDance/adult/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

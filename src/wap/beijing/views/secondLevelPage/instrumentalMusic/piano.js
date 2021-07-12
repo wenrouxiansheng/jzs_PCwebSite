@@ -24,8 +24,8 @@ export default class piano extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿钢琴", img: require('../../../assets/instrumentalMusic/piano/nav1.png').default },
-                        { address: "#", text: "成人钢琴", img: require('../../../assets/instrumentalMusic/piano/nav2.png').default },
+                        { address: "/site/wap/beijing/IM/piano/child", text: "少儿钢琴", img: require('../../../assets/instrumentalMusic/piano/nav1.png').default },
+                        { address: "/site/wap/beijing/IM/piano/adult", text: "成人钢琴", img: require('../../../assets/instrumentalMusic/piano/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

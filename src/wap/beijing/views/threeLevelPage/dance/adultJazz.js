@@ -24,10 +24,10 @@ export default class adultJazz extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "踢踏舞", img: require('../../../assets/dance/jazz/adult/nav1.png').default },
-                        { address: "#", text: "舞台式爵士舞", img: require('../../../assets/dance/jazz/adult/nav2.png').default },
-                        { address: "#", text: "现代爵士舞", img: require('../../../assets/dance/jazz/adult/nav3.png').default },
-                        { address: "#", text: "街头爵士舞", img: require('../../../assets/dance/jazz/adult/nav4.png').default },
+                        { address: "service", text: "踢踏舞", img: require('../../../assets/dance/jazz/adult/nav1.png').default },
+                        { address: "service", text: "舞台式爵士舞", img: require('../../../assets/dance/jazz/adult/nav2.png').default },
+                        { address: "service", text: "现代爵士舞", img: require('../../../assets/dance/jazz/adult/nav3.png').default },
+                        { address: "service", text: "街头爵士舞", img: require('../../../assets/dance/jazz/adult/nav4.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

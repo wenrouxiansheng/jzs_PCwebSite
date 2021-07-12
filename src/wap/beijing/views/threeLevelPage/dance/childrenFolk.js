@@ -24,11 +24,11 @@ export default class childrenFolk extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "蒙族舞", img: require('../../../assets/dance/folkDance/child/nav1.png').default },
-                        { address: "#", text: "傣族舞", img: require('../../../assets/dance/folkDance/child/nav2.png').default },
-                        { address: "#", text: "藏族舞", img: require('../../../assets/dance/folkDance/child/nav3.png').default },
-                        { address: "#", text: "苗族舞", img: require('../../../assets/dance/folkDance/child/nav4.png').default },
-                        { address: "#", text: "新疆舞", img: require('../../../assets/dance/folkDance/child/nav5.png').default },
+                        { address: "service", text: "蒙族舞", img: require('../../../assets/dance/folkDance/child/nav1.png').default },
+                        { address: "service", text: "傣族舞", img: require('../../../assets/dance/folkDance/child/nav2.png').default },
+                        { address: "service", text: "藏族舞", img: require('../../../assets/dance/folkDance/child/nav3.png').default },
+                        { address: "service", text: "苗族舞", img: require('../../../assets/dance/folkDance/child/nav4.png').default },
+                        { address: "service", text: "新疆舞", img: require('../../../assets/dance/folkDance/child/nav5.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

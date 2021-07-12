@@ -24,7 +24,7 @@ export default class belCanto extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "美声唱法", img: require('../../../assets/music/belCanto/nav1.png').default },
+                        { address: "service", text: "美声唱法", img: require('../../../assets/music/belCanto/nav1.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

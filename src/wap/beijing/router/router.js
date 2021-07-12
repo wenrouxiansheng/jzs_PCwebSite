@@ -61,6 +61,15 @@ const router = {
         { path: '/IM/piano', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/piano')) },
         { path: '/IM/drumKit', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/drumKit')) },
         { path: '/IM/ukulele', component: lazy(() => import('../views/secondLevelPage/instrumentalMusic/ukulele')) },
+        //器乐三级
+        { path: '/IM/guitar/child', component: lazy(() => import('../views/threeLevelPage/IM/childrenGuitar')) },
+        { path: '/IM/guitar/adult', component: lazy(() => import('../views/threeLevelPage/IM/adultGuitar')) },
+        { path: '/IM/piano/child', component: lazy(() => import('../views/threeLevelPage/IM/childrenPiano')) },
+        { path: '/IM/piano/adult', component: lazy(() => import('../views/threeLevelPage/IM/adultPiano')) },
+        { path: '/IM/drumKit/child', component: lazy(() => import('../views/threeLevelPage/IM/childDrumKit')) },
+        { path: '/IM/drumKit/adult', component: lazy(() => import('../views/threeLevelPage/IM/adultDrumKit')) },
+        { path: '/IM/ukulele/child', component: lazy(() => import('../views/threeLevelPage/IM/childUkulele')) },
+        { path: '/IM/ukulele/adult', component: lazy(() => import('../views/threeLevelPage/IM/adultUkulele')) },
 
         //美术二级
         { path: '/fineArts/pencilSketch', component: lazy(() => import('../views/secondLevelPage/fineArts/pencilSketch')) },

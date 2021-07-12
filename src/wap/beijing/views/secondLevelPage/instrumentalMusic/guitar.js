@@ -24,8 +24,8 @@ export default class guitar extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿吉他", img: require('../../../assets/instrumentalMusic/guitar/nav1.png').default },
-                        { address: "#", text: "成人吉他", img: require('../../../assets/instrumentalMusic/guitar/nav2.png').default },
+                        { address: "/site/wap/beijing/IM/guitar/child", text: "少儿吉他", img: require('../../../assets/instrumentalMusic/guitar/nav1.png').default },
+                        { address: "/site/wap/beijing/IM/guitar/adult", text: "成人吉他", img: require('../../../assets/instrumentalMusic/guitar/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

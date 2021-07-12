@@ -24,9 +24,9 @@ export default class adultBallet extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "芭蕾形体", img: require('../../../assets/dance/ballet/adult/nav1.png').default },
-                        { address: "#", text: "芭蕾基础", img: require('../../../assets/dance/ballet/adult/nav2.png').default },
-                        { address: "#", text: "芭蕾提升", img: require('../../../assets/dance/ballet/adult/nav3.png').default },
+                        { address: "service", text: "芭蕾形体", img: require('../../../assets/dance/ballet/adult/nav1.png').default },
+                        { address: "service", text: "芭蕾基础", img: require('../../../assets/dance/ballet/adult/nav2.png').default },
+                        { address: "service", text: "芭蕾提升", img: require('../../../assets/dance/ballet/adult/nav3.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

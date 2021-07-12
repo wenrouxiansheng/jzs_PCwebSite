@@ -24,8 +24,8 @@ export default class drumKit extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿架子鼓", img: require('../../../assets/instrumentalMusic/drumKit/nav1.png').default },
-                        { address: "#", text: "成人架子鼓", img: require('../../../assets/instrumentalMusic/drumKit/nav2.png').default },
+                        { address: "/site/wap/beijing/IM/drumKit/child", text: "少儿架子鼓", img: require('../../../assets/instrumentalMusic/drumKit/nav1.png').default },
+                        { address: "/site/wap/beijing/IM/drumKit/adult", text: "成人架子鼓", img: require('../../../assets/instrumentalMusic/drumKit/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

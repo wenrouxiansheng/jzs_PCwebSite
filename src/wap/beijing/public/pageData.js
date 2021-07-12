@@ -25,7 +25,7 @@ const data = {
         { img: require('../assets/dance/folkDance/child/change6.png').default, text: "得到很多比赛、表演的机会，自信满满，性格开朗活泼" },
         { img: require('../assets/dance/folkDance/child/change7.png').default, text: "与小伙伴一起跳舞，配合度、协作能力明显提升" },
     ],
-    danceClass:[
+    danceClass: [
         { img: require('../assets/dance/class/class1.png').default },
         { img: require('../assets/dance/class/class2.png').default },
         { img: require('../assets/dance/class/class3.png').default },

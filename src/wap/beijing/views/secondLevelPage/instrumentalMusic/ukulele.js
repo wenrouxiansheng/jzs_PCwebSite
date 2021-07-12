@@ -24,8 +24,8 @@ export default class ukulele extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿尤克里里", img: require('../../../assets/instrumentalMusic/ukulele/nav1.png').default },
-                        { address: "#", text: "成人尤克里里", img: require('../../../assets/instrumentalMusic/ukulele/nav2.png').default },
+                        { address: "/site/wap/beijing/IM/ukulele/child", text: "少儿尤克里里", img: require('../../../assets/instrumentalMusic/ukulele/nav1.png').default },
+                        { address: "/site/wap/beijing/IM/ukulele/adult", text: "成人尤克里里", img: require('../../../assets/instrumentalMusic/ukulele/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

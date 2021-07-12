@@ -23,14 +23,14 @@ export default class schoolListEdit extends Component {
             }
 
             //小图列表记录被选中的图片
-            const { props: { list: { smallList } } } = this.props.detail[0],
-                { name, tel } = smallList[num];
+            const { props: { data: { smallList } } } = this.props.detail[0],
+                { list, phone } = smallList;
             this.setState({
                 selectedImg: {
                     type,
                     num,
-                    tel,
-                    name
+                    tel: phone,
+                    name: list[num].name
                 }
             })
         }
@@ -38,17 +38,23 @@ export default class schoolListEdit extends Component {
     onInputChange = (genre) => {
         //修改列表中校区电话信息
         return (e) => {
-            const { props: { list: { smallList } } } = this.props.detail[0]
+            const { props: { data: { smallList }, data } } = this.props.detail[0]
             const { selectedImg: { type, num } } = this.state;
+            if (genre === 'title') {
+                data.title = e.target.value;
+                return;
+            }
+
             if (type !== 'small') {
                 message.warning('请选择列表中要更改的信息');
                 return;
             }
+
             if (genre === 'school') {
-                smallList[num].name = e.target.value;
+                smallList.list[num].name = e.target.value;
             }
             if (genre === 'tel') {
-                smallList[num].tel = e.target.value;
+                smallList.phone = e.target.value;
             }
         }
     }
@@ -76,10 +82,10 @@ export default class schoolListEdit extends Component {
             if (typeof imgData === 'string') {
                 const { props } = this.props.detail[0]
                 if (type === 'big') {//大图
-                    props.list.src = imgData;
+                    props.data.src = imgData;
                 }
                 if (type === 'small') {//小图列表
-                    props.list.smallList[num].src = imgData;
+                    props.data.smallList.list[num].src = imgData;
                 }
                 this.setState({})
             }
@@ -89,17 +95,17 @@ export default class schoolListEdit extends Component {
     }
     addSchoolList = () => {
         //添加列表校区
-        const { props: { list: { smallList } } } = this.props.detail[0];
+        const { props: { data: { smallList } } } = this.props.detail[0];
         let obj = { name: '校区名', src: require('../../../assets/photoGallery/school3.jpg').default, tel: "400-900-8898" };
-        smallList.push(obj);
+        smallList.list.push(obj);
         this.setState({})
     }
     delectInfo = (num) => {
         //删除校区
         return () => {
-            const { props: { list: { smallList } } } = this.props.detail[0];
+            const { props: { data: { smallList } } } = this.props.detail[0];
 
-            smallList.splice(num, 1);
+            smallList.list.splice(num, 1);
             this.setState({})
         }
     }
@@ -108,7 +114,8 @@ export default class schoolListEdit extends Component {
         PubSub.unsubscribe(imgMessage);
     }
     render() {
-        const { props: { list: { src, title, smallList } } } = this.props.detail[0]
+        console.log(this.props.detail[0])
+        const { props: { data: { src, title, smallList } } } = this.props.detail[0]
         const { selectedImg } = this.state;
 
         return (
@@ -117,16 +124,16 @@ export default class schoolListEdit extends Component {
                     <label><span>点击图片更改：</span><img src={src} alt="" onClick={this.recordSelectedImage('big', 0)} /></label>
                 </div>
                 <div className="input_box">
-                    <label><span>左图标题：</span><input type="text" name="title" defaultValue={title} placeholder="请输入标题" onChange={this.onInputChange} /></label>
+                    <label><span>左图标题：</span><input type="text" name="title" defaultValue={title} placeholder="请输入标题" onChange={this.onInputChange('title')} /></label>
                 </div>
                 <div className="input_box" style={{ marginBottom: '10px' }}>
                     <label ><span>右侧图片列表：</span></label>
                 </div>
                 <div className="initElementImgList">
                     {
-                        smallList.map((item, index) => {
+                        smallList.list.map((item, index) => {
                             return <div className={selectedImg.num === index ? 'active' : ''} key={index}>
-                                <img src={item.src} alt="" onClick={this.recordSelectedImage('small', index)} />
+                                <img src={item.img} alt="" onClick={this.recordSelectedImage('small', index)} />
                                 <Popconfirm placement="rightTop" title="确认删除？" onConfirm={this.delectInfo(index)} okText="是" cancelText="否">
                                     <CloseCircleOutlined />
                                 </Popconfirm>

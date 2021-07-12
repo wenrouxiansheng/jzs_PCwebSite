@@ -89,7 +89,7 @@ export default class pcEditWebsite extends Component {
             suspensionIsShow: false
         })
     }
-    
+
     render() {
         const { suspensionIsShow, componentInfo } = this.state;
         return (

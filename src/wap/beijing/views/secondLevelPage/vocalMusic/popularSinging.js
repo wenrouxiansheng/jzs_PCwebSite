@@ -24,7 +24,7 @@ export default class popularSinging extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "流行唱法", img: require('../../../assets/music/popularSinging/nav1.png').default },
+                        { address: "service", text: "流行唱法", img: require('../../../assets/music/popularSinging/nav1.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

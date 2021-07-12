@@ -24,10 +24,10 @@ export default class soundBase extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "童声合唱", img: require('../../../assets/music/childrenVoice/nav1.png').default },
-                        { address: "#", text: "音基", img: require('../../../assets/music/childrenVoice/nav2.png').default },
-                        { address: "#", text: "视唱练耳", img: require('../../../assets/music/childrenVoice/nav3.png').default },
-                        { address: "#", text: "音乐大师课", img: require('../../../assets/music/childrenVoice/nav4.png').default },
+                        { address: "service", text: "童声合唱", img: require('../../../assets/music/childrenVoice/nav1.png').default },
+                        { address: "service", text: "音基", img: require('../../../assets/music/childrenVoice/nav2.png').default },
+                        { address: "service", text: "视唱练耳", img: require('../../../assets/music/childrenVoice/nav3.png').default },
+                        { address: "service", text: "音乐大师课", img: require('../../../assets/music/childrenVoice/nav4.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

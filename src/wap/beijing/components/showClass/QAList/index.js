@@ -8,7 +8,7 @@ export default class QAList extends Component {
             <div className="QAList" >
                 {
                     list.map((item, index) => {
-                        return <p key={index}>
+                        return <p key={index} className="btnsh_udesk_im">
                             <span>{item}</span>点击咨询 &gt;
                         </p>
                     })

@@ -24,8 +24,8 @@ export default class sketch extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿速写", img: require('../../../assets/finieArts/sketch/nav1.png').default },
-                        { address: "#", text: "成人速写", img: require('../../../assets/finieArts/sketch/nav2.png').default },
+                        { address: "/site/wap/beijing/fineArts/sketch/child", text: "少儿速写", img: require('../../../assets/finieArts/sketch/nav1.png').default },
+                        { address: "/site/wap/beijing/fineArts/sketch/adult", text: "成人速写", img: require('../../../assets/finieArts/sketch/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

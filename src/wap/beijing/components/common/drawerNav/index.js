@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 
 export default function DrawerNav() {
     const obj = {
-        logoLink: "#",
+        logoLink: "/site/wap/beijing/home",
         logo: require('../../../assets/homepage/drawerNav/nav_logo.png').default,
         navList: [
             { text: "首页", address: "/site/wap/beijing/home", img: require('../../../assets/homepage/drawerNav/home_page.png').default },

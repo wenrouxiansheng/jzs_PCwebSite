@@ -1,8 +1,9 @@
 import { Component } from 'react'
 import { seekComponents } from '../public'
 
+import DataJson from '../public/pageData'
 
-
+console.log()
 export default class homePage extends Component {
   state = {
     componentsJson: [
@@ -28,8 +29,8 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/icon1_03.png').default,
-            title: { address: "#", text: "舞蹈培训" },
-            linkList: [{ address: "#", text: "少儿舞蹈" }, { address: "#", text: "成人舞蹈" }],
+            title: { address: "/site/wap/beijing/dance", text: "舞蹈培训" },
+            linkList: [{ address: "/site/wap/beijing/dance/child", text: "少儿舞蹈" }, { address: "/site/wap/beijing/dance/adult", text: "成人舞蹈" }],
             rightLink: null,
             subtitle: null
           }
@@ -54,8 +55,8 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/icon2_06.png').default,
-            title: { address: "#", text: "声乐培训" },
-            linkList: [{ address: "#", text: "少儿声乐" }, { address: "#", text: "成人声乐" }],
+            title: { address: "/site/wap/beijing/music", text: "声乐培训" },
+            linkList: [{ address: "/site/wap/beijing/music/child", text: "少儿声乐" }, { address: "/site/wap/beijing/music/adult", text: "成人声乐" }],
             rightLink: null,
             subtitle: null
           }
@@ -81,8 +82,8 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/icon3_06.png').default,
-            title: { address: "#", text: "器乐培训" },
-            linkList: [{ address: "#", text: "少儿器乐" }, { address: "#", text: "成人器乐" }],
+            title: { address: "/site/wap/beijing/IM", text: "器乐培训" },
+            linkList: [{ address: "/site/wap/beijing/IM/child", text: "少儿器乐" }, { address: "/site/wap/beijing/IM/adult", text: "成人器乐" }],
             rightLink: null,
             subtitle: null
           }
@@ -104,8 +105,8 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/icon4_06.png').default,
-            title: { address: "#", text: "美术培训" },
-            linkList: [{ address: "#", text: "少儿美术" }, { address: "#", text: "成人美术" }],
+            title: { address: "/site/wap/beijing/fineArts", text: "美术培训" },
+            linkList: [{ address: "/site/wap/beijing/fineArts/child", text: "少儿美术" }, { address: "/site/wap/beijing/fineArts/adult", text: "成人美术" }],
             rightLink: null,
             subtitle: null
           }
@@ -151,7 +152,7 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage2_03.png').default,
             title: { address: "#", text: "全职教师" },
             linkList: null,
-            rightLink: { text: "更多>>", address: "#" },
+            rightLink: { text: "更多>>", address: "/site/wap/beijing/teachersList" },
             subtitle: "汇聚国内外艺术院校师资力量"
           }
         },
@@ -161,13 +162,7 @@ export default class homePage extends Component {
         props: {
           data: {
             type: 'teacherLoop',
-            list: [
-              { name: "王晓玉", duration: "5年", img: require("../assets/teacherList/teacher1_05.png").default, address: "#" },
-              { name: "许杨", duration: "9年", img: require("../assets/teacherList/teacher2_05.png").default, address: "#" },
-              { name: "孙亚秋", duration: "4年", img: require("../assets/teacherList/teacher3_05.png").default, address: "#" },
-              { name: "向定军", duration: "5年", img: require("../assets/teacherList/teacher6_05.png").default, address: "#" },
-              { name: "张培佩", duration: "3年", img: require("../assets/teacherList/teacher9.jpg").default, address: "#" },
-            ]
+            list: DataJson.musicTeacher
           }
         }
       },

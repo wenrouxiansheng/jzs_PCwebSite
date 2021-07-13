@@ -1,6 +1,6 @@
 function schoolJson() {
     
-
+    //这个文件pc和wap beijing共用
 
 
     return {

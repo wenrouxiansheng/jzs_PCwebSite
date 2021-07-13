@@ -20,7 +20,10 @@ const Banner = lazy(() => import('../components/homepage/banner')),//banner图 l
     ContactWay = lazy(() => import('../components/aboutUs/contactWay')),//电话浮层
     Table = lazy(() => import('../components/common/table')),//表格组件
     PictureComponent = lazy(() => import('../components/showClass/pictureComponent')),//图片文案组件
-    QAList = lazy(() => import('../components/showClass/QAList'))//问答列表
+    QAList = lazy(() => import('../components/showClass/QAList')),//问答列表
+    ReturnBar = lazy(() => import('../components/common/returnBar')),//返回 顶部栏
+    TeacherInfo = lazy(() => import('../components/showClass/teacherInfo')),//教师详情
+    SchoolInfo = lazy(() => import('../components/showClass/schoolInfo'))//校区详情
     ;
 
 export default function switchComponents(name, props, num) {
@@ -47,6 +50,9 @@ export default function switchComponents(name, props, num) {
         'Table': <Table {...props} key={num} />,
         'PictureComponent': <PictureComponent {...props} key={num} />,
         'QAList': <QAList {...props} key={num} />,
+        'ReturnBar': <ReturnBar {...props} key={num} />,
+        'TeacherInfo': <TeacherInfo {...props} key={num} />,
+        'SchoolInfo': <SchoolInfo {...props} key={num} />,
     }
 
     return components[name] || <div>组件名称错误</div>;

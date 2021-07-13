@@ -1,0 +1,51 @@
+.teacherInfo {
+    height: 18rem;
+    .aPicture {
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        margin: 0px;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        height: 7.6rem;
+    }
+    .CharacterDetails {
+        width: 7rem;
+        min-height: 2rem;
+        border-radius: 0.1rem;
+        background-color: white;
+        box-shadow: 0px 0px 7px #cecdcc;
+        padding: 0.4rem 0.2rem 0.5rem 0.2rem;
+        position: absolute;
+        top: 6.82rem;
+        left: 0.24rem;
+        margin: 0px;
+        outline: none;
+        
+        h3 {
+            font-size: 0.36rem;
+            font-weight: 400;
+            margin-bottom: 0.15rem;
+            font-weight: bold;
+        }
+        .text {
+            color: #333;
+            font-size: 0.3rem;
+        }
+        p {
+            line-height: 0.46rem;
+            font-size: 0.28rem;
+            margin-top: 0.1rem;
+            color: #555;
+        }
+        h4 {
+            color: #F2AA46;
+            font-size: 0.36rem;
+            font-weight: bold;
+            margin-top: 0.4rem;
+        }
+    }
+}

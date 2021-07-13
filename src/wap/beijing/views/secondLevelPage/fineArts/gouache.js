@@ -24,8 +24,8 @@ export default class gouache extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿水粉", img: require('../../../assets/finieArts/gouache/nav1.png').default },
-                        { address: "#", text: "成人水粉", img: require('../../../assets/finieArts/gouache/nav2.png').default },
+                        { address: "/site/wap/beijing/fineArts/gouache/child", text: "少儿水粉", img: require('../../../assets/finieArts/gouache/nav1.png').default },
+                        { address: "/site/wap/beijing/fineArts/gouache/adult", text: "成人水粉", img: require('../../../assets/finieArts/gouache/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

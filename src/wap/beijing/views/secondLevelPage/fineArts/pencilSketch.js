@@ -24,8 +24,8 @@ export default class pencilSketch extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿素描", img: require('../../../assets/finieArts/pencilSketch/nav1.png').default },
-                        { address: "#", text: "成人素描", img: require('../../../assets/finieArts/pencilSketch/nav2.png').default },
+                        { address: "/site/wap/beijing/fineArts/pencilSketch/child", text: "少儿素描", img: require('../../../assets/finieArts/pencilSketch/nav1.png').default },
+                        { address: "/site/wap/beijing/fineArts/pencilSketch/adult", text: "成人素描", img: require('../../../assets/finieArts/pencilSketch/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

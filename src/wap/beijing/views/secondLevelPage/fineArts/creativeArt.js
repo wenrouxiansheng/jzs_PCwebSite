@@ -24,7 +24,7 @@ export default class creativeArt extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "创意美术", img: require('../../../assets/finieArts/creativeArt/nav1.png').default },
+                        { address: "service", text: "创意美术", img: require('../../../assets/finieArts/creativeArt/nav1.png').default },
                         { address: "#", text: "少儿美术", img: require('../../../assets/finieArts/creativeArt/nav2.png').default },
                     ],
                     style: {

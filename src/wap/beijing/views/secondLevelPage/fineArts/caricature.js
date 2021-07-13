@@ -24,8 +24,8 @@ export default class caricature extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿漫画", img: require('../../../assets/finieArts/caricature/nav1.png').default },
-                        { address: "#", text: "成人漫画", img: require('../../../assets/finieArts/caricature/nav2.png').default },
+                        { address: "/site/wap/beijing/fineArts/caricature/child", text: "少儿漫画", img: require('../../../assets/finieArts/caricature/nav1.png').default },
+                        { address: "/site/wap/beijing/fineArts/caricature/adult", text: "成人漫画", img: require('../../../assets/finieArts/caricature/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

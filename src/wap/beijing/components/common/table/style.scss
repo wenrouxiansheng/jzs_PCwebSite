@@ -16,7 +16,7 @@
             background-color: #f9d68b;
         }
     }
-    tbody{
+    tbody {
         tr {
             line-height: 0.5rem;
             &:nth-of-type(even) {
@@ -26,14 +26,7 @@
     }
     td {
         padding: 0.2rem 0.1rem 0.2rem 0.1rem;
-        border-left: solid 1px #f3e5ca;
-        border-right: solid 1px #f3e5ca;
+        border: solid 1px #f3e5ca;
         vertical-align: middle;
-        &:first-child {
-            border: 0;
-        }
-        &:last-child {
-            border: 0;
-        }
     }
 }

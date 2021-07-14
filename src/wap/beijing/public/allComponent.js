@@ -23,7 +23,8 @@ const Banner = lazy(() => import('../components/homepage/banner')),//banner图 l
     QAList = lazy(() => import('../components/showClass/QAList')),//问答列表
     ReturnBar = lazy(() => import('../components/common/returnBar')),//返回 顶部栏
     TeacherInfo = lazy(() => import('../components/showClass/teacherInfo')),//教师详情
-    SchoolInfo = lazy(() => import('../components/showClass/schoolInfo'))//校区详情
+    SchoolInfo = lazy(() => import('../components/showClass/schoolInfo')),//校区详情
+    Publicity = lazy(() => import('../components/showClass/publicity'))//宣传 、广告、声明类的横幅
     ;
 
 export default function switchComponents(name, props, num) {
@@ -53,6 +54,7 @@ export default function switchComponents(name, props, num) {
         'ReturnBar': <ReturnBar {...props} key={num} />,
         'TeacherInfo': <TeacherInfo {...props} key={num} />,
         'SchoolInfo': <SchoolInfo {...props} key={num} />,
+        'Publicity': <Publicity {...props} key={num} />,
     }
 
     return components[name] || <div>组件名称错误</div>;

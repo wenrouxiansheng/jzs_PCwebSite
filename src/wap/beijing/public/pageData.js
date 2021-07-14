@@ -145,6 +145,25 @@ const data = {
             { img: require('../assets/instrumentalMusic/guitar/perform4.png').default, title: "金桔杯艺术大赛", text: "桔子树主办，连续三届被纳入由北京市文资办主办的北京惠民文化消费季" },
         ]
     },
+    adultIM: [
+        { img: require('../assets/instrumentalMusic/guitar/swiper1.png').default, text: "学习乐器，全面锻炼大脑" },
+        { img: require('../assets/instrumentalMusic/adultDrumKit/change2.png').default, text: "学乐器大量练习，会让您更有耐心、坚持不懈" },
+        { img: require('../assets/instrumentalMusic/adultPiano/change3.png').default, text: "乐器演奏促进手眼、手脚的协调与配合" },
+        { img: require('../assets/instrumentalMusic/adultUkulele/change4.png').default, text: "演奏乐器是一种创造性行为，有助提高创新力" },
+        { img: require('../assets/instrumentalMusic/adultUkulele/change5.png').default, text: "乐曲蕴含丰富的文化内容，有助拓宽知识面" },
+    ],
+    childIM: [
+        { img: require('../assets/instrumentalMusic/childDrumKit/change1.png').default, text: "学习乐器，全面锻炼孩子大脑" },
+        { img: require('../assets/instrumentalMusic/childrenGuitar/change2.png').default, text: "学乐器大量练习，会让孩子更有耐心、坚持不懈" },
+        { img: require('../assets/instrumentalMusic/childPiano/change3.png').default, text: "乐器演奏促进孩子手眼、手脚的协调与配合" },
+        { img: require('../assets/instrumentalMusic/childUkulele/change4.png').default, text: "演奏乐器是一种创造性行为，有助提高孩子数学成绩" },
+        { img: require('../assets/instrumentalMusic/childUkulele/change5.png').default, text: "学习乐器要不断阅读理解，有助提高孩子阅读理解能力" },
+    ],
+    classIM: [
+        { img: require('../assets/instrumentalMusic/adultPiano/class1.png').default },
+        { img: require('../assets/instrumentalMusic/childrenGuitar/class1.png').default },
+        { img: require('../assets/instrumentalMusic/adultGuitar/class1.png').default },
+    ],
 
     //美术页面公用数据
     adultArt: [

@@ -130,9 +130,9 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/homePage1_03.png').default,
-            title: { address: "#", text: "艺考考级" },
+            title: { address: "/site/wap/beijing/artGradingTest", text: "艺考考级" },
             linkList: null,
-            rightLink: { text: "更多>>", address: "#" },
+            rightLink: { text: "更多>>", address: "/site/wap/beijing/artGradingTest" },
             subtitle: null
           }
         },
@@ -150,7 +150,7 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/homePage2_03.png').default,
-            title: { address: "#", text: "全职教师" },
+            title: { address: "/site/wap/beijing/teachersList", text: "全职教师" },
             linkList: null,
             rightLink: { text: "更多>>", address: "/site/wap/beijing/teachersList" },
             subtitle: "汇聚国内外艺术院校师资力量"
@@ -171,9 +171,9 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/homePage3_03.png').default,
-            title: { address: "#", text: "学员风采" },
+            title: { address: "/site/wap/beijing/studentShow", text: "学员风采" },
             linkList: null,
-            rightLink: { text: "更多>>", address: "#" },
+            rightLink: { text: "更多>>", address: "/site/wap/beijing/studentShow" },
             subtitle: "桔子树STAR 闪耀中外"
           }
         },

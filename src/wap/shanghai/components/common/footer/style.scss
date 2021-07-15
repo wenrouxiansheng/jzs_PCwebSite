@@ -1,0 +1,25 @@
+/* 版权footerbar */
+.footerBarCopyright {
+    width: 100%;
+    color: #666666;
+    background-color: #fff;
+    overflow: hidden;
+    .copyrightContent:nth-of-type(1){
+        margin-top: 0.4rem;
+    }
+    .copyrightContent {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 0.24rem;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        white-space: nowrap;
+        margin-bottom: 0.2rem;
+        line-height: 0.3rem;
+        span {
+            display: block;
+            transform: scale(.9);
+        }
+    }
+}

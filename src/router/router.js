@@ -19,15 +19,20 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 </div>;
 
 export default class routeDom extends Component {
-    //这里可以当作hoc 判断移动还是pc    
-    //地址  或是  端口用域名判断
-    componentDidMount() {
+    //判断移动还是pc    
+    verify = () => {
         const isPhone = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
-        if (document.body.clientWidth > 850 && !isPhone) {
-            console.log('进入pc端')
-        } else {
-            console.log('进入wap端')
+        const screenWidth = document.body.clientWidth
+
+        if (isPhone !== null || screenWidth < 1200) {
+            return <Redirect to="/site/wap" />
         }
+        /**
+         * isPhone是null 并且 屏幕宽度大于等于1200
+         * 执行这一步
+         */
+
+        return <Redirect to="/site/pc" />
     }
     render() {
         return (
@@ -36,7 +41,7 @@ export default class routeDom extends Component {
                     <Route path="/site/pcEdit" component={lazy(() => import('../pcEditWebsite/views'))} />{/**pc编辑 */}
                     <Route path="/site/pc" component={lazy(() => import('../pc/views'))} /> {/**pc官网 */}
                     <Route path="/site/wap" component={lazy(() => import('../wap/control'))} /> {/**pc官网 */}
-                    <Redirect to="/site/pc" />
+                    {this.verify()}
                 </Switch>
             </Suspense>
         )

@@ -1,0 +1,35 @@
+.NewsList{
+    width: 7rem;
+    display: block;
+    margin: 0 auto;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #e6e6e6;
+    &>div{
+        width: 72%;
+        font-size: 0.28rem;
+        p{
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #333;
+            height: 0.4rem;
+            font-size: 0.28rem;
+            line-height: 0.4rem;
+        }
+        time{
+            display: block;
+            margin-top: 0.3rem;
+            font-size: 0.24rem;
+            color: #999;
+        }
+    }
+    img{
+        width: 1.8rem;
+        height: 1.2rem;
+        object-fit: cover;
+        margin-right: 0.15rem;
+    }
+}

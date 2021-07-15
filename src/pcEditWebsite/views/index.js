@@ -23,7 +23,7 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 const routeList = [
     { path: "/site/pcEdit/editor", name: "edit", component: lazy(() => import('./editor')), auth: true },
     { path: "/site/pcEdit/home", name: "home", component: lazy(() => import('./home')), auth: true },
-    { path: "/site/pcEdit/login", name: "home", component: lazy(() => import('./login')), auth: false },
+    { path: "/site/pcEdit/login", name: "login", component: lazy(() => import('./login')), auth: false },
 ]
 export default class pcEditRouter extends Component {
     //这里作为HOC 路由守卫 先简易实现

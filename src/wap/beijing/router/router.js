@@ -31,6 +31,8 @@ const router = {
         { path: '/danceGradingTest/adult', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/adultDance')) },
         { path: '/fineArtsGradingTest/child', component: lazy(() => import('../views/secondLevelPage/gradingTest/fineArts/childFineArts')) },
         { path: '/fineArtsGradingTest/adult', component: lazy(() => import('../views/secondLevelPage/gradingTest/fineArts/adultFineArts')) },
+
+
         //舞蹈考级
         { path: '/danceGradingTest/folk', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/folk')) },
         { path: '/danceGradingTest/jazz', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/jazz')) },
@@ -39,12 +41,29 @@ const router = {
         { path: '/danceGradingTest/hipHop', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/hipHop')) },
         { path: '/danceGradingTest/latin', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/latin')) },
         { path: '/danceGradingTest/classical', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/classical')) },
+
+
         //声乐考级
         { path: '/musicGradingTest/popMusic', component: lazy(() => import('../views/secondLevelPage/gradingTest/music/popMusic')) },
         { path: '/musicGradingTest/folk', component: lazy(() => import('../views/secondLevelPage/gradingTest/music/folk')) },
         { path: '/musicGradingTest/belCanto', component: lazy(() => import('../views/secondLevelPage/gradingTest/music/belCanto')) },
+
+        //小升初，初升高考试
+        { path: '/musicGradingTest/juniorMusic', component: lazy(() => import('../views/secondLevelPage/gradingTest/music/juniorMusic')) },
+        { path: '/musicGradingTest/highMusic', component: lazy(() => import('../views/secondLevelPage/gradingTest/music/highMusic')) },
+        { path: '/IMGradingTest/juniorIM', component: lazy(() => import('../views/secondLevelPage/gradingTest/instrumentalMusic/juniorIM')) },
+        { path: '/IMGradingTest/highIM', component: lazy(() => import('../views/secondLevelPage/gradingTest/instrumentalMusic/highIM')) },
+        { path: '/fineArtsGradingTest/juniorArt', component: lazy(() => import('../views/secondLevelPage/gradingTest/fineArts/juniorArt')) },
+        { path: '/fineArtsGradingTest/highArt', component: lazy(() => import('../views/secondLevelPage/gradingTest/fineArts/highArt')) },
+        { path: '/danceGradingTest/juniorDance', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/juniorDance')) },
+        { path: '/danceGradingTest/highDance', component: lazy(() => import('../views/secondLevelPage/gradingTest/dance/highDance')) },
+
+
+
         //器乐考级
         { path: '/IMGradingTest/guitar', component: lazy(() => import('../views/secondLevelPage/gradingTest/instrumentalMusic/guitar')) },
+        { path: '/IMGradingTest/piano', component: lazy(() => import('../views/secondLevelPage/gradingTest/instrumentalMusic/piano')) },
+        { path: '/IMGradingTest/drumKit', component: lazy(() => import('../views/secondLevelPage/gradingTest/instrumentalMusic/drumKit')) },
 
 
         //考级二级

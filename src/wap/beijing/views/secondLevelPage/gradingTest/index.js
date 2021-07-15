@@ -72,8 +72,8 @@ export default class artGradingTest extends Component {
                 props: {
                     data: [
                         { address: "/site/wap/beijing/IMGradingTest/guitar", text: "吉他", img: require('../../../assets/instrumentalMusic/courseImg5.png').default },
-                        { address: "", text: "钢琴", img: require('../../../assets/instrumentalMusic/courseImg6.png').default },
-                        { address: "", text: "架子鼓", img: require('../../../assets/instrumentalMusic/courseImg7.png').default },
+                        { address: "/site/wap/beijing/IMGradingTest/piano", text: "钢琴", img: require('../../../assets/instrumentalMusic/courseImg6.png').default },
+                        { address: "/site/wap/beijing/IMGradingTest/drumKit", text: "架子鼓", img: require('../../../assets/instrumentalMusic/courseImg7.png').default },
                     ],
                     style: {
                         borderBottom: '0px'
@@ -90,14 +90,14 @@ export default class artGradingTest extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "", text: "少儿声乐", img: require('../../../assets/gradingTest/nav1.png').default },
-                        { address: "", text: "少儿器乐", img: require('../../../assets/gradingTest/nav2.png').default },
-                        { address: "", text: "少儿舞蹈", img: require('../../../assets/gradingTest/nav3.png').default },
-                        { address: "", text: "少儿美术", img: require('../../../assets/gradingTest/nav4.png').default },
-                        { address: "", text: "成人声乐", img: require('../../../assets/gradingTest/nav5.png').default },
-                        { address: "", text: "成人器乐", img: require('../../../assets/gradingTest/nav6.png').default },
-                        { address: "", text: "成人舞蹈", img: require('../../../assets/gradingTest/nav7.png').default },
-                        { address: "", text: "成人美术", img: require('../../../assets/gradingTest/nav8.png').default },
+                        { address: "/site/wap/beijing/musicGradingTest/child", text: "少儿声乐", img: require('../../../assets/gradingTest/nav1.png').default },
+                        { address: "/site/wap/beijing/IMGradingTest/child", text: "少儿器乐", img: require('../../../assets/gradingTest/nav2.png').default },
+                        { address: "/site/wap/beijing/danceGradingTest/child", text: "少儿舞蹈", img: require('../../../assets/gradingTest/nav3.png').default },
+                        { address: "/site/wap/beijing/fineArtsGradingTest/child", text: "少儿美术", img: require('../../../assets/gradingTest/nav4.png').default },
+                        { address: "/site/wap/beijing/musicGradingTest/adult", text: "成人声乐", img: require('../../../assets/gradingTest/nav5.png').default },
+                        { address: "/site/wap/beijing/IMGradingTest/adult", text: "成人器乐", img: require('../../../assets/gradingTest/nav6.png').default },
+                        { address: "/site/wap/beijing/danceGradingTest/adult", text: "成人舞蹈", img: require('../../../assets/gradingTest/nav7.png').default },
+                        { address: "/site/wap/beijing/fineArtsGradingTest/adult", text: "成人美术", img: require('../../../assets/gradingTest/nav8.png').default },
                     ],
                     style: {
                         borderBottom: '0px'
@@ -114,14 +114,14 @@ export default class artGradingTest extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "", text: "小升初声乐", img: require('../../../assets/music/nav3.png').default },
-                        { address: "", text: "小升初器乐", img: require('../../../assets/instrumentalMusic/childrenGuitar/nav1.png').default },
-                        { address: "", text: "小升初舞蹈", img: require('../../../assets/dance/chineseDance/nav1.png').default },
-                        { address: "", text: "小升初美术", img: require('../../../assets/finieArts/childGouache/nav3.png').default },
-                        { address: "", text: "初升高声乐", img: require('../../../assets/music/nav6.png').default },
-                        { address: "", text: "初升高器乐", img: require('../../../assets/instrumentalMusic/childrenGuitar/nav2.png').default },
-                        { address: "", text: "初升高舞蹈", img: require('../../../assets/dance/chineseDance/nav2.png').default },
-                        { address: "", text: "初升高美术", img: require('../../../assets/finieArts/childGouache/nav2.png').default },
+                        { address: "/site/wap/beijing/musicGradingTest/juniorMusic", text: "小升初声乐", img: require('../../../assets/music/nav3.png').default },
+                        { address: "/site/wap/beijing/IMGradingTest/juniorIM", text: "小升初器乐", img: require('../../../assets/instrumentalMusic/childrenGuitar/nav1.png').default },
+                        { address: "/site/wap/beijing/danceGradingTest/juniorDance", text: "小升初舞蹈", img: require('../../../assets/dance/chineseDance/nav1.png').default },
+                        { address: "/site/wap/beijing/fineArtsGradingTest/juniorArt", text: "小升初美术", img: require('../../../assets/finieArts/childGouache/nav3.png').default },
+                        { address: "/site/wap/beijing/musicGradingTest/highMusic", text: "初升高声乐", img: require('../../../assets/music/nav6.png').default },
+                        { address: "/site/wap/beijing/IMGradingTest/highIM", text: "初升高器乐", img: require('../../../assets/instrumentalMusic/childrenGuitar/nav2.png').default },
+                        { address: "/site/wap/beijing/danceGradingTest/highDance", text: "初升高舞蹈", img: require('../../../assets/dance/chineseDance/nav2.png').default },
+                        { address: "/site/wap/beijing/fineArtsGradingTest/highArt", text: "初升高美术", img: require('../../../assets/finieArts/childGouache/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

@@ -60,7 +60,7 @@ const data = {
     ],
     musicTeacher: [
         {
-            name: "孟繁颖", duration: "7年", img: require("../assets/teacherList/teacher4_05.png").default, address: "/site/wap/beijing/teacherDetail/1",
+            name: "孟繁颖", duration: "7年", img: require("../assets/teacherList/teacher4_05.png").default, address: "/site/wap/beijing/teacherDetail/0",
             course: "古典舞、芭蕾舞、民族民间舞、爵士舞、踢踏舞、肚皮舞",
             honor: `获校园舞蹈大赛第二名、黑龙江省舞蹈大赛独舞第一名<br>
             2002年在校期间参加中国冰雪节开幕式与国母彭丽媛同台演出并伴舞<br>
@@ -74,7 +74,7 @@ const data = {
             2013年舞台剧《给未知恋人的爱情短信》舞台总监<br>`
         },
         {
-            name: "许杨", duration: "9年", img: require("../assets/teacherList/teacher2_05.png").default, address: "/site/wap/beijing/teacherDetail/2",
+            name: "许杨", duration: "9年", img: require("../assets/teacherList/teacher2_05.png").default, address: "/site/wap/beijing/teacherDetail/1",
             course: "童声、美声、民族、通俗唱法",
             honor: `1989年6岁考入北京市少年宫独唱班学习童声唱法<br>
             1990年参加全国迎亚运少儿歌唱比赛获得二等奖<br>
@@ -84,7 +84,7 @@ const data = {
             在维也纳留学期间，曾多次参加大使馆组织的各项文艺活动，并受到大使接见；多次在奥地利、意大利、捷克等国家歌剧院进行演出；曾多次参加欧洲各国声乐比赛并获得优秀表演等奖项`
         },
         {
-            name: "孙亚秋", duration: "4年", img: require("../assets/teacherList/teacher3_05.png").default, address: "/site/wap/beijing/teacherDetail/3",
+            name: "孙亚秋", duration: "4年", img: require("../assets/teacherList/teacher3_05.png").default, address: "/site/wap/beijing/teacherDetail/2",
             course: "儿童画，创意美术，水彩，水粉，素描，彩铅，油画",
             honor: `2010年软笔楷书作品获吉林省规范汉字书写大赛优秀奖<br>
             2011年美术作品&lt;蓝色衬布&gt;获吉林省第三届大学生艺术节二等奖<br>
@@ -94,7 +94,7 @@ const data = {
             吉林省美术家协会会员`
         },
         {
-            name: "向定军", duration: "5年", img: require("../assets/teacherList/teacher6_05.png").default, address: "/site/wap/beijing/teacherDetail/4",
+            name: "向定军", duration: "5年", img: require("../assets/teacherList/teacher6_05.png").default, address: "/site/wap/beijing/teacherDetail/3",
             course: "架子鼓、架子鼓考级、少儿架子鼓",
             honor: `2010年迷笛音乐节参与现场演出并担任主鼓手<br>
             2011年糖果音乐节上担任主架子鼓鼓手<br>
@@ -106,7 +106,7 @@ const data = {
             2014年进入北京高畅现代音乐进修，并在北京各大酒吧有专场演出经验`
         },
         {
-            name: "张培佩", duration: "3年", img: require("../assets/teacherList/teacher9.jpg").default, address: "/site/wap/beijing/teacherDetail/5",
+            name: "张培佩", duration: "3年", img: require("../assets/teacherList/teacher9.jpg").default, address: "/site/wap/beijing/teacherDetail/4",
             course: "芭蕾舞、古典舞、民族民间舞、爵士舞、少儿舞蹈",
             honor: `2010年为天狮集团周年庆晚会担任舞蹈导演<br>
             2010年为索尼爱立信亚洲总部年会担任舞蹈编排<br>

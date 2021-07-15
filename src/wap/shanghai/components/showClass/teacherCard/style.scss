@@ -1,0 +1,51 @@
+.CharacterIntroduction{
+    width: 95%;
+    height: 3.2rem;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding: 0.2rem;
+    box-shadow: 0px 0px 0.1rem #cccac9;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.05rem;
+    background-color: white ;
+    a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.28rem;
+        h3{
+            font-size: 0.35rem;
+            font-weight: 500;
+            color: #333;
+        }
+        img{
+            width: 2.8rem;
+            height: 2.8rem;
+            object-fit: cover;
+            border-radius: 0.05rem;
+        }
+        div{
+            width:60%;
+            padding-left: 0.2rem;
+            color: #333;
+            p{
+                font-size: 0.28rem;
+                line-height: 0.4rem;
+                color: #666;
+                margin-top: 0.1rem;
+                &:nth-of-type(1){
+                    margin-top: 0.25rem;
+                }
+            }
+        }
+    }
+}
+.loadMore{
+    font-size: 0.26rem;
+    color: rgb(85, 85, 85);
+    padding-left: 3.2rem;
+    margin-bottom: 0.25rem;
+}

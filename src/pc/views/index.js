@@ -47,6 +47,10 @@ export default class page extends Component {
         routeType: false
     }
     componentDidMount() {
+        setTimeout(() => {
+            console.log(editingStatus.getState())
+
+        }, 5000)
         //判断顶部window是否是当前的window 不是就是嵌套当作编辑状态   这个判断可能在后期用iframe去集成会有问题
         if (window.self === window.top) return;
         editingStatus.dispatch(changeEditingStatus(true))

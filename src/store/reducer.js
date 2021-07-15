@@ -1,9 +1,16 @@
 /** 
  * 创建检测是否是编辑器状态
 */
-export function checkEditingStatus(preState, active) {
-    const { data = false } = active;//设置默认值false  如果不是编辑器状态不会调用active
-    return data
+export function checkEditingStatus(preState = false, active) {
+    const { type } = active;//设置默认值false  如果不是编辑器状态不会调用active
+    console.log(preState, active)
+    switch (type) {
+        case 1: return true;
+
+        case 0: return false;
+
+        default: return preState;
+    }
 }
 
 /** 

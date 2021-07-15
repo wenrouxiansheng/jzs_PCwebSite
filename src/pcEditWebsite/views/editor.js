@@ -28,6 +28,8 @@ export default class pcEditWebsite extends Component {
         componentInfo: null//选中组件的信息
     }
     componentDidMount() {
+        console.log(containerStatus.getState(), '>>>>>>>>>>>>>>>>>>')
+
         //接收要更改页面组件和组件信息 打开编辑悬浮窗
         selectPageMessage = PubSub.subscribe('selectPageComponent', (msg, data) => {
             this.setState({

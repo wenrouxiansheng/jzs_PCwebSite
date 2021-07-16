@@ -148,6 +148,7 @@ export default class homePage extends Component {
             {
                 component: 'TeacherList',
                 props: {
+                    
                 }
             },
             {

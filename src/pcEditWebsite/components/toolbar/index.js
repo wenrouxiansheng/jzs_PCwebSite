@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppstoreFilled, SettingFilled, FormatPainterFilled } from '@ant-design/icons';
+import { AppstoreFilled, SettingFilled } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
 import './style.scss'
 
@@ -10,12 +10,12 @@ export default class toolbar extends Component {
                 icon: <AppstoreFilled />,
                 text: "模块"
             },
+            // {
+            //     icon: <FormatPainterFilled />,
+            //     text: "样式"
+            // },
             {
                 icon: <SettingFilled />,
-                text: "样式"
-            },
-            {
-                icon: <FormatPainterFilled />,
                 text: "设置"
             }
         ]

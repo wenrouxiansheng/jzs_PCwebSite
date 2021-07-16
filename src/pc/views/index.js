@@ -13,6 +13,7 @@ import { routeList, pcPathName } from '../router'
 import { editingStatus } from '../../store/store'
 import { changeEditingStatus } from '../../store/actions'
 import '../assets/css/pcStyle.scss'//pc的固定样式
+import { getIsEditState } from '@src/public/getStorage'
 
 //页面汇总文件
 
@@ -47,13 +48,10 @@ export default class page extends Component {
         routeType: false
     }
     componentDidMount() {
-        setTimeout(() => {
-            console.log(editingStatus.getState())
+        
+        if (!getIsEditState()) return;
 
-        }, 5000)
-        //判断顶部window是否是当前的window 不是就是嵌套当作编辑状态   这个判断可能在后期用iframe去集成会有问题
-        if (window.self === window.top) return;
-        editingStatus.dispatch(changeEditingStatus(true))
+        editingStatus.dispatch(changeEditingStatus(1))
         this.setState({
             routeType: true
         })

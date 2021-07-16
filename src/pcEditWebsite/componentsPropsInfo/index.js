@@ -1,4 +1,7 @@
+import schoolJson from '@src/pc/components/campusDistribution/schoolList/schoolJson'
+
 //此文件装载   每个组件的原始props值    解决在添加组件时没有初始值
+
 export default function switchInfo(name) {
     const objInfo = {
         title: {
@@ -13,24 +16,18 @@ export default function switchInfo(name) {
             ]
         },
         imgAndText: {
-            detail: { id: 1, title: "强大的办学规模", text: "已开设北京16家，上海2家，18家直营校区，总教学面积近35000平米", src: require("../assets/template/honor2.png").default, type: "left" }
+            detail: { id: 1, title: "强大的办学规模", text: "文案", src: require("../assets/template/honor2.png").default, type: "left" }
         },
         schoolListImgText: {
-            list: {
+            data: {
                 src: require('../assets/template/banner.png').default,
                 title: "桔子树——中国艺术教育素质教育品牌",
-                smallList: [
-                    {
-                        src: require('../assets/template/swiper1.png').default,
-                        name: "通州校区",
-                        tel: "400-900-8898"
-                    },
-                ]
+                smallList: schoolJson
             }
         },
         table: {
             tableData: {
-                title: ["课程", "人数", "上课时长", "咨询"],
+                title: ["课程", "人数", "上课时长"],
                 list: [
                     [
                         {
@@ -44,10 +41,6 @@ export default function switchInfo(name) {
                         {
                             rowspan: 1,
                             text: "60分钟"
-                        },
-                        {
-                            rowspan: 1,
-                            text: "<span style='color: #ff8000;'>考级咨询</span>"
                         },
                     ],
                 ]
@@ -74,7 +67,11 @@ export default function switchInfo(name) {
             list: [
                 {
                     info: [
-                        { img: require('../assets/template/teacher.jpg').default, name: "余子涵1", duration: "5年", course: "现代舞、芭蕾舞、古典舞、民族舞、流行舞等", adress: "/" },
+                        { img: require('../../pc/assets/homePage/teacher/teacher1.png').default, name: "许杨", duration: "9年", course: "童声、美声、民族、通俗唱法", adress: "/site/pc/aboutUs/teachers/detail/1" },
+                        { img: require('../../pc/assets/homePage/teacher/teacher2.png').default, name: "孙亚秋", duration: "4年", course: "儿童画，创意美术，水彩，水粉，素描，彩铅，油画等", adress: "/site/pc/aboutUs/teachers/detail/2" },
+                        { img: require('../../pc/assets/homePage/teacher/teacher3.png').default, name: "孟繁颖", duration: "7年", course: "古典舞、芭蕾舞、民族民间舞、爵士舞、踢踏舞、肚皮舞", adress: "/site/pc/aboutUs/teachers/detail/3" },
+                        { img: require('../../pc/assets/homePage/teacher/teacher4.png').default, name: "任雅臣", duration: "5年", course: "流行声乐、音基", adress: "/site/pc/aboutUs/teachers/detail/4" },
+                        { img: require('../../pc/assets/homePage/teacher/teacher5.png').default, name: "向定军", duration: "5年", course: "架子鼓、架子鼓考级、少儿架子鼓等", adress: "/site/pc/aboutUs/teachers/detail/5" },
                     ]
                 },
             ]
@@ -93,10 +90,10 @@ export default function switchInfo(name) {
                 ]
             ],
             introduceList: [
-                { img: require('../../pc/assets/homePage/brandHonor/list1.png').default, text: "艺术教育培训经验", font: ["9", "年"] },
-                { img: require('../../pc/assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: ["18", "家"] },
-                { img: require('../../pc/assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: ["88", "种"] },
-                { img: require('../../pc/assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: ["40", "余万"] },
+                { img: require('../../pc/assets/homePage/brandHonor/list1.png').default, text: "艺术教育培训经验", font: "9年" },
+                { img: require('../../pc/assets/homePage/brandHonor/list2.png').default, text: "直营校区覆盖北京、上海", font: "20家" },
+                { img: require('../../pc/assets/homePage/brandHonor/list3.png').default, text: "专业课程精心设计", font: "数百种" },
+                { img: require('../../pc/assets/homePage/brandHonor/list4.png').default, text: "学员信赖选择", font: "数十万" },
             ]
         },
         exhibition: {
@@ -148,9 +145,7 @@ export default function switchInfo(name) {
             ]
         },
         courseFlow: {
-            data: [
-                { img: require('../assets/template/honor2.png').default, num: "01", text: "专业测评，了解学员上课愿望" },
-            ]
+            type: 'dance'
         },
         learningGoal: {
             textList: [
@@ -174,10 +169,16 @@ export default function switchInfo(name) {
         teacherStandards: {
             list: [
                 {
-                    img: require('../assets/template/honor2.png').default, title: "海外知名艺术院校归国教师", text: "此处写描述"
+                    img: require('@src/pc/assets/aboutUs/teachers/flag1.png').default, title: "艺术培训综合体", text: "声乐、器乐、舞蹈、美术齐头并进，培养青少年综合素养"
                 },
                 {
-                    img: require('../assets/template/honor3.png').default, title: "国内艺术院校毕业教师", text: "此处写描述"
+                    img: require('@src/pc/assets/aboutUs/teachers/flag2.png').default, title: "雄厚的师资力量", text: "数百名专职教师，毕业于国内外艺术院校"
+                },
+                {
+                    img: require('@src/pc/assets/aboutUs/teachers/flag3.png').default, title: "教研团队建设", text: "艺术培训行业科学、系统、完善的课程研发团队"
+                },
+                {
+                    img: require('@src/pc/assets/aboutUs/teachers/flag4.png').default, title: "量身提供教学计划", text: "只属于你的课程计划，“一位学员、一份计划、一种方法”"
                 },
             ]
         },

@@ -166,12 +166,12 @@ export default class componentsModal extends Component {
                         id: "1-14",
                         value: "CurriculumPlan"
                     },
-                    {
-                        text: "流程介绍",
-                        icon: <FontColorsOutlined />,
-                        id: "1-15",
-                        value: "CourseFlow"
-                    },
+                    // {
+                    //     text: "流程介绍",
+                    //     icon: <FontColorsOutlined />,
+                    //     id: "1-15",
+                    //     value: "CourseFlow"
+                    // },
                     {
                         text: "课程流程",
                         icon: <FontColorsOutlined />,
@@ -246,7 +246,6 @@ export default class componentsModal extends Component {
     }
     addComponent = (value) => {
         return () => {
-            console.log(containerStatus.getState())
             if (!containerStatus.getState()) {//如果不是组件容器 就是往iframe页面中添加
                 let iframe = document.getElementById('iframe').contentWindow;
                 iframe.PubSub.publish('addComponent', { component: value, info: switchComponentInfo(value) });

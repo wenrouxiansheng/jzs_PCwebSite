@@ -7,113 +7,62 @@
         width: 100%;
         min-height: 300px;
         display: none;
-        animation: modular .5s ease;
+        animation: modular 0.5s ease;
         @keyframes modular {
-            from{
+            from {
                 transform: translateY(-100px);
                 opacity: 0;
             }
-            to{
+            to {
                 transform: translateY(0px);
                 opacity: 1;
             }
         }
-    }
-    .modular.standardTemplate > div {
-        margin: 0px 20px 20px;
-        float: left;
-    }
-    .modular.custom {
-        background-color: teal;
-    }
-    .modular.active {
-        display: block;
-    }
-    .standardTemplate > div {
-        width: 360px;
-        height: 290px;
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        transition: 0.3s;
-        cursor: pointer;
-        overflow: hidden;
-        box-shadow: 0px 0px 6px #a8a8a8;
-    }
-    .standardTemplate > div:hover {
-        box-shadow: 0px 0px 15px #a8a8a8;
-        transform: translateY(-10px);
-    }
-    .standardTemplate > div img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-    }
-    .standardTemplate > div p {
-        width: 100%;
-        height: 60px;
-    }
-    .standardTemplate > div p a {
-        display: inline-block;
-        width: 50%;
-        height: 60px;
-        float: left;
-        background-color: white;
-        text-align: center;
-        line-height: 60px;
-        color: #333;
-    }
-    .standardTemplate > div p a:hover {
-        background-color: #f0f0f0;
-    }
-    .modular {
-        width: 100%;
-        min-height: 300px;
-        display: none;
-    }
-    .modular.standardTemplate > div {
-        margin: 0px 20px 20px;
-        float: left;
-    }
-    .modular.custom {
-        background-color: teal;
-    }
-    .modular.active {
-        display: block;
-    }
-    .standardTemplate > div {
-        width: 360px;
-        height: 290px;
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        transition: 0.3s;
-        cursor: pointer;
-        overflow: hidden;
-        box-shadow: 0px 0px 6px #a8a8a8;
-    }
-    .standardTemplate > div:hover {
-        box-shadow: 0px 0px 15px #a8a8a8;
-        transform: translateY(-10px);
-    }
-    .standardTemplate > div img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-    }
-    .standardTemplate > div p {
-        width: 100%;
-        height: 60px;
-    }
-    .standardTemplate > div p a {
-        display: inline-block;
-        width: 50%;
-        height: 60px;
-        float: left;
-        background-color: white;
-        text-align: center;
-        line-height: 60px;
-        color: #333;
-    }
-    .standardTemplate > div p a:hover {
-        background-color: #f0f0f0;
+        &.standardTemplate > div {
+            margin: 0px 20px 20px;
+            float: left;
+            width: 360px;
+            height: 290px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0px 0px 6px #a8a8a8;
+            &:hover {
+                box-shadow: 0px 0px 15px #a8a8a8;
+                transform: translateY(-10px);
+            }
+            img {
+                width: 100%;
+                height: 230px;
+                object-fit: cover;
+            }
+            p {
+                width: 100%;
+                height: 60px;
+                a {
+                    display: inline-block;
+                    width: 50%;
+                    height: 60px;
+                    float: left;
+                    background-color: white;
+                    text-align: center;
+                    line-height: 60px;
+                    color: #333;
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                }
+            }
+        }
+        &.custom {
+            a {
+                width: 100% !important;
+            }
+        }
+        &.active {
+            display: block;
+        }
     }
 }

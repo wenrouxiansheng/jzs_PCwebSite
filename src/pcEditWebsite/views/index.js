@@ -1,8 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react'
 import { Skeleton } from 'antd';
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { editingStatus } from '../../store/store'
-import { changeEditingStatus } from '../../store/actions'
 import '../assets/css/pcStyle.scss'//pc重置样式
 
 const loadingStyle = {
@@ -46,9 +44,6 @@ export default class pcEditRouter extends Component {
             if (targetRouterConfig.auth) return <Redirect to='/site/pcEdit/login' />;//需要授权的路由
             else return <Route path={pathname} component={component} />;//无需授权没有登录信息直接进入
         }
-    }
-    componentDidMount() {
-        editingStatus.dispatch(changeEditingStatus(1))
     }
     render() {
         return (

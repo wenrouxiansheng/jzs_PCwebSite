@@ -3,7 +3,6 @@
 */
 export function checkEditingStatus(preState = false, active) {
     const { type } = active;//设置默认值false  如果不是编辑器状态不会调用active
-    console.log(preState, active)
     switch (type) {
         case 1: return true;
 

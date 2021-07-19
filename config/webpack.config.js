@@ -565,7 +565,7 @@ module.exports = function (webpackEnv) {
     },
     plugins: [
       // Generates an `index.html` file with the <script> injected.
-      new BundleAnalyzerPlugin({ analyzerPort: 9090 }),
+      webpackEnv === 'development' && new BundleAnalyzerPlugin({ analyzerPort: 9090 }),
       new HtmlWebpackPlugin(
         Object.assign(
           {},

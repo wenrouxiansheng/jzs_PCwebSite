@@ -20,7 +20,7 @@ export default class FooterBar extends Component {
                 </div>
                 <div>
                     <LocationOnIcon className="font" />
-                    <p><Link to="#">校区地址</Link></p>
+                    <p><Link to="/site/wap/beijing/schoolList">校区地址</Link></p>
                 </div>
             </div>
         )

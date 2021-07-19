@@ -10,10 +10,10 @@ SwiperCore.use([Autoplay]);
 export default class gradingTestShowLoop extends Component {
     state = {
         list: [
-            { address: "#", img: require('../../../assets/homepage/music.png').default, title: "声乐考级", text: 'VOCAL MUSIC EMPLOYS' },
-            { address: "#", img: require('../../../assets/homepage/dance.png').default, title: "舞蹈考级", text: 'DANCE DISTINCTION' },
-            { address: "#", img: require('../../../assets/homepage/instrumentalMusic.png').default, title: "器乐考级", text: 'INSTRUMENTAL MUSIC' },
-            { address: "#", img: require('../../../assets/homepage/art.png').default, title: "美术考级", text: 'FINE ARTS' },
+            { address: "/site/wap/beijing/musicGradingTest", img: require('../../../assets/homepage/music.png').default, title: "声乐考级", text: 'VOCAL MUSIC EMPLOYS' },
+            { address: "/site/wap/beijing/danceGradingTest", img: require('../../../assets/homepage/dance.png').default, title: "舞蹈考级", text: 'DANCE DISTINCTION' },
+            { address: "/site/wap/beijing/IMGradingTest", img: require('../../../assets/homepage/instrumentalMusic.png').default, title: "器乐考级", text: 'INSTRUMENTAL MUSIC' },
+            { address: "/site/wap/beijing/fineArtsGradingTest", img: require('../../../assets/homepage/art.png').default, title: "美术考级", text: 'FINE ARTS' },
         ],
     }
     bannerNode = (item, index) => {//节点封装

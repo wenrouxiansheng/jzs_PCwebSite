@@ -1,8 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react'
 import { Skeleton } from 'antd';
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { editingStatus } from '../../store/store'
-import { changeEditingStatus } from '../../store/actions'
 import '../assets/css/pcStyle.scss'//pc重置样式
 
 const loadingStyle = {
@@ -23,7 +21,7 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 const routeList = [
     { path: "/site/pcEdit/editor", name: "edit", component: lazy(() => import('./editor')), auth: true },
     { path: "/site/pcEdit/home", name: "home", component: lazy(() => import('./home')), auth: true },
-    { path: "/site/pcEdit/login", name: "home", component: lazy(() => import('./login')), auth: false },
+    { path: "/site/pcEdit/login", name: "login", component: lazy(() => import('./login')), auth: false },
 ]
 export default class pcEditRouter extends Component {
     //这里作为HOC 路由守卫 先简易实现
@@ -46,9 +44,6 @@ export default class pcEditRouter extends Component {
             if (targetRouterConfig.auth) return <Redirect to='/site/pcEdit/login' />;//需要授权的路由
             else return <Route path={pathname} component={component} />;//无需授权没有登录信息直接进入
         }
-    }
-    componentDidMount() {
-        editingStatus.dispatch(changeEditingStatus(true))
     }
     render() {
         return (

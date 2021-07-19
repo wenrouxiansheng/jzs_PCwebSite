@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 
 export default function DrawerNav() {
     const obj = {
-        logoLink: "#",
+        logoLink: "/site/wap/beijing/home",
         logo: require('../../../assets/homepage/drawerNav/nav_logo.png').default,
         navList: [
             { text: "首页", address: "/site/wap/beijing/home", img: require('../../../assets/homepage/drawerNav/home_page.png').default },
@@ -64,7 +64,7 @@ export default function DrawerNav() {
         <header className="DrawerNav">
             <DehazeIcon onClick={toggleDrawer(true)} className="DrawerNav_btn_icon" style={{ fontSize: "0.6rem", color: "#555555" }} />
             <a href={logoLink} className="DrawerNav_title"><img src={logo} alt="" /></a>
-            <button className="DrawerNav_button" id="btnsh_udesk_im">立即咨询</button>
+            <button className="DrawerNav_button btnsh_udesk_im">立即咨询</button>
 
             <SwipeableDrawer
                 anchor={'left'}

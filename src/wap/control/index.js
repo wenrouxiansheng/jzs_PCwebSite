@@ -37,13 +37,23 @@ export default class wapRouterControl extends Component {
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
     }
+    
+    verify = () => {
+        //检查北京 还是上海
+        const pathName = window.location.host;
+        if(pathName.indexOf('shanghai') !== -1){
+            return <Redirect to="/site/wap/shanghai" />
+        }
+        return <Redirect to="/site/wap/beijing" />
+    }
     render() {
         return (
             <Suspense fallback={Loading}>
                 <Switch>
                     <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/router'))} />{/* 北京站点 */}
-                    <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai'))} />{/* 上海站点 */}
-                    <Redirect to="/site/wap/beijing" />
+                    <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai/router'))} />{/* 上海站点 */}
+                    
+                    {this.verify()}
                 </Switch>
             </Suspense>
         )

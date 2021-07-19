@@ -53,7 +53,6 @@ export default class table extends Component {
                                 </tr>
                             })
                         }
-
                     </tbody>
                 </table>
 

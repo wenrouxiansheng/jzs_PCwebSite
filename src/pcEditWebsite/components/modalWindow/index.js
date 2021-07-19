@@ -1,10 +1,10 @@
 import React, { Component, lazy, Suspense } from 'react'
-import { AppstoreFilled, SettingFilled, FormatPainterFilled, CloseCircleFilled } from '@ant-design/icons';
+import { AppstoreFilled, SettingFilled, CloseCircleFilled } from '@ant-design/icons';
 import PubSub from 'pubsub-js'
 
 import './style.scss'
 const ComponentsModal = lazy(() => import('../../editorComponents/modalWindow/componentsModal')),
-    StyleModal = lazy(() => import('../../editorComponents/modalWindow/styleModal')),
+    // StyleModal = lazy(() => import('../../editorComponents/modalWindow/styleModal')),
     SetupModal = lazy(() => import('../../editorComponents/modalWindow/setupModal'));
 const Loading = <div style={{ fontSize: '14px', textAlign: 'center', lineHeight: '100px' }}>稍等...</div>;
 let showMessage = null;
@@ -15,10 +15,10 @@ export default class modalWindow extends Component {
                 text: "模块",
                 icon: <AppstoreFilled />
             },
-            {
-                text: "样式",
-                icon: <FormatPainterFilled />
-            },
+            // {
+            //     text: "样式",
+            //     icon: <FormatPainterFilled />
+            // },
             {
                 text: "设置",
                 icon: <SettingFilled />
@@ -59,8 +59,8 @@ export default class modalWindow extends Component {
     switchModal = (num) => {
         switch (num) {
             case 0: return <ComponentsModal />;//模块模态窗
-            case 1: return <StyleModal />;//样式模态窗
-            case 2: return <SetupModal />;//设置模态窗
+            // case 1: return <StyleModal />;//样式模态窗
+            case 1: return <SetupModal />;//设置模态窗
             default: <div>模态窗组件检索 null</div>
         }
     }

@@ -336,6 +336,7 @@ module.exports = function (webpackEnv) {
         '@assets': path.join(__dirname, '../src/pc/assets'),
         '@components': path.join(__dirname, '../src/pc/components'),
         '@pcPage': path.join(__dirname, '../src/pc/views'),
+        '@src': path.join(__dirname, '../src'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

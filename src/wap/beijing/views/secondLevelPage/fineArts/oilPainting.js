@@ -24,8 +24,8 @@ export default class oilPainting extends Component {
                 component: 'TabControl',
                 props: {
                     data: [
-                        { address: "#", text: "少儿油画", img: require('../../../assets/finieArts/oilPainting/nav1.png').default },
-                        { address: "#", text: "成人油画", img: require('../../../assets/finieArts/oilPainting/nav2.png').default },
+                        { address: "/site/wap/beijing/fineArts/oilPainting/child", text: "少儿油画", img: require('../../../assets/finieArts/oilPainting/nav1.png').default },
+                        { address: "/site/wap/beijing/fineArts/oilPainting/adult", text: "成人油画", img: require('../../../assets/finieArts/oilPainting/nav2.png').default },
                     ],
                     style: {
                         borderBottom: '0px'

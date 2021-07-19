@@ -4,6 +4,7 @@ import { lazy } from 'react'
 export const pcPathName = "/site/pc";
 export const routeList = [
     { path: '/home', component: lazy(() => import('@pcPage/homePage')) },//首页
+    { path: '/template', component: lazy(() => import('@pcPage/template')) },//模板自定义页面
 
     {
         path: '/brandIntroduction',//品牌介绍

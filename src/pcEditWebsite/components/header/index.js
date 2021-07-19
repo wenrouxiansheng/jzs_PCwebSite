@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import "./style.scss"
 
-
 export default class editHeader extends Component {
 
     getHtml = () => {
-        const iframe = document.getElementById('iframe');
-        console.log(iframe)
+        const iframe = document.getElementById('iframe').contentWindow;
+        iframe.PubSub.publish('savePageData', "触发保存");
     }
 
     render() {

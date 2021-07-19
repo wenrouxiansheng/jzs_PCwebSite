@@ -10,6 +10,7 @@ import Toolbar from "../components/toolbar";//左侧工具栏
 import RichTextEditor from "../components/richTextEditor";//富文本编辑器
 import { containerStatus } from '../../store/store'
 import { checkComponentContainer } from '../../store/actions'
+import { setIsEditState } from '@src/public/setStorage'
 
 const style = {
     position: 'relative',
@@ -28,6 +29,9 @@ export default class pcEditWebsite extends Component {
         componentInfo: null//选中组件的信息
     }
     componentDidMount() {
+        //标记为编辑模式
+        setIsEditState({ type: 1 })
+
         //接收要更改页面组件和组件信息 打开编辑悬浮窗
         selectPageMessage = PubSub.subscribe('selectPageComponent', (msg, data) => {
             this.setState({
@@ -57,6 +61,9 @@ export default class pcEditWebsite extends Component {
         PubSub.unsubscribe(selectPageMessage);
         PubSub.unsubscribe(revisedMessage);
         PubSub.unsubscribe(operationMessage);
+
+        //去除编辑器标记
+        setIsEditState({ type: 0 })
     }
     changeRevisedDataList = (data) => {
 
@@ -89,13 +96,16 @@ export default class pcEditWebsite extends Component {
             suspensionIsShow: false
         })
     }
-    
+
     render() {
         const { suspensionIsShow, componentInfo } = this.state;
+
+        const custom = this.props.location.state?.custom
+        console.log(custom)
         return (
             <div className="editorPage" style={style}>
                 <Header type={'edit'} />
-                <iframe id="iframe" src="/site/pc/home" title="pc" ref={this.iframe} style={{ width: "100%", height: "calc(100vh - 80px)" }} />
+                <iframe id="iframe" src={custom ? '/site/pc/template' : '/site/pc/home'} title="pc" ref={this.iframe} style={{ width: "100%", height: "calc(100vh - 80px)" }} />
                 <EditorSuspension suspensionIsShow={suspensionIsShow} closeSuspension={this.closeSuspension} componentInfo={componentInfo} />
                 <ImgGalleryEditor />
                 <ModalWindow />

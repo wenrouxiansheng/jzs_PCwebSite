@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom'
 import { Skeleton } from 'antd';
 import router from './router'
 //骨架屏
@@ -21,24 +21,20 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 export default class wapBeijingRouter extends Component {
 
     verify = () => {
-        const { location: { pathname } } = this.props;
         const { publicPath, list } = router;
 
-        const page = list.filter(item => {
-            return pathname === publicPath + item.path
+        return list.map((item, index) => {
+            return <Route path={publicPath + item.path} component={item.component} key={index} />
         })
-
-        if (page.length === 0) { //路径无效进入
-            return <Redirect to="/site/wap/beijing/home" />
-        } else {
-            return <Route path={publicPath + page[0].path} component={page[0].component} />
-        }
     }
 
     render() {
         return (
             <Suspense fallback={Loading}>
-                {this.verify()}
+                <Switch>
+                    {this.verify()}
+                    <Redirect to="/site/wap/beijing/home" />
+                </Switch>
             </Suspense>
         )
     }

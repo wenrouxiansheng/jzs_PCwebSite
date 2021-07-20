@@ -18,7 +18,7 @@ export default class homePage extends Component {
                 props: {
                     bannerList: [
                         { id: 1, adress: "#", src: require("../../assets/homePage/banner/banner.jpg").default },
-                        { id: 2, adress: "#", src: require("../../assets/homePage/banner/homepage2.png").default },
+                        { id: 2, adress: "#", src: require("../../assets/aboutUs/teachers/banner.jpg").default },
                     ]
                 }
             },

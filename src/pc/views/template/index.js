@@ -58,7 +58,7 @@ export default class template extends Component {
 
         savePageData = PubSub.subscribe('savePageData', (msg, data) => {
             const componentJson = JSON.stringify(this.state.componentJson)
-            this.saveClick('template.html', componentJson);
+            this.saveClick('template.js', componentJson);
         });
 
     }

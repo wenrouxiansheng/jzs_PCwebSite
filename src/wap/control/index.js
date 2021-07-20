@@ -22,7 +22,14 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 export default class wapRouterControl extends Component {
     //这个文件作为区分北京上海官网跳转  hoc
     componentDidMount() {
-        (function (doc, win) {//rem换算 1rem = 100px
+        const screenWidth = document.body.clientWidth;
+
+        //pc端跳转
+        if (screenWidth >= 1200) {
+            this.props.history.push('/site/pc')
+        }
+
+        ;(function (doc, win) {//rem换算 1rem = 100px
             var docEl = doc.documentElement,
                 resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
                 recalc = function () {
@@ -37,11 +44,11 @@ export default class wapRouterControl extends Component {
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
     }
-    
+
     verify = () => {
         //检查北京 还是上海
         const pathName = window.location.host;
-        if(pathName.indexOf('shanghai') !== -1){
+        if (pathName.indexOf('shanghai') !== -1) {
             return <Redirect to="/site/wap/shanghai" />
         }
         return <Redirect to="/site/wap/beijing" />
@@ -52,7 +59,7 @@ export default class wapRouterControl extends Component {
                 <Switch>
                     <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/router'))} />{/* 北京站点 */}
                     <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai/router'))} />{/* 上海站点 */}
-                    
+
                     {this.verify()}
                 </Switch>
             </Suspense>

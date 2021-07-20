@@ -19,9 +19,13 @@ const Loading = <div className="lazyLoading" style={loadingStyle}>
 </div>;
 
 export default class routeDom extends Component {
+
+    isPhone = () => {
+        return navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+    }
     //判断移动还是pc    
     verify = () => {
-        const isPhone = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+        const isPhone = this.isPhone();
         const screenWidth = document.body.clientWidth
 
         if (isPhone !== null || screenWidth < 1200) {

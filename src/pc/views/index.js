@@ -51,6 +51,7 @@ export default class page extends Component {
         const isPhone = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
         const screenWidth = document.body.clientWidth
 
+        
 
         //移动端跳转
         if (isPhone !== null || screenWidth < 1200) {

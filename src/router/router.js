@@ -38,6 +38,15 @@ export default class routeDom extends Component {
 
         return <Redirect to="/site/pc" />
     }
+
+    componentDidMount() {
+
+        //设置站长统计样式
+        const statistics = window.document.querySelector('#cnzz_stat_icon_1271255367');
+        if(statistics) {
+            statistics.style="position: fixed;bottom: 0px;left: 0px;"
+        }
+    }
     render() {
         return (
             <Suspense fallback={Loading}>

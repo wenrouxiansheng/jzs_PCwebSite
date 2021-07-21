@@ -5,6 +5,7 @@ import QRappDown from '@assets/homePage/footer/QR_appDown.png'
 import QRpublic from '@assets/homePage/footer/QR_public.png'
 import tel from '@assets/homePage/footer/tel.png'
 import local from '@assets/homePage/footer/location.png'
+import gongan from '@assets/homePage/footer/gongan.jpg'
 
 export default class footer extends Component {
     state = {
@@ -89,8 +90,9 @@ export default class footer extends Component {
                     </div>
                 </div>
                 <p>商务合作：010-5965-2885</p>
-                <p>北京桔子树文化传播有限责任公司</p>
-                <p>京公网安备 11011202001383号</p>
+                <p>京ICP备17024125号-1</p>
+                <p>版权所有@2021.北京桔子树文化传播有限责任公司</p>
+                <p><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011202001383" target="_blank" rel="noreferrer"><img src={gongan} alt=""/> 京公网安备 11011202001383号</a></p>
             </footer>
         )
     }

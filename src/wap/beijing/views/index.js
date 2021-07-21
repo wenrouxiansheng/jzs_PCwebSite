@@ -193,7 +193,7 @@ export default class homePage extends Component {
             icon: require('../assets/homepage/tabControl/homePage4_03.png').default,
             title: { address: "#", text: "课堂实景" },
             linkList: null,
-            rightLink: { text: "更多>>", address: "#" },
+            rightLink: null,
             subtitle: "精品小班 专职教师"
           }
         },
@@ -237,9 +237,9 @@ export default class homePage extends Component {
         props: {
           data: {
             icon: require('../assets/homepage/tabControl/homePage2_03.png').default,
-            title: { address: "#", text: "品牌介绍" },
+            title: { address: "/site/wap/beijing/brandIntroduction", text: "品牌介绍" },
             linkList: null,
-            rightLink: { text: "更多>>", address: "#" },
+            rightLink: { text: "更多>>", address: "/site/wap/beijing/brandIntroduction" },
             subtitle: "中国艺术教育优质品牌"
           }
         },

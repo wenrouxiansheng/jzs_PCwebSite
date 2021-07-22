@@ -5,14 +5,16 @@ const titleStyle = {
     textAlign: 'center',
     fontSize: '0.3rem',
     fontWeight: 'bold',
-    marginTop: '0.3rem'
+    marginTop: '0.3rem',
+    lineHeight: '0.4rem'
 }
 const subtitleStyle = {
     padding: '0px 0.3rem',
     fontSize: '0.24rem',
     color: 'rgb(85, 85, 85)',
     margin: '0.15rem 0px',
-    textAlign: 'center'
+    textAlign: 'center',
+    lineHeight: '0.4rem'
 }
 export default class studentShow extends Component {
     state = {

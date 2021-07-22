@@ -4,7 +4,8 @@ import { seekComponents } from '../public'
 const fontStyle = {
     padding: '0.15rem 0.3rem',
     fontSize: '0.28rem',
-    color: 'rgb(85, 85, 85)'
+    color: 'rgb(85, 85, 85)',
+    lineHeight: '0.4rem'
 }
 export default class studentShow extends Component {
     state = {

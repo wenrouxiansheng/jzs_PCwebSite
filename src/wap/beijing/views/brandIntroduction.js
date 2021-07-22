@@ -32,7 +32,8 @@ export default class brandIntroduction extends Component {
                     style: {
                         textAlign: 'center',
                         fontSize: '0.3rem',
-                        fontWeight: 'bold'
+                        fontWeight: 'bold',
+                        lineHeight: '0.4rem'
                     }
                 }
             },
@@ -44,7 +45,8 @@ export default class brandIntroduction extends Component {
                         fontSize: '0.24rem',
                         color: 'rgb(102, 102, 102)',
                         padding: '0rem 0.3rem',
-                        margin: '0.2rem 0 0.3rem 0'
+                        margin: '0.2rem 0 0.3rem 0',
+                        lineHeight: '0.4rem'
                     }
                 }
             },
@@ -145,7 +147,8 @@ export default class brandIntroduction extends Component {
                     style: {
                         fontSize: '0.24rem',
                         color: '#555555',
-                        padding: '0 0.3rem'
+                        padding: '0 0.3rem',
+                        lineHeight: '0.4rem'
                     }
                 }
             },
@@ -188,7 +191,8 @@ export default class brandIntroduction extends Component {
                         textAlign: 'center',
                         fontSize: '0.24rem',
                         color: '#555555',
-                        padding: '0 0.3rem'
+                        padding: '0 0.3rem',
+                        lineHeight: '0.4rem'
                     }
                 }
             },

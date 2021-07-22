@@ -1,5 +1,4 @@
 
-import './App.css';
 import 'antd/dist/antd.css';
 import { withRouter } from 'react-router-dom'
 import RouterPage from './router/router'

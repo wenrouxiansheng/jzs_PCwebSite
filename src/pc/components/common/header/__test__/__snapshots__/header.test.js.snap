@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PC:Header 组件测试 1`] = `
+<header
+  className="headModule"
+>
+  <img
+    alt=""
+    src="test-file-stub"
+  />
+  <div
+    className="headerRight"
+  >
+    <span
+      className="city"
+    >
+      北京
+    </span>
+    <img
+      alt=""
+      src="test-file-stub"
+    />
+    <span
+      className="tel"
+    >
+      400-900-8898
+    </span>
+  </div>
+</header>
+`;

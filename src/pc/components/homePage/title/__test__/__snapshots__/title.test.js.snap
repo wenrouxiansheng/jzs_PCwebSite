@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PC:title 组件测试 1`] = `
+<div
+  className="animationTitle"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  <h3>
+    <b>
+      为什么选择桔子树
+    </b>
+  </h3>
+  <h6>
+    Core advantages
+  </h6>
+</div>
+`;
+
+exports[`PC:title 组件测试 2`] = `
+<div
+  className="animationTitle"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  <h3>
+    <b>
+      为什么选择桔子树
+    </b>
+  </h3>
+  <h6>
+    Core advantages
+  </h6>
+</div>
+`;
+
+exports[`title 组件测试 1`] = `
+<div
+  className="animationTitle"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  <h3>
+    <b>
+      为什么选择桔子树
+    </b>
+  </h3>
+  <h6>
+    Core advantages
+  </h6>
+</div>
+`;
+
+exports[`title 组件测试 2`] = `
+<div
+  className="animationTitle"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  <h3>
+    <b>
+      为什么选择桔子树
+    </b>
+  </h3>
+  <h6>
+    Core advantages
+  </h6>
+</div>
+`;

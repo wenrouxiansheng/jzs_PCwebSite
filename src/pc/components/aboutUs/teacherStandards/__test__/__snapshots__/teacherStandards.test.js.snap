@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PC:<TeacherStandards /> render 1`] = `
+<div
+  className="teacherStandards"
+  style={Object {}}
+>
+  <div>
+    <div
+      className="img"
+    >
+      <img
+        alt=""
+      />
+    </div>
+    <h1>
+      艺术培训综合体
+    </h1>
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "声乐、器乐、舞蹈、美术齐头并进，培养青少年综合素养",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="img"
+    >
+      <img
+        alt=""
+      />
+    </div>
+    <h1>
+      雄厚的师资力量
+    </h1>
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "数百名专职教师，毕业于国内外艺术院校",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="img"
+    >
+      <img
+        alt=""
+      />
+    </div>
+    <h1>
+      教研团队建设
+    </h1>
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "艺术培训行业科学、系统、完善的课程研发团队",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="img"
+    >
+      <img
+        alt=""
+      />
+    </div>
+    <h1>
+      量身提供教学计划
+    </h1>
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "只属于你的课程计划，“一位学员、一份计划、一种方法”",
+        }
+      }
+    />
+  </div>
+</div>
+`;

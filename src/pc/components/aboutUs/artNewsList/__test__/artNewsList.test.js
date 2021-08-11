@@ -1,26 +1,28 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { shallow, configure, render } from "enzyme";
+import { shallow } from "enzyme";
 import ArtNewsList from "../index";
-import Adapter from "enzyme-adapter-react-16";
 
-configure({ adapter: new Adapter() });
-
-describe("PC:artNewsList", () => {
-  it("渲染测试", () => {
-    const component = renderer.create(<ArtNewsList />);
-    let tree = component.toJSON();
+describe("PC:<ArtNewsList />", () => {
+  it("render", () => {
+    const wrapper = renderer.create(<ArtNewsList />);
+    let tree = wrapper.toJSON();
 
     //渲染测试
     expect(tree).toMatchSnapshot();
   });
 
-  it("分页事件测试", () => {
-    const num = 3;
-    const component = shallow(<ArtNewsList />);
-    // const a = component.find("Pagination").simulate("change", num).prop('pageSize')
-    // component.find("Pagination").simulate("change", a)
+  it("paging event", () => {
+    const NUM = 3;
+    const wrapper = shallow(<ArtNewsList />);
 
-    expect(component.find("Pagination").simulate("change", num)).toBe(3);
+    wrapper.find("Pagination").simulate("change", NUM);
+    expect(wrapper.find("Pagination").prop("current")).toBe(NUM);
   });
+
+  // it("mount", () => {
+  //   const wrapper = mount(<ArtNewsList />);
+  //   wrapper.find(".ant-pagination-item").at(2).simulate("click");
+  //   expect(wrapper.find(".ant-pagination-item-active").text()).toBe("3");
+  // });
 });

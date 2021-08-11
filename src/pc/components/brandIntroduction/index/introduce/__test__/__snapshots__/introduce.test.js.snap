@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PC:<Introduce /> render 1`] = `
+<div
+  className="introduce"
+  style={Object {}}
+>
+  <div
+    className="listContainer"
+  >
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            办学规模
+          </span>
+        </p>
+        <h3>
+          强大的办学规模
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "已开设<span class=\\"color\\">18</span>家直营校区 （北京<span style=\\"color: #f2aa46;\\">16</span>家，上海<span style=\\"color: #f2aa46;\\">2</span>家） 总教学面积近<span style=\\"color: #f2aa46;\\">35000</span>平米",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            师资力量
+          </span>
+        </p>
+        <h3>
+          雄厚的师资力量
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "数百名全职教师，毕业于国内外艺术院校",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            教研团队
+          </span>
+        </p>
+        <h3>
+          教研团队建设
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "艺术培训行业科学、系统、完善的课程研发团队",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            教学模式
+          </span>
+        </p>
+        <h3>
+          私人订制教学模式
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "采用“私人订制教学模式”，一位学员、一份计划、一种方法",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            艺术综合体
+          </span>
+        </p>
+        <h3>
+          艺术培训综合体
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "声乐、器乐、舞蹈、美术齐头并进，培养孩子综合素养",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            个性化教育
+          </span>
+        </p>
+        <h3>
+          个性化教育
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "尊重学员个性差异，因材施教，为青少年提供适合的艺术教育",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="text_box"
+      >
+        <p>
+          <span
+            className="title_flag"
+          >
+            学员口碑
+          </span>
+        </p>
+        <h3>
+          良好的学员口碑
+        </h3>
+        <span
+          className="text"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "九年累计培训数十万学员，许多新学员由老学员转介绍而来 ",
+            }
+          }
+        />
+      </div>
+      <div
+        className="img_box"
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

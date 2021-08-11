@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PC:<Paragraph /> render 1`] = `
+<div
+  className="paragraph"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "测试",
+    }
+  }
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+/>
+`;

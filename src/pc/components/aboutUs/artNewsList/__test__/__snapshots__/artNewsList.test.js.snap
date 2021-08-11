@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PC:artNewsList 渲染测试 1`] = `
+exports[`PC:<ArtNewsList /> render 1`] = `
 <div
   className="artNewsList"
   style={Object {}}

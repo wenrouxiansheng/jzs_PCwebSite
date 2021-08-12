@@ -7,10 +7,10 @@ const { Option } = Select;
 
 
 export default class form extends Component {
-    form = React.createRef()
+    formNode = React.createRef()
     onFinish = (values) => {
         console.log('Success:', values);
-        this.form.current.resetFields();
+        this.formNode.current.resetFields();
     };
     render() {
         const { style } = this.props;
@@ -19,7 +19,7 @@ export default class form extends Component {
                 <div className="container">
                     <Form
                         onFinish={this.onFinish}
-                        ref={this.form}
+                        ref={this.formNode}
                     >
                         <h1>报名参加桔子树</h1>
                         <h3>免费试听课程</h3>

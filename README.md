@@ -1,4 +1,4 @@
-# PC & Wap(wap只包含官网) 建站
+# PC官网及建站 & Wap(北京移动官网、上海移动官网) 
 
 ### 安装依赖项
 ```
@@ -12,15 +12,9 @@ npm run start
 ```
 npm run build
 ```
-### 部署项目
-```
-npm install
+## ui框架插件等
+-------------
 
-npm run build
-
-node server.js
-```
-## ui框架
 material-ui: [官网地址](https://material-ui.com/zh/)
 
 antd-ui: [官网地址](https://ant.design/components/overview-cn/)
@@ -32,8 +26,27 @@ braft-editor富文本编辑器:
 2. [gihub说明地址](https://github.com/margox/braft-editor)
 
 
+pubsubjs：[gihub说明地址](https://github.com/mroderick/PubSubJS)
 
-### 消息大致图
+## 路由详情说明
+-------------
+#### 一级路由
+1. 路径： src/router/router.js   
+    - 用于区分H5官网及H5活动页、pc官网、pc建站
+
+#### 二级路由
+1. pc官网路由 路径：src/pc/router.js
+2. pcEdit建站路由 路径：src/pcEditWebsite/views/index.js
+3. H5路由 路径：src/wap/control/index.js    
+    - 用于区分活动页面路由、北京H5官网路由、上海H5官网路由
+
+#### 三级路由
+1. H5活动页路由：src/wap/activityPages/router/index.js
+2. H5北京官网路由：src/wap/beijing/router/index.js
+3. H5上海官网路由：src/wap/shanghai/router/index.js
+
+
+### 建站消息大致图
 ![消息传递大致图](src/pcEditWebsite/消息传递大致图.png)
 
 

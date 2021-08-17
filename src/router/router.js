@@ -52,8 +52,8 @@ export default class routeDom extends Component {
             <Suspense fallback={Loading}>
                 <Switch>
                     <Route path="/site/pcEdit" component={lazy(() => import('../pcEditWebsite/views'))} />{/**pc编辑 */}
+                    <Route path="/site/wap" component={lazy(() => import('../wap/control'))} /> {/**wap官网 */}
                     <Route path="/site/pc" component={lazy(() => import('../pc/views'))} /> {/**pc官网 */}
-                    <Route path="/site/wap" component={lazy(() => import('../wap/control'))} /> {/**pc官网 */}
                     {this.verify()}
                 </Switch>
             </Suspense>

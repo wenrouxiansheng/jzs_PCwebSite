@@ -1,0 +1,110 @@
+.introduce {
+  .piano-title-1 {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 2rem;
+    object-fit: contain;
+    margin-top: 1rem;
+  }
+  .container {
+    width: 100%;
+    min-height: 15rem;
+    background-image: url("../../../assets/piano/bg.png");
+    background-size: 100% 100%;
+    overflow: hidden;
+    .title {
+      letter-spacing: 0.1rem;
+      color: #a49881;
+      font-weight: bold;
+      font-size: 0.6rem;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .subtitle {
+      text-align: center;
+      margin-top: 0.1rem;
+      margin-bottom: 0.4rem;
+      span {
+        position: relative;
+        letter-spacing: 0.1rem;
+        color: #A49881;
+        font-size: 0.27rem;
+        &::before{
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1.5rem;
+          height: 0.04rem;
+          background-color: #a49881;
+          left: 112%;
+          top: 50%;
+        }
+        &::after{
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1.5rem;
+          height: 0.04rem;
+          background-color: #a49881;
+          right: 112%;
+          top: 50%;
+        }
+      }
+    }
+    .text{
+      width: 6rem;
+      margin: 0 auto;
+      font-size: 0.26rem;
+      line-height: 0.6rem;
+      text-align: center;
+      strong{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 0.1rem;
+        color: #a49881;
+        font-size: 0.3rem;
+      }
+    }
+    .text-block{
+      padding: 0.3rem 0.3rem;
+      width: 95%;
+      margin: 0 auto;
+      height: auto;
+      color: white;
+      margin-top: 0.5rem;
+      background-color: #a49881;
+      font-size: 0.24rem;
+      text-align: center;
+    }
+    .detail-text{
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      border-bottom: solid 0.04rem #a49881;
+      &:last-of-type{
+        border: 0;
+      }
+      img{
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+      }
+      p{
+        width: 4.7rem;
+        margin-left: 0.2rem;
+        color: #666666;
+        font-size: 0.24rem;
+        line-height: 0.4rem;
+        span{
+          color: #A49881;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

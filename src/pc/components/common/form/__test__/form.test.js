@@ -38,7 +38,7 @@ describe("PC:<Form />", () => {
 
     //模拟选择列表选项
     wrapper.find(".ant-select-item-option").at(0).simulate("click");
-
+    expect(wrapper.find(".ant-select-item-option").length).toEqual(3);
     await waitForComponentToPaint(wrapper);
 
     /**
@@ -48,6 +48,7 @@ describe("PC:<Form />", () => {
     wrapper.find(".ant-select-selector").at(1).simulate("mousedown");
 
     await waitForComponentToPaint(wrapper);
+    expect(wrapper.find(".ant-select-item-option").length).toEqual(6);
 
     wrapper.find(".ant-select-item-option").at(4).simulate("click");
 

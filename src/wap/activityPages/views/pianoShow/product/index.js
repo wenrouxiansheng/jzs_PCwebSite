@@ -11,22 +11,22 @@ export default class Product extends Component {
   state = {
     pianoSlideList: [
       {
-        image: require("../../../assets/piano/piano1.png").default,
+        image: require("../../../assets/piano/121B.png").default,
         title: "JZS-121B",
         subtitle: "简约奢华品质美感",
         price: "28880",
         link: "/site/wap/activity/pianoList",
       },
       {
-        image: require("../../../assets/piano/piano1.png").default,
-        title: "JZS-122B",
+        image: require("../../../assets/piano/123B.png").default,
+        title: "JZS-123B",
         subtitle: "简约奢华品质美感",
         price: "28880",
         link: "/site/wap/activity/pianoList",
       },
       {
-        image: require("../../../assets/piano/piano1.png").default,
-        title: "JZS-123B",
+        image: require("../../../assets/piano/126B.png").default,
+        title: "JZS-126B",
         subtitle: "简约奢华品质美感",
         price: "28880",
         link: "/site/wap/activity/pianoList",

@@ -40,18 +40,52 @@
     }
   }
   .piano-title-2 {
-    display: block;
     margin: 0 auto;
     width: 6rem;
-    height: 1.07rem;
-    object-fit: contain;
     margin-top: 0.8rem;
+    text-align: center;
+    p:nth-of-type(1){
+      font-size: 0.49rem;
+      color: #666666;
+      span{
+        color: #C4AC83;
+      }
+    }
+    .subtitle {
+      text-align: center;
+      margin-top: 0.1rem;
+      span {
+        position: relative;
+        color: #666666;
+        font-size: 0.44rem;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1.2rem;
+          height: 0.04rem;
+          background-color: #a49881;
+          left: 112%;
+          top: 50%;
+        }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1.2rem;
+          height: 0.04rem;
+          background-color: #a49881;
+          right: 112%;
+          top: 50%;
+        }
+      }
+    }
   }
   .piano-title-2-subtitle {
     color: #666666;
     font-size: 0.25rem;
     text-align: center;
-    margin-top: 0.4rem;
+    margin-top: 0.2rem;
   }
 
   .piano-detail-parameter {
@@ -88,6 +122,7 @@
         padding-left: 0.4rem;
         font-size: 0.25rem;
         line-height: 0.6rem;
+        width: 130%;
         &:first-of-type {
           margin-top: 0.2rem;
         }
@@ -97,6 +132,7 @@
           line-height: inherit;
           margin-left: 0.85rem;
           position: relative;
+
           &::before {
             content: "";
             display: block;

@@ -20,6 +20,18 @@ const Loading = (
   </div>
 );
 export default class wapBeijingRouter extends Component {
+  componentDidMount() {
+    let awaitTime = 0;
+    let timer = setInterval(() => {
+      const service = document.querySelector("#udesk_container");
+      if (service) {
+        service.style.display = "none";
+        clearInterval(timer);
+      } else {
+        awaitTime = 1500;
+      }
+    }, awaitTime);
+  }
   render() {
     return (
       <Suspense fallback={Loading}>

@@ -10,37 +10,40 @@ const detailShow = [
 
 const productDetail = [
   {
-    img: require("../../../assets/piano/piano1.png").default,
-    from: "中国1",
-    color: "黑色亮光（以实物为准）",
-    size: "1500*1210*610mm​",
-    musicWire: "Roslou勒斯劳琴弦",
-    plank: "纯铜脚踏/精钢脚踏",
-    hammer: "德国进口榔头",
-    key: "实木琴键-逐键配重工艺",
+    img: require("../../../assets/piano/121B.png").default,
+    from: "中国",
+    color: "黑色亮光弯腿",
+    size: "1500mm*620mm*1210mm",
+    musicWire: "德国“ROSLAU”勒斯劳琴弦",
+    plank: "高级镀铬踏板",
+    hammer: "德国顶级羊毛毡红木榔头",
+    key: "白松复合实木白键",
     nail: "镀钛乌金弦轴钉",
+    number: "121B",
   },
   {
-    img: require("../../../assets/piano/piano1.png").default,
-    from: "中国2",
-    color: "黑色亮光（以实物为准）",
-    size: "1500*1210*610mm​",
-    musicWire: "Roslou勒斯劳琴弦",
-    plank: "纯铜脚踏/精钢脚踏",
-    hammer: "德国进口榔头",
-    key: "实木琴键-逐键配重工艺",
+    img: require("../../../assets/piano/123B.png").default,
+    from: "中国",
+    color: "黑色亮光",
+    size: "1230mm*1530mm*610mm​",
+    musicWire: "德国“ROSLAU”勒斯劳琴弦",
+    plank: "高级镀铜踏板",
+    hammer: "德国顶级羊毛毡红木榔头",
+    key: "白松复合实木白键并逐键加铅",
     nail: "镀钛乌金弦轴钉",
+    number: "123B",
   },
   {
-    img: require("../../../assets/piano/piano1.png").default,
-    from: "中国3",
-    color: "黑色亮光（以实物为准）",
-    size: "1500*1210*610mm​",
-    musicWire: "Roslou勒斯劳琴弦",
-    plank: "纯铜脚踏/精钢脚踏",
-    hammer: "德国进口榔头",
-    key: "实木琴键-逐键配重工艺",
+    img: require("../../../assets/piano/126B.png").default,
+    from: "中国",
+    color: "黑色亮光",
+    size: "1260mm*1530mm*610mm​",
+    musicWire: "德国“ROSLAU”勒斯劳琴弦",
+    plank: "高级镀铜踏板",
+    hammer: "德国顶级羊毛毡红木榔头",
+    key: "白松复合实木白键并逐键加铅",
     nail: "镀钛乌金弦轴钉",
+    number: "126B",
   },
 ];
 
@@ -75,11 +78,14 @@ export default class ProductDetail extends Component {
           </div>
         </div>
 
-        <img
-          src={require("../../../assets/piano/piano-title2.png").default}
-          alt=""
-          className="piano-title-2"
-        />
+        <div className="piano-title-2">
+          <p>
+            <span>JZS</span>-{data.number}钢琴
+          </p>
+          <p className="subtitle">
+            <span>立式经典</span>
+          </p>
+        </div>
         <p className="piano-title-2-subtitle">
           高品质打造钢琴之最，聆听生活之美
         </p>

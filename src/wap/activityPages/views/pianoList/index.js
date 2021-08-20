@@ -6,7 +6,7 @@ import "./style.scss";
 const pianoListData = [
   {
     modelNumber: "123W",
-    price: "28800",
+    price: "29500",
     img: require("../../assets/pianoList/piano-123W.png").default,
     from: "中国",
     color: "白色亮光(以实物为准)",
@@ -20,7 +20,7 @@ const pianoListData = [
 
   {
     modelNumber: "126B",
-    price: "28800",
+    price: "36800",
     img: require("../../assets/pianoList/piano-126B.png").default,
     from: "中国",
     color: "黑色亮光(以实物为准)",
@@ -34,7 +34,7 @@ const pianoListData = [
 
   {
     modelNumber: "126Y3",
-    price: "28800",
+    price: "39800",
     img: require("../../assets/pianoList/piano-126Y3.png").default,
     from: "中国",
     color: "白色亮光(以实物为准)",
@@ -48,7 +48,7 @@ const pianoListData = [
 
   {
     modelNumber: "126Y8",
-    price: "28800",
+    price: "42800",
     img: require("../../assets/pianoList/piano-126Y8.png").default,
     from: "中国",
     color: "白色亮光(以实物为准)",
@@ -62,7 +62,7 @@ const pianoListData = [
 
   {
     modelNumber: "126Y9",
-    price: "28800",
+    price: "43900",
     img: require("../../assets/pianoList/piano-126Y9.png").default,
     from: "中国",
     color: "白色亚光(以实物为准)",
@@ -76,7 +76,7 @@ const pianoListData = [
 
   {
     modelNumber: "125Y1",
-    price: "28800",
+    price: "39800",
     img: require("../../assets/pianoList/piano-125Y1.png").default,
     from: "中国",
     color: "棕色亚光(以实物为准)",
@@ -90,7 +90,7 @@ const pianoListData = [
 
   {
     modelNumber: "126Y2",
-    price: "28800",
+    price: "41800",
     img: require("../../assets/pianoList/piano-126Y2.png").default,
     from: "中国",
     color: "棕色亚光(以实物为准)",
@@ -104,7 +104,7 @@ const pianoListData = [
 
   {
     modelNumber: "133Y7",
-    price: "28800",
+    price: "56800",
     img: require("../../assets/pianoList/piano-133Y7.png").default,
     from: "中国",
     color: "全雕花(以实物为准)",
@@ -118,7 +118,7 @@ const pianoListData = [
 
   {
     modelNumber: "125Y",
-    price: "28800",
+    price: "38800",
     img: require("../../assets/pianoList/piano-125Y.png").default,
     from: "中国",
     color: "棕色亚光(以实物为准)",
@@ -132,7 +132,7 @@ const pianoListData = [
 
   {
     modelNumber: "126Y1",
-    price: "28800",
+    price: "40800",
     img: require("../../assets/pianoList/piano-126Y1.png").default,
     from: "中国",
     color: "棕色亚光(以实物为准)",
@@ -146,7 +146,7 @@ const pianoListData = [
 
   {
     modelNumber: "128Y",
-    price: "28800",
+    price: "45800",
     img: require("../../assets/pianoList/piano-128Y.png").default,
     from: "中国",
     color: "棕色亚光(以实物为准)",

@@ -44,11 +44,11 @@
     width: 6rem;
     margin-top: 0.8rem;
     text-align: center;
-    p:nth-of-type(1){
+    p:nth-of-type(1) {
       font-size: 0.49rem;
       color: #666666;
-      span{
-        color: #C4AC83;
+      span {
+        color: #c4ac83;
       }
     }
     .subtitle {
@@ -112,7 +112,7 @@
         color: #2f2f2f;
         font-size: 0.25rem;
         position: absolute;
-        left: 1.8rem;
+        left: 1.6rem;
         top: 0.1rem;
         font-weight: bold;
       }
@@ -123,6 +123,7 @@
         font-size: 0.25rem;
         line-height: 0.6rem;
         width: 130%;
+
         &:first-of-type {
           margin-top: 0.2rem;
         }
@@ -130,9 +131,10 @@
           display: inline-block;
           height: 100%;
           line-height: inherit;
-          margin-left: 0.85rem;
+          margin-left: 0.65rem;
           position: relative;
-
+          transform: scale(0.9);
+          transform-origin: left;
           &::before {
             content: "";
             display: block;
@@ -146,15 +148,14 @@
         }
         &:last-of-type {
           span {
-            margin-left: 0.6rem;
+            margin-left: 0.4rem;
           }
         }
       }
-
     }
     & > div:nth-of-type(2) {
       margin-left: 0.3rem;
-      img{
+      img {
         width: 1.83rem;
         height: auto;
         object-fit: cover;

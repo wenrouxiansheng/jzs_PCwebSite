@@ -15,7 +15,7 @@ export default class pianoProduct extends Component {
     });
   };
   closeDrawer = (e) => {
-    const classNameAry = ["control", "container", "title-back"]
+    const classNameAry = ["control", "container", "title-back"];
     if (classNameAry.includes(e.target.className)) {
       this.setState({
         animation: false,
@@ -46,7 +46,7 @@ export default class pianoProduct extends Component {
       oilPaint,
       slowDescent,
       action,
-      MovingRod
+      MovingRod,
     } = this.props.data;
     return (
       <div className="pianoProduct">
@@ -66,7 +66,7 @@ export default class pianoProduct extends Component {
             <p>简约奢华品质美感</p>
           </div>
 
-          <p>高品质打造钢琴之最 聆听生活之美</p>
+          <p>高品质打造聆听生活之美</p>
         </div>
 
         <img alt="" src={img} />

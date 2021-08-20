@@ -83,7 +83,7 @@ export default class Product extends Component {
           alt=""
           className="title"
         />
-        <p className="subtitle">极/于/形/追/求/独/特/美/感</p>
+        <p className="subtitle">卓越品质追求独特美感</p>
 
         <Swiper
           slidesPerView={"auto"}

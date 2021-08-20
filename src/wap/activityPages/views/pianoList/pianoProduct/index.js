@@ -15,7 +15,8 @@ export default class pianoProduct extends Component {
     });
   };
   closeDrawer = (e) => {
-    if (e.target.className === "container") {
+    const classNameAry = ["control", "container", "title-back"]
+    if (classNameAry.includes(e.target.className)) {
       this.setState({
         animation: false,
       });
@@ -40,12 +41,20 @@ export default class pianoProduct extends Component {
       hammer,
       key,
       nail,
+      mark,
+      soundboard,
+      oilPaint,
+      slowDescent,
+      action,
+      MovingRod
     } = this.props.data;
     return (
       <div className="pianoProduct">
         <div className="flex">
           <div className="list-title">
-            <p><span>P</span>iano</p>
+            <p>
+              <span>P</span>iano
+            </p>
             <p>JUZISHU</p>
           </div>
 
@@ -82,13 +91,22 @@ export default class pianoProduct extends Component {
           onClick={this.closeDrawer}
         >
           <div>
-            <p>
-              <span>JZS</span>-{modelNumber}
-            </p>
-            <p>规格参数</p>
-            <div>
+            <img
+              src={require("../../../assets/pianoList/back.png").default}
+              alt=""
+              className="control"
+            />
+            <div className="titleContainer">
               <p>
-                品牌<span>JUZISHU</span>
+                <span>JZS</span>-{modelNumber}
+              </p>
+              <p>规格参数</p>
+              <div className="title-back"></div>
+            </div>
+
+            <div className="textContainer">
+              <p>
+                <span className="brand">品牌</span> <span>JUZISHU</span>
               </p>
               <p>
                 产地<span>{from}</span>
@@ -112,7 +130,26 @@ export default class pianoProduct extends Component {
                 琴键<span>{key}</span>
               </p>
               <p>
-                弦轴钉<span>{nail}</span>
+                马克<span>{mark}</span>
+              </p>
+              <p>
+                音板<span>{soundboard}</span>
+              </p>
+              <p>
+                油漆<span>{oilPaint}</span>
+              </p>
+              <p>
+                缓降<span>{slowDescent}</span>
+              </p>
+
+              <p>
+                弦轴钉<span className="padding">{nail}</span>
+              </p>
+              <p>
+                击弦机<span className="padding">{action}</span>
+              </p>
+              <p>
+                联动杆<span className="padding">{MovingRod}</span>
               </p>
             </div>
           </div>

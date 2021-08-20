@@ -1,7 +1,6 @@
 .pianoProduct {
   width: 100%;
-  padding: 0.5rem;
-  min-height: 4rem;
+  padding: 2rem 0.5rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -99,7 +98,18 @@
     right: 0px;
     top: 0px;
     background-color: rgba(0, 0, 0, 0);
-
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 50%;
+      height: 3rem;
+      border: 0.06rem solid #c4ac83;
+      bottom: 0.3rem;
+      right: 0.4rem;
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
     @keyframes container_fadeIn {
       0% {
         opacity: 0;
@@ -121,50 +131,126 @@
       }
     }
     & > div {
-      background-image: url("../../../assets/pianoList/show-bg.png");
-      width: 4rem;
+      .control {
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        width: 0.37rem;
+        height: 2.5rem;
+        transform: translateY(-50%);
+        object-fit: cover;
+      }
+      width: 7rem;
       height: 100%;
       position: absolute;
       right: 0px;
       top: 0px;
-      background-size: 100% 100%;
-      & > p:nth-of-type(1) {
-        position: absolute;
-        top: 0.3rem;
-        left: 0.4rem;
-        font-size: 0.34rem;
-        color: white;
-        font-weight: bold;
-        span {
-          color: #d7c9a6;
+      background-color: rgba(215, 201, 166, 0.8);
+
+      .titleContainer {
+        position: relative;
+        height: 1rem;
+        width: 5.4rem;
+        background-color: #2f2f2f;
+        margin-top: 0.2rem;
+        margin-left: 0.3rem;
+        padding-left: 0.2rem;
+        & > p:nth-of-type(1) {
+          font-size: 0.34rem;
+          color: white;
           font-weight: bold;
+          span {
+            color: #d7c9a6;
+            font-weight: bold;
+          }
+        }
+        & > p:nth-of-type(2) {
+          font-size: 0.24rem;
+          letter-spacing: 0.1rem;
+          color: white;
+        }
+        .title-back {
+          position: absolute;
+          right: 0.2rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          border: solid 2px #d7c9a6;
+          &::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 0.2rem solid #d7c9a6;
+            border-right: 0.2rem solid transparent;
+            border-bottom: 0.2rem solid transparent;
+            border-top: 0.2rem solid transparent;
+            position: absolute;
+            right: 0.02rem;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
       }
-      & > p:nth-of-type(2) {
+      .textContainer {
         position: absolute;
-        top: 0.75rem;
-        left: 0.4rem;
-        font-size: 0.24rem;
-        letter-spacing: 0.1rem;
-        color: white;
-      }
-      & > div {
-        position: absolute;
-        top: 1.25rem;
+        top: 1.35rem;
         left: 0.4rem;
         font-size: 0.24rem;
         p {
           margin-top: 0.04rem;
+          .brand {
+            display: inline-block;
+            margin-left: 0rem;
+            width: initial;
+            position: relative;
+            z-index: 1;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              left: -0.1rem;
+              top: -0.03rem;
+              width: 0.8rem;
+              height: 0.4rem;
+              background-color: #c0a67c;
+              z-index: -1;
+            }
+            &::after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 0;
+              border-left: 0.1rem solid #c4ac83;
+              border-right: 0.1rem solid transparent;
+              border-bottom: 0.1rem solid transparent;
+              border-top: 0.1rem solid transparent;
+              position: absolute;
+              right: -0.4rem;
+              top: 0.06rem;
+              z-index: -1;
+            }
+          }
           span {
-            margin-left: 0.4rem;
+            margin-left: 0.6rem;
             font-size: 0.24rem;
             display: inline-block;
-            width: 2.6rem;
+            position: relative;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              bottom: 0px;
+              left: 0px;
+              width: 3.5rem;
+              height: 1px;
+              background-color: #c4ac83;
+            }
           }
-        }
-        p:last-of-type {
-          span {
-            margin-left: 0.16rem;
+          span.padding {
+            margin-left: 0.36rem;
           }
         }
       }

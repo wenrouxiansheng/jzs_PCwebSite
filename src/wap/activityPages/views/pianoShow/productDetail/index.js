@@ -159,6 +159,9 @@ export default class ProductDetail extends Component {
           <p>
             联动杆<span className="padding">{data.MovingRod}</span>
           </p>
+          <p>
+            （颜色、尺寸以实物为准）
+          </p>
         </div>
       </div>
     );

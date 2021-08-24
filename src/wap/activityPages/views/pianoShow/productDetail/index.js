@@ -52,7 +52,7 @@ const productDetail = [
     img: require('../../../assets/piano/126B.png').default,
     from: '中国',
     color: '黑色亮光',
-    size: '1530mm*1250mm*610mm​',
+    size: '1530mm*1260mm*610mm​',
     musicWire: '德国“ROSLAU”勒斯劳琴弦',
     plank: '高级镀铜踏板',
     hammer: '德国顶级羊毛毡红木榔头',

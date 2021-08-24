@@ -1,34 +1,34 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-import "./style.scss";
+import './style.scss'
 
 export default class pianoProduct extends Component {
   state = {
     show: false,
 
     animation: false,
-  };
+  }
   openDrawer = () => {
     this.setState({
       show: true,
       animation: true,
-    });
-  };
+    })
+  }
   closeDrawer = (e) => {
-    const classNameAry = ["control", "container", "title-back"];
+    const classNameAry = ['control', 'container', 'title-back']
     if (classNameAry.includes(e.target.className)) {
       this.setState({
         animation: false,
-      });
+      })
       setTimeout(() => {
         this.setState({
           show: false,
-        });
-      }, 280);
+        })
+      }, 280)
     }
-  };
+  }
   render() {
-    const { show, animation } = this.state;
+    const { show, animation } = this.state
     const {
       modelNumber,
       price,
@@ -47,7 +47,7 @@ export default class pianoProduct extends Component {
       slowDescent,
       action,
       MovingRod,
-    } = this.props.data;
+    } = this.props.data
     return (
       <div className="pianoProduct">
         <div className="flex">
@@ -77,22 +77,22 @@ export default class pianoProduct extends Component {
 
         <img
           alt=""
-          src={require("../../../assets/pianoList/flag.png").default}
+          src={require('../../../assets/pianoList/flag.png').default}
           onClick={this.openDrawer}
         />
         <div
           className="container"
           style={{
-            display: show ? "block" : "none",
+            display: show ? 'block' : 'none',
             animation: `${
-              animation ? "container_fadeIn" : "container_fadeOut"
+              animation ? 'container_fadeIn' : 'container_fadeOut'
             } 0.3s ease-in`,
           }}
           onClick={this.closeDrawer}
         >
           <div>
             <img
-              src={require("../../../assets/pianoList/back.png").default}
+              src={require('../../../assets/pianoList/back.png').default}
               alt=""
               className="control"
             />
@@ -151,13 +151,11 @@ export default class pianoProduct extends Component {
               <p>
                 联动杆<span className="padding">{MovingRod}</span>
               </p>
-              <p>
-              （颜色、尺寸以实物为准）
-              </p>
+              <p>（颜色、尺寸以实物为准）</p>
             </div>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

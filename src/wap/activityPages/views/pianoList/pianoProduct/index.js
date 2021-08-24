@@ -142,7 +142,7 @@ export default class pianoProduct extends Component {
                 缓降<span>{slowDescent}</span>
               </p>
 
-              <p>
+              <p style={{ display: nail ? 'block' : 'none' }}>
                 弦轴钉<span className="padding">{nail}</span>
               </p>
               <p>

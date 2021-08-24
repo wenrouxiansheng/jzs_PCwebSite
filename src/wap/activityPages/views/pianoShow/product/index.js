@@ -12,7 +12,7 @@ export default class Product extends Component {
     pianoSlideList: [
       {
         image: require("../../../assets/piano/121B.png").default,
-        title: "JZS-121B6",
+        title: "JZS-121B",
         subtitle: "简约奢华品质美感",
         price: "24800",
         link: "/site/wap/activity/pianoList",

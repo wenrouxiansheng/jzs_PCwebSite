@@ -11,24 +11,24 @@ export default class Product extends Component {
   state = {
     pianoSlideList: [
       {
-        image: require("../../../assets/piano/piano1.png").default,
+        image: require("../../../assets/piano/121B.png").default,
         title: "JZS-121B",
         subtitle: "简约奢华品质美感",
-        price: "28880",
+        price: "24800",
         link: "/site/wap/activity/pianoList",
       },
       {
-        image: require("../../../assets/piano/piano1.png").default,
-        title: "JZS-122B",
+        image: require("../../../assets/piano/123B.png").default,
+        title: "JZS-123B7",
         subtitle: "简约奢华品质美感",
-        price: "28880",
+        price: "28800",
         link: "/site/wap/activity/pianoList",
       },
       {
-        image: require("../../../assets/piano/piano1.png").default,
-        title: "JZS-123B",
+        image: require("../../../assets/piano/126B.png").default,
+        title: "JZS-126B",
         subtitle: "简约奢华品质美感",
-        price: "28880",
+        price: "34800",
         link: "/site/wap/activity/pianoList",
       },
     ],
@@ -83,7 +83,7 @@ export default class Product extends Component {
           alt=""
           className="title"
         />
-        <p className="subtitle">极/于/形/追/求/独/特/美/感</p>
+        <p className="subtitle">卓越品质追求独特美感</p>
 
         <Swiper
           slidesPerView={"auto"}

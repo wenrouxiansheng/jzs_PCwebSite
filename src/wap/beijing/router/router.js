@@ -176,4 +176,5 @@ const router = {
 
     ]
 }
-export default router
+export default router.list
+export let publicRoute = router.publicPath

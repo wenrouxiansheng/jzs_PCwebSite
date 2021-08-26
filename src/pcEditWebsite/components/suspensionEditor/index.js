@@ -28,6 +28,7 @@ export default class suspensionEditor extends Component {
     }
     static getDerivedStateFromError(error) {
         // 更新 state 使下一次渲染能够显示降级后的 UI
+        // 只有生产环境下可以看到发生错误后降级渲染，在开发时react还是会报错
         return { hasError: true };
     }
 

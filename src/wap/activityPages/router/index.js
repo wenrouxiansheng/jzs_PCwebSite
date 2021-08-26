@@ -1,6 +1,7 @@
-import React, { Component, Suspense, lazy } from "react";
+import React, { Component, Suspense } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { Skeleton } from "antd";
+import routeList from "./routeList";
 //骨架屏
 const loadingStyle = {
   width: "100vw",
@@ -20,21 +21,25 @@ const Loading = (
   </div>
 );
 export default class wapBeijingRouter extends Component {
+  componentDidMount() {
+    let awaitTime = 0;
+    let timer = setInterval(() => {
+      const service = document.querySelector("#udesk_container");
+      if (service) {
+        service.style.display = "none";
+        clearInterval(timer);
+      } else {
+        awaitTime = 1500;
+      }
+    }, awaitTime);
+  }
   render() {
     return (
       <Suspense fallback={Loading}>
         <Switch>
-          {/* 钢琴展示 */}
-          <Route
-            path="/site/wap/activity/pianoShow"
-            component={lazy(() => import("../views/pianoShow"))}
-          />
-          {/* 钢琴列表 */}
-          <Route
-            path="/site/wap/activity/pianoList"
-            component={lazy(() => import("../views/pianoList"))}
-          />
-
+          {routeList.map((item, index) => {
+            return <Route {...item} key={index} />;
+          })}
           <Redirect to="/site/wap/beijing/home" />
         </Switch>
       </Suspense>

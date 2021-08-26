@@ -59,6 +59,7 @@ export default class wapRouterControl extends Component {
                 <Switch>
                     <Route path="/site/wap/beijing" component={lazy(() => import('../beijing/router'))} />{/* 北京站点 */}
                     <Route path="/site/wap/shanghai" component={lazy(() => import('../shanghai/router'))} />{/* 上海站点 */}
+                    <Route path="/site/wap/activity" component={lazy(() => import('../activityPages/router'))} />{/* 活动页面 */}
 
                     {this.verify()}
                 </Switch>

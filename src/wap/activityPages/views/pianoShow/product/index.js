@@ -21,7 +21,7 @@ export default class Product extends Component {
         image: require("../../../assets/piano/123B.png").default,
         title: "JZS-123B7",
         subtitle: "简约奢华品质美感",
-        price: "26800",
+        price: "28800",
         link: "/site/wap/activity/pianoList",
       },
       {

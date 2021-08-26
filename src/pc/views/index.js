@@ -2,7 +2,6 @@ import React, { Suspense, Component } from "react";
 import { ConfigProvider, Skeleton } from "antd";
 import { Route, Redirect, Switch } from "react-router-dom";
 import zhCN from "antd/lib/locale/zh_CN";
-import PubSub from "pubsub-js";
 
 import Header from "@components/common/header";
 import Nav from "@components/common/horizontalNav";
@@ -37,20 +36,11 @@ const Loading = (
   </div>
 );
 
-let changeSelection = null;
 export default class page extends Component {
   state = {
-    selection: {
-      display: "none",
-      width: "500px",
-      height: "0px",
-      left: "50px",
-      top: "60px",
-    },
-    routeType: false,
+    routeType: false, //控制跳转是打开新标签还是当前页
   };
   componentDidMount() {
-
     const isPhone = navigator.userAgent.match(
       /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
     );
@@ -67,39 +57,7 @@ export default class page extends Component {
     this.setState({
       routeType: true,
     });
-    //是编辑状态 订阅更改信息
-    changeSelection = PubSub.subscribe(
-      "changeSelectionPosition",
-      (msg, data) => {
-        this.setState({
-          selection: data,
-        });
-      }
-    );
   }
-  isEdit = () => {
-    //是不是编辑状态
-    if (!editingStatus.getState()) return;
-    const { selection } = this.state;
-    return <SelectionModifiers info={selection} />;
-  };
-  componentWillUnmount() {
-    if (!editingStatus.getState()) return;
-    // 组件销毁前去除订阅消息
-    PubSub.unsubscribe(changeSelection);
-  }
-  childRoute = (detail) => {
-    //二级路由遍历
-    return detail.children.map((item, index) => {
-      return (
-        <Route
-          path={pcPathName + detail.path + item.path}
-          component={item.component}
-          key={index}
-        />
-      );
-    });
-  };
   render() {
     const { routeType } = this.state;
     return (
@@ -110,19 +68,13 @@ export default class page extends Component {
           <Suspense fallback={Loading}>
             <Switch>
               {routeList.map((item, index) => {
-                return item.children ? (
-                  this.childRoute(item)
-                ) : (
-                  <Route
-                    path={pcPathName + item.path}
-                    component={item.component}
-                    key={index}
-                  />
+                return (
+                  <Route {...item} path={pcPathName + item.path} key={index} />
                 );
               })}
               <Redirect to="/site/pc/home" />
             </Switch>
-            {this.isEdit()}
+            {editingStatus.getState() && <SelectionModifiers />}
           </Suspense>
           <SuspendedWindow />
           <Footer />

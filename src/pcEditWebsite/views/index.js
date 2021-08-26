@@ -24,7 +24,7 @@ const routeList = [
     { path: "/site/pcEdit/login", name: "login", component: lazy(() => import('./login')), auth: false },
 ]
 export default class pcEditRouter extends Component {
-    //这里作为HOC 路由守卫 先简易实现
+    //这里作为 路由守卫 先简易实现
     guard = () => {
         const { location: { pathname } } = this.props,//页面访问路径
             isLogin = localStorage.getItem("state"),//模拟登录信息

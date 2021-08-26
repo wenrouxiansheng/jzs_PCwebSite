@@ -5,7 +5,7 @@ import SiteContainer from "../components/homePage/siteContainer";//编辑器容�
 
 export default class pcEditHome extends Component {
     state = {
-        indexed: 0
+        indexed: 0//控制显示的盒子
     }
     switchSelected = (num) => {
         this.setState({

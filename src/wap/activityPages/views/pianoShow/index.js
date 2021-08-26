@@ -10,6 +10,7 @@ export default class pianoShow extends Component {
     opacity: 0,
   };
   controlDFisplay = (val) => {
+    //设置主内容透明度  跟据首屏滑动距离定透明度
     this.setState({
       opacity: val,
     });

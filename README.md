@@ -116,11 +116,11 @@ pubsubjs：[gihub 说明地址](https://github.com/mroderick/PubSubJS)
 - 1.4 发布getChangeComponentData - 传递给页面新的componentJson更新视图
 
 ### 2. 悬浮模块窗（pcEditWebsite/components/modalWindow/index.js）
-- 订阅showModalWindow - 接收控制模态床是否显示 及 设置显示模块（组件列表、设置）
+- 2.1 订阅showModalWindow - 接收控制模态床是否显示 及 设置显示模块（组件列表、设置）
 
 ### 3. 悬浮模块窗中 组件列表模块（pcEditWebsite/editorComponents/modalWindow/componentsModal/index.js）
-- 发布addComponent - 传递添加组件的信息及默认数据
-- 发布addComponentContainer - 传递组件信息给组件容器添加
+- 3.1 发布addComponent - 传递添加组件的信息及默认数据
+- 3.2 发布addComponentContainer - 传递组件信息给组件容器添加
 
 
 

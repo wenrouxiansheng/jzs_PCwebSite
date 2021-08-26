@@ -1,11 +1,49 @@
 import React, { Component } from 'react'
 
 import './style.scss'
-
-const detailShow = [
-  { img: require('../../../assets/piano/img1.png').default, text: '钢琴烤漆' },
-  { img: require('../../../assets/piano/img2.png').default, text: '缓降器' },
-  { img: require('../../../assets/piano/img3.png').default, text: '实木琴键' },
+const detailShowList = [
+  [
+    {
+      img: require('../../../assets/piano/img1.png').default,
+      text: '德国无氧无污染天然酵化镜面漆',
+    },
+    {
+      img: require('../../../assets/piano/img2.png').default,
+      text: '高端内置缓降器',
+    },
+    {
+      img: require('../../../assets/piano/img3.png').default,
+      text: '白松复合实木白键',
+    },
+  ],
+  [
+    {
+      img: require('../../../assets/piano/img1.png').default,
+      text: '德国无氧无污染天然酵化镜面漆',
+    },
+    {
+      img: require('../../../assets/piano/img2.png').default,
+      text: '高端内置缓降器',
+    },
+    {
+      img: require('../../../assets/piano/img3.png').default,
+      text: '白松复合实木白键并逐键加铅',
+    },
+  ],
+  [
+    {
+      img: require('../../../assets/piano/img1.png').default,
+      text: '德国无氧无污染天然酵化镜面漆',
+    },
+    {
+      img: require('../../../assets/piano/img2.png').default,
+      text: '高端内置缓降器和三角同款',
+    },
+    {
+      img: require('../../../assets/piano/img3.png').default,
+      text: '白松复合实木白键并逐键加铅',
+    },
+  ],
 ]
 
 const productDetail = [
@@ -75,6 +113,7 @@ export default class ProductDetail extends Component {
   render() {
     const { product } = this.props
     const data = productDetail[product]
+    const detailList = detailShowList[product]
     return (
       <div className="productDetail">
         <img
@@ -82,10 +121,9 @@ export default class ProductDetail extends Component {
           alt=""
           className="piano-title-1"
         />
-
         <div className="piano-detail-container">
           <div>
-            {detailShow.map((item, index) => {
+            {detailList.map((item, index) => {
               return (
                 <p key={index}>
                   <img src={item.img} alt="" />
@@ -95,7 +133,7 @@ export default class ProductDetail extends Component {
             })}
           </div>
           <div>
-            <img src={data.img} alt="" />
+            <img src={data.img} style={{ marginTop: '45px' }} alt="" />
           </div>
         </div>
 
